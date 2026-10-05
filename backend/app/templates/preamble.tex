@@ -87,12 +87,18 @@
 % \notefigure[width]{id}{caption}: a diagram cropped from the original page. The build step
 % fills in the width (share of \linewidth) from the drawing's width on the original page.
 % A redrawn version in drawings/<id>.tex (TikZ) is used instead of the crop when present.
+% The width is a share of the page's text width, also inside a minipage (capped at its width).
+\newlength{\notepagewidth}
+\AtBeginDocument{\setlength{\notepagewidth}{\linewidth}}
+\newlength{\notefigwidth}
 \newcommand{\notefigure}[3][0.5]{%
+  \setlength{\notefigwidth}{#1\notepagewidth}%
+  \ifdim\notefigwidth>\linewidth\setlength{\notefigwidth}{\linewidth}\fi
   \begin{center}
     \IfFileExists{drawings/#2.tex}%
       {\input{drawings/#2.tex}}%
       {\IfFileExists{figures/#2.png}%
-        {\includegraphics[width=#1\linewidth,height=0.35\textheight,keepaspectratio]{figures/#2.png}}%
+        {\includegraphics[width=\notefigwidth,height=0.35\textheight,keepaspectratio]{figures/#2.png}}%
         {\fbox{\parbox{0.5\linewidth}{\centering\small [Figure #2 missing]}}}}%
     \if\relax\detokenize{#3}\relax\else\par\small\emph{#3}\fi
   \end{center}}
