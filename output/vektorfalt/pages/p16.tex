@@ -1,0 +1,49 @@
+% language: swedish
+% figure: fig1 0.093 0.476 0.285 0.587
+% figure: fig2 0.093 0.605 0.275 0.722
+% figure: fig3 0.10 0.745 0.295 0.865
+Gå i gräns på integralen:
+\[ \lim_{\delta V \to 0} \frac{1}{\delta V} \frac{\partial u_1}{\partial x}\,\delta V = \frac{\partial u_1}{\partial x} \]
+
+På samma sätt för resterande 4 ytor:\\
+$\Rightarrow \dfrac{\partial u_2}{\partial y}$ och $\dfrac{\partial u_3}{\partial z}$. Lägg ihop alla termer
+\[ \Rightarrow \operatorname{div}(\vb{u}) = \frac{\partial u_1}{\partial x} + \frac{\partial u_2}{\partial y} + \frac{\partial u_3}{\partial z} \]
+Notation: $\operatorname{div}(\vb{u}) = \nabla \cdot \vb{u}$
+\[ \nabla = \left( \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right) \]
+\begin{align*}
+\Rightarrow \nabla \cdot \vb{u} &= \left( \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right) \cdot (u_1, u_2, u_3) \\
+&= \frac{\partial u_1}{\partial x} + \frac{\partial u_2}{\partial y} + \frac{\partial u_3}{\partial z}
+\end{align*}
+
+Fysikalisk tolkning:
+
+\begin{minipage}{0.3\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.68\linewidth}
+\begin{align*}
+\vb{u} &= (x, 0, 0) \\
+\nabla \cdot \vb{u} &= 1 + 0 + 0 = 1
+\end{align*}
+\end{minipage}
+
+\begin{minipage}{0.3\linewidth}
+\notefigure[0.9]{fig2}{}
+\end{minipage}
+\begin{minipage}{0.68\linewidth}
+\begin{align*}
+\vb{u} &= (-x, 0, 0) \\
+\nabla \cdot \vb{u} &= -1 + 0 + 0 = 1
+\end{align*}
+\end{minipage}
+
+\begin{minipage}{0.3\linewidth}
+\notefigure[0.9]{fig3}{}
+\end{minipage}
+\begin{minipage}{0.68\linewidth}
+\begin{align*}
+\vb{u} &= (0, x, 0) \\
+\nabla \cdot \vb{u} &= 0 + 0 + 0 = 0
+\end{align*}
+Divergensfritt
+\end{minipage}

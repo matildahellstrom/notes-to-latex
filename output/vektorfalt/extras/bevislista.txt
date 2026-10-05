@@ -1,0 +1,2 @@
+# One theorem per line: p<page>: <part of its title> [| comment]
+

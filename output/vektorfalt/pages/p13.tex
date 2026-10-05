@@ -1,0 +1,32 @@
+% language: swedish
+% figure: fig1 0.14 0.173 0.385 0.33
+\subsection{Gradienter, Divergens, Rotation}
+I 3D:
+
+\begin{minipage}{0.36\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.62\linewidth}
+\begin{itemize}
+  \item Gradienten $\nabla f$ är vinkelrät mot isoyta. Pekar i riktning mot ökande $f$.
+  \item Amplituden = förändringshastighet hos $f$.
+  \item Gradienten beskrivs med hjälp av partialderivator
+  \[ \nabla f = \frac{\partial f}{\partial x}\vb{e}_1 + \frac{\partial f}{\partial y}\vb{e}_2 + \frac{\partial f}{\partial z}\vb{e}_3 \]
+\end{itemize}
+\end{minipage}
+
+Visa att ovanstående påståenden gäller. Antag liten förflyttning $\vb{r}$ till $\vb{r} + d\vb{r}$. Ger motsvarande ändring: $f$ till $f + df$. Med hjälp av Taylorutveckling:
+\begin{align*}
+df &= \frac{\partial f}{\partial x}\Delta x + \frac{\partial f}{\partial y}\Delta y + \frac{\partial f}{\partial z}\Delta z \\
+&= \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right) \cdot (\Delta x, \Delta y, \Delta z) \\
+&\coloneqq \nabla f \cdot d\vb{r}
+\end{align*}
+
+Antag att $d\vb{r}$ ligger i planet $f = \text{konstant}$\\
+$\Rightarrow df = 0 \Rightarrow \nabla f \cdot d\vb{r} = 0$
+
+I allmänhet $\nabla f \neq 0$ och $d\vb{r} \neq 0$. Då för att $\nabla f \cdot d\vb{r} = 0$ måste $\nabla f$ och $d\vb{r}$ vara vinkelräta.
+
+Amplituden: Ersätt $d\vb{r} = \vb{n}\,ds$, där $\abs{\vb{n}} = 1$. $\vb{n}$ är i samma riktning som $f$.\\
+Beräkna $df = \nabla f \cdot \vb{n}\,ds = \abs{\nabla f}\,ds$.\\
+$\Rightarrow \abs{\nabla f} = \dfrac{df}{ds} \Rightarrow$ Påstående om amplituden stämmer.

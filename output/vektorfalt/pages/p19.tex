@@ -1,0 +1,35 @@
+% language: swedish
+\subsection{Indexnotationer med tillämpningar}
+Vi kan skriva en vektor
+\[ \vb{a} = \sum_{i=1}^3 a_i\vb{e}_i = a_1\vb{e}_1 + a_2\vb{e}_2 + a_3\vb{e}_3 \]
+I indexnotation skriver man $a_i$, $i$ fritt index $i = 1, 2, 3$.
+
+Skriver till exempel $\vb{c} = \vb{a} + \vb{b}$\\
+\phantom{Skriver till exempel} $c_i = a_i + b_i$
+\begin{align*}
+\text{Skalärprodukt: } \vb{a} \cdot \vb{b} &= a_1 b_1 + a_2 b_2 + a_3 b_3 \\
+&= \sum_{i=1}^3 a_i b_i
+\end{align*}
+$\vb{a} \cdot \vb{b} = a_j b_j$, Dubbla index = summationsindex.\\
+Index kan endast förekomma 1 eller 2 gånger i en term.
+
+\begin{example}
+$(\vb{a} \cdot \vb{b}) \cdot (\vb{c} \cdot \vb{d}) = a_j b_j c_k d_k = c_k a_j d_k b_j$
+\end{example}
+
+\begin{example}[4.1]
+Skriv $a_j b_i c_j$ på vektorform
+\begin{align*}
+\sum_{j=1}^3 a_j b_i c_j &= b_i \sum_{j=1}^3 a_j c_j = \underset{\substack{\uparrow \\ \text{fritt index}}}{b_i}(\vb{a} \cdot \vb{c}) = \\
+&= (\vb{a} \cdot \vb{c})\,b_i = (\vb{a} \cdot \vb{c})\,\vb{b}
+\end{align*}
+\end{example}
+
+\begin{example}[4.2]
+Skriv uttrycket $\vb{u} + (\vb{a} \cdot \vb{b})\vb{v} = \abs{\vb{a}}^2(\vb{b} \cdot \vb{v})\vb{a}$ på indexform.
+\begin{align*}
+u_i + (\vb{a} \cdot \vb{b})v_i &= \abs{\vb{a}}^2(\vb{b} \cdot \vb{v})a_i \\
+&= (\vb{a} \cdot \vb{a})(\vb{b} \cdot \vb{v})a_i \\
+u_i + a_j b_j v_i &= a_j a_j b_k v_k a_i
+\end{align*}
+\end{example}

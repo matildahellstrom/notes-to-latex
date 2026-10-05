@@ -1,0 +1,34 @@
+% language: swedish
+% figure: fig1 0.765 0.138 0.945 0.252
+\subsection{Gauss och Stokes sats}
+
+\begin{minipage}{0.75\linewidth}
+\begin{theorem}[Gauss sats / Divergensteoremet]
+\[ \iiint_V \nabla \cdot \vb{u}\,dV = \oiint_S \vb{u} \cdot \vb{n}\,dS \]
+$\vb{u}$: kontinuelig, deriverbar i $V$\\
+$S$: Sluten yta runt $V$'s rand\\
+$\vb{n}$: utåtriktad ytnormal
+\end{theorem}
+\end{minipage}
+\begin{minipage}{0.23\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+
+Definition av divergens:
+\[ \nabla \cdot \vb{u} \approx \frac{1}{\delta V_i} \oiint_{\delta S_i} \vb{u} \cdot \vb{n}\,dS, \quad \delta S_i, \delta V_i \text{ små yt/volymelement} \]
+Summera alla delvolymer $\delta V_i$
+\[ \sum_i \nabla \cdot \vb{u}\,\delta V_i \approx \sum_i \oiint_{\delta S_i} \vb{u} \cdot \vb{n}\,dS \]
+Låt $\delta V_i \to 0$. Vänster led $\Rightarrow$ Volymintegral\\
+\phantom{Låt $\delta V_i \to 0$.} Högerled $\Rightarrow$ Motstående ytnormal tar ut varandra
+\[ \Rightarrow \iiint_V \underset{\substack{\uparrow \\ \text{Total expansion av} \\ \text{fältet i volymen } V.}}{\nabla \cdot \vb{u}}\,dV = \oiint_{\underset{\text{flöde genom ytan}}{S}} \vb{u} \cdot \vb{n}\,dS \]
+
+Fler ekvationer härleds om $\vb{u} = \vb{a}f$\\
+\phantom{Fler ekvationer härleds om} $\vb{u} = \vb{a} \times \vb{v}$\\
+\phantom{Fler ekvationer härleds om} $\vb{u} = f\nabla g$\\
+\phantom{Fler ekvationer härleds om} $\vb{u} = f\nabla g - g\nabla f$
+
+Masskonservering:
+\begin{itemize}
+  \item Flöde med hastighet $\vb{u}(\vb{r}, t)$
+  \item Vätska har densitet $\rho(\vb{r}, t)$
+\end{itemize}

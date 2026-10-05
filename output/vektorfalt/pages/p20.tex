@@ -1,0 +1,33 @@
+% language: swedish
+\subsubsection*{Kronecker delta $\delta_{ij}$}
+\begin{definition}
+$\delta_{ij} = \begin{cases} 1 & \text{om } j = i \\ 0 & \text{om } j \neq i \end{cases}$
+\end{definition}
+Alltså: $\delta_{11} = \delta_{22} = \delta_{33}$, annars $= 0$.
+
+\begin{example}
+\begin{align*}
+\delta_{ij} a_j = \sum_{j=1}^3 \delta_{ij} a_j &= \delta_{i1} a_1 + \delta_{i2} a_2 + \delta_{i3} a_3 \\
+&= a_i
+\end{align*}
+Skalärprodukt
+\begin{align*}
+\text{Visa } \vb{a} \cdot \vb{b} &= \delta_{ij} a_i b_j \\
+&= \sum_{i=1}^3 \sum_{j=1}^3 \delta_{ij} a_i b_j = a_1 b_1 + a_2 b_2 + a_3 b_3
+\end{align*}
+Kunde ha skrivit $\begin{cases} \delta_{ij} b_j = b_i \\ \delta_{ij} a_i = a_j \end{cases}$
+\end{example}
+
+\subsubsection*{$\varepsilon$-tensorn}
+\[ \varepsilon_{ijk} = \begin{cases} 0 & \text{om någon av } i, j, k \text{ är lika} \\ 1 & \text{om } ijk = (1\,2\,3)\,(2\,3\,1)\,(3\,1\,2) \\ -1 & \text{om } ijk = (1\,3\,2)\,(2\,1\,3)\,(3\,2\,1) \end{cases} \]
+Visa $\varepsilon_{ijk} a_j b_k = (\vb{a} \times \vb{b})_i \coloneqq \vb{a} \times \vb{b}$
+
+Visa för $x$-komponenten $i = 1$
+\begin{align*}
+\varepsilon_{1jk} a_j b_k &= \sum_{j=1}^3 \sum_{k=1}^3 \varepsilon_{1jk} a_j b_k = \begin{cases} \text{endast } j = 2,\ k = 3 \\ \text{och } j = 3\ k = 2 \text{ bidrar} \end{cases} \\
+&= \underbrace{\varepsilon_{123}}_{=1} a_2 b_3 + \underbrace{\varepsilon_{132}}_{=-1} a_3 b_2 = a_2 b_3 - a_3 b_2 \\
+&= \text{kryssprodukt } x\text{-komponent}
+\end{align*}
+Lika för $i = 2$ och $3$ för $y$ respektive $z$.
+
+\[ \varepsilon_{ijk}\varepsilon_{k\ell m} = \delta_{i\ell}\delta_{jm} - \delta_{im}\delta_{j\ell}, \quad 4 \text{ fria index} \]

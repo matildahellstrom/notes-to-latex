@@ -1,0 +1,38 @@
+% language: swedish
+% figure: fig1 0.10 0.045 0.27 0.192
+% figure: fig2 0.12 0.196 0.45 0.312
+\subsubsection*{Rotation av vektorfält}
+
+\begin{minipage}{0.25\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.73\linewidth}
+\[ \vb{n} \cdot \operatorname{curl}(\vb{u}) = \lim_{\delta S \to 0} \frac{1}{\delta S} \oint_{\partial C} \vb{u} \cdot d\vb{r} \]
+Antag först $\vb{n} = \vb{e}_3$\\
+Vi beräknar $z$-komponenten av $\operatorname{curl}(\vb{u})$
+\end{minipage}
+
+\begin{minipage}{0.42\linewidth}
+\notefigure[0.9]{fig2}{}
+\end{minipage}
+\begin{minipage}{0.56\linewidth}
+För $C_1$: Centrum av $C_1 =$\\
+$= \left( x, y - \dfrac{\delta y}{2}, z \right)$\\
+$\Rightarrow \vb{u} \cdot d\vb{r} = u_1\,dx$
+\end{minipage}
+
+Integral:
+\[ \int_{C_1} \vb{u} \cdot d\vb{r} \approx u_1\left( x, y - \frac{\delta y}{2}, z \right) \delta x \]
+På samma sätt för $C_2, C_3, C_4$.
+\[ \Rightarrow \vb{e}_3 \cdot \operatorname{curl}(\vb{u}) = \frac{\partial u_2}{\partial x} - \frac{\partial u_1}{\partial y} \]
+På samma sätt för $\vb{e}_1$ och $\vb{e}_2$
+\[ \Rightarrow \operatorname{curl}(\vb{u}) = \left( \frac{\partial u_3}{\partial y} - \frac{\partial u_2}{\partial z}, \frac{\partial u_1}{\partial z} - \frac{\partial u_3}{\partial x}, \frac{\partial u_2}{\partial x} - \frac{\partial u_1}{\partial y} \right) \]
+Notation: $\operatorname{curl}(\vb{u}) = \nabla \times \vb{u} = \begin{vmatrix} \vb{e}_1 & \vb{e}_2 & \vb{e}_3 \\[0.3em] \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{d}{dz} \\[0.8em] u_1 & u_2 & u_3 \end{vmatrix}$
+
+På tidigare vektorfält:\\
+$\nabla \times (x, 0, 0) = (0, 0, 0)$ \quad Rotationsfria\\
+$\nabla \times (-x, 0, 0) = (0, 0, 0)$\\
+$\nabla \times (0, x, 0) = (0, 0, 1)$
+
+[Läs själva i boken: Laplaceoperatorn $\nabla \cdot \nabla\phi$\\
+Rotation av konservativt fält $\nabla \times \nabla\phi$.]

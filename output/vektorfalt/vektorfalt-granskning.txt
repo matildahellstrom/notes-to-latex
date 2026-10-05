@@ -1,0 +1,16 @@
+Granskning av osäkra läsningar -- Vektorfält
+Skriv efter 'Svar:' vad som står i originalet, eller 'ok' om läsningen stämmer.
+Lämna tomt om du inte vet. Skicka sedan filen (eller innehållet) till Claude.
+
+1. Sida 5. Läst som: x
+   Svar: 
+
+2. Sida 21. Läst som: k
+   Svar: 
+
+3. Sida 21. Läst som: x_i
+   Svar: 
+
+4. Sida 24. Läst som: rymdkälltäthet
+   Svar: 
+

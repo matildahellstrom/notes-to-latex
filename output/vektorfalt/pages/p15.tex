@@ -1,0 +1,40 @@
+% language: swedish
+% figure: fig1 0.10 0.112 0.415 0.262
+% figure: fig2 0.105 0.312 0.47 0.465
+\subsubsection*{Divergens av vektorfält}
+\[ \operatorname{div}(\vb{u}) \coloneqq \lim_{\delta V \to 0} \frac{1}{\delta V} \oiint_{\partial S} \vb{u} \cdot \vb{n}\,dS \]
+
+\begin{minipage}{0.42\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.56\linewidth}
+Tolkning flöde från $\vb{u}$ ut ur volymen $\partial V$ delat med volymen $\partial V$.
+
+Härled ett uttryck i kartesiska koordinater.
+\end{minipage}
+
+Antag fält $\vb{u} = (u_1, u_2, u_3)$
+
+\begin{minipage}{0.42\linewidth}
+\notefigure[0.9]{fig2}{}
+\end{minipage}
+\begin{minipage}{0.56\linewidth}
+Integralen har 6 bidrag, ett från varje sida. Integrera över $S_1$, $\vb{n}_1 = (1, 0, 0)$\\
+$\Rightarrow \vb{u} \cdot \vb{n} = u_1$
+\end{minipage}
+
+Antag centrum av $S_1$: $(x + \delta x/2, y, z)$\\
+\phantom{Antag centrum av} $dS$: $\delta y\,\delta x$
+\[ \iint_{S_1} \vb{u} \cdot \vb{n}\,dS \approx u_1\left( x + \frac{\delta x}{2}, y, z \right) \delta y\,\delta z \]
+\hfill Liten yta $\Rightarrow u_1$ konstant över ytan \hfill\null
+
+På samma sätt för $S_2$: $\vb{n} = (-1, 0, 0)$\\
+Centrum $\left( x - \dfrac{\delta x}{2}, y, z \right) \Rightarrow \vb{u} \cdot \vb{n} = -u_1$
+
+$\Rightarrow$ Bidrag till integralen
+\[ \iint_{S_2} \vb{u} \cdot \vb{n}\,dS \approx -u_1\left( x - \frac{\delta x}{2}, y, z \right) \]
+Addera
+\begin{align*}
+\iint_{S_1 + S_2} \vb{u} \cdot \vb{n}\,dS &= \left[ u_1\left( x + \frac{\delta x}{2}, y, z \right) - u_1\left( x - \frac{\delta x}{2}, y, z \right) \right] \delta y\,\delta z \\
+&\approx \frac{\partial u_1}{\partial x}\,\delta x\,\delta y\,\delta z \approx \frac{\partial u_1}{\partial x}\,\delta V
+\end{align*}

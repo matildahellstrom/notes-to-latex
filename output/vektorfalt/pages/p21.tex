@@ -1,0 +1,32 @@
+% language: swedish
+\begin{align*}
+(\vb{a} \times (\vb{b} \times \vb{c}))_i &= \varepsilon_{ijk} a_j (\vb{b} \times \vb{c})_k \\
+&= \varepsilon_{ijk} a_j \varepsilon_{k\ell m} b_\ell c_m \\
+&= \varepsilon_{ijk} \varepsilon_{k\ell m} a_j b_\ell c_m \\
+&= (\delta_{i\ell}\delta_{jm} - \delta_{im}\delta_{j\unsure{k}}) a_j b_\ell c_m \\
+&= [\delta_{i\ell} b_\ell = b_i] \\
+&= a_m b_i c_m - a_j b_j c_i \\
+&= (\vb{a} \cdot \vb{c}) b_i - (\vb{a} \cdot \vb{b}) c_i \\
+&= (\vb{a} \cdot \vb{c}) \vb{b} - (\vb{a} \cdot \vb{b}) \vb{c}
+\end{align*}
+
+\subsubsection*{Gradienter, Divergens, Rotation}
+Grad: $\nabla f = \left( \dfrac{\partial f}{\partial x_1}, \dfrac{\partial f}{\partial x_2}, \dfrac{\partial f}{\partial x_3} \right)$
+
+Indexnotation: $\big[ \nabla f \big]_i = \dfrac{\partial f}{\partial x_i}$\\
+\quad operatorn $[\nabla]_i = \dfrac{\partial}{\partial x_i}$
+
+Divergensen $\nabla \cdot \vb{u} = \dfrac{\partial u_1}{\partial \unsure{x_i}} + \dfrac{\partial u_2}{\partial x_2} + \dfrac{\partial u_3}{\partial x_3} = \dfrac{\partial u_j}{\partial x_j}$
+
+Rotation $\nabla \times \vb{u}$:\\
+Visa för $x$-komponent
+\[ \big[ \nabla \times \vb{u} \big]_1 = \frac{\partial u_3}{\partial x_2} - \frac{\partial u_2}{\partial x_3} = \varepsilon_{ijk} \frac{\partial u_k}{\partial x_j} \]
+På samma sätt för $i = 2$ och $3$
+\[ \Rightarrow \nabla \times \vb{u} = \varepsilon_{ijk} \frac{\partial u_k}{\partial x_j} \]
+
+\subsubsection*{Kombinationer}
+\begin{align*}
+0 = \nabla \times \nabla f &= \varepsilon_{ijk} \frac{\partial}{\partial x_j} \frac{\partial f}{\partial x_k} = \left\{ \text{byt } j \leftrightarrow k \right\} = \\
+&= \varepsilon_{ikj} \frac{\partial}{\partial x_k} \frac{\partial f}{\partial x_j} = -\varepsilon_{ijk} \frac{\partial}{\partial x_k} \frac{\partial f}{\partial x_j} = -\varepsilon_{ijk} \frac{\partial}{\partial x_j} \frac{\partial f}{\partial x_k}
+\end{align*}
+Uttryck lika med sig själv. Måste vara 0.

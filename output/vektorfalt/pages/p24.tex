@@ -1,0 +1,33 @@
+% language: swedish
+% figure: fig1 0.12 0.75 0.245 0.858
+Massa i volymen $V$
+\[ \text{Massa i } V = \iiint_V \rho\,dV \]
+\begin{align*}
+\text{Massflöde ut ur } V &= \oiint_S \rho\,\vb{u} \cdot \vb{n}\,dS, \\
+\text{in i } V &= -\oiint_S \rho\,\vb{u} \cdot \vb{n}\,dS
+\end{align*}
+\[ \frac{d}{dt} \iiint \rho\,dV = -\oiint \rho\,\vb{u} \cdot \vb{n}\,dS \quad \left\{ \begin{array}{l} \text{byt ordning på} \\ \text{integral och derivata} \end{array} \right\} \]
+\begin{align*}
+&\Rightarrow \iiint_V \frac{d}{dt}\rho\,dV = -\iiint_V \nabla \cdot (\vb{u}\rho)\,dV \\
+&\iiint_V \frac{d\rho}{dt} + \nabla \cdot (\vb{u}\rho)\,dV = 0 \Rightarrow \frac{d\rho}{dt} + \nabla \cdot (\rho\vb{u}) = 0
+\end{align*}
+
+Om $\rho(\vb{r}, t)$ konstant i tiden:\\
+$\Rightarrow \nabla \cdot (\vb{u}\rho) = 0$
+
+\subsubsection*{Källor}
+Integral över sluten yta $S$.
+\[ \oiint_S \vb{u} \cdot \vb{n}\,dS = q \]
+Om $q \neq 0$ fältet har en källa innanför $S$\\
+\phantom{Om} $q = 0$ fältet är källfritt
+\[ q = \iiint_V \underbrace{\nabla \cdot \vb{u}}_{\rho \text{ \unsure{rymdkälltäthet}, divergens av } \vb{u}} dV \]
+
+\begin{minipage}{0.22\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.76\linewidth}
+Låt volymen $V$ minska mot $Q$
+\[ \lim_{V \to Q} \oiint_S \vb{u} \cdot \vb{n}\,dS = q \]
+\end{minipage}
+
+Om gränsvärdet existerar och har $q \neq 0$ så har fältet en punktkälla.

@@ -1,0 +1,36 @@
+% language: swedish
+\begin{example}[3.4]
+Beräkna enhetsnormal till ytan $f(x, y, z) = x^2 + y^2 - z = 0$ i punkt $(1, 1, 2)$
+\begin{align*}
+\nabla f &= \nabla(x^2 + y^2 - z) = (2x, 2y, -1) \\
+\nabla f(1, 1, 2) &= (2, 2, -1)
+\end{align*}
+Vektorn måste normeras $\abs{\nabla f(1, 1, 2)} = \sqrt{2^2 + 2^2 + 1} = 3$\\
+Enhetsnormalen: $\displaystyle \hat{\vb{n}}\ \frac{\nabla f(1, 1, 2)}{\abs{\nabla f(1, 1, 2)}} = \left( \frac{2}{3}, \frac{2}{3}, -\frac{1}{3} \right)$
+\end{example}
+
+\subsubsection*{Gradient, konservativa fält och potentialer}
+\begin{theorem}[3.1]
+Relaterar gradient av skalärt fält till konservativa vektorfält.
+
+Antag vektorfält $\vb{F}$ relaterar till skalärfält $\phi$ som $\vb{F} = \nabla\phi$.\\
+$\nabla\phi$ existerar överallt i $D$.\\
+Då är $\vb{F}$ konservativt i $D$ och omvänt om $\vb{F}$ är konservativt kan man skriva $\vb{F} = \nabla\phi$. $\phi$ kallas potential.
+\end{theorem}
+
+\begin{proof}
+Antag $\vb{F} = \nabla\phi$. Beräkna linjeintegralen från $A$ till $B$ längs $C$.
+\[ \int_C \vb{F} \cdot d\vb{r} = \int_C \nabla\phi \cdot d\vb{r} = \int_C d\phi = \Big[ \phi \Big]_A^B = \phi(B) - \phi(A) \]
+$\Rightarrow \vb{F}$ är konservativt.
+
+Omvänt: Antag $\vb{F}$ är konservativt
+\[ \phi(\vb{r}) = \int_0^{\vb{r}} \vb{F} \cdot d\tilde{\vb{r}}, \quad \text{Vi vet att } d\phi = \vb{F} \cdot d\vb{r} \]
+\begin{align*}
+&\Rightarrow \vb{F} \cdot d\vb{r} = \nabla\phi \cdot d\vb{r} \text{ måste gälla } \forall d\vb{r} \\
+&\Rightarrow \vb{F} = \nabla\phi
+\end{align*}
+\end{proof}
+
+\begin{note}
+Notera $\phi$ är ej unik, en konstant kan adderas.
+\end{note}

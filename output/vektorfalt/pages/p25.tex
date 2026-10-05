@@ -1,0 +1,37 @@
+% language: swedish
+% figure: fig1 0.675 0.598 0.82 0.69
+\begin{example}[Elfält från punktladdning]
+Vektorfält $\displaystyle \vb{E} = \frac{q}{4\pi\varepsilon_0} \cdot \frac{x\vb{e}_1 + y\vb{e}_2 + z\vb{e}_3}{(x^2 + y^2 + z^2)^{3/2}}$
+
+Divergensen
+\begin{align*}
+\nabla \cdot \vb{E} &= \nabla \cdot \left( \frac{q}{4\pi\varepsilon_0} \cdot \frac{x\vb{e}_1 + y\vb{e}_2 + z\vb{e}_3}{(x^2 + y^2 + z^2)^{3/2}} \right) \\
+&= \frac{q}{4\pi\varepsilon_0} \left( \frac{1}{(x^2 + y^2 + z^2)^{3/2}} - \frac{3x^2}{(x^2 + y^2 + z^2)^{5/2}} + \frac{1}{(x^2 + y^2 + z^2)^{3/2}} \right. \\
+&\qquad \left. - \frac{3y^2}{(x^2 + y^2 + z^2)^{5/2}} + \frac{1}{(x^2 + y^2 + z^2)^{3/2}} - \frac{3z^2}{(x^2 + y^2 + z^2)^{5/2}} \right) \\
+&= 0, \text{ då } (x, y, z) \neq 0
+\end{align*}
+
+Låt $S$ vara ett klot med radie $a$ och centrum i origo. I sfäriska koordinater visas enklast
+\[ \oiint_S \vb{E} \cdot \vb{n}\,dS = \frac{q}{\varepsilon_0} \]
+
+För att Gauss sats ska vara uppfylld behövs Dirac-delta funktionen
+\[ \nabla \cdot \vb{E} = \frac{q}{\varepsilon_0}\delta(x)\delta(y)\delta(z) = \frac{q}{\varepsilon_0}\delta^3(\vb{r}) \]
+\end{example}
+
+\begin{minipage}{0.7\linewidth}
+\begin{theorem}[Stokes sats]
+\[ \iint_S \nabla \times \vb{u} \cdot \vb{n}\,dS = \oint \vb{u} \cdot d\vb{r} \]
+$\vb{u}$ kontinuerligt deriverbar på ytan $S$
+\end{theorem}
+\end{minipage}
+\begin{minipage}{0.28\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+
+\begin{proof}
+\[ \nabla \times \vb{u} \cdot \vb{n} \approx \frac{1}{\delta S_i} \oint_{\delta C_i} \vb{u} \cdot d\vb{r} \]
+Summera alla bidrag
+\[ \sum_i \nabla \times \vb{u} \cdot \vb{n}\,\delta S_i \]
+Låt $\delta S_i \to 0$, summering blir
+\[ \iint_S \nabla \times \vb{u} \cdot \vb{n}\,dS = \oint_C \vb{u} \cdot d\vb{r} \]
+\end{proof}
