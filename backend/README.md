@@ -83,7 +83,11 @@ The `/transcribe` skill runs it for you, but you can also use it yourself from t
 ./notes build <name> [-t "Title"] [--partial]
 ./notes extras <name> [-t "Course"]
 ./notes site <name> [-t "Course"]
+./notes all <name> [-t "Course"]     # build, extras, review and site in one go
 ```
+
+`-t` is remembered per document (`output/<name>/title.txt`), so after the first time `./notes all <name>` is enough.
+`all` stops if the notes don't compile; the other steps run even if one of them fails, and the summary says which.
 
 ## Tests
 

@@ -2,7 +2,7 @@
 name: transcribe
 description: Transcribe handwritten maths and science notes (PDFs, scans or photos) into LaTeX and a compiled PDF. Use when the user runs /transcribe or asks to turn their notes into LaTeX.
 argument-hint: "[PDFs, images or folder] [--pages 1-4] [--name NAME] [--title TITLE]"
-allowed-tools: Bash(./notes prepare *), Bash(./notes build *), Bash(open output/*), Read, Write, Edit
+allowed-tools: Bash(./notes prepare *), Bash(./notes build *), Bash(./notes all *), Bash(open output/*), Read, Write, Edit
 ---
 
 # Transcribe handwritten notes
@@ -52,10 +52,20 @@ If it reports LaTeX errors, the line numbers are lines in that page's `pN.tex`. 
 
 When figures were cropped, read each figure PNG once. If a crop cuts off part of the drawing or includes a lot of surrounding text, adjust that `% figure:` line and build again.
 
+When the whole document builds, finish everything else in one go:
+
+```bash
+./notes all <name>
+```
+
+It rebuilds, then makes the study material (bevislista, exercises, flashcards), the review sheet for
+the yellow readings, and the website. The title from `-t` is remembered, so it can be left out. If a
+step fails, its error is printed; fix what you can, otherwise mention it in the report.
+
 ## 5. Report
 
 Tell the user, briefly:
 
-- the PDF path (and offer to open it with `open <path>`)
-- the uncertain readings from the build output, grouped by page, so they know what to check against the original
+- the PDF path (and offer to open it with `open <path>`), and the website (`site/<name>/index.html`)
+- how many uncertain readings there are, and that they can go through them in `<name>-granskning.pdf` and answer in `<name>-granskning.txt`
 - anything you couldn't handle (unreadable sections, drawings you left out)

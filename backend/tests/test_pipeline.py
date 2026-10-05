@@ -265,3 +265,14 @@ def test_site_views_link_to_their_targets():
              View("f2", "B", '<div class="sida" id="sida-3"></div><span id="ref-9.18"></span>')]
     link_views(views)
     assert 'href="#f2~ref-9.18"' in views[0].html and 'href="#f2~sida-3"' in views[0].html
+
+
+def test_title_is_remembered(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    from app import cli
+    monkeypatch.setattr(cli, "OUTPUT_DIR", tmp_path)
+    (tmp_path / "kurs").mkdir()
+    cli.remember_title(SimpleNamespace(name="kurs", title="Linjär algebra"))
+    later = SimpleNamespace(name="kurs", title="")
+    cli.remember_title(later)
+    assert later.title == "Linjär algebra"

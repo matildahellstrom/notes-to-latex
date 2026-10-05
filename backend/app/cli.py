@@ -3,6 +3,11 @@
     ./notes prepare <name> lecture.pdf [--pages 1-4]  split into pages for transcription
     ./notes build <name> [-t "Title"]                 crop figures, assemble and compile
     ./notes extras <name> [-t "Course"]               bevislista, övningar, flashcards, extras/
+    ./notes review <name>                             review sheet for the uncertain readings
+    ./notes site <name>                               static website in site/<name>/
+    ./notes all <name> [-t "Course"]                  build, extras, review and site in one go
+
+The title given with -t is remembered in output/<name>/title.txt, so later runs can leave it out.
 """
 
 from __future__ import annotations
@@ -75,7 +80,9 @@ def cmd_build(args) -> int:
         for n, words in result.uncertain.items():
             print(f"  page {n}: " + " | ".join(words))
     figures = sorted((out_dir / "figures").glob("*.png"))
-    if figures:
+    if figures and getattr(args, "brief", False):
+        print(f"Figures: {len(figures)} in {out_dir / 'figures'}")
+    elif figures:
         print("Figures: " + ", ".join(str(f) for f in figures))
     return 0 if result.ok else 2
 
@@ -124,6 +131,46 @@ def cmd_site(args) -> int:
     return 0
 
 
+STEPS = [("build", cmd_build), ("extras", cmd_extras), ("review", cmd_review), ("site", cmd_site)]
+
+
+def cmd_all(args) -> int:
+    """Everything after transcription. Stops if the notes don't compile; otherwise runs every step
+    and reports which ones failed."""
+    args.partial, args.brief = False, True
+    failed = []
+    for name, step in STEPS:
+        print(f"\n== {name} ==")
+        try:
+            code = step(args)
+        except (FileNotFoundError, ValueError, RuntimeError) as e:
+            print(f"Error: {e}", file=sys.stderr)
+            code = 1
+        if code:
+            failed.append(name)
+            if name == "build":
+                print("\nStopped: fix the build first (the other steps use its PDF and pages).")
+                return code
+    print("\n== done ==")
+    if failed:
+        print("Failed: " + ", ".join(failed))
+        return 2
+    print(f"All steps OK. Open {PROJECT_DIR / 'site' / args.name / 'index.html'}")
+    return 0
+
+
+def remember_title(args) -> None:
+    """Save -t for the document, or fill it in from an earlier run."""
+    if not hasattr(args, "title") or not hasattr(args, "name"):
+        return
+    saved = OUTPUT_DIR / args.name / "title.txt"
+    if args.title:
+        if saved.parent.exists():
+            saved.write_text(args.title + "\n", encoding="utf-8")
+    elif saved.exists():
+        args.title = saved.read_text(encoding="utf-8").strip()
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="notes", description="Handwritten notes to LaTeX.")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -157,7 +204,13 @@ def main(argv: list[str] | None = None) -> int:
     v.add_argument("-t", "--title", default="", help="course name used in the title")
     v.set_defaults(func=cmd_review)
 
+    a = sub.add_parser("all", help="build, extras, review and site in one go")
+    a.add_argument("name", help="document name (output folder)")
+    a.add_argument("-t", "--title", default="", help="course name (remembered for later runs)")
+    a.set_defaults(func=cmd_all)
+
     args = parser.parse_args(argv)
+    remember_title(args)
     try:
         return args.func(args)
     except (FileNotFoundError, ValueError) as e:
