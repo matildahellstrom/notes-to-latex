@@ -30,7 +30,7 @@ output/*/_check-*
 output/*/drawings/*-p[0-9]*-fig*.tex
 
 # Generated website (build with ./notes site)
-site/
+/site/
 
 # macOS
 .DS_Store
