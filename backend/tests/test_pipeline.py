@@ -246,3 +246,22 @@ def test_bevislista_from_separate_proof_document(tmp_path):
     body = borrow_figures(tmp_path / "bevis", tmp_path / "notes", body)
     assert "\\notefigure[0.5]{bevis-p2-fig1}{}" in body
     assert (tmp_path / "notes" / "figures" / "bevis-p2-fig1.png").exists()
+
+
+def test_site_tex_preparation():
+    from app.pipeline.site import math_regions, prepare_tex
+    tex = r"\fbox{1.2e} Visa $\fbox{$a$}$ och \[ \fbox{b} \] \textcircled{d} \fbox{$\Rightarrow$}"
+    out = prepare_tex(tex)
+    assert out.startswith(r"\exbox{1.2e}") and r"$\fbox{$a$}$" in out and r"\[ \fbox{b} \]" in out
+    assert "ⓓ" in out and out.endswith(r"\exbox{$\Rightarrow$}")
+    assert math_regions(r"a $x$ b \$ c \begin{align*} y \end{align*}") == [(2, 5), (13, 42)]
+    out = prepare_tex("\\begin{theorem}[Rouchés sats]\nX\n\\end{theorem}\n\\begin{enumerate}[label=\\alph*)]")
+    assert "\\textbf{⟪Rouchés sats⟫}" in out and out.endswith("\\begin{enumerate}[a)]")
+
+
+def test_site_views_link_to_their_targets():
+    from app.pipeline.site import View, link_views
+    views = [View("f1", "A", '<a href="#ref-9.18">sats 9.18</a> <a href="#sida-3">s</a>'),
+             View("f2", "B", '<div class="sida" id="sida-3"></div><span id="ref-9.18"></span>')]
+    link_views(views)
+    assert 'href="#f2~ref-9.18"' in views[0].html and 'href="#f2~sida-3"' in views[0].html

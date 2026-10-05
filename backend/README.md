@@ -58,6 +58,22 @@ builds, next to the notes in `output/<name>/`:
 Long documents also get a table of contents, a list of theorems, and clickable references ("enligt Sats 9.18").
 A diagram can be redrawn as TikZ in `drawings/<page>-<fig>.tex` (e.g. `drawings/p70-fig1.tex`); it then replaces the scanned crop.
 
+## Website
+
+```bash
+./notes site komplex-2018 -t "Komplex analys 2018"
+```
+
+Writes `site/komplex-2018/index.html` (+ `figures/`) and `site/index.html`, a list of every document built so far.
+Open `index.html` in a browser, or upload the whole `site/` folder to any static host (GitHub Pages, Netlify, ...).
+`site/komplex-2018/artifact.html` is the same page as a single file with the figures inlined.
+
+The page has one view per lecture (`\section`), plus Satser och definitioner, Bevislista (with "Dölj bevisen" to
+practise), Övningar (solutions behind "Visa lösning"), Flashcards (marked cards are remembered in the browser), and the
+hand-written `extras/*.tex` pages. Search covers all the text, and theorem references link across lectures.
+LaTeX is converted with pandoc (`brew install pandoc`); the maths stays TeX and MathJax renders it in the browser,
+one view at a time. Rebuild after changing pages or extras; `site/` is not versioned.
+
 ## The `./notes` script
 
 The `/transcribe` skill runs it for you, but you can also use it yourself from the project root:
@@ -66,6 +82,7 @@ The `/transcribe` skill runs it for you, but you can also use it yourself from t
 ./notes prepare <name> <PDFs, images or folder> [--pages 1-4] [--keep-blank]
 ./notes build <name> [-t "Title"] [--partial]
 ./notes extras <name> [-t "Course"]
+./notes site <name> [-t "Course"]
 ```
 
 ## Tests

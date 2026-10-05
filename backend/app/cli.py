@@ -115,6 +115,15 @@ def cmd_review(args) -> int:
     return 0
 
 
+def cmd_site(args) -> int:
+    from app.pipeline.site import build_site
+    index, artifact = build_site(OUTPUT_DIR / args.name, PROJECT_DIR / "site", args.title or args.name)
+    print(f"Site:     {index}")
+    print(f"One file: {artifact}")
+    print(f"Index:    {index.parent.parent / 'index.html'}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="notes", description="Handwritten notes to LaTeX.")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -137,6 +146,11 @@ def main(argv: list[str] | None = None) -> int:
     e.add_argument("name", help="document name (output folder)")
     e.add_argument("-t", "--title", default="", help="course name used in the titles")
     e.set_defaults(func=cmd_extras)
+
+    w = sub.add_parser("site", help="static website: notes + study material, in site/<name>/")
+    w.add_argument("name", help="document name (output folder)")
+    w.add_argument("-t", "--title", default="", help="course name shown on the page")
+    w.set_defaults(func=cmd_site)
 
     v = sub.add_parser("review", help="review sheet for the remaining uncertain readings")
     v.add_argument("name", help="document name (output folder)")

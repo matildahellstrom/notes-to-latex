@@ -313,6 +313,37 @@ def anki_file(items: list[tuple[str, str, int]]) -> str:
     return "\n".join(rows) + "\n"
 
 
+def bevislista_body(out_dir: Path, doc: Document) -> str:
+    """The bevislista as LaTeX, from extras/bevislista.txt (written with a default selection the
+    first time). A line "källa: <name>" takes the theorems and proofs from output/<name>/."""
+    sel_file = out_dir / "extras" / "bevislista.txt"
+    if not sel_file.exists():
+        sel_file.parent.mkdir(exist_ok=True)
+        sel_file.write_text("# One theorem per line: p<page>: <part of its title> [| comment]\n"
+                            + "\n".join(default_selection(doc)) + "\n", encoding="utf-8")
+    selection = [l for l in sel_file.read_text(encoding="utf-8").splitlines()
+                 if l.strip() and not l.startswith("#")]
+    source = next((l.split(":", 1)[1].strip() for l in selection if l.startswith("källa:")), None)
+    if not source:
+        return bevislista(doc, selection)
+    body = bevislista(load(out_dir.parent / source), selection, f"Bevislistan ({source})")
+    return borrow_figures(out_dir.parent / source, out_dir, body)
+
+
+def load_deck(out_dir: Path, doc: Document) -> list[tuple[str, str, int]]:
+    """Flashcards (front, back, page), with the fronts rewritten in extras/flashcards.txt applied."""
+    deck = cards(doc)
+    fronts = out_dir / "extras" / "flashcards.txt"   # "p40: <automatic front> => <better front>"
+    if fronts.exists():
+        overrides = {}
+        for line in fronts.read_text(encoding="utf-8").splitlines():
+            m = re.match(r"p(\d+):\s*(.*?)\s*=>\s*(.*)$", line)
+            if m:
+                overrides[(int(m.group(1)), m.group(2))] = m.group(3)
+        deck = [(overrides.get((page, front), front), back, page) for front, back, page in deck]
+    return deck
+
+
 # --- Driver -----------------------------------------------------------------------------------
 
 def build_extras(out_dir: Path, title: str) -> dict[str, CompileResult | Path]:
@@ -321,20 +352,8 @@ def build_extras(out_dir: Path, title: str) -> dict[str, CompileResult | Path]:
     extras_dir.mkdir(exist_ok=True)
     results: dict[str, CompileResult | Path] = {}
 
-    sel_file = extras_dir / "bevislista.txt"
-    if not sel_file.exists():
-        sel_file.write_text("# One theorem per line: p<page>: <part of its title> [| comment]\n"
-                            + "\n".join(default_selection(doc)) + "\n", encoding="utf-8")
-    selection = [l for l in sel_file.read_text(encoding="utf-8").splitlines()
-                 if l.strip() and not l.startswith("#")]
-    source = next((l.split(":", 1)[1].strip() for l in selection if l.startswith("källa:")), None)
-    if source:  # "källa: <name>": take the proofs from output/<name>/ instead of these notes
-        body = bevislista(load(out_dir.parent / source), selection, f"Bevislistan ({source})")
-        body = borrow_figures(out_dir.parent / source, out_dir, body)
-    else:
-        body = bevislista(doc, selection)
     results["bevislista"] = write_pdf(out_dir, "bevislista", f"Bevislista -- {title}",
-                                      body, doc.language, toc=True)
+                                      bevislista_body(out_dir, doc), doc.language, toc=True)
 
     items = exercises(doc)
     results["ovningar"] = write_pdf(out_dir, "ovningar", f"Övningar -- {title}",
@@ -343,15 +362,7 @@ def build_extras(out_dir: Path, title: str) -> dict[str, CompileResult | Path]:
                                               f"Övningar med lösningar -- {title}",
                                               ovningar(items, True), doc.language)
 
-    deck = cards(doc)
-    fronts = extras_dir / "flashcards.txt"   # "p40: <automatic front> => <better front>"
-    if fronts.exists():
-        overrides = {}
-        for line in fronts.read_text(encoding="utf-8").splitlines():
-            m = re.match(r"p(\d+):\s*(.*?)\s*=>\s*(.*)$", line)
-            if m:
-                overrides[(int(m.group(1)), m.group(2))] = m.group(3)
-        deck = [(overrides.get((page, front), front), back, page) for front, back, page in deck]
+    deck = load_deck(out_dir, doc)
     results["flashcards"] = write_pdf(out_dir, "flashcards", f"Flashcards -- {title}",
                                       flashcards_pdf(deck), doc.language)
     anki = out_dir / f"{out_dir.name}-anki.txt"
