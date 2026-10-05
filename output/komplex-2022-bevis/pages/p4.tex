@@ -1,0 +1,21 @@
+% language: swedish
+\begin{proof}
+Enligt lemma kan man hitta $\gamma^1, \dots, \gamma^k$ s.a.\ $\gamma_0$ och $\gamma^1$, \dots, $\gamma^k$ och $\gamma_1$ är enkelt homotopa.
+
+Så det räcker att visa satsen då $\gamma_0$ och $\gamma_1$ är enkelt homotopa. Vi har då $\gamma_0 \cup (-\gamma_1) = \pm\partial\Omega$ där $\Omega \subseteq G$.
+Vi antar också att $f \in C^1$ (går att bevisa utan men svårt).
+
+Vi får:
+\begin{align*}
+&\int_{\gamma_0} f\,dz - \int_{\gamma_1} f\,dz = \int_{\gamma_0 \cup (-\gamma_1)} f\,dz = \pm\int_{\partial\Omega} f\,dz = \\
+&= \left[ u := \operatorname{Re} f,\ v := \operatorname{Im} f,\ dz = dx + i\,dy,\ f\,dz = (u + iv)(dx + i\,dy) = \right. \\
+&\qquad \left. = u\,dx - v\,dy + i(v\,dx + u\,dy) \right] = \pm\left( \int_{\partial\Omega} u\,dx - v\,dy + i\int_{\partial\Omega} v\,dx + u\,dy \right) = \\
+&= \left[ \begin{array}{l} \underline{\text{Greens sats}} \\ \displaystyle\int_{\partial\Omega} P\,dx + Q\,dy = \iint_\Omega \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dx\,dy \end{array} \right] = \\
+&= \pm\Bigg( \iint_\Omega \underbrace{\left( -\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} \right)}_{\substack{= 0 \text{ enligt CR's} \\ \text{ekvationer}}} dx\,dy + i\iint_\Omega \underbrace{\left( \frac{\partial u}{\partial x} - \frac{\partial v}{\partial y} \right)}_{\substack{= 0 \text{ enligt CR's} \\ \text{ekvationer}}} dx\,dy \Bigg) = 0
+\end{align*}
+
+$\gamma$ nollhomotop i $G$ betyder $\gamma \sim_G \gamma_P$ där $\gamma_P(t) = P$ $\forall t$, dvs $\gamma_P'(t) = 0$.
+
+Får enligt ovan då att
+\[ \int_\gamma f\,dz = \int_{\gamma_P} f\,dz = \int_\alpha^\beta f(\underbrace{\gamma_P(t)}_{= P})\underbrace{\gamma_P'(t)}_{= 0}\,dt = 0 \]
+\end{proof}

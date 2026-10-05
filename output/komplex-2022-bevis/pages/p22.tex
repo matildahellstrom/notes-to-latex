@@ -1,0 +1,16 @@
+% language: swedish
+% figure: fig1 0.05 0.047 0.385 0.15
+\begin{proof}
+Antag $a_1, \dots, a_M \in \operatorname{int}(\gamma)$ medan resten ligger utanför.
+
+\notefigure{fig1}{}
+
+Låt $\tilde{\gamma}$ vara som i figuren, notera $\gamma \sim_{G \setminus \{a_1, \dots, a_N\}} \tilde{\gamma}$
+\[ \int_\gamma f\,dz \overset{\textcolor{magenta!80!black}{\text{CS}}}{=} \int_{\tilde{\gamma}} f\,dz = \sum_{j = 1}^M \int_{|z - a_j| = \varepsilon} f\,dz \]
+$f$ holo i $D(a_j, 2\varepsilon)^\times$ så $f(z) = \sum_{-\infty}^\infty c_k(z - a_j)^k$ i $D(a_j, 2\varepsilon)^\times$ så
+\begin{align*}
+\int_{|z - a_j| = \varepsilon} f\,dz &= \int_{|z - a_j| = \varepsilon} \sum_{-\infty}^\infty c_k(z - a_j)^k\,dz \overset{\textcolor{magenta!80!black}{\text{likf.\ konv.}}}{=} \sum_{-\infty}^\infty c_k\int_{|z - a_j| = \varepsilon} (z - a_j)^k\,dz \overset{\textcolor{magenta!80!black}{\text{FEX}}}{=} 2\pi i c_{-1} = \\
+&= 2\pi i\operatorname{Res}_{a_j} f \quad \text{så}
+\end{align*}
+\[ \int_\gamma f\,dz = \sum_{j = 1}^M 2\pi i\operatorname{Res}_{a_j} f = 2\pi i\sum_{a_j \in \operatorname{int}(\gamma)} \operatorname{Res}_{a_j} f \]
+\end{proof}

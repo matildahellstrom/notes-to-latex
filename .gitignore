@@ -26,6 +26,8 @@ output/*/*.fdb_latexmk
 output/*/*.xdv
 output/*/*-anki.txt
 output/*/_check-*
+# drawings borrowed from another document (källa: in bevislista.txt) are copied in by extras
+output/*/drawings/*-p[0-9]*-fig*.tex
 
 # Generated website (build with ./notes site)
 site/

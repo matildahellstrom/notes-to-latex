@@ -1,13 +1,31 @@
 # One theorem per line: p<page>: <part of its title> [| comment]
-p32: Cauchys integralformel för derivatan ($\sim$ Sats 5.1)
-p34: Algebrans fundamentalsats (sats 5.11)
-p51: Taylorutveckling av holomorfa funktioner (8.8)
-p57: Identitetsprincipen
-p58: Laurentserieutvecklingar av holomorfa funktioner
-p64: Residysatsen (Sats 9.10)
-p65: Prop.\ 9.11a
-p65: Prop 1.3.R
-p66: Prop 9.14
-p77: Argumentprincipen
-p80: Rouchés sats (Sats 9.18)
-p61: Klassifikation av isolerade singulariteter | endast a-delen är på bevislistan
+# "källa: <name>" takes the theorems and proofs from output/<name>/ instead of these notes.
+källa: komplex-2022-bevis
+p1: Cauchy--Riemanns ekvationer
+p3: Cauchys sats
+p5: Cauchys integralformel version 1
+p7: Cauchys integralformel för derivatan
+p9: Liouvilles sats
+p11: Algebrans fundamentalsats
+p13: Taylorutveckling
+p15: Klassifikation av nollställen
+p17: Identitetsprincipen
+p19: Laurentserieutveckling
+p21: Residysatsen
+p23: Argumentprincipen
+p25: Rouchés sats
+p27: Klassifikation av isolerade singulariteter | endast a) ska bevisas
+
+# Earlier selection, taken from the 2018 lecture notes themselves:
+#   p32: Cauchys integralformel för derivatan ($\sim$ Sats 5.1)
+#   p34: Algebrans fundamentalsats (sats 5.11)
+#   p51: Taylorutveckling av holomorfa funktioner (8.8)
+#   p57: Identitetsprincipen
+#   p58: Laurentserieutvecklingar av holomorfa funktioner
+#   p64: Residysatsen (Sats 9.10)
+#   p65: Prop.\ 9.11a
+#   p65: Prop 1.3.R
+#   p66: Prop 9.14
+#   p77: Argumentprincipen
+#   p80: Rouchés sats (Sats 9.18)
+#   p61: Klassifikation av isolerade singulariteter | endast a-delen är på bevislistan

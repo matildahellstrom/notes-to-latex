@@ -1,6 +1,7 @@
 """Study material generated from a transcribed document.
 
     bevislista   theorems the notes mark as part of the exam proof list, with their proofs
+                 (or, with "källa: <name>" in extras/bevislista.txt, those of a separate proof document)
     ovningar     exercises and exam questions without solutions (and a version with solutions)
     flashcards   one card per definition/theorem: Anki import file + printable PDF
     hand-written extras/<name>.tex bodies (formula sheet, errata, ...) are compiled as well
@@ -13,6 +14,7 @@ from __future__ import annotations
 
 import html
 import re
+import shutil
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -23,6 +25,7 @@ from app.pipeline.run import load_transcribed
 # Text that ends a theorem's "neighbourhood": everything up to here belongs with the theorem
 # (its proof, lemmas, continued proofs across a page break).
 STOP = re.compile(r"\\begin\{(?:theorem|definition)\}|\\section\*?\{|\\subsection\*?\{|\\noindent\\rule")
+NEXT_THEOREM = re.compile(r"\\begin\{theorem\}")
 PAGE_MARK = re.compile(r"\n?%%PAGE (\d+)%%\n?")
 THEOREM = re.compile(r"\\begin\{theorem\}(?:\[(?P<title>(?:[^\[\]]|\[[^\]]*\])*)\])?")
 EXERCISE_START = re.compile(
@@ -85,12 +88,12 @@ def write_pdf(out_dir: Path, suffix: str, title: str, body: str, lang: str,
 
 # --- Bevislista -------------------------------------------------------------------------------
 
-def theorem_blocks(doc: Document) -> list[tuple[int, str, str]]:
+def theorem_blocks(doc: Document, stop_at: re.Pattern = STOP) -> list[tuple[int, str, str]]:
     """(page, title, text from the theorem up to the next stop) for every theorem."""
     blocks = []
     for m in THEOREM.finditer(doc.text):
         end = doc.text.find("\\end{theorem}", m.end())
-        stop = STOP.search(doc.text, end)
+        stop = stop_at.search(doc.text, end)
         chunk = doc.text[m.start(): stop.start() if stop else len(doc.text)]
         blocks.append((doc.page_at(m.start()), (m.group("title") or "").strip(), chunk))
     return blocks
@@ -106,8 +109,10 @@ def default_selection(doc: Document) -> list[str]:
     return lines
 
 
-def bevislista(doc: Document, selection: list[str]) -> str:
-    blocks = theorem_blocks(doc)
+def bevislista(doc: Document, selection: list[str], source: str = "Anteckningarna") -> str:
+    """One section per selected theorem with its proof. A dedicated proof document (source) has
+    nothing but theorems and proofs, so there each block runs on to the next theorem."""
+    blocks = theorem_blocks(doc) if source == "Anteckningarna" else theorem_blocks(doc, NEXT_THEOREM)
     parts = []
     for line in selection:
         m = re.match(r"p(\d+):\s*(.*?)(?:\s*\|\s*(.*))?$", line.strip())
@@ -119,9 +124,19 @@ def bevislista(doc: Document, selection: list[str]) -> str:
             raise ValueError(f"bevislista: no theorem '{title}' on page {page}")
         _, full_title, chunk = found[0]
         heading = re.sub(r"\s*\(.*?\)\s*$", "", full_title) or f"Sats på sida {page}"
-        parts.append(f"\\section{{{heading}}}\n{{\\small\\color{{gray}} Anteckningarna sida {page}"
+        parts.append(f"\\section{{{heading}}}\n{{\\small\\color{{gray}} {source} sida {page}"
                      + (f" -- {comment}" if comment else "") + "}\n\n" + strip_marks(chunk))
     return "\n\n\\newpage\n".join(parts)
+
+
+def borrow_figures(source_dir: Path, out_dir: Path, body: str) -> str:
+    """Copy the source document's figures and drawings next to ours, with its name as prefix."""
+    prefix = source_dir.name + "-"
+    for sub, ext in (("figures", "png"), ("drawings", "tex")):
+        for f in (source_dir / sub).glob(f"*.{ext}"):
+            (out_dir / sub).mkdir(exist_ok=True)
+            shutil.copy(f, out_dir / sub / (prefix + f.name))
+    return re.sub(r"(\\notefigure(?:\[[^\]]*\])?\{)", r"\1" + prefix, body)
 
 
 # --- Övningar ---------------------------------------------------------------------------------
@@ -312,8 +327,14 @@ def build_extras(out_dir: Path, title: str) -> dict[str, CompileResult | Path]:
                             + "\n".join(default_selection(doc)) + "\n", encoding="utf-8")
     selection = [l for l in sel_file.read_text(encoding="utf-8").splitlines()
                  if l.strip() and not l.startswith("#")]
+    source = next((l.split(":", 1)[1].strip() for l in selection if l.startswith("källa:")), None)
+    if source:  # "källa: <name>": take the proofs from output/<name>/ instead of these notes
+        body = bevislista(load(out_dir.parent / source), selection, f"Bevislistan ({source})")
+        body = borrow_figures(out_dir.parent / source, out_dir, body)
+    else:
+        body = bevislista(doc, selection)
     results["bevislista"] = write_pdf(out_dir, "bevislista", f"Bevislista -- {title}",
-                                      bevislista(doc, selection), doc.language, toc=True)
+                                      body, doc.language, toc=True)
 
     items = exercises(doc)
     results["ovningar"] = write_pdf(out_dir, "ovningar", f"Övningar -- {title}",

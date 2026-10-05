@@ -1,0 +1,16 @@
+% language: swedish
+\begin{proof}
+Antag först att $a = 0$. Välj punkt $w \in D(0, R)$ och $r$ s.a.\ $|w| < r < R$.
+\begin{align*}
+f(w) &\overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} \frac{1}{2\pi i}\int_{|z| = r} \frac{f(z)}{z - w}\,dz = \frac{1}{2\pi i}\int_{|z| = r} \frac{f(z)}{z}\left( \frac{1}{1 - w/z} \right) dz = \\
+&= \left[ \left| \frac{w}{z} \right| = \frac{|w|}{r} < 1 \Rightarrow \frac{1}{1 - w/z} = \sum_0^\infty \left( \frac{w}{z} \right)^k \right] = \frac{1}{2\pi i}\int_{|z| = r} \frac{f(z)}{z}\sum_0^\infty \left( \frac{w}{z} \right)^k dz = \\
+&= \left[ \begin{array}{l}
+\displaystyle\sum_0^\infty \left( \frac{w}{z} \right)^k \overset{\textcolor{magenta!80!black}{\tilde{z} := w/z}}{=} \sum_0^\infty \tilde{z}^k \text{ likformigt konvergent på } |\tilde{z}| = \frac{|w|}{r} < 1 \\
+\text{dvs } |z| = r. \\
+\displaystyle\left| \frac{f(z)}{z} \right| \le \max_{|z| = r} \frac{|f(z)|}{r} < \infty \Rightarrow \sum_0^\infty \frac{f(z)}{z}\left( \frac{w}{z} \right)^k \text{ likf.\ konv.\ på } |z| = r
+\end{array} \right] = \\
+&= \sum_0^\infty w^k \frac{1}{2\pi i}\int_{|z| = r} \frac{f(z)}{z^{k + 1}}\,dz = \sum_0^\infty c_k w^k
+\end{align*}
+För $a \neq 0$ låt $w := z - a$, $g(w) := f(z)$ holo i $D(0, R)$
+\[ \Rightarrow f(z) = g(w) \overset{\textcolor{magenta!80!black}{\text{enligt ovan}}}{=} \sum_0^\infty c_k w^k = \sum_0^\infty c_k(z - a)^k, \quad c_k = \frac{f^{(k)}(a)}{k!} \]
+\end{proof}

@@ -229,3 +229,20 @@ def test_review_keeps_existing_answers(tmp_path):
     txt = tmp_path / "x-granskning.txt"
     txt.write_text("1. Sida 3. Läst som: φ\n   Svar: ok\n\n2. Sida 9. Läst som: hemsidan\n   Svar: \n")
     assert read_answers(txt) == {(3, "φ"): "ok"}
+
+
+def test_bevislista_from_separate_proof_document(tmp_path):
+    from app.pipeline.extras import Document, bevislista, borrow_figures
+    text = ("\n%%PAGE 1%%\n\\begin{theorem}[Residysatsen]X\\end{theorem}\n\\noindent\\rule{1pt}{1pt}\n"
+            "\\begin{definition}D\\end{definition}\n%%PAGE 2%%\n\\begin{proof}P \\notefigure[0.5]{p2-fig1}{}"
+            "\\end{proof}\n%%PAGE 3%%\n\\begin{theorem}[Rouchés sats]Y\\end{theorem}")
+    doc = Document([], text, "swedish")
+    body = bevislista(doc, ["källa: bevis", "p1: Residysatsen"], "Bevislistan (bevis)")
+    assert "\\begin{proof}P" in body and "Rouchés" not in body   # runs past the rule to the proof
+    assert "Bevislistan (bevis) sida 1" in body
+    (tmp_path / "bevis" / "figures").mkdir(parents=True)
+    (tmp_path / "bevis" / "figures" / "p2-fig1.png").write_bytes(b"png")
+    (tmp_path / "notes").mkdir()
+    body = borrow_figures(tmp_path / "bevis", tmp_path / "notes", body)
+    assert "\\notefigure[0.5]{bevis-p2-fig1}{}" in body
+    assert (tmp_path / "notes" / "figures" / "bevis-p2-fig1.png").exists()

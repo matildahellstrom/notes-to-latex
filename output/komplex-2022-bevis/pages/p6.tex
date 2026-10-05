@@ -1,0 +1,14 @@
+% language: swedish
+\begin{proof}
+Notera att
+\[ \int_{|z - a| = r} \frac{1}{z - a}\,dz \overset{\textcolor{magenta!80!black}{w := z - a}}{=} \int_{|w| = r} \frac{1}{w}\,dw = 2\pi i \quad \textcolor{magenta!80!black}{\leftarrow \text{FEX}} \]
+\[ \Rightarrow f(a) = \frac{1}{2\pi i}\int_{|z - a| = r} \frac{f(a)}{z - a}\,dz \]
+\[ A_r := \frac{1}{2\pi i}\int_{|z - a| = r} \frac{f(z)}{z - a}\,dz - f(a) = \frac{1}{2\pi i}\int_{|z - a| = r} \frac{f(z) - f(a)}{z - a}\,dz \]
+Notera $\dfrac{f(z) - f(a)}{z - a}$ holo i $G \setminus \{a\} \overset{\text{CS}}{\Rightarrow} A_r$ oberoende av $r \in (0, R]$ eftersom $C(a, r)$ homotopa i $G \setminus \{a\}$.
+
+Vill nu visa att $A_r \xrightarrow[r \to 0]{} 0$, för då följer att $A_r = 0$ $\forall r \in (0, R]$ (enligt det jag noterade ovan)
+\begin{align*}
+|A_r| &= \frac{1}{2\pi}\left| \int_{|z - a| = r} \frac{f(z) - f(a)}{z - a}\,dz \right| \underset{\textcolor{magenta!80!black}{\text{triangelolikheten för integraler}}}{\le} \frac{1}{2\pi}\max_{|z - a| = r} \frac{|f(z) - f(a)|}{\underbrace{|z - a|}_{= r}}\,2\pi r = \\
+&= \max_{|z - a| = r} |f(z) - f(a)| \xrightarrow[r \to 0]{} 0 \quad \text{ty } f \text{ kontinuerlig i } a
+\end{align*}
+\end{proof}

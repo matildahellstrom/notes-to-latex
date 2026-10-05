@@ -1,0 +1,31 @@
+% language: swedish
+% figure: fig1 0.06 0.105 0.31 0.257
+\begin{proof}
+Antag först $a = 0$.
+Välj $w \in A(0, R_1, R_2)$ och $r_1, r_2$ s.a.\ $R_1 < r_1 < |w| < r_2 < R_2$.
+Låt $\underline{\gamma}, \underline{\tilde{\gamma}}$ vara som i figur, notera
+
+\notefigure{fig1}{}
+
+$\gamma \sim_{A(0, R_1, R_2) \setminus \{w\}} \tilde{\gamma}$. Får att
+\begin{align*}
+f(w) &\overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} \frac{1}{2\pi i}\int_\gamma \frac{f(z)}{z - w} \overset{\textcolor{magenta!80!black}{\text{CS}}}{=} \frac{1}{2\pi i}\int_{\tilde{\gamma}} \frac{f(z)}{z - w}\,dz = \\
+&= \underbrace{\frac{1}{2\pi i}\int_{|z| = r_2} \frac{f(z)}{z - w}\,dz}_{\text{I}} \underbrace{- \frac{1}{2\pi i}\int_{|z| = r_1} \frac{f(z)}{z - w}\,dz}_{\text{II}}
+\end{align*}
+
+\underline{Beräkning av I}
+\[ \frac{f(z)}{z - w} = \frac{f(z)}{z}\,\frac{1}{1 - w/z} \overset{|w/z| < 1}{=} \frac{f(z)}{z}\sum_0^\infty \left( \frac{w}{z} \right)^k = \sum_0^\infty w^k \frac{f(z)}{\rattat{z^{k + 1}}{z^{k - 1}}} \]
+likf.\ konv.\ på $|z| = r_2$ så
+\[ \text{I} = \sum_0^\infty w^k \frac{1}{2\pi i}\int_{|z| = r_2} \frac{f(z)}{z^{k + 1}}\,dz \overset{\textcolor{magenta!80!black}{\text{CS}}}{=} \sum_0^\infty c_k w^k \]
+\underline{Beräkning av II}
+\begin{align*}
+-\frac{f(z)}{z - w} &= \frac{f(z)}{w - z} = \frac{f(z)}{w}\,\frac{1}{1 - z/w} \overset{|z/w| < 1}{=} \frac{f(z)}{w}\sum_0^\infty \left( \frac{z}{w} \right)^k = \\
+&= \sum_0^\infty w^{-k-1} f(z) z^k = \sum_{-\infty}^{-1} w^k \frac{f(z)}{z^{k + 1}} \quad \text{likf.\ konv.\ på } |z| = r_1 \text{ så}
+\end{align*}
+\[ \text{II} = \sum_{-\infty}^{-1} w^k \frac{1}{2\pi i}\int_{|z| = r_1} \frac{f(z)}{z^{k + 1}}\,dz \overset{\textcolor{magenta!80!black}{\text{CS}}}{=} \sum_{-\infty}^{-1} c_k w^k \]
+Vi får alltså $f(w) = \text{I} + \text{II} = \displaystyle\sum_{-\infty}^\infty c_k w^k$.
+
+Om $a \neq 0$ sätt $w := z - a$, $g(w) := f(z)$, $g$ holo i $A(0, R_1, R_2)$,
+\[ f(z) = g(w) \overset{\textcolor{magenta!80!black}{\text{ovan}}}{=} \sum_{-\infty}^\infty c_k w^k = \sum_{-\infty}^\infty c_k(z - a)^k, \text{ där} \]
+\[ c_k = \frac{1}{2\pi i}\int_{|w| = r} \frac{g(w)}{w^{k + 1}}\,dw = \frac{1}{2\pi i}\int_{|z - a| = r} \frac{f(z)}{(z - a)^{k + 1}}\,dz \]
+\end{proof}

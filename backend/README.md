@@ -48,7 +48,7 @@ builds, next to the notes in `output/<name>/`:
 
 | File | What it is |
 |---|---|
-| `<name>-bevislista.pdf` | theorems marked as part of the exam proof list, with their proofs (edit `extras/bevislista.txt` to change the selection) |
+| `<name>-bevislista.pdf` | theorems marked as part of the exam proof list, with their proofs (edit `extras/bevislista.txt` to change the selection; a line `källa: <name>` takes the theorems and proofs from another transcribed document, e.g. an official proof list) |
 | `<name>-ovningar.pdf` / `-ovningar-losningar.pdf` | all exercises and exam questions, without and with solutions |
 | `<name>-flashcards.pdf` / `<name>-anki.txt` | one card per definition and theorem; import the `.txt` in Anki (File → Import). Better card fronts go in `extras/flashcards.txt` |
 | `<name>-<x>.pdf` | any hand-written `extras/<x>.tex` body, e.g. a formula sheet or a list of likely slips |

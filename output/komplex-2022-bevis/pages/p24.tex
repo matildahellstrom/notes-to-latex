@@ -1,0 +1,21 @@
+% language: swedish
+\begin{proof}
+Numrera nollst.\ till $f$ i $\operatorname{int}(\gamma)$: $a_1, \dots, a_N$, $n_i :=$ ordn.\ $a_i$, numrera polerna till $f$ i $\operatorname{int}(\gamma)$: $b_1, \dots, b_M$, $m_j :=$ ordn.\ $b_j$. Iteration av satserna ,,Klassifikation av nollställen'' samt ,,Klassifikation av isolerade singulariteter'' ger att
+\[ f(z) = \prod_{i = 1}^N (z - a_i)^{n_i} \prod_{j = 1}^M (z - b_j)^{-m_j} g(z), \quad g \text{ holo och } \neq 0 \]
+i området $H := G \setminus \{f\text{:s nollst.\ och poler utanför } \operatorname{int}(\gamma)\} \supseteq \overline{\operatorname{int}(\gamma)}$
+\[ \frac{f'(z)}{f(z)} = \sum_{i = 1}^N \frac{n_i}{z - a_i} - \sum_{j = 1}^M \frac{m_j}{z - b_j} + \frac{g'(z)}{g(z)}, \quad \frac{g'}{g} \text{ holo i } H \]
+$\Rightarrow \dfrac{f'}{f}$ holo i $H$ förutom isol.\ sing.\ i $a_1, \dots, a_N, b_1, \dots, b_M$.
+\begin{align*}
+\operatorname{Res}_{a_i}\left( \frac{f'}{f} \right) &\overset{\textcolor{magenta!80!black}{\text{RRa}}}{=} \operatorname{Res}_{a_i}\left( \frac{n_i}{z - a_i} \right) + \operatorname{Res}_{a_i}\underbrace{\left( \sum_{l \neq i} \frac{n_l}{z - a_l} - \sum_j \frac{m_j}{z - b_j} + \frac{g'}{g} \right)}_{\text{holo i omg.\ till } a_i} \overset{\textcolor{magenta!80!black}{\text{RRb+c}}}{=} n_i + 0 = n_i \\
+\operatorname{Res}_{b_j}\left( \frac{f'}{f} \right) &= \operatorname{Res}_{b_j}\left( -\frac{m_j}{z - b_j} \right) + \operatorname{Res}_{b_j}\left( \sum_i \frac{n_i}{z - a_i} - \sum_{l \neq j} \frac{m_l}{z - b_l} + \frac{g'}{g} \right) = -m_j + 0 = -m_j
+\end{align*}
+\[ W(f \circ \gamma) = \frac{1}{2\pi i}\int_{f \circ \gamma} \frac{1}{z}\,dz = \frac{1}{2\pi i}\int_\alpha^\beta \frac{1}{f(\gamma(t))}(f \circ \gamma)'(t)\,dt \overset{\textcolor{magenta!80!black}{\text{holo kedjereg.}}}{=} \]
+\begin{framed}
+$\displaystyle W(\gamma) := \frac{1}{2\pi i}\int_\gamma \frac{1}{z}\,dz \overset{\text{CS}}{=} m\frac{1}{2\pi i}\int_{|z| = 1} \frac{1}{z}\,dz \overset{\text{FEX}}{=} m$
+\end{framed}
+\begin{align*}
+&= \frac{1}{2\pi i}\int_\alpha^\beta \frac{f'(\gamma(t))}{f(\gamma(t))}\gamma'(t)\,dt = \frac{1}{2\pi i}\int_\gamma \frac{f'}{f}\,dz \overset{\textcolor{magenta!80!black}{\text{RS}}}{=} \\
+&= \sum_{i = 1}^N \operatorname{Res}_{a_i}(f'/f) + \sum_{j = 1}^M \operatorname{Res}_{b_j}(f'/f) = \sum_{i = 1}^N n_i - \sum_{j = 1}^M m_j = \\
+&= N(f, \operatorname{int}(\gamma)) - P(f, \operatorname{int}(\gamma))
+\end{align*}
+\end{proof}

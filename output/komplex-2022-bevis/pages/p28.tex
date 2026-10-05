@@ -1,0 +1,17 @@
+% language: swedish
+\begin{proof}
+\fbox{$\Rightarrow$}: $a$ hävbar sing., kan alltså utvidga $f$ till en holo funktion i $D(a, R)$, alltså $f(z)$ kontinuerlig i $a$ så
+\[ (z - a)f(z) \xrightarrow[z \to a]{} (a - a)f(a) = 0 \]
+\fbox{$\Leftarrow$}: Låt $h(z) := \begin{cases} (z - a)^2 f(z), & z \in D(a, R)^\times \\ 0, & z = a \end{cases}$
+
+$h$ holo i $D(a, R)^\times$, är $h$ holo i $D(a, R)$?
+\[ \frac{h(z) - h(a)}{z - a} = \frac{(z - a)^2 f(z)}{(z - a)} = (z - a)f(z) \xrightarrow[z \to \rattat{a}{0}]{} 0 \]
+dvs $h$ komplext deriverbar i $a$, så $h$ holo i $D(a, R)$. Notera också $h'(a) = 0$.
+\begin{align*}
+h(z) &\overset{\textcolor{magenta!80!black}{\text{TU}}}{=} \sum_0^\infty c_k(z - a)^k = \left[ c_0 = h(a) = 0,\ c_1 = h'(a) = 0 \right] = \\
+&= (z - a)^2\sum_0^\infty c_{k + 2}(z - a)^k = (z - a)^2 g(z) \quad \text{där}
+\end{align*}
+$g$ holo i $D(a, R)$.
+\[ f(z) = \frac{h(z)}{(z - a)^2} = g(z) \quad \text{i } D(a, R)^\times, \text{ så } g \text{ holo} \]
+utvidgning av $f$ till $D(a, R)$ så $a$ är en hävbar singularitet.
+\end{proof}

@@ -1,0 +1,26 @@
+% language: swedish
+% figure: fig1 0.51 0.17 0.80 0.27
+\begin{theorem}[Residysatsen]
+Antag $f$ holo i $G$ förutom isolerade singulariteter i $a_1, \dots, a_N$, $\gamma$ enkel positivt orienterad kurva i $G \setminus \{a_1, \dots, a_N\}$ s.a.\ $\gamma \sim_G 0$. Då är
+\[ \int_\gamma f\,dz = 2\pi i\sum_{a_j \in \operatorname{int}(\gamma)} \operatorname{Res}_{a_j} f \]
+\notefigure{fig1}{}
+\end{theorem}
+\textcolor{magenta!80!black}{$\uparrow$ Bevisa denna}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{definition}
+Låt $f$ ha isol.\ sing.\ i $a$.
+Om $f(z) = \sum_{-\infty}^\infty c_k(z - a)^k$ i $D(a, R)^\times$ så definieras $f$:s residy i $a$ som $\operatorname{Res}_a f = c_{-1}$
+\end{definition}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\underline{Räkneregler för residyer}
+\begin{enumerate}[label=\alph*)]
+  \item $\operatorname{Res}_a(bf + cg) = b\operatorname{Res}_a f + c\operatorname{Res}_a g$
+  \item Om $f$ holo i $D(a, R)$, dvs $a$ hävbar sing., då är $\operatorname{Res}_a f = 0$.
+  \item Om $f(z) = \dfrac{g(z)}{(z - a)^{m + 1}}$, $m \ge 0$, $g$ holo i $D(a, R)$ då är
+  \[ \operatorname{Res}_a f = \frac{g^{(m)}(a)}{m!} \]
+  \item Om $f, g$ holo i $D(a, R)$, $a$ enkelt nollställe till $g$ (dvs $g(a) = 0$, \rattat{$g'(a) \neq 0$}{$g'(a) = 0$}), då är $\operatorname{Res}_a \dfrac{f}{g} = \dfrac{f(a)}{g'(a)}$
+\end{enumerate}

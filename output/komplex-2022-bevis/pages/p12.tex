@@ -1,0 +1,10 @@
+% language: swedish
+\begin{proof}
+Antag motsatsen, dvs $p(z) \neq 0$ $\forall z \in \mathbb{C}$.
+Då är $\dfrac{1}{p(z)}$ hel och CIF för derivator ger att
+\[ \frac{1}{p(0)} = \frac{1}{2\pi i}\int_{C[0, R]} \frac{\frac{1}{p(z)}}{z}\,dz \quad \forall R > 0. \]
+Låt $d := \operatorname{grad} p$ och låt $a_d$ vara koefficienten till $z^d$ i $p(z)$. Då kan vi för tillräckligt stora $R$ approximera
+\[ \left| \frac{1}{p(0)} \right| = \frac{1}{2\pi}\left| \int_{C[0, R]} \frac{1}{zp(z)} \right| \le \frac{1}{2\pi}\max_{z \in C[0, R]} \left| \frac{1}{zp(z)} \right| 2\pi R \underset{\textcolor{magenta!80!black}{\text{,,proposition 5.10''}}}{\le} \frac{2}{|a_d|R^d} \]
+$R$ kan väljas hur stort som helst och $\dfrac{2}{|a_d|R^d} \xrightarrow[R \to \infty]{} 0$ så
+$\dfrac{1}{p(0)} = 0$ vilket är omöjligt
+\end{proof}

@@ -1,0 +1,27 @@
+% language: swedish
+\begin{proof}
+\textbf{Bevis av a)} $f$ holo i $G$ så $f'(z)$ existerar $\forall z \in G$
+\begin{align*}
+f'(z) &= \lim_{h \to 0} \frac{f(z + h) - f(z)}{h} = \lim_{\Delta x \to 0} \frac{f(x + iy + \Delta x) - f(x + iy)}{\Delta x} = \\
+&= \frac{\partial f}{\partial x}(z) = \frac{\partial}{\partial x}(u + iv)(z) = \frac{\partial u}{\partial x}(z) + i\frac{\partial v}{\partial x}(z)
+\end{align*}
+Å andra sidan
+\begin{align*}
+f'(z) &= \lim_{i\Delta y \to 0} \frac{f(x + iy + i\Delta y) - f(x + iy)}{i\Delta y} = \frac{1}{i}\frac{\partial f}{\partial y}(z) = \\
+&= -i\frac{\partial}{\partial y}(u + iv)(z) = \frac{\partial v}{\partial y}(z) - i\frac{\partial u}{\partial y}(z)
+\end{align*}
+\[ \Rightarrow \begin{cases} \dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y} \\[1em] \dfrac{\partial u}{\partial y} = -\dfrac{\partial v}{\partial x} \end{cases} \]
+
+\textbf{Bevis av b)}
+\begin{framed}
+\underline{Sats från flervar:} Om $f$ är $C^1$, då är $f$ differentierbar, dvs
+\[ f(z + \Delta x + i\Delta y) - f(z) = \frac{\partial f}{\partial x}(z)\Delta x + \frac{\partial f}{\partial y}(z)\Delta y + o(|\Delta x + i\Delta y|) \quad \textcolor{magenta!80!black}{\leftarrow \text{lilla ordo}} \]
+\end{framed}
+Skriv $h = \Delta x + i\Delta y$
+\begin{align*}
+\frac{f(z + h) - f(z)}{h} &= \frac{\frac{\partial f}{\partial x}(z)\Delta x + \frac{\partial f}{\partial y}(z)\Delta y + o(h)}{h} \overset{\text{CR}}{=} \qquad \fbox{$\text{CR: } \frac{\partial f}{\partial y} = i\frac{\partial f}{\partial x}$} \\
+&= \frac{\frac{\partial f}{\partial x}(z)\Delta x + i\frac{\partial f}{\partial x}(z)\Delta y + o(h)}{h} = \frac{\frac{\partial f}{\partial x}(z)h + o(h)}{h} = \\
+&= \frac{\partial f}{\partial x}(z) + \frac{o(h)}{h} \xrightarrow[h \to 0]{} \frac{\partial f}{\partial x}(z)
+\end{align*}
+Så $f$ är komplext deriverbar $\forall z \in G$, dvs $f$ holo i $G$
+\end{proof}

@@ -1,0 +1,11 @@
+% language: swedish
+% figure: fig1 0.0 0.024 0.585 0.155
+\begin{proof}
+\notefigure{fig1}{}
+Notera att $(f + sg) \circ \gamma$, $s \in [0, 1]$, är homotopi mellan $f \circ \gamma$ och $(f + g) \circ \gamma$ i $\mathbb{C}$. Korsar dessa kurvor någonsin $0$?
+\[ |f(\gamma(t)) + sg(\gamma(t))| \underset{\textcolor{magenta!80!black}{\text{omv.\ }\Delta\text{-olikh.}}}{\ge} |f(\gamma(t))| - s|g(\gamma(t))| \ge |f(\gamma(t))| - |g(\gamma(t))| \underset{\textcolor{magenta!80!black}{\text{enligt antagandet}}}{>} 0 \]
+$\Rightarrow$ korsar aldrig $0$\\
+$\Rightarrow f \circ \gamma \sim_{\mathbb{C} \setminus \{0\}} (f + g) \circ \gamma$
+\[ N(f, \operatorname{int}(\gamma)) \underset{\textcolor{magenta!80!black}{\text{AP}}}{=} W(f \circ \gamma) \underset{\textcolor{magenta!80!black}{f \circ \rattat{\gamma}{g} \sim_{\mathbb{C} \setminus \{0\}} (f + g) \circ \gamma}}{=} W((f + g) \circ \gamma) \underset{\textcolor{magenta!80!black}{\text{AP}}}{=} N(f + g, \operatorname{int}(\gamma)) \]
+\textcolor{magenta!80!black}{(AP i första steget: har inga poler ty holo)}
+\end{proof}

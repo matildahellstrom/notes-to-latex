@@ -1,0 +1,19 @@
+% language: swedish
+\begin{proof}
+Om $|h| < r$ så
+\[ f(a + h) \overset{\textcolor{magenta!80!black}{\text{CIF v2}}}{=} \frac{1}{2\pi i}\int_{|z - a| = r} \frac{f(z)}{z - (a + h)}\,dz \]
+\begin{align*}
+\Rightarrow \frac{f(a + h) - f(a)}{h} &= \frac{1}{2\pi ih}\int_{|z - a| = r} f(z)\left( \frac{1}{z - a - h} - \frac{1}{z - a} \right) dz = \\
+&= \left[ \frac{1}{z - a - h} - \frac{1}{z - a} = \frac{h}{(z - a - h)(z - a)} \right] = \\
+&= \frac{1}{2\pi i}\int_{|z - a| = r} \frac{f(z)}{(z - a - h)(z - a)}\,dz
+\end{align*}
+vill nu visa att det går mot $\dfrac{1}{2\pi i}\displaystyle\int_{|z - a| = r} \frac{f(z)}{(z - a)^2}\,dz$ då $h \to 0$.
+\begin{align*}
+&\left| \int_{|z - a| = r} \frac{f(z)}{(z - a - h)(z - a)}\,dz - \int_{|z - a| = r} \frac{f(z)}{(z - a)^2}\,dz \right| = \\
+&= \left[ \frac{1}{(z - a - h)(z - a)} - \frac{1}{(z - a)^2} = \frac{h}{(z - a - h)(z - a)^2} \right] = \\
+&= \left| \int_{|z - a| = r} \frac{f(z)h}{(z - a - h)(z - a)^2}\,dz \right| \underset{\textcolor{magenta!80!black}{\text{triangelolikheten för integraler}}}{\le} \max_{|z - a| = r} \frac{|f(z)||h|}{|z - a - h||z - a|^2}\,2\pi r \le \\
+&\le \left[ |z - a - h| \underset{\textcolor{magenta!80!black}{\text{omvända triangelolikheten}}}{\ge} |z - a| - |h| = r - |h| \ge r/2 \text{ ty } |h| \le r/2 \right] \le \\
+&\le \max_{|z - a| = r} \frac{|f(z)||h|4\pi}{r^2} \xrightarrow[h \to 0]{} 0
+\end{align*}
+Så $f'(a) = \displaystyle\lim_{h \to 0} \frac{f(a + h) - f(a)}{h} = \frac{1}{2\pi i}\int \frac{f(z)}{(z - a)^2}\,dz$
+\end{proof}
