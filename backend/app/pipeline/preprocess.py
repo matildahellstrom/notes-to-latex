@@ -13,6 +13,9 @@ register_heif_opener()  # lets Pillow open iPhone .heic photos
 
 MAX_EDGE = 2400  # px; enough detail for small subscripts
 PDF_RENDER_EDGE = 2800  # render PDF pages a bit larger, then downscale for smooth strokes
+A4_RATIO = 1.414    # height / width of an A4 page
+TALL_RATIO = 1.6    # pages taller than this (e.g. long scroll pages from note apps) are cut into
+                    # A4-shaped pieces, so the writing keeps a readable size
 IMAGE_TYPES = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp"}
 SUPPORTED = IMAGE_TYPES | {".pdf"}
 
@@ -48,7 +51,7 @@ def load_pages(path: Path, page_range: str | None = None) -> list[SourcePage]:
     if suffix != ".pdf":
         with Image.open(path) as raw:
             img = ImageOps.exif_transpose(raw).convert("RGB")  # phone photos are often stored sideways
-        return [SourcePage(path.name, img)]
+        return split_tall(SourcePage(path.name, img))
 
     pdf = pdfium.PdfDocument(path)
     try:
@@ -56,11 +59,38 @@ def load_pages(path: Path, page_range: str | None = None) -> list[SourcePage]:
         for i in parse_page_range(page_range, len(pdf)):
             page = pdf[i]
             width, height = page.get_size()
-            bitmap = page.render(scale=PDF_RENDER_EDGE / max(width, height))  # page rotation is applied
-            pages.append(SourcePage(f"{path.name} p{i + 1}", bitmap.to_pil().convert("RGB")))
+            # a tall page is rendered as if it were A4-shaped, so each piece gets normal resolution
+            long_edge = max(width, height) if height <= TALL_RATIO * width else width * A4_RATIO
+            bitmap = page.render(scale=PDF_RENDER_EDGE / long_edge)  # page rotation is applied
+            pages += split_tall(SourcePage(f"{path.name} p{i + 1}", bitmap.to_pil().convert("RGB")))
         return pages
     finally:
         pdf.close()
+
+
+def split_tall(src: SourcePage) -> list[SourcePage]:
+    """Cut a page much taller than A4 into A4-shaped pieces ("lecture.pdf p42 del 2/5").
+
+    Each cut is placed on the emptiest row near the A4 height, so it falls between lines of
+    writing rather than through them."""
+    img = src.image
+    w, h = img.size
+    if h <= TALL_RATIO * w:
+        return [src]
+    target = int(w * A4_RATIO)
+    # fraction of dark pixels in each row
+    dark = img.convert("L").point(lambda v: 255 if v < 140 else 0)
+    ink = list(dark.resize((1, h), Image.Resampling.BOX).getdata())
+    cuts, top = [0], 0
+    while h - top > 1.25 * target:
+        lo, hi = top + int(0.8 * target), min(h - 1, top + int(1.1 * target))
+        best = min(range(lo, hi), key=lambda y: (ink[y], abs(y - top - target)))
+        cuts.append(best)
+        top = best
+    cuts.append(h)
+    n = len(cuts) - 1
+    return [SourcePage(f"{src.label} del {k + 1}/{n}", img.crop((0, a, w, b)))
+            for k, (a, b) in enumerate(zip(cuts, cuts[1:]))]
 
 
 def normalize(img: Image.Image) -> Image.Image:

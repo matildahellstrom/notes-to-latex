@@ -276,3 +276,21 @@ def test_title_is_remembered(tmp_path, monkeypatch):
     later = SimpleNamespace(name="kurs", title="")
     cli.remember_title(later)
     assert later.title == "Linjär algebra"
+
+
+def test_tall_page_is_cut_between_lines(tmp_path):
+    from app.pipeline.preprocess import load_pages
+    img = Image.new("RGB", (600, 3000), "white")
+    draw = ImageDraw.Draw(img)
+    for y in range(40, 2960, 60):                     # a line of "writing" every 60 px
+        draw.rectangle((50, y, 550, y + 30), fill="black")
+    path = tmp_path / "scroll.pdf"
+    img.save(path)
+    pieces = load_pages(path)
+    assert [p.label for p in pieces] == [f"scroll.pdf p1 del {k}/{len(pieces)}" for k in range(1, len(pieces) + 1)]
+    assert 3 <= len(pieces) <= 4
+    for p in pieces:
+        w, h = p.image.size
+        assert h <= 1.6 * w
+        top_row = p.image.crop((0, 0, w, 1)).convert("L")
+        assert min(top_row.getdata()) > 200 or p is pieces[0]   # cut in the white gap, not through ink
