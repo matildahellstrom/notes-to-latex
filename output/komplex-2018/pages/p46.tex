@@ -1,0 +1,48 @@
+% language: swedish
+\begin{theorem}[Kor 6.13]
+Om $u, v$ harmonisk i begränsat område $G$, kontinuerlig på $\overline{G}$, $u = v$ på $\partial G$ då är $u \equiv v$ i $G$.
+\end{theorem}
+\begin{proof}
+$\Delta(u - v) = \Delta u - \Delta v = 0$, $u - v \in C^2 \Rightarrow u - v$ harmonisk i $G$.
+
+Kontinuerlig på $\overline{G}$, $u - v = 0$ på $\partial G \underset{\textcolor{magenta!80!black}{\text{sv.\ maxprinc}}}{\Longrightarrow} u - v \le 0$ i $G$
+
+\emph{P.s.s.} $v - u \le 0$ i $G \Rightarrow u \equiv v$ i $G$
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Maximummodulusprincipen (Kor 6.11)]
+Om $f$ holomorf i $G$ och $|f|$ antar max i $G$, då är $f$ konstant i $G$.
+\end{theorem}
+\begin{proof}
+Antag $|f|$ antar max i $w \in G$. Skriv $f(w) = re^{i\theta}$, dvs $|f(w)| = r$
+
+Låt $u(z) = \operatorname{Re}(e^{-i\theta} f) \overset{\textcolor{magenta!80!black}{\text{prop 6.3}}}{\Longrightarrow} u$ harmonisk i $G$.
+\[ u(z) = \operatorname{Re}(e^{-i\theta} f(z)) \le |e^{i\theta} f(z)| = |f(z)| \le |f(w)| = r = u(w), \]
+dvs.\ $u$ antar max i $w \overset{\textcolor{magenta!80!black}{\text{max princ.}}}{\Longrightarrow} u$ konstant i $G$
+
+$\overset{\textcolor{magenta!80!black}{\text{CR ekv.}}}{\Longrightarrow} e^{-i\theta} f$ konstant $\Rightarrow f$ konstant.
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Finns det $f$ holomorf i $D(0, 1)$ s.a.\ $|f(z)| = 2 - |z|^2$?
+
+\textbf{Lösning:} $2 - |z|^2$ antar max i $0 \in D(0, 1)$
+
+Dock så är den inte konstant $\underset{\textcolor{magenta!80!black}{\text{max mod.\ princ.}}}{\Rightarrow}$ ej $|f|$ för $f$ holomorf
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+Vi vet hur man räknar ut $\displaystyle\int_\gamma \frac{f(z)}{p(z)}\,dz$, $f$ holomorf, $p$ polynom, $\gamma$ sluten kurva
+
+Men vad blir $\displaystyle\int_{|z| = 1} \frac{e^z}{\sin z}\,dz$?
+
+\emph{Idé}: i punkter där $\sin z = 0$ (singulariteten för $\frac{e^z}{\sin z}$) skriv $\frac{e^z}{\sin z}$ som potensserie, t.ex.\ $\dfrac{e^z}{\sin z} = \displaystyle\sum_{k = -\infty}^{\infty} c_k z^k$ \quad \textcolor{magenta!80!black}{$\leftarrow$ Laurentserieutveckling}
+
+får
+\[ \int_{|z| = 1} \frac{e^z}{\sin z}\,dz = \int_{|z| = 1} \sum c_k z^k\,dz = \sum_{k = -\infty}^{\infty} \int_{|z| = 1} c_k z^k\,dz = 2\pi i \underbrace{c_{-1}}_{\textcolor{magenta!80!black}{\to \text{residy}}} \]
+Kallas \emph{Residykalkyl}

@@ -1,0 +1,53 @@
+% language: swedish
+% figure: fig1 0.36 0.025 0.41 0.09
+% figure: fig2 0.265 0.14 0.355 0.16
+\begin{example}
+\begin{itemize}
+  \item $\dfrac{1}{z^2 + 1}$ \notefigure{fig1}{} har isolerad singularitet i $\pm \rattat{i}{1}$
+  \item $\dfrac{1}{\sin(\frac{1}{z})}$ har isolerade singulariteter i $\dfrac{1}{k\pi}$, $k \in \mathbb{Z} \setminus \{0\}$
+  \notefigure{fig2}{}
+  men $0$ icke isolerad singularitet.
+  \item $z$ holomorf i $D(0, 1)^\times$, isolerad singularitet i $0$\dots
+\end{itemize}
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{definition}
+Antag $f$ har isolerad singularitet i $z_0$. Då är singulariteten $z_0$.
+\begin{enumerate}[label=\textcolor{red!70!black}{\roman*)}]
+  \item \emph{hävbar} om $\exists g$ holomorf i $D(z_0, R)$ s.a.\ $f \equiv g$ i $D(z_0, R)^\times$
+  \item en \emph{pol} om $\displaystyle\lim_{z \to z_0} |f(z)| = \infty$
+  \item \emph{väsentlig} annars.
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+$z$ har hävbar singularitet i $0$.
+\begin{itemize}
+  \item $\dfrac{\sin z}{z^2}$ har en pol i $0$ \quad \textcolor{magenta!80!black}{$\displaystyle\lim_{z \to 0} \left| \frac{\sin z}{z^2} \right| \to \infty$}
+  \item $\sin(\frac{1}{z})$ har väsentlig singularitet i $0$.
+\end{itemize}
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Klassifikation av isolerade singulariteter (Sats 4.1, 4.2 R)]
+Antag $z_0$ isol.\ sing.\ till $f$. Då är singulariteten:
+\begin{enumerate}[label=\textcolor{red!70!black}{\textcircled{\alph*}}]
+  \item hävbar omm $\displaystyle\lim_{z \to z_0} (z - z_0)f(z) = 0$
+  \item en pol omm $f(z) = \dfrac{g(z)}{(z - z_0)^m}$ i $D(z_0, R)^\times$ \quad $m \ge 1$, $g$ holo i $D(z_0, R)$ $g(z_0) \neq 0$
+
+  $m$ kallas då polens ordning.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+\textcircled{a} $\Rightarrow$ \ $z_0$ hävbar singularitet, dvs $f(z) = g(z)$ i $D(z_0, R)^\times$, $g$ holomorf i $D(z, R)$
+\[ \Rightarrow \lim_{z \to z_0} (z - z_0)f(z) = \lim_{z \to z_0} (z - z_0)g(z) = 0 \cdot \underset{\textcolor{magenta!80!black}{\text{kont.}}}{g(z)} = 0 \]
+\textcircled{a} $\Leftarrow$ \ Låt $h(z) = \begin{cases} (z - z_0)^2 f(z), & z \in D(z_0, R)^\times \\ 0, & z = z_0 \end{cases}$
+
+$h$ holomorf i $D(z_0, R)^\times$. $h$ \rattat{komplext}{kompakt} deriverbar i $z_0$?
+\[ \lim_{z \to z_0} \frac{h(z) - h(z_0)}{z - z_0} = \lim_{z \to z_0} (z - z_0)f(z) = 0 \ \textcolor{magenta!80!black}{\text{enligt sats}} \Rightarrow h \text{ holomorf i } D(z_0, R) \]
+\[ h(z) \overset{\textcolor{magenta!80!black}{\text{TU}}}{=} \sum_0^\infty c_k(z - z_0)^k = \left[ \begin{array}{l} c_0 = h(z_0) = 0 \\ c_1 = \rattat{h'(z_0)}{h(z_1)} = 0 \end{array} \right] = \sum_2^\infty c_k(z - z_0)^k = (z - z_0)^2 \sum_2^\infty c_k(z - z_0)^{k-2} = \]
+\hfill $\longrightarrow$
+\end{proof}

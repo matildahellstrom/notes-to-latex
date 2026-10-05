@@ -1,0 +1,31 @@
+% language: swedish
+% figure: fig1 0.685 0.561 0.80 0.63
+\section{Föreläsning 23/10}
+\subsection{Tenta 2013 oktober uppgift 8}
+Låt $u$ vara harmonisk i $\mathbb{C}$. Visa att $\exists f$ holomorf i $\mathbb{C}$ s.a.\ $\operatorname{Re} f = x\dfrac{du}{dx} + y\dfrac{du}{dy}$
+
+\textbf{Lösning (nytt försök)}
+
+$\mathbb{C}$ enkelt sammanhängande $\overset{\textcolor{magenta!80!black}{\text{Sats}}}{\Longrightarrow} \exists g$ holomorf i $\mathbb{C}$ s.a.\ $u = \operatorname{Re} g$
+\[ \text{Låt } v = \operatorname{Im} g. \quad g' \overset{\textcolor{magenta!80!black}{\text{CR}}}{=} \frac{dg}{dx} = \frac{du}{dx} + i\frac{dv}{dx} \overset{\textcolor{magenta!80!black}{\text{CR}}}{=} \frac{du}{dx} - i\frac{du}{dy} \]
+\[ zg' = (x + iy)\left( \frac{du}{dx} - i\frac{du}{dy} \right) = x\frac{du}{dx} + y\frac{du}{dy} + i\left( y\frac{du}{dx} - x\frac{du}{dy} \right) \]
+$f = zg'$ holomorf enligt sats, $\operatorname{Re} f = x\dfrac{du}{dx} + y\dfrac{du}{dy}$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Laurentserieutveckling av holomorf funktion (Sats 8.24)]
+Antag $f$ holomorf i $A(z_0, R_1, R_2)$. Då har $f$ en Laurentserieutveckling $f(z) = \sum_{-\infty}^\infty c_k(z - z_0)^k$ i $A(z_0, R_1, R_2)$ där $c_k = \dfrac{1}{2\pi i} \displaystyle\int_{|z - z_0| = r} \frac{f(z)}{(z - z_0)^{k+1}}\,dz$, $R_1 < r < R_2$
+\end{theorem}
+
+\subsection{Tenta 2014 Januari uppg.\ 3}
+Utveckla $\dfrac{1}{(z - 1)(z - 2)^2}$ i LS, centrum i $0$, giltig i $A(0, 1, 2)$
+
+\textbf{Lösning:} $\dfrac{1}{(z - 1)(z - 2)^2}$ holomorf i $\mathbb{C} \setminus \{1, 2\}$
+\notefigure{fig1}{}
+\textcolor{red!70!black}{detta område vi är intresserade av.}
+
+PBU ger $\dfrac{1}{(z - 1)(z - 2)^2} = \dfrac{1}{z - 1} - \dfrac{1}{z - 2} + \dfrac{1}{(z - 2)^2}$.
+\[ \frac{1}{z - 1} = \frac{1}{z} \cdot \frac{1}{1 - 1/z} \overset{\textcolor{magenta!80!black}{|z| > 1}}{=} \frac{1}{z} \sum_0^\infty \left( \frac{1}{z} \right)^k = \sum_{-\infty}^{-1} z^k \]
+\[ \frac{1}{z - 2} = -\frac{1}{2} \frac{1}{1 - z/2} \overset{\textcolor{magenta!80!black}{|z| < 2}}{=} -\frac{1}{2} \sum_0^\infty (z/2)^k = -\sum_0^\infty \frac{1}{2^{k+1}} z^k \]
+\[ \frac{1}{(z - 2)^2} = -\left( \frac{1}{z - 2} \right)' = -\left( -\sum_0^\infty \frac{1}{2^{k+1}} z^k \right)' \overset{\textcolor{magenta!80!black}{\text{Sats}}}{=} \sum_1^\infty \frac{k}{2^{k+1}} z^{k-1} = \sum_0^\infty \frac{k + 1}{2^{k+2}} z^k \]
+\[ \text{Får } \frac{1}{(z - 1)(z - 2)^2} = \sum_{-\infty}^{-1} z^k + \sum_0^\infty \frac{1}{2^{k+1}} z^k + \sum_0^\infty \frac{k + 1}{2^{k+2}} z^k = \sum_{-\infty}^\infty c_k z^k,\ c_k = \begin{cases} 1, & k < 0 \\ \frac{k + 3}{2^{k+2}}, & k \ge 0 \end{cases} \]

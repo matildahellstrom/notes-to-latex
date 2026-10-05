@@ -1,0 +1,4 @@
+#!/bin/bash
+# Runs the notes pipeline: ./notes prepare <name> <images...>  |  ./notes build <name> [-t title]
+DIR="$(cd "$(dirname "$0")" && pwd)"
+PYTHONPATH="$DIR/backend" exec "$DIR/backend/.venv/bin/python" -m app.cli "$@"

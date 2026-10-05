@@ -1,0 +1,53 @@
+% language: swedish
+% figure: fig1 0.05 0.73 0.17 0.79
+% figure: fig2 0.055 0.80 0.20 0.915
+\subsection{Olikheter}
+
+\begin{note}
+\textcolor{red!70!black}{$z < w$ meningslöst för $z, w \in \mathbb{C}$}
+
+\textcolor{blue!60!black}{däremot $|z| < |w|$ har mening}
+\end{note}
+
+\begin{note}
+\begin{align*}
+  |\operatorname{Re} z| &\le |z| \qquad (|x| \le \sqrt{x^2 + y^2}) \\
+  |\operatorname{Im} z| &\le |z| \qquad (|y| \le \sqrt{x^2 + y^2})
+\end{align*}
+\end{note}
+
+\begin{theorem}[Triangelolikheten (Prop 1.6)]
+$|z + w| \le |z| + |w|$ \hfill \textcolor{magenta!80!black}{obs: $|zw| = |z|\,|w|$}
+\end{theorem}
+\begin{proof}
+\begin{align*}
+  \text{VL}^2 &= (z+w)\overline{(z+w)} = (z+w)(\bar{z} + \bar{w}) = z\bar{z} + w\bar{w} + z\bar{w} + w\bar{z}\textcolor{magenta!80!black}{\ = \overline{z\bar{w}}} = \\
+  &= |z|^2 + |w|^2 + z\bar{w} + \overline{z\bar{w}} = |z|^2 + |w|^2 + 2\operatorname{Re}(z\bar{w}) \le \\
+  &\le |z|^2 + |w|^2 + 2|z\bar{w}| = |z|^2 + |w|^2 + 2|z|\,|w| = (|z| + |w|)^2 = \\
+  &= \text{HL}^2
+\end{align*}
+\end{proof}
+
+\begin{note}
+$|z - w| \le |z| + |-w| = |z| + |w|$
+\end{note}
+
+\begin{theorem}[Omvända triangelolikheten (Kor.~1.7b)]
+$|z \pm w| \ge |z| - |w|$
+\end{theorem}
+\textcolor{red!70!black}{\textbf{Bevis:}} övning 1.25
+
+\subsection{Topologi i planet}
+\notefigure{fig1}{}
+$D(a, r) = \{z \in \mathbb{C} : |z - a| < r\}$ \quad $a \in \mathbb{C}$, $r \in \mathbb{R}$
+
+Låt nu $G \subseteq \mathbb{C}$ mängd
+
+\notefigure{fig2}{}
+\begin{itemize}
+  \item $a$ \emph{inre} punkt i $G$ om $\exists r > 0$ s.a. $D(a, r) \subseteq G$
+  \item $b$ \emph{yttre} punkt om $\exists r > 0$ s.a. $D(b, r) \subseteq G^c$ \ ($G^c = \mathbb{C} \setminus G$)
+  \item om $c$ är varken inre eller yttre så är $c$ en \emph{randpunkt},
+    $c \in \partial G$ \textcolor{blue!60!black}{$\leftarrow$ rand till $G$}
+  \item $G$ \emph{öppen} om alla punkter $a \in G$ är inre punkter
+\end{itemize}

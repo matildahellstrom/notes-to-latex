@@ -1,0 +1,39 @@
+% language: swedish
+% figure: fig1 0.30 0.327 0.41 0.372
+% figure: fig2 0.425 0.475 0.655 0.535
+\section{Föreläsning 24/9}
+
+\textbf{Repetition:}
+
+$u : G \subseteq \mathbb{C} \to \mathbb{R}$ \emph{harmonisk} om $u \in C^2$ och $\Delta u = \dfrac{d^2u}{dx^2} + \dfrac{d^2u}{dy^2} = 0$
+
+\textbf{Proposition 6.3:} Om $f$ holomorf, då är $\operatorname{Re} f$, $\operatorname{Im} f$ harmonisk
+
+\textbf{Sats 6.6:} om $u$ harmonisk i enkelt sammanhängande område $G$, då $\exists f$ holomorf i $G$ s.a.\ $\operatorname{Re} f$ i $G$. $v = \operatorname{Im} f$ kallas \emph{harmoniskt konjugat} till $u$.
+
+\textbf{Utvikning:} harmoniska funktioner $u : I \to \mathbb{R}$, $I = (a, b)$
+
+$\Delta u = \dfrac{d^2u}{dx} = 0$
+\notefigure{fig1}{}
+$=$ linjär!
+
+\begin{theorem}[Medelvärdessatsen för harmoniska funktioner (Sats 6.10)]
+Om $u$ harmonisk i $G \subseteq \mathbb{C}$, $\overline{D}(w, r) \subseteq G$, då är
+\[ u(w) = \frac{1}{2\pi} \int_0^{2\pi} u(w + re^{it})\,dt \]
+\notefigure{fig2}{}
+\end{theorem}
+\begin{proof}
+Välj $\varepsilon > 0$ s.a.\ $D(w, r + \varepsilon) \subseteq G$, enkelt sammanhängande.
+
+$\underset{\textcolor{magenta!80!black}{\text{Sats 6.6}}}{\Longrightarrow} \exists f$ holomorf i $D(w, r + \varepsilon)$, $u = \operatorname{Re} f$ i $D(w, r + \varepsilon)$
+\[ f(w) \overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} \frac{1}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{z - w}\,dz = \left[ \begin{array}{l} \gamma(t) = w + re^{it},\ t \in [0, 2\pi] \\ \gamma'(t) = ire^{it} \end{array} \right] = \frac{1}{2\pi \textcolor{red!70!black}{i}} \int_0^{2\pi} \frac{f(w + re^{it})\textcolor{red!70!black}{ire^{it}}}{\textcolor{red!70!black}{re^{it}}}\,dt \]
+\[ \Rightarrow u(w) = \operatorname{Re} f(w) = \frac{1}{2\pi} \int_0^{2\pi} u(w + re^{it})\,dt \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Maximumprincipen (Sats 6.10)]
+Om $u$ harmonisk i $G$ och om $u$ antar max i området (dvs.\ $\exists w \in G : u(w) = \sup_{z \in G} u(z)$), då är $u$ konstant.
+\end{theorem}
+
+\hfill \textcolor{red!70!black}{\underline{Bevis}} $\rightarrow$

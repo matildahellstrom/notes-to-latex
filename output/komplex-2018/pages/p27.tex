@@ -1,0 +1,18 @@
+% language: swedish
+% figure: fig1 0.275 0.312 0.41 0.39
+\fbox{4.36} \quad Beräkna \quad a) $\displaystyle\int_{C[-1, 2]} \frac{z^2}{4 - z^2}\,dz$ \quad b) $\displaystyle\int_{C[0, 1]} \frac{\sin z}{z}\,dz$ \quad c) $\displaystyle\int_{C[0, 2]} \frac{e^z}{z(z - 3)}\,dz$
+
+\begin{theorem}[Sats 4.24 (Cauchys Integralformel)]
+Om $f$ är holomorf i $\overline{D}[w, R]$ så $\displaystyle f(w) = \frac{1}{2\pi i} \int_{C[w, R]} \frac{f(z)}{z - w}\,dz$
+\end{theorem}
+
+\textbf{Lösning:} a)
+\[ \frac{1}{4 - z^2} = \frac{A}{2 - z} + \frac{B}{2 + z} = \frac{A(z + 2) + B(2 - z)}{4 - z^2} \Rightarrow \begin{cases} A - B = 0 \\ 2A + 2B = 1 \end{cases} \Rightarrow \begin{cases} A = B \ \& \ 4A = 1 \\ \Rightarrow A \ \& \ B = \frac{1}{4} \end{cases} \]
+\[ \int_{C[-1, 2]} \frac{z^2}{4 - z^2}\,dz \Rightarrow \]
+\notefigure{fig1}{}
+\[ \Rightarrow \int_{C[-1, 2]} \frac{z^2}{4(2 - z)} + \frac{z^2}{4(2 + z)}\,dz \quad \textcolor{magenta!80!black}{\leftarrow f(z) = \frac{z^2}{4}} \]
+\[ = 2\pi i \frac{(-2)^2}{4} = 2\pi i \]
+
+b) \quad $\displaystyle\int_{C[0, 1]} \frac{\sin z}{z}\,dz = 2\pi i \sin(0) = 0$ \quad \textcolor{magenta!80!black}{$\leftarrow w = 0,\ f = \sin z$}
+
+c) \quad $\displaystyle\int_{C[0, 2]} \frac{e^z\,dz}{z(z - 3)}\,dz = 2\pi i \frac{e^0}{0 - 3} = -\frac{2\pi i}{3}$ \quad \textcolor{magenta!80!black}{$\leftarrow w = 0,\ f = \frac{e^z}{z - 3}$}

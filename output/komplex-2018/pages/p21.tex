@@ -1,0 +1,54 @@
+% language: swedish
+% figure: fig1 0.07 0.16 0.185 0.222
+% figure: fig2 0.08 0.28 0.26 0.322
+% figure: fig3 0.028 0.677 0.203 0.74
+\begin{theorem}[Proposition 4.2]
+Om $\gamma_2$ reparametrisering av $\gamma_1$ då $\displaystyle\int_{\gamma_1} f\,dz = \int_{\gamma_2} f\,dz$.
+\end{theorem}
+
+\begin{definition}
+Om $\gamma : [a, b] \to \mathbb{C}$ kurva
+\[ -\gamma : [a, b] \to \mathbb{C} \text{ kurva}, \quad (-\gamma)(t) = \gamma(a + b - t) \]
+\notefigure{fig1}{}
+\end{definition}
+
+\begin{definition}
+Om $\gamma_1, \gamma_2$, \ $\gamma_3 = \gamma_1 \cup \gamma_2$ \qquad \emph{Konkatenation}
+\notefigure{fig2}{}
+\end{definition}
+
+\begin{definition}
+$|\gamma| = \displaystyle\int_a^b |\gamma'(t)|\,dt$ \quad längden av $\gamma$
+\end{definition}
+
+\begin{theorem}[Egenskaper (Prop 4.6)]
+\begin{enumerate}[label=\textcircled{\alph*}]
+  \item $\displaystyle\int_\gamma (f + cg)\,dz = \int_\gamma f\,dz + c\int_\gamma g\,dz$
+  \item $\displaystyle\int_{-\gamma} f\,dz = -\int_\gamma f\,dz$
+  \item $\displaystyle\int_{\gamma_1 \cup \gamma_2} f\,dz = \int_{\gamma_1} f\,dz + \int_{\gamma_2} f\,dz$
+  \item \emph{Triangelolikhet för integraler}
+  \[ \left| \int_\gamma f\,dz \right| \le \max_{z \in \gamma} |f(z)| \cdot |\gamma| \]
+\end{enumerate}
+\end{theorem}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Föreläsning 12/9}
+\subsection{Fortsättning integraler}
+$G \subseteq \mathbb{C}$
+\notefigure{fig3}{}
+$f : G \to \mathbb{C}$ kontinuerlig
+\[ \int_\gamma f\,dz = \int_a^b f(\gamma(t))\gamma'(t)\,dt \]
+
+\textbf{Egenskaper (Prop 4.6)} \quad Se ovan a--d $\uparrow$
+
+\begin{proof}[Bevis av d)]
+Skriv $\displaystyle\int_\gamma f\,dz = re^{i\theta}$
+\begin{align*}
+  \left| \int_\gamma f\,dz \right| &= r = re^{i\theta} \cdot e^{-i\theta} = \int_\gamma f\,dz \cdot e^{-i\theta} = \\
+  &= \int_\gamma e^{-i\theta} f\,dz = \int_a^b e^{-i\theta} f(\gamma(t))\gamma'(t)\,dt = \\
+  &= \int_a^b \operatorname{Re}(e^{-i\theta} f(\gamma(t))\gamma'(t))\,dt + i\int_a^b \operatorname{Im}(e^{-i\theta} f(\gamma(t))\gamma'(t))\,dt \\
+  &\overset{\textcolor{magenta!80!black}{\text{ty reellt}}}{=} \int_a^b \operatorname{Re}(e^{-i\theta} f(\gamma(t))\gamma'(t))\,dt \le \int_a^b |e^{-i\theta} f(\gamma(t))\gamma'(t)|\,dt \le \\
+  &\le \left( |e^{-i\theta}| = 1,\ |f(\gamma(t))| \le \max_{z \in \gamma} |f(z)| \right) \le \max_{z \in \gamma} |f(z)| \underbrace{\int_a^b |\gamma'(t)|\,dt}_{\textcolor{magenta!80!black}{|\gamma|}}
+\end{align*}
+\end{proof}

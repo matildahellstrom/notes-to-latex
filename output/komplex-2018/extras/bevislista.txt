@@ -1,0 +1,13 @@
+# One theorem per line: p<page>: <part of its title> [| comment]
+p32: Cauchys integralformel för derivatan ($\sim$ Sats 5.1)
+p34: Algebrans fundamentalsats (sats 5.11)
+p51: Taylorutveckling av holomorfa funktioner (8.8)
+p57: Identitetsprincipen
+p58: Laurentserieutvecklingar av holomorfa funktioner
+p64: Residysatsen (Sats 9.10)
+p65: Prop.\ 9.11a
+p65: Prop 1.3.R
+p66: Prop 9.14
+p77: Argumentprincipen
+p80: Rouchés sats (Sats 9.18)
+p61: Klassifikation av isolerade singulariteter | endast a-delen är på bevislistan

@@ -1,0 +1,40 @@
+% language: swedish
+\section{Föreläsning 10/10}
+\subsection{Fourieranalys}
+\emph{Idé}: dela upp signal i dess frekvens
+
+\emph{J.\ Fourier 1822}: introducerade detta för att lösa värmeledningsekvationerna. Funkar för många olika slags signaler:
+
+\emph{Diskreta}: används vid datakomprimering JPEG, mp3, \dots
+
+\emph{Kontinuerliga}: används röntgenkristall., datatomografi, \dots
+
+\subsection{Fouriertransformen}
+\begin{definition}
+En funktion $f : \mathbb{R} \to \mathbb{C}$, ligger i $L^1$ ($f \in L^1$) om den är integrerbar (t.ex.\ styckvis kontinuerlig) samt $\displaystyle\int_{-\infty}^\infty |f(t)|\,dt < \infty$
+\end{definition}
+
+\begin{example}
+$e^{-|t|} \in L^1$, \ $e^{-t} \notin L^1$
+\end{example}
+
+\begin{definition}
+Givet $f \in L^1$ så def.\ vi dess Fouriertransform (FT) $\hat{f} : \mathbb{R} \to \mathbb{C}$, $\hat{f}(x) = \displaystyle\int_{-\infty}^\infty f(t)e^{-ixt}\,dt$
+\end{definition}
+
+\begin{example}
+Bestäm FT av $e^{-|t|}$
+
+\textbf{Lösning:}
+\[ \widehat{e^{-|t|}}(x) = \int_{-\infty}^\infty e^{-|t|}e^{-ixt}\,dt = \int_{-\infty}^0 e^t e^{-ixt}\,dt + \int_0^\infty e^{-t}e^{-ixt}\,dt = \]
+\[ = \int_{-\infty}^0 e^{t(1 - ix)}\,dt + \int_0^\infty e^{-t(1 + ix)}\,dt = \left[ \frac{e^{t(1 - ix)}}{1 - ix} \right]_{-\infty}^0 + \left[ -\frac{e^{-t(1 + ix)}}{1 + ix} \right]_0^\infty = \]
+\[ = \frac{1}{1 - ix} + \frac{1}{1 + ix} = \frac{2}{(1 + x^2)} \]
+\end{example}
+
+\begin{theorem}[Inversionsformeln (Sats 2.1F)]
+Anta $f$ kontinuerlig, $f, \hat{f} \in L^1$. Då är $f(t) = \dfrac{1}{2\pi} \displaystyle\int_{-\infty}^\infty \hat{f}(x)e^{ixt}\,dx$
+\end{theorem}
+
+Detta säger att signalen $f(t)$ ges som överlagring av rena oscillationer $\hat{f}(x)e^{ixt} = \hat{f}(x)(\cos(xt) + i\sin(xt))$, $x = $ frekvensen, $|\hat{f}(x)| = $ amplituden, $\arg \hat{f}(x) = $ fasen.
+
+\textcolor{red!70!black}{\textbf{OBS!}} Får $f(t) = \dfrac{1}{2\pi} \displaystyle\int_{-\infty}^\infty \hat{f}(x)e^{ixt}\,dx = \frac{1}{2\pi} \hat{\hat{f}}(-t) \Leftrightarrow \underbrace{\hat{\hat{f}}(t) = 2\pi f(-t)}_{\textcolor{magenta!80!black}{\text{inversionsformeln}}}$

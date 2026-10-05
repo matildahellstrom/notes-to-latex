@@ -1,0 +1,47 @@
+% language: swedish
+\begin{proof}[Bevis av CR del b)]
+\textcolor{magenta!80!black}{Finns på hemsidan, behöver ej kunna detta bevis}
+
+Kommer visa att $\displaystyle\lim_{t + is \to 0} \frac{f(z_0 + t + is) - f(z_0)}{t + is} = \frac{df}{dx}(z_0)$
+
+Enligt antagandet är $f \in C^1$, så speciellt differentierbar, dvs
+\begin{align*}
+  f(z_0 + t + is) - f(z_0) &= \frac{df}{dx}(z_0)t + \frac{df}{dy}(z_0)s + o(|t + is|) = \textcolor{blue!60!black}{\left[\text{enligt ant. } \frac{df}{dy} = i\frac{df}{dx}\right]} \\
+  &= \frac{df}{dx}t + i\frac{df}{dx}s + o(|t + is|) = \frac{df}{dx}(t + is) + o(|t + is|)
+\end{align*}
+\[ \textcolor{red!70!black}{\Rightarrow} \quad \frac{f(z_0 + t + is) - f(z_0)}{t + is} = \frac{df}{dx}(z_0) + \frac{o(|t + is|)}{t + is} \xrightarrow[\textcolor{blue!60!black}{t + is \to 0}]{} \frac{df}{dx}(z_0) \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Visa att $e^z = e^x e^{iy}$ är holomorf i $\mathbb{C}$
+
+\textbf{Lösning:}
+\[ \frac{d}{dx} e^z = e^x e^{iy} = e^z \qquad \frac{d}{dy} e^z = e^x \frac{d}{dy}(\cos y + i\sin y) = e^x(-\sin y + i\cos y) \]
+\[ = ie^z = i\frac{d}{dx}e^z \qquad \textcolor{blue!60!black}{((e^z)' = e^z)} \]
+$\Rightarrow e^z \in C^1$ och uppfyller CRs ekv.\ $\overset{\text{Sats}}{\Rightarrow}$ $e^z$ holomorf
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[2.17]
+\hfill \textcolor{magenta!80!black}{$\nabla u \equiv 0 \Leftrightarrow \nabla u = 0$}
+
+Om $f$ holomorf i område (= domän, öppen sammanhängande) och $f' \equiv 0$ då är $f$ konstant.
+\end{theorem}
+\begin{proof}
+Vi vet att $f' = \dfrac{df}{dx} = -i\dfrac{df}{dy}$ enligt CR
+\[ \overset{\textcolor{blue!60!black}{\text{enl. ant.}}}{\Longrightarrow} \frac{df}{dx} \equiv 0 \quad \frac{df}{dy} \equiv 0, \quad \Rightarrow \nabla u \equiv 0, \ \nabla v \equiv 0 \]
+\[ \xRightarrow[\textcolor{blue!60!black}{\text{tidigare sats}}]{\textcolor{blue!60!black}{G \text{ område}}} u, v \text{ konstanta}, \ f \text{ konstant} \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Antag att $f$ holomorf i $\mathbb{C}$ och $\operatorname{Re} f = \operatorname{Im} f$. Visa att $f$ är konstant
+
+\textbf{Lösning:} Låt $u = \operatorname{Re} f$, $v = \operatorname{Im} f$. har enligt antagandet $u = v$.
+\[ \text{CRs ekv.} \begin{cases} \dfrac{du}{dx} = \dfrac{dv}{dy} = \dfrac{du}{dy} \\[2ex] \dfrac{du}{dy} = -\dfrac{dv}{dx} = -\dfrac{du}{dx} \end{cases} \Rightarrow \frac{du}{dx} = 0 = \frac{du}{dy} \Rightarrow \nabla u = 0 \overset{\textcolor{blue!60!black}{\text{område}}}{\Rightarrow} u \text{ konstant} \]
+\[ \Rightarrow v \text{ konstant}, \ f \text{ konstant}. \]
+\end{example}

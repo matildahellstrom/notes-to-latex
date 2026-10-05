@@ -1,0 +1,38 @@
+% language: swedish
+% figure: fig1 0.67 0.045 0.90 0.18
+% figure: fig2 0.63 0.72 0.83 0.805
+\fbox{9.15} \quad Beräkna $\displaystyle\int_{-\infty}^\infty \frac{dx}{(1 + x^2)^2}$
+\notefigure{fig1}{}
+\[ \Rightarrow \int_{-\infty}^\infty \frac{dx}{(1 + x^2)^2} = \lim_{R \to \infty} \int_{-R}^R \frac{dx}{(1 + x^2)^2} = \lim_{R \to \infty} \int_{[-R, R]} \frac{dz}{(1 + z^2)^2} = \]
+\[ = \lim_{R \to \infty}\left( \int_{\gamma_R} \frac{dz}{(1 + z^2)^2} - \int_{H_R} \frac{dz}{(1 + z^2)^2} \right) \overset{\textcolor{magenta!80!black}{R > 1}}{=} \int_{\gamma_R} \frac{dz}{(1 + z^2)^2} - \lim_{R \to \infty} \int_{H_R} \frac{dz}{(1 + z^2)^2} \]
+\[ \Rightarrow \left| \frac{1}{z^2 + 1} \right| \underset{\textcolor{magenta!80!black}{\text{omvänd } \Delta \text{ olik}}}{\le} \frac{1}{|z|^2 - 1} \]
+\[ \Rightarrow \left| \int_{H_R} \frac{dz}{(1 + z^2)^2} \right| \le \pi R \max_{z \in H_R} \left| \frac{1}{(z^2 + 1)^2} \right| \le \pi R \frac{1}{(R^2 - 1)^2} \to 0 \text{ då } R \to \infty \]
+\[ \frac{1}{(z^2 + 1)^2} = \frac{1}{(z + i)^2(z - i)^2} = f(z) \]
+\[ \operatorname{Res}_i f(z) = \lim_{z \to i} \frac{d}{dz}\left( (z - i)^2 f(z) \right) = \lim_{z \to i} \frac{d}{dz} \frac{1}{(z + i)^2} = \lim_{z \to i} = -2 \left. \frac{1}{(z + i)^3} \right|_{z = i} = \frac{-2}{(2i)^3} = \frac{2}{8i} \]
+\[ \Rightarrow \text{integralen} = 2\pi i \cdot \frac{2}{8i} = \frac{\pi}{2} \qquad \textcolor{magenta!80!black}{\text{reell integral} \to \text{reellt svar}} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{minipage}[t]{0.55\linewidth}
+\fbox{9.21} \quad Hitta antalet nollställen för
+
+\textcircled{b} $\frac{1}{3}e^z - z$ \quad i $\overline{D}[0, 1]$
+
+\textcircled{c} $z^4 - 5z + 1$ \quad i $1 \le |z| \le 2$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\linewidth}
+\textbf{Rouchés sats:} om $\gamma$ är sluten, enkel, positivt orienterad om $|g(z)| < |f(z)|$ $\forall z \in \gamma$ $\Rightarrow Z(f + g, \gamma) = Z(f, \gamma)$
+\end{minipage}
+\notefigure{fig2}{}
+
+\textcircled{b} $\gamma = C[0, 1]$ \quad $z \in \gamma \Leftrightarrow |z| = 1$
+\[ \underbrace{\left| \frac{1}{3}e^z \right|}_{g(z)} \le \frac{1}{3}e^z < 1 = \underbrace{|-z|}_{f(z)} \]
+$Z(\frac{1}{3}e^z - z, \gamma) = Z(-z, \gamma) = 1$
+
+\textcircled{c} \emph{Steg 1}: $\gamma = C[0, 2]$. $|-5z + 1| \le 5|z| + 1 = 11 < 16 = |z^4|$
+
+$Z(z^4 - 5z + 1, \gamma) = Z(z^4, \gamma) = 4$
+
+\emph{Steg 2}: $\alpha = C[0, 1]$ \quad $|z^4| = 1 < 4 = 5 - 1 = |-5z| - |1| \le |-5z + 1|$
+
+$Z(z^4 - 5z + 1, \alpha) = Z(-5z + 1, \alpha) = 1$

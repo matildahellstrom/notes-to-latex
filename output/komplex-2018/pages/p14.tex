@@ -1,0 +1,40 @@
+% language: swedish
+% figure: fig1 0.205 0.547 0.405 0.643
+\section{Föreläsning 10/9}
+
+\subsection{Komplexa logaritmer}
+\begin{definition}
+Givet område $G$ så sägs varje \emph{kontinuerlig} funktion $\operatorname{Log} z : G \to \mathbb{C}$ som uppfyller $e^{\operatorname{Log} z} = z$ vara en \emph{gren} av logaritmen $\log z$. \ $\operatorname{Log} z = \ln|z| + i\operatorname{Arg} z$ \textcolor{red!70!black}{$(-\pi < \operatorname{Arg} z \le \pi)$} kallas den \emph{principala grenen}.
+\end{definition}
+
+\begin{example}
+$\operatorname{Log}(3i) = \ln 3 + i\pi/2$
+
+$\operatorname{Log}(-7) = \ln 7 + i\pi$ \quad \textcolor{magenta!80!black}{(fick ej ta $-\pi$ så då tar vi $\pi$ istället)}
+\end{example}
+
+\begin{note}
+$\operatorname{Log} z$ är diskontinuerlig längs $\mathbb{R}_{\le 0}$, så $\operatorname{Log} z$ är \emph{inte} en gren av $\log z$ på $\{\operatorname{Re} z < 0\}$
+\end{note}
+
+\begin{note}
+Ibland $\operatorname{Log} z^2 \neq 2\operatorname{Log} z$
+
+e.g.\ $\operatorname{Log}((-7)^2) = \ln 49 = 2\ln 7$
+
+\qquad $2\operatorname{Log}(-7) = 2\ln 7 + 2\pi i$
+\end{note}
+
+\begin{example}
+\notefigure{fig1}{}
+Om $\operatorname{Log} z$ är en gren av $\log z$ på $G$, och $\operatorname{Log} 1 = 0$, vad blir $\operatorname{Log} 2$?
+
+\textcolor{red!70!black}{\textbf{Svar:}} $\ln 2 - i2\pi$
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\textcolor{blue!60!black}{
+$\operatorname{Log} z \leftarrow$ principella \\
+$\mathcal{L}og\, z$ $\leftarrow$ godtycklig \\
+$\log z \leftarrow$ någon gren}

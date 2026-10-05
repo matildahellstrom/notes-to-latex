@@ -1,0 +1,50 @@
+% language: swedish
+\begin{example}
+Hitta Mavb $M(z) = \dfrac{az + b}{cz + d}$ s.a.\ $M(0) = 1$, $M(1) = 0$, $M(i) = \dfrac{1 - i}{2}$
+
+\textbf{Lösning:} $M(0) = 1 \Rightarrow \dfrac{b}{d} = 1 \Rightarrow b = d$, sätt $b = d = 1$
+
+$M(1) = 0 \Rightarrow a + 1 = 0 \Rightarrow a = -1$
+
+$M(z) = \dfrac{-z + 1}{cz + 1}$ \qquad $M(i) = \dfrac{-i + 1}{ci + 1} = \dfrac{1 - i}{2} \Rightarrow c = -i$
+\[ \Rightarrow M(z) = \frac{-z + 1}{-iz + 1} = \frac{z - 1}{iz - 1} \]
+\end{example}
+
+\begin{note}
+$\dfrac{az + b}{cz + d}$ ej def i $z = -\dfrac{d}{c}$. \emph{Låt} $\hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}$. \ $\dfrac{az + b}{cz + d} : \hat{\mathbb{C}} \to \hat{\mathbb{C}}$,
+\[ -\frac{d}{c} \mapsto \infty, \quad \infty \mapsto \frac{a}{c} \quad \textcolor{blue!60!black}{(\text{om } c = 0,\ \infty \mapsto \infty)} \]
+\end{note}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Hitta Mavb $M$ s.a $0 \mapsto \infty$, $\infty \mapsto 1$, $i \mapsto 2$
+
+\textbf{Lösning:} $0 \mapsto \infty \Rightarrow d = 0$
+
+$\infty \mapsto 1 \Rightarrow a = c = 1$
+
+$\left(M(z) = \dfrac{z + b}{z}\right)$ \quad $i \mapsto 2 \Rightarrow \dfrac{i + b}{i} = 2 \Rightarrow b = i$
+
+$\Rightarrow M(z) = \dfrac{z + i}{z}$
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Proposition 3.1]
+\begin{enumerate}[label=\alph*)]
+  \item komposition av två Mavb ger ny Mavb
+  \item $\left(\dfrac{az + b}{cz + d}\right)^{-1} = \dfrac{dz - b}{-cz + a}$
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+a) Varje Mavb är uppbyggd av elementära Mavb.
+
+Räcker således att visa att $E \circ \left(\dfrac{az + b}{cz + d}\right)$ ny Mavb då $E$ elementär.
+
+Visar fallet $E = z + e$.
+\[ (z + e) \circ \left(\frac{az + b}{cz + d}\right) = \frac{az + b}{cz + d} + e = \frac{az + b + e(cz + d)}{cz + d} = \frac{(a + ec)z + (ed + b)}{cz + d} \]
+\emph{Kollar determinant}: $(a + ec)d - (b + ed)c = ad - bc \neq 0$
+
+\textcolor{magenta!80!black}{(liknande för resterande regler)}
+\end{proof}

@@ -1,0 +1,30 @@
+% language: swedish
+\subsection{F1c s.\ 13}
+Bestäm LT av $t^2 e^{at}$
+
+\textbf{Lösning:} $\tilde{1} = \dfrac{1}{s}$, \ $\widetilde{e^{at}} = \widetilde{e^{at} \cdot 1} = \tilde{1}(s - a) = \dfrac{1}{s - a}$
+\[ \widetilde{te^{at}} = -\left( \widetilde{e^{at}} \right)' = -\left( \frac{1}{s - a} \right)' = \frac{1}{(s - a)^2} \]
+\[ \widetilde{t^2 e^{at}} = -\left( \widetilde{te^{at}} \right)' = -\left( \frac{1}{(s - a)^2} \right)' = \frac{2}{(s - a)^3} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{F3a.\ s.\ 13}
+Lös diff.ekv.\ \quad $*$: $u'' - 2u' + 2u = 6e^t$ \quad $t \ge 0$, \ $u(0) = 0$, $u'(0) = 1$
+
+\textbf{Lösning:} LT av $*$ ger:
+\[ s^2\tilde{u} - su(0) - u'(0) - 2(s\tilde{u} - u(0)) + 2\tilde{u} = 6\widetilde{e^t} \Leftrightarrow \]
+\[ \Leftrightarrow (s^2 - 2s + 2)\tilde{u} - 1 = 6\frac{1}{s - 1} \Leftrightarrow \tilde{u} = \left( 6\frac{1}{s - 1} + 1 \right) \cdot \frac{1}{(s^2 - 2s + 2)} \]
+\[ \Rightarrow s^2 - 2s + 2 = (s - 1)^2 + 1 \]
+\[ \Rightarrow \frac{1}{(s - 1)((s - 1)^2 + 1)} \overset{\textcolor{magenta!80!black}{\text{PBU}}}{=} \frac{1}{s - 1} - \frac{s - 1}{(s - 1)^2 + 1} \Rightarrow \frac{1}{s - 1} = \widetilde{e^t},\ \frac{s}{s^2 + 1} = \widetilde{\cos t} \]
+\[ \frac{1}{s^2 + 1} = \widetilde{\sin t},\ \frac{s - 1}{(s - 1)^2 + 1} = \widetilde{e^t \cos t},\ \frac{1}{(s - 1)^2 + 1} = \widetilde{e^t \sin t} \]
+\[ \Rightarrow \tilde{u} = \widetilde{e^t(6 - 6\cos t + \sin t)} \Rightarrow u = e^t(6 - 6\cos t + \sin t). \]
+
+\textcolor{red!70!black}{\textbf{OBS!}} Fulla uträkningar krävs för full poäng på tentan.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{F 1b s.16}
+Hitta ZT av $\alpha = \{a_k\}$ \quad $a_k = k$
+
+\textbf{Lösning:} $Z(\alpha) = \displaystyle\sum_0^\infty \frac{k}{z^k}$. Sätt $w = \dfrac{1}{z}$, $Z(\alpha) = \displaystyle\sum_0^\infty kw^k = w\sum_1^\infty kw^{k-1} =$
+\[ = w\left( \sum_0^\infty w^k \right)' = w\left( \frac{1}{1 - w} \right)' = \frac{w}{(1 - w)^2} = \frac{1}{z} \frac{1}{(1 - 1/z)^2} = \frac{z}{(z - 1)^2} \]

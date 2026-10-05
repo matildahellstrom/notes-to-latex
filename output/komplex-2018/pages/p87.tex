@@ -1,0 +1,33 @@
+% language: swedish
+\section{Föreläsning 15/10}
+\subsection{Fouriertransformen (fortsättning)}
+\begin{itemize}
+  \item $f : \mathbb{R} \to \mathbb{C}$, $f \in L^1$, Fouriertransformen (FT) av $f$
+
+  $\hat{f} : \mathbb{R} \to \mathbb{C}$, \ $\hat{f}(x) = \displaystyle\int_{-\infty}^\infty f(t)e^{-ixt}\,dt$
+\end{itemize}
+
+\textbf{Egenskaper:}
+\begin{itemize}
+  \item $\hat{\hat{f}}(t) = 2\pi f(\rattat{-t}{t})$ \ (inversionsformeln)
+  \item $\displaystyle\int_{-\infty}^\infty |f(t)|^2\,dt = \frac{1}{2\pi} \int_{-\infty}^\infty \rattat{|\hat{f}(x)|^2}{|\hat{f}(x)^2|}\,dx$ \ (\rattat{Parsevals}{Pascals} formel)
+  \item $\widehat{f'} = ix\hat{f}$
+  \item $\widehat{tf} = i\hat{f}'$
+  \item $\widehat{f(t - a)} = e^{-iax}\hat{f}$
+  \item $\widehat{f(at)}(x) = \dfrac{\hat{f}(x/a)}{|a|}$
+\end{itemize}
+
+\begin{definition}
+$f, g : \mathbb{R} \to \mathbb{C}$, då def.\ faltningen $f * g$ av $f$ med $g$ som $(f * g)(t) = \displaystyle\int_{-\infty}^\infty f(r)g(t - r)\,dr$
+\end{definition}
+
+\textcolor{red!70!black}{\textbf{obs!}} $f * g = g * f$
+
+\begin{theorem}[Sats 2.4.F]
+$\widehat{f * g} = \hat{f}\hat{g}$
+\end{theorem}
+\begin{proof}
+\[ \widehat{f * g}(x) = \int_{-\infty}^\infty (f * g)(t)e^{-xt}\,dt = \int_{-\infty}^\infty \left( \int_{-\infty}^\infty f(r)g(t - r)\,dr \right) e^{-ixt}\,dt \overset{\textcolor{magenta!80!black}{\text{byt integralordning}}}{=} \]
+\[ = \int_{-\infty}^\infty \left( \int_{-\infty}^\infty g(t - r)e^{-ixt}\,dr \right) f(r)\,dr = \int_{-\infty}^\infty \left( \int_{-\infty}^\infty g(t - r)e^{-ix(t - r)}\,dt \right) f(r)e^{-ixr}\,dr = \]
+\[ = \int_{-\infty}^\infty \hat{g}(x)f(r)e^{-ixr}\,dr = \hat{f}(x)\hat{g}(x) \]
+\end{proof}

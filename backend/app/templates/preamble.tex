@@ -1,0 +1,100 @@
+% Fixed preamble for transcribed notes. Compiled with XeLaTeX.
+% The model only ever writes the document body; everything it may use is defined here.
+\documentclass[11pt,a4paper]{article}
+
+% --- Language and fonts --------------------------------------------------------
+\usepackage{fontspec}               % UTF-8 input: å, ä, ö work directly
+\usepackage[swedish,english]{babel} % last option (english) is the default
+\usepackage{csquotes}
+
+% --- Page layout ----------------------------------------------------------------
+\usepackage[margin=2.2cm,marginparwidth=2cm]{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{multicol}               % formula sheets
+
+% --- Maths ----------------------------------------------------------------------
+\usepackage{amsmath,amssymb,mathtools,amsthm}  % amsthm: proof environment
+\usepackage{physics}                % \vb, \dv, \pdv, \abs, \norm, \ket, \bra
+\usepackage{bm}
+\usepackage{cancel}                 % \cancel{x}: struck-out factors
+
+% --- Science --------------------------------------------------------------------
+\usepackage{siunitx}                % \SI, \si, \num, \qty
+\sisetup{per-mode=symbol}
+\usepackage[version=4]{mhchem}      % \ce{...}
+
+% --- Graphics, colour, boxes ------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{tikz}                   % redrawn diagrams (drawings/<id>.tex)
+\usetikzlibrary{arrows.meta,decorations.markings,patterns}
+\tikzset{>=Stealth,
+  contour/.style={thick,blue!60!black},
+  arrow at/.style={postaction={decorate},decoration={markings,mark=at position #1 with {\arrow{Stealth}}}},
+  axis/.style={->,thin},
+  pt/.style={circle,fill,inner sep=1.1pt},
+  sing/.style={font=\small}}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black}
+
+% Box titles: "Definition" or "Definition: Title" when a title is given.
+\newcommand{\nbtitle}[2]{#1\if\relax\detokenize{#2}\relax\else: #2\fi}
+
+% Box names and the decimal marker follow the page language.
+\newcommand{\definitionname}{Definition}
+\newcommand{\theoremname}{Theorem}
+\newcommand{\examplename}{Example}
+\newcommand{\notename}{Note}
+\addto\captionsenglish{%
+  \renewcommand{\definitionname}{Definition}\renewcommand{\theoremname}{Theorem}%
+  \renewcommand{\examplename}{Example}\renewcommand{\notename}{Note}%
+  \sisetup{output-decimal-marker={.}}}
+\addto\captionsswedish{%
+  \renewcommand{\definitionname}{Definition}\renewcommand{\theoremname}{Sats}%
+  \renewcommand{\examplename}{Exempel}\renewcommand{\notename}{Anmärkning}%
+  \sisetup{output-decimal-marker={,}}}  % 9,82 stays 9,82 on Swedish pages
+
+\newtcolorbox{definition}[1][]{enhanced,breakable,colback=blue!4,colframe=blue!55!black,
+  fonttitle=\bfseries,title={\nbtitle{\definitionname}{#1}}}
+\newtcolorbox{theorem}[1][]{enhanced,breakable,colback=red!4,colframe=red!55!black,
+  fonttitle=\bfseries,title={\nbtitle{\theoremname}{#1}}}
+\newtcolorbox{example}[1][]{enhanced,breakable,colback=green!4,colframe=green!45!black,
+  fonttitle=\bfseries,title={\nbtitle{\examplename}{#1}}}
+\newtcolorbox{note}[1][]{enhanced,breakable,colback=gray!6,colframe=gray!60!black,
+  fonttitle=\bfseries,title={\nbtitle{\notename}{#1}}}
+
+% List of theorems: the build step adds \theoremindex{title} to each theorem box.
+\makeatletter
+\newcommand{\theoremindex}[1]{\phantomsection\addcontentsline{thm}{subsection}{#1}}
+\newcommand{\listoftheorems}{\section*{Satser och propositioner}\@starttoc{thm}}
+\makeatother
+
+% A framed section with only the page's own title (or none), for frames without a label.
+\newtcolorbox{framed}[1][]{enhanced,breakable,colback=white,colframe=red!50!black,
+  title={#1},fonttitle=\bfseries,coltitle=red!50!black,attach title to upper={\ }}
+
+% --- Transcription helpers --------------------------------------------------------
+% \unsure{...}: text the transcriber could not read with confidence (highlighted).
+\newcommand{\unsure}[1]{\relax\ifmmode\colorbox{yellow!55}{$\displaystyle #1$}\else\colorbox{yellow!55}{#1}\fi}
+
+% \rattat{new}{old}: a slip in the original notes, corrected at the student's request. Prints the
+% corrected text with a green dagger; the original wording stays in the source.
+\newcommand{\rattat}[2]{\relax\ifmmode{#1}{}^{\textcolor{green!50!black}{\dagger}}\else#1\textsuperscript{\textcolor{green!50!black}{\dag}}\fi}
+
+% \notefigure[width]{id}{caption}: a diagram cropped from the original page. The build step
+% fills in the width (share of \linewidth) from the drawing's width on the original page.
+% A redrawn version in drawings/<id>.tex (TikZ) is used instead of the crop when present.
+\newcommand{\notefigure}[3][0.5]{%
+  \begin{center}
+    \IfFileExists{drawings/#2.tex}%
+      {\input{drawings/#2.tex}}%
+      {\IfFileExists{figures/#2.png}%
+        {\includegraphics[width=#1\linewidth,height=0.35\textheight,keepaspectratio]{figures/#2.png}}%
+        {\fbox{\parbox{0.5\linewidth}{\centering\small [Figure #2 missing]}}}}%
+    \if\relax\detokenize{#3}\relax\else\par\small\emph{#3}\fi
+  \end{center}}
+
+% \pagebreakmarker: separates pages of the original notes.
+\newcommand{\pagebreakmarker}[1]{\par\medskip\noindent{\color{gray}\rule{\linewidth}{0.3pt}\\[-0.4em]\hfill\scriptsize\MakeLowercase{\pagename} #1}\par\medskip}

@@ -1,0 +1,32 @@
+% language: swedish
+% figure: fig1 0.605 0.257 0.865 0.312
+% figure: fig2 0.15 0.51 0.257 0.572
+% figure: fig3 0.035 0.78 0.155 0.822
+\section{Storgruppsövning 21/9}
+
+\fbox{4.29} \quad Beräkna $\displaystyle\int_0^{2\pi} \frac{dt}{2 + \sin t}$ \qquad \textcolor{magenta!80!black}{\underline{Tips:} Använd substitutionen $z = e^{it}$}
+
+\textbf{Lösning:} $\sin t = \dfrac{e^{it} - e^{-it}}{2i} = \dfrac{z - \frac{1}{z}}{2i} \Rightarrow 2 + \sin t = \dfrac{4i + z \rattat{-}{+} \frac{1}{z}}{2i}$
+\[ dz = d(e^{it}) = ie^{it}\,dt = iz\,dt \Rightarrow dt = \frac{-i\,dz}{z} \Rightarrow \frac{dt}{2 + \sin t} = \frac{-i\frac{dz}{z}}{\frac{4i + z - \frac{1}{z}}{2i}} = \frac{2\,dz}{z^2 + 4iz - 1} \]
+\[ = \frac{2\,dz}{(z - z_0)(z - z_1)}, \quad \begin{array}{l} z_0 = -i(2 + \sqrt{3}) \\ z_1 = -i(2 - \sqrt{3}) \end{array} \]
+\notefigure{fig1}{}
+\[ \int_0^{2\pi} \frac{dt}{2 + \sin t} = \int_{|z| = 1} \frac{2\,dz}{(z - z_0)(z - z_1)} \overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} 2\pi i \left( \frac{2}{z - z_0} \right)_{z = z_1} = \frac{2\pi i \cdot 2}{z_1 - z_0} = \frac{2\pi}{\sqrt{3}} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{5.1d} \quad $\square$ kurva som parametriserar positivt fyrkanten med hörn i punkterna $\pm 4 \pm 4i$. Bestäm $\displaystyle\int_\square \frac{e^z \cos z}{(z - \pi)^3}\,dz$
+
+\textbf{Lösning:}
+\notefigure{fig2}{}
+$e^z \cos z$ hel, $\square$ går runt $\pi$
+\[ \Rightarrow \int_\square \frac{e^z \cos z}{(z - \pi)^3}\,dz \overset{\textcolor{magenta!80!black}{\text{CIF för der.}}}{=} \frac{2\pi i}{2!}(e^z \cos z)''_{z = \pi} = \left[ (e^z \cos z)'' = -2e^z \sin z \right] = \pi i(-2e^\pi \sin \pi) = 0 \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{5.3i} \quad Beräkna $\displaystyle\int_{|z| = 3} \frac{e^{2z}}{(z - 1)^2(z - 2)}$
+
+\textbf{Lösning:}
+\notefigure{fig3}{}
+\[ \int_{|z| = 3} \frac{e^{2z}\,dz}{(z - 1)^2(z - 2)} = \int_{\gamma_1} \frac{\frac{e^{2z}}{(z - 1)^2}\,dz}{(z - 2)} + \int_{\gamma_2} \frac{\frac{e^{2z}}{(z - 2)}\,dz}{(z - 1)^2} \overset{\textcolor{red!70!black}{\text{CIF}}}{=} 2\pi i \left( \frac{e^{2z}}{(z - 1)^2} \right)_{z = 2} + 2\pi i \left( \frac{e^{2z}}{z - 2} \right)'_{z = 1} \]
+\textcolor{magenta!80!black}{(inringat: våra $f(z)$)}
+\[ = \dots = 2\pi i \cdot e^2(e^2 - 3) \qquad \textcolor{blue!60!black}{\underline{\text{Tips:}} \ 2\pi i \frac{f^{(k)}(w)}{k!} = \int_\gamma \frac{f(z)}{(z - w)^{k+1}}\,dz} \]

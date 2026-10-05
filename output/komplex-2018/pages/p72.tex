@@ -1,0 +1,30 @@
+% language: swedish
+% figure: fig1 0.72 0.33 0.89 0.378
+% figure: fig2 0.715 0.66 0.83 0.74
+\fbox{8.35} \quad \textcircled{a} Hitta LSU för $\dfrac{1}{(z^2 - 4)(z - 2)}$ centrerad i $2$, giltig i $D(2, 4)^\times$.
+
+\textbf{Lösning:} $z^2 - 4 = (z - 2)(z + 2)$ \quad $\dfrac{1}{(z^2 - 4)(z - 2)} = \dfrac{1}{(z + 2)(z - 2)^2}$ \quad $\left\{ \begin{array}{l} w = z - 2 \\ z = w + 2 \end{array} \right\}$
+\[ \frac{1}{z + 2} = \frac{1}{w + 4} = \frac{1}{4} \frac{1}{1 - (-w/4)} \overset{|w| < 4}{=} \frac{1}{4} \sum_0^\infty (-w/4)^k = \sum_0^\infty \frac{(-1)^k}{4^{k+1}} w^k = \]
+\[ = \sum_0^\infty \frac{(-1)^k}{4^{k+1}} (z - 2)^k. \quad \frac{1}{(z + 2)(z - 2)^2} = \sum_0^\infty \frac{(-1)^k}{4^{k+1}} (z - 2)^{k-2} = \sum_{-2}^\infty \frac{(-1)^k}{4^{k+3}} (z - 2)^k \]
+
+\textcircled{b} Beräkna $\displaystyle\int_{|z - 2| = 1} \frac{dz}{(z^2 - 4)(z - 2)}$
+
+\textbf{Lösning:} $\dfrac{1}{(z^2 - 4)(z - 2)}$ holomorf i $\mathbb{C} \setminus \{2, -2\}$
+\notefigure{fig1}{}
+\textcolor{magenta!80!black}{2 enda sing.\ i inre av kurva.}
+\[ \operatorname{Res}_2\left( \frac{1}{(z^2 - 4)(z - 2)} \right) \overset{\text{enligt a)}}{=} \frac{(-1)^{-1}}{4^{-1+3}} = -\frac{1}{16} \]
+\[ \int_{|z - 2| = 1} \frac{dz}{(z^2 - 4)(z - 2)} \underset{\text{Residysatsen}}{=} 2\pi i \cdot \operatorname{Res}_2\left( \frac{1}{(z^2 - 4)(z - 2)} \right) = -\frac{\pi i}{8} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{8.36} \quad \textcircled{a} Hitta Taylorutv.\ av $e^z$ centrerad i $-1$.
+
+\textbf{Lösning:} $e^z = e^{z + 1 - 1} = e^{-1}e^{z + 1} = e^{-1} \displaystyle\sum_0^\infty \frac{(z + 1)^k}{k!} = \sum_0^\infty \frac{e^{-1}}{k!} (z + 1)^k$
+
+\textcircled{b} Beräkna $\displaystyle\int_{|z + 2| = 2} \frac{e^z}{(z + 1)^{34}}\,dz$
+\notefigure{fig2}{}
+Den singulära punkten $-1$ ligger i inre av kurvan
+
+\textbf{Lösning:} $f(z) = \dfrac{e^z}{(z + 1)^{34}}$ holomorf i $\mathbb{C} \setminus \{-1\}$
+\[ \frac{e^z}{(z + 1)^{34}} = \sum_0^\infty \frac{e^{-1}}{k!} (z + 1)^{k - 34} \Rightarrow \operatorname{Res}_{-1} f = \frac{e^{-1}}{33!} \]
+\[ \int_{|z + 2| = 2} \frac{e^z}{(z + 1)^{34}} \underset{\text{enligt residysatsen}}{=} 2\pi i \operatorname{Res}_{-1} f = \frac{2\pi i e^{-1}}{33!} \]

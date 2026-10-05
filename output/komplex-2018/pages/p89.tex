@@ -1,0 +1,32 @@
+% language: swedish
+% figure: fig1 0.44 0.398 0.55 0.44
+\begin{theorem}[Egenskaper hos LT (prop.\ 3.3F)]
+\begin{enumerate}[label=\textcircled{\alph*}]
+  \item $\widetilde{af + bg} = a\tilde{f} + b\tilde{g}$
+  \item $\widetilde{f'} = s\tilde{f} - f(0)$
+  \item $\widetilde{f^{(n)}} = s^n\tilde{f} - s^{n-1}f(0) - \dots - f^{(n-1)}(0)$
+  \item $\rattat{\widetilde{e^{ct}f} = \tilde{f}(s - c)}{\widetilde{e^{ct}f(s)} = \hat{f}(s - c)}$
+  \item $\widetilde{f_a} = e^{-as}\tilde{f}$, \ $f_a(t) = \begin{cases} f(t - a), & t \ge a \\ 0, & 0 \le t \le a \end{cases}$
+  \item $\widetilde{tf} = -\tilde{f}'$
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+\begin{itemize}
+  \item $\tilde{1}(s) = \displaystyle\int_0^\infty 1e^{-st}\,dt = \left[ \frac{-e^{-st}}{s} \right]_0^\infty = [\operatorname{Re} s > 0] = \frac{1}{s}$
+  \item $\tilde{t} = \widetilde{t \cdot 1} \overset{\textcolor{magenta!80!black}{\text{räkneregel}}}{=} -(\tilde{1})' = -\left( \dfrac{1}{s} \right)' = \dfrac{1}{s^2}$
+  \item $\widetilde{e^{ct}} = \widetilde{e^{ct} \cdot 1} \overset{\textcolor{magenta!80!black}{d)}}{=} \dfrac{1}{s - c}$
+  \notefigure{fig1}{}
+  \item $\widetilde{\sin ct} = \widetilde{\dfrac{e^{ict} - e^{-ict}}{2i}} = \dfrac{1}{2i}\left( \dfrac{1}{s - ic} - \dfrac{1}{s + ic} \right) = \dfrac{1}{2i}\left( \dfrac{2ic}{s^2 + c^2} \right) = \dfrac{c}{s^2 + c^2}$
+  \item $\widetilde{\cos ct} = \dots = \dfrac{s}{s^2 + c^2}$
+\end{itemize}
+\end{example}
+
+\begin{example}
+Lös diff.ekv.\ $(*)$: $u''(t) + u(t) = 0$, $t \ge 0$, med begynnelsevärden $u(0) = 1$, $u'(0) = 2$.
+
+\textbf{Lösning:} LT av $(*)$ ger: $s^2\tilde{u} - su(0) - u'(0) + \tilde{u} = 0 \Rightarrow$
+\[ \Rightarrow (s^2 + 1)\tilde{u} - s - 2 = 0 \Longrightarrow \tilde{u} = \frac{s + 2}{s^2 + 1} = \frac{s}{s^2 + 1} + 2\frac{1}{s^2 + 1} = \]
+\[ = \left[ \widetilde{\cos t} = \frac{s}{s^2 + 1},\ \widetilde{\sin t} = \frac{1}{s^2 + 1} \right] = \widetilde{\cos t + 2\sin t} \]
+$\overset{\textcolor{magenta!80!black}{\text{IF}}}{\Longrightarrow} u = \cos t + 2\sin t$
+\end{example}

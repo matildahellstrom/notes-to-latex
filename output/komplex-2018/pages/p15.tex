@@ -1,0 +1,36 @@
+% language: swedish
+% figure: fig1 0.03 0.584 0.485 0.677
+\begin{theorem}[Proposition 3.19]
+Om $\operatorname{Log} z$ är en gren av $\log z$ på $G$, då är $\operatorname{Log} z$ holomorf i $G$ och $\operatorname{Log}'(z) = \dfrac{1}{z}$.
+\end{theorem}
+\begin{proof}
+Räknelag för komplex derivata \textcolor{magenta!80!black}{(prop 2.12)} säger att om $f$ holomorf, $f' \neq 0$, $g$ kontinuerlig funktion s.a.\ $f(g(z)) = z$, då $g$ holomorf och $g'(z) = \dfrac{1}{f'(g(z))}$
+
+I vårt fall: $f(z) = e^z$, $g(z) = \mathcal{L}og\, z$
+
+\textcolor{red!70!black}{$\Rightarrow$} $\mathcal{L}og\, z$ är holomorf och $\mathcal{L}og'(z) = \dfrac{1}{e^{\mathcal{L}og\, z}} = \dfrac{1}{z}$
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{definition}
+$a^b = e^{b \log a}$ \quad $(a, b \in \mathbb{C})$
+\end{definition}
+
+\textbf{Övning 3.50:} Visa att $z^c$, $c \in \mathbb{C} \setminus \{0\}$, är holomorf i $\mathbb{C} \setminus \mathbb{R}_{\le 0}$ och att $(z^c)' = cz^{c-1}$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Konforma avbildningar}
+\begin{definition}
+En funktion $f : G \to \mathbb{C}$ är \emph{konform} om den bevarar vinkeln mellan glatta kurvor i $G$.
+\notefigure{fig1}{}
+\end{definition}
+
+\begin{theorem}[Proposition 2.11]
+Om $f$ holomorf, $f' \neq 0$ då är $f$ konform.
+\end{theorem}
+
+\textbf{Lemma:} Om $f$ holomorf och $\gamma$ glatt kurva, då är $(f \circ \gamma)'(t) = f'(\gamma(t)) \cdot \gamma'(t)$
+
+\hfill \textcolor{red!70!black}{\underline{Bevis av Lemma}} $\rightarrow$

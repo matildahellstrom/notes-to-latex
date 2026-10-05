@@ -1,0 +1,8 @@
+% language: swedish
+\[ = \frac{1}{(s + 1)((s - 1)^2 + 4)} + \frac{s - 1}{(s - 1)^2 + 4} + \frac{1}{(s - 1)^2 + 4}. \]
+\[ \text{PBU ger } \frac{1}{(s + 1)((s - 1)^2 + 4)} = \frac{1}{8} \frac{1}{s + 1} - \frac{1}{8} \frac{s - 1}{(s - 1)^2 + 4} + \frac{1}{4} \frac{1}{(s - 1)^2 + 4} \]
+\[ \Longrightarrow \hat{y} = \frac{1}{8} \frac{1}{s + 1} + \frac{7}{8} \frac{s - 1}{(s - 1)^2 + 4} + \frac{5}{4} \frac{1}{(s - 1)^2 + 4} \]
+\[ \frac{1}{s + 1} = \widetilde{e^{-t}}, \quad \frac{s}{s^2 + 4} = \widetilde{\cos 2t}, \quad \frac{s - 1}{(s - 1)^2 + 4} = \widetilde{e^t \cos 2t} \]
+\[ \frac{2}{s^2 + 4} = \widetilde{\sin 2t}, \quad \frac{1}{(s - 1)^2 + 4} = \frac{1}{2}\widetilde{e^t \sin 2t} \]
+\[ \Longrightarrow \hat{y} = \widetilde{\left( \frac{1}{8}e^{-t} + \frac{7}{8}e^t \cos 2t + \frac{5}{8}e^t \sin 2t \right)} \]
+\[ \underset{\textcolor{red!70!black}{\text{formel}}}{\overset{\textcolor{red!70!black}{\text{inv}}}{\Longrightarrow}} y = \frac{1}{8}e^{-t} + \frac{7}{8}e^{\rattat{t}{-t}} \cos 2t + \frac{5}{8}e^t \sin 2t \]

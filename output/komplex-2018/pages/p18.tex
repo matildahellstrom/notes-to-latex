@@ -1,0 +1,39 @@
+% language: swedish
+% figure: fig1 0.025 0.171 0.142 0.25
+% figure: fig2 0.06 0.315 0.128 0.348
+\section{Föreläsning 11/9}
+
+\subsection{Utrikning: Stereografiska projektionen}
+sfären $S^2 = \{(x, y, t) \in \mathbb{R}^3 : x^2 + y^2 + t^2 = 1\}$
+\notefigure{fig1}{}
+$N = (0, 0, 1)$ \quad Givet $p \in S^2 \setminus \{N\}$. Låt $L_p$ vara linjära genom $N$ och $p$, $\varphi(p) =$ skärning med $xy$-planet $\cong \mathbb{C}$
+
+Definiera också $\varphi(N) = \infty$ får bijektionen $\varphi : S^2 \to \hat{\mathbb{C}}$ kallas den \emph{stereografiska projektionen}
+\notefigure{fig2}{}
+$\hat{\mathbb{C}}$ kallas ofta för \emph{Riemannsfären}.
+
+\subsection{Fortsättning Mavb}
+\begin{theorem}[Kor 3.13]
+Om $(z_1, z_2, z_3)$, $(w_1, w_2, w_3)$ två triplar av distinkta punkter i $\hat{\mathbb{C}}$, då $\exists!$ Mavb så att $z_1 \mapsto w_1$, $z_2 \mapsto w_2$, $z_3 \mapsto w_3$
+\end{theorem}
+\begin{proof}
+Notera $\dfrac{(z - z_1)(z_2 - z_3)}{(z - z_3)(z_2 - z_1)}$ avbildar $z_1 \mapsto 0$, $z_2 \mapsto 1$, $z_3 \mapsto \infty$
+\[ \text{Får } \left( \frac{(z - w_1)(w_2 - w_3)}{(z - w_3)(w_2 - w_1)} \right)^{-1} \circ \left( \frac{(z - z_1)(z_2 - z_3)}{(z - z_3)(z_2 - z_1)} \right) \qquad \begin{array}{l} z_1 \mapsto w_1 \\ z_2 \mapsto w_2 \\ z_3 \mapsto w_3 \end{array} \]
+\textcolor{magenta!80!black}{Att den är unik lämnas som övning}
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Sats 3.4]
+Mavb avbildar cirklar och linjer på cirklar eller linjer
+
+(cirkel kan gå på cirkel eller linje och tvärtom)
+\end{theorem}
+\begin{proof}
+$M = E_k \circ \dots \circ E_1$ \ \textcolor{magenta!80!black}{elementära Mavb}
+
+Räcker därför visa påståendet för elementära Mavb.
+
+Satsen gäller definitivt för skalningar och translationer, återstår fallet $E = \frac{1}{z}$. Låt $C = C(a, r) = \{|z - a|\}$. Vill visa $E(C)$ cirkel eller linje. \textcolor{magenta!80!black}{Fall med linje analogt}
+\[ E(C) = \Big\{ \Big| \underbrace{\frac{1}{z}}_{\textcolor{magenta!80!black}{E^{-1}(z)}} - a \Big| = r \Big\} \qquad \longrightarrow \]
+\end{proof}

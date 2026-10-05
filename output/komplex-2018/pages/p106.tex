@@ -1,0 +1,37 @@
+% language: swedish
+% figure: fig1 0.035 0.135 0.13 0.20
+% figure: fig2 0.55 0.135 0.77 0.19
+% figure: fig3 0.07 0.366 0.16 0.45
+\subsection{Tenta 2013 oktober uppg.\ 3b}
+Hur många nollställen har $z^5 - 5z + 3$ i högra halvplanet?
+
+\textbf{Lösning:}
+\notefigure{fig1}{}
+$\gamma_R(t) = Re^{it}$, $t \in [-\pi/2, \pi/2]$ \qquad $\sigma_R = \gamma_R \cup [iR, -iR]$
+\notefigure{fig2}{}
+
+\emph{$\operatorname{argvar}(\rattat{f}{\gamma} \circ \gamma_R)$}: \quad $f(Re^{it}) = R^5 e^{5it} - 5Re^{it} + 3 = R^5 e^{5it}\Big( 1 - \underbrace{\dfrac{5e^{-4it}}{R^4} + \dfrac{3e^{-5it}}{R^5}}_{\textcolor{magenta!80!black}{\text{litet}}} \Big)$
+\[ \Rightarrow \arg(f(Re^{it})) \approx 5t + 2\pi k \]
+\[ \Rightarrow \operatorname{argvar}(f \circ \gamma_R) \approx 5\pi \]
+\emph{$\operatorname{argvar}(f \circ [iR, -iR])$}: \quad $f(iy) = iy^5 - 5iy + 3 = 3 + i(y^5 - 5y)$
+\notefigure{fig3}{}
+$\operatorname{Re}(f(iy)) = 3$
+\[ f(iR) = 3 + i(R^5 - 5R) \Rightarrow \arg(f(iR)) \approx \pi/2 + 2\pi k_1 \]
+\[ f(-iR) = 3 + i(-R^5 + 5R) \Rightarrow \arg(f(-iR)) \approx -\pi/2 + 2\pi k_2 \]
+\begin{align*}
+  &\Rightarrow \text{Kurvan passerar } 0 \text{ till höger} \\
+  &\Rightarrow \operatorname{argvar}(f \circ [iR, -iR]) \approx -\pi \\
+  &\Rightarrow \operatorname{argvar}(f \circ \sigma_R) = \operatorname{argvar}(f \circ \gamma_R) + \operatorname{argvar}(f \circ [iR, -iR]) \approx 4\pi
+\end{align*}
+$\Rightarrow W(f \circ \sigma_R) = 2$ för $R \gg 1$
+
+$\overset{\textcolor{magenta!80!black}{\text{arg.\ princ}}}{\Longrightarrow} f$ har 2 nollställen i $\operatorname{int}(\sigma_R)$, $R \gg 1$
+
+$\Rightarrow f$ har 2 nollställen i högra halvplanet
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Föreläsning 24/10}
+\begin{theorem}[Rouchés sats (Sats 9.18)]
+Antag $f, g$ holomorf i $G$, $\gamma$ styckvis glatt sluten enkel nollhomotop kurva i $G$. Antag dessutom $|f| > |g|$ \emph{på $\gamma$}. Då har $f$ och $f + g$ lika många nollställen i $\operatorname{int}(\gamma)$
+\end{theorem}

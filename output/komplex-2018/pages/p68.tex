@@ -1,0 +1,35 @@
+% language: swedish
+\section{Räknestuga 5/10}
+
+\fbox{9.2} \quad Hitta polerna och deras ordning av \quad \textcircled{a} $(z^2 + 1)^{-3}(z - 1)^{-4}$ \quad \textcircled{b} $z \cot z = \dfrac{z \cos z}{\sin z}$ \quad \textcircled{d} $1/(1 - e^z)$ \quad \textcircled{e} $z/(1 - e^z)$
+
+\textcircled{a} $(z + i)^{-3}(z - i)^{-3}(z - 1)^{-4}$ \quad \emph{Polerna}: $\pm i$ ordning 3, $1$ ordning 4
+
+\textcircled{b} $\sin z = 0 \Leftrightarrow z = \rattat{\pi k}{\pi ik}$, $k \in \mathbb{Z}$, $k \neq 0 \Rightarrow z \cos z \neq 0$
+
+Vi vet att $\sin z = z - \dfrac{z^3}{3!} + \dfrac{z^5}{5!} - \dots = zg(z)$, $g(0) \neq 0$
+
+$\sin z$ har en pol av ordning 1 i $0$, men det ger att $\sin z$ har pol av ordning 1 i $\rattat{\pi k}{\pi ik}$. \emph{Polerna}: $\rattat{\pi k}{\pi ik}$, $k \neq 0$ av ordning 1
+
+\textcircled{d} $e^z = 1 \Leftrightarrow z = 2\pi ik$, $k \in \mathbb{Z}$
+
+$e^z = 1 + z + \dfrac{z^2}{2!} + \dots \Rightarrow 1 - e^z = -z - \dfrac{z^2}{2!} = zg(z)$, $g(0) \neq 0$ för någon funktion $g(z)$
+
+$\dfrac{1}{1 - e^z} = \dfrac{1}{zg(z)}$ \quad \emph{Polerna}: $2\pi ik$, \rattat{$k \in \mathbb{Z}$}{$k \neq 0$} av ordning 1.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{9.5} \quad För $\gamma = C[0, 3]$ beräkna \quad \textcircled{a} $\displaystyle\int_\gamma \cot z\,dz$ \quad \textcircled{c} $\displaystyle\int_\gamma \frac{dz}{(z + 4)(z^2 + 1)}$ \quad \textcircled{d} $\displaystyle\int_\gamma z^2 e^{1/z}\,dz$
+
+\textcircled{a} $\cot z = \dfrac{\cos z}{\sin z}$ har polen i $\rattat{\pi k}{\pi ik}$, så enbart i $0$ innanför $\gamma$, av ordning 1.
+\[ \operatorname{Res}_{\rattat{0}{\gamma}}(\cot z) = \lim_{z \to 0} \frac{z \cos z}{\sin z} \overset{\textcolor{magenta!80!black}{\text{l'Hospital}}}{=} \lim_{z \to 0} \frac{\cos z - z \sin z}{\cos z} = 1 \]
+Enligt Residysatsen fås $\displaystyle\int_\gamma \cot z\,dz = 2\pi i \operatorname{Res}_0(\cot z) = \underline{2\pi i}$
+
+\textcircled{c}
+\begin{align*}
+  \int \frac{dz}{(z + 4)(z^2 + 1)} &= 2\pi i\left( \operatorname{Res}_i\left( \frac{1}{(z + 4)(z^2 + 1)} \right) + \operatorname{Res}_{-i}\left( \frac{1}{(z + 4)(z^2 + 1)} \right) \right) = \\
+  &= 2\pi i\left( \left. \frac{\textcolor{red!70!black}{(z - i)}}{(z + 4)(z + i)\textcolor{red!70!black}{(z - i)}} \right|_{z = i} + \left. \frac{\textcolor{red!70!black}{(z + i)}}{(z + 4)\textcolor{red!70!black}{(z + i)}(z - i)} \right|_{z = -i} \right) = \\
+  &= 2\pi i\left( \frac{1}{2i(4 + i)} - \frac{1}{2i(4 - i)} \right) = \\
+  &= \pi\left( \frac{(4 - i)}{(4 + i)(4 - i)} - \frac{(4 + i)}{(4 - i)(4 + i)} \right) = \frac{\pi}{17} \cdot (-2i) = -\frac{2\pi i}{17}
+\end{align*}
+\hfill $\to$ \textcircled{d}

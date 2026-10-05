@@ -1,0 +1,28 @@
+% language: swedish
+% figure: fig1 0.012 0.145 0.152 0.25
+% figure: fig2 0.62 0.267 0.705 0.363
+\begin{theorem}[Kor 5.8]
+Om $f$ holomorf i $G$, $G$ enkelt sammanhängande, då finns primitiv $F$ till $f$ i $G$.
+\end{theorem}
+\begin{proof}
+\notefigure{fig1}{}
+Tag $w_0 \in G$. Givet $w \in G$, välj styckvis glatt kurva $\gamma_w$ från $w_0$ till $w$, låt $F(w) = \displaystyle\int_{\gamma_w} f\,dz$ \ om $\tilde{\gamma}_w$ sådan kurva är $\gamma_w \cup (-\tilde{\gamma}_w)$ sluten dvs.\ nollhomotop då $G$ antas enkelt sammanhängande
+\[ \Rightarrow \int_{\gamma_w} f\,dz - \int_{\tilde{\gamma}_w} f\,dz = \int_{\gamma_w \cup (-\tilde{\gamma}_w)} f\,ds \overset{\textcolor{magenta!80!black}{\text{CS}}}{=} 0 \]
+\notefigure{fig2}{}
+Låt $\gamma_h(t) = w + th$, $t \in [0, 1]$
+
+Får $F(w + h) = \displaystyle\int_{\gamma_w \cup \gamma_h} f\,dz = F(w) + \int_{\gamma_h} f\,dz$
+\[ \Rightarrow \frac{F(w + h) - F(w)}{h} = \frac{\int_{\gamma_h} f\,dz}{h} = \frac{\int_0^1 f(w + th)\textcolor{red!70!black}{h}\,dt}{\textcolor{red!70!black}{h}} = \int_0^1 f(w + th)\,dt \xrightarrow[h \to 0]{} f(w) \]
+ty $f$ kontinuerlig $= F$ primitiv till $f$.
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Moreras sats (Kor 5.6)]
+Om $f : G \to \mathbb{C}$ kontinuerlig och $\displaystyle\int_\gamma f\,dz = 0$ $\forall$ slutna styckvis glatta kurvor $\gamma$ i $G$, då är $f$ holomorf i $G$
+\end{theorem}
+\begin{proof}
+Välj $w_0 \in G$, definiera $F$ som i \emph{beviset av kor 5.8} \textcolor{red!70!black}{($\uparrow$)}
+
+pga.\ antagandet beror $F(w)$ ej på val av kurva. Som i bevis av kor 5.8 får vi att $F' = f \Rightarrow F$ holomorf, enligt sats $F^{(k)}$ holomorf för alla $k \in \mathbb{N}$ så speciellt $f$ holomorf i $G$.
+\end{proof}

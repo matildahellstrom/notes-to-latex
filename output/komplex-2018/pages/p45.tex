@@ -1,0 +1,33 @@
+% language: swedish
+% figure: fig1 0.755 0.26 0.975 0.385
+% figure: fig2 0.053 0.493 0.235 0.562
+\begin{proof}
+Antag $\exists w \in G : u(w) = \sup_{z \in G} u(z)$.
+
+Vill visa $u \equiv u(w)$ i $G$.
+\[ \left\{ \begin{array}{l} \textbf{Steg 1:} \text{ Visar att om } \overline{D}(w, R) \subseteq G \Rightarrow u \equiv u(w) \text{ i } \overline{D}(w, R) \\ \textbf{Steg 2:} \text{ Visar } u \equiv u(w) \text{ i hela } G. \end{array} \right. \]
+
+\textcolor{red!70!black}{\textbf{Steg 1:}} Antag $\overline{D}(w, R) \subseteq G$. Välj $0 < r \le R$. Enligt medelvärdessatsen $u(w) = \dfrac{1}{2\pi} \displaystyle\int_0^{2\pi} u(w + re^{it})\,dt$. Om $u(w + re^{it}) < u(w)$ för $t_0 \in [0, 2\pi]$ då
+\notefigure{fig1}{}
+\[ \underset{\textcolor{magenta!80!black}{u \text{ kont.}}}{\Rightarrow} u(w + re^{it}) \le u(w) - \varepsilon \text{ för } t \in [a, b],\ b > a,\ \varepsilon > 0. \]
+\[ \Rightarrow u(w) = \frac{1}{2\pi} \int_0^{2\pi} u(w + re^{it})\,dt \le \frac{1}{2\pi}\left( \int_a^b u(w) - \varepsilon\,dt + \underbrace{\int u(w)\,dt}_{\text{resten}} \right) = \]
+\[ = u(w) - \frac{\varepsilon(b - a)}{2\pi} \quad \textcolor{red!70!black}{\underline{\text{Motsägelse!}}} \]
+$\Rightarrow u \equiv u(w)$ i $\overline{D}(w, R)$.
+
+\textcolor{red!70!black}{\textbf{Steg 2:}} \quad överkursövning visa steg 2 rigoröst.
+\notefigure{fig2}{}
+\textcolor{magenta!80!black}{$\leftarrow$ om man tar en punkt i randen och sätter det som en ny cirkels mittpunkt, så kan man täcka hela området med cirklar.}
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Svaga maximumprincipen]
+Om $u$ harmonisk på begränsat område, $u$ kontinuerlig på $\overline{G} = G \cup \partial G$, då antar $u$ sitt max på $\partial G$.
+\end{theorem}
+\begin{proof}
+$G$ begränsad $\Rightarrow \overline{G}$ kompakt $u$ kontinuerlig på $\overline{G}$
+
+$\underset{\textcolor{magenta!80!black}{\text{Sats A.1}}}{\Rightarrow} u$ antar max på $\overline{G}$. Om $u$ antar max i $G \underset{\textcolor{magenta!80!black}{\text{max prin.}}}{\Rightarrow} u$ konstant i $G$.
+
+$\underset{\textcolor{magenta!80!black}{u \text{ kont.}}}{\Rightarrow} u$ konstant på $\overline{G} \Rightarrow$ speciellt antar $u$ max på $\partial G$.
+\end{proof}

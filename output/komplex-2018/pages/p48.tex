@@ -1,0 +1,43 @@
+% language: swedish
+% figure: fig1 0.83 0.365 0.915 0.43
+\begin{proof}
+a) \quad $\displaystyle\left| \int_\gamma f_n\,dz - \int_\gamma f\,dz \right| = \left| \int_\gamma (f_n - f)\,dz \right| \underset{\textcolor{magenta!80!black}{\Delta \text{ olik} \int}}{\le} \max_{z \in \gamma} |f_n(z) - f(z)| \cdot |\gamma| \xrightarrow[n \to \infty]{} 0$
+
+b) \quad $\displaystyle\int_\gamma \sum_1^\infty f_k\,dz = \lim_{n \to \infty} \int_\gamma \sum_1^n f_k\,dz = \lim_{n \to \infty} \sum_1^n \int_\gamma f_k\,dz = \sum_1^\infty \int_\gamma f_k\,dz$
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Potensserier}
+En funktionsserie på formen $\sum_0^\infty c_k(z - z_0)^k$, $c_k \in \mathbb{C}$, $z_0 \in \mathbb{C}$ kallas potensserie (centrerad i $z_0$).
+
+\begin{theorem}[Sats 7.31]
+Varje potensserie $\sum_0^\infty c_k(z - z_0)^k$ har en konvergensradie $R \in [0, \infty]$ s.a.
+\notefigure{fig1}{}
+\begin{enumerate}[label=\textcolor{red!70!black}{\roman*)}]
+  \item serien konvergerar absolut på $D(z_0, R)$. ($\mathbb{C}$ om $R = \infty$)
+  \item serien konvergerar likformigt på $\overline{D}(z_0, r)$, $r < R$
+  \item serien divergerar utanför $\overline{D}(z_0, R)$.
+\end{enumerate}
+\end{theorem}
+
+\textbf{Konvergenskriterier:}
+
+\emph{Kvotkriteriet}: om $\dfrac{|c_{k+1}|}{|c_k|} \xrightarrow{\textcolor{magenta!80!black}{k \to \infty}} C$, då $R = \dfrac{1}{C}$ \ ($R = \infty$ om $C = 0$, $R = 0$ om $C = \infty$)
+
+\emph{Rotkriteriet}: Om $|c_k|^{1/k} \to C$, då $R = 1/C$. Generellt är $R = \dfrac{1}{C}$ där $C = \displaystyle\limsup_{k \to \infty} |c_k|^{1/k}$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Bestäm konvergensradien för $\displaystyle\sum_0^\infty \frac{z^k}{k!}$
+
+\textbf{Lösning:} $c_k = \dfrac{1}{k!}$, \ $\dfrac{|c_{k+1}|}{|c_k|} = \dfrac{k!}{(k + 1)!} = \dfrac{1}{k + 1} \xrightarrow[\textcolor{magenta!80!black}{k \to \infty}]{\textcolor{magenta!80!black}{\text{kvot krit.}}} 0 \Rightarrow R = \infty$
+\end{example}
+
+\begin{example}
+Bestäm konvergensradien för $\displaystyle\sum_0^\infty \frac{i^k z^{2k}}{3^k}$
+
+\textbf{Lösning:} $c_{2k} = \dfrac{i^k}{3^k}$, $c_{2k+1} = 0$ \quad \textcolor{magenta!80!black}{\fbox{\parbox{0.38\linewidth}{Koefficienten $c_{2k+1}$ finns ej pga $z$ endast innehåller jämna potenser}}}
+\[ \limsup_{k \to \infty} |c_k|^{1/k} = \limsup_{k \to \infty} |c_{2k}|^{1/2k} = \limsup_{k \to \infty} \left( \frac{1}{3^k} \right)^{1/2k} = \frac{1}{\sqrt{3}} \Longrightarrow R = \sqrt{3} \]
+\end{example}

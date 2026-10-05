@@ -1,0 +1,34 @@
+% language: swedish
+\fbox{7.33} \quad Hitta konvergensradien för $\displaystyle\sum_{k = 0}^\infty z^{k!}$
+
+\textcolor{blue!60!black}{Skriver ut serien:} \ $1 + z + z^2 + z^6 + z^{24} + \dots$
+
+Alltså: $c_0 = 1$, $c_1 = 1$, $c_2 = 1$, $c_3 = 0$, $c_4 = 0$, $c_5 = 0$, $c_6 = 1$
+
+För att använda rot/kvotkriteriet måste $\displaystyle\lim_{k \to \infty} \sqrt[k]{|c_k|}$ existera
+
+Det gör den inte! \textcolor{blue!60!black}{Hade kunnat använda limsup.}
+
+Om $|z| < 1$, $|z| = r < 1$
+\[ \sum_{k = 0}^\infty |z|^{k!} = \sum_{k = 0}^\infty r^{k!} < \sum_{k = 0}^\infty r^k = \frac{1}{1 - r} < \infty \]
+\textcolor{blue!60!black}{Absolutkonvergent $\to$ radien är åtminstone 1}
+
+om $|z| > 1$, $|z| = 1 + \varepsilon$, $\varepsilon > 0 \Rightarrow \displaystyle\sum_{k = 0}^\infty |z|^{k!} = \sum_{k = 0}^\infty (1 + \varepsilon)^{k!} \overset{\textcolor{magenta!80!black}{\text{övning}}}{=} \infty$
+
+\textcolor{blue!60!black}{Divergent} $\Rightarrow R = 1$ \ \textcolor{blue!60!black}{Definition av konvergensradien.}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{8.17} \quad Hitta Laurentserien för $f(z) = \dfrac{1}{(z - 1)(z + 1)}$ centrerad vid $z = 1$
+\[ f(z) = \frac{1}{(z - 1)(z + 1)} = \underbrace{\frac{1}{z - 1}}_{\textcolor{magenta!80!black}{\text{redan centrerad}}} \cdot \underbrace{\frac{1}{2 + (z - 1)}}_{\textcolor{magenta!80!black}{\text{för att centrera}}} = \frac{1}{2} \frac{1}{z - 1} \frac{1}{1 - \left( \frac{1 - z}{2} \right)} = \frac{1}{2} \frac{1}{z - 1} \sum_0^\infty \left( \frac{1 - z}{2} \right)^n = \]
+\[ = \frac{1}{2} \frac{1}{z - 1} \sum_{n = 0}^\infty \frac{(-1)^n}{2^n}(z - 1)^n = \sum_{n = 0}^\infty \frac{(-1)^n}{2^{n+1}}(z - 1)^{n-1} = \underbrace{\sum_{n = \rattat{-1}{1}}^\infty \frac{(-1)^{n+1}}{2^{n+2}}(z - 1)^n}_{\textcolor{magenta!80!black}{\text{användbart om man t.ex.\ vill beräkna integralen av detta.}}} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{8.19} \quad Hitta Laurentserien för $\dfrac{z - 2}{z + 1}$ runt $z = -1$
+\[ f(z) = \frac{1}{z + 1}(-3 + (z + 1)) = \underbrace{-3(z + 1)^{-1}}_{\textcolor{magenta!80!black}{\text{uppfyllt}}} + 1(z + 1) \qquad \textcolor{blue!60!black}{\text{endast två termer i summan}} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{8.23} \quad Visa att $\dfrac{z - 1}{z - 2} = \displaystyle\sum_{k = 0}^\infty \frac{1}{(z - 1)^k}$, \ $|z - 1| > 1$
+\[ \sum_{k = 0}^\infty \left( \frac{1}{z - 1} \right)^k \underset{\left| \frac{1}{z - 1} \right| < 1}{=} \frac{1}{1 - \frac{1}{z - 1}} = \frac{1}{\frac{z - 1}{z - 1} - \frac{1}{z - 1}} = \frac{1}{\left( \frac{z - 2}{z - 1} \right)} = \frac{z - 1}{z - 2} \]

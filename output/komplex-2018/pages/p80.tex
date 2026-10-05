@@ -1,0 +1,30 @@
+% language: swedish
+% figure: fig1 0.03 0.585 0.14 0.638
+\begin{theorem}[Rouchés sats (Sats 9.18)]
+\hfill \textcolor{magenta!80!black}{Bevislista}
+
+Antag $f, g$ holomorf i $G$, $\gamma$ styckvis glatt, sluten enkel nollhomotop positivt orienterad kurva i $G$, $|f(z)| > |g(z)|$ \emph{på $\gamma$}. Då har $f$ och $f + g$ lika många nollställen i $\operatorname{int}(\gamma)$.
+\end{theorem}
+\begin{proof}
+\emph{Notera}: $(f + sg) \circ \gamma$, $s \in [0, 1]$ är homotopi mellan $f \circ \gamma$ och $(f + g) \circ \gamma$ i $\mathbb{C}$.
+\[ |f(\gamma(t))| > |g(\gamma(t))| \Rightarrow |f(\gamma(t)) + sg(\gamma(t))| \underset{\textcolor{magenta!80!black}{\text{omv } \Delta \text{ olik.}}}{\ge} |f(\gamma(t))| - s|g(\gamma(t))| \ge |f(\gamma(t))| - |g(\gamma(t))| > 0 \]
+\[ \Longrightarrow f + sg \neq 0 \text{ på } \gamma \qquad \Longrightarrow f \circ \rattat{\gamma}{g} \sim_{\mathbb{C} \setminus \{0\}} (f + g) \circ \gamma \]
+\[ \text{Får } W((f + g) \circ \gamma) = \frac{1}{2\pi i} \int_{(f + g) \circ \gamma} \frac{1}{z}\,dz = \left[ \frac{1}{z} \text{ holomorf i } \mathbb{C} \setminus \{0\} \right] \overset{\textcolor{magenta!80!black}{\text{CS}}}{=} \frac{1}{2\pi i} \int_{f \circ \gamma} \frac{1}{z}\,dz = \]
+\[ = W(f \circ \gamma) \underset{\textcolor{magenta!80!black}{\text{princ.}}}{\overset{\textcolor{magenta!80!black}{\text{Arg}}}{\Longrightarrow}} N(f, \gamma) = N(f + g, \gamma) \]
+\end{proof}
+
+\textcolor{magenta!80!black}{Alternativ till Argumentprincipen för att hitta nollställen}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Bestäm antalet nollställen till $3z^3 + e^{iz} - 1$ i $D(0, 2)$
+
+\textbf{Lösning:} Sätt $f(z) = 3z^3$, $g(z) = e^{iz} - 1$, dvs.\ $f + g = 3z^3 + e^{iz} - 1$
+
+$f$ har 3 nollställen i $D(0, 2)$.
+\notefigure{fig1}{}
+\[ |f(z)| = |3z^3| = 3|z^3| = 24 \text{ på } C(0, 2) \]
+\[ |g(z)| = |e^{iz} - 1| \underset{\textcolor{magenta!80!black}{\Delta \text{ olik}}}{\le} |e^{iz}| + 1 = e^{-y} + 1 \le [y \ge -2 \text{ på } C(0, 2)] \le e^2 + 1 < 10 \text{ på } C(0, 2) \]
+$\Rightarrow |f| > |g|$ på $C(0, 2) \overset{\textcolor{magenta!80!black}{\text{Rouché}}}{\Longrightarrow} f$ och $f + g$ har lika många nollställen i $\operatorname{int}(C(0, 2)) = D(0, 2)$ dvs.\ $f + g$ har 3 nollställen i $D(0, 2)$
+\end{example}

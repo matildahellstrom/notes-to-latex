@@ -1,0 +1,30 @@
+# Better fronts for automatically generated cards: p<page>: <automatic front> => <new front>
+p4: Definiera: $G$ => Definiera: (parametriserad) kurva i $G$
+p5: Definiera: $G \subseteq \mathbb{C}$ => Definiera: komplex funktion
+p5: Definiera: $\displaystyle\lim_{z \to z_0} f(z)$ => Definiera: gränsvärdet $\lim_{z \to z_0} f(z) = w$
+p6: Definiera: $f : G \to \mathbb{C}$ => Definiera: kontinuitet i $z_0$
+p11: Definiera: kontinuerlig, gren => Definiera: gren av logaritmen $\log z$
+p14: Definiera: kontinuerlig, gren => Definiera: gren av $\log z$ och principala grenen $\operatorname{Log} z$
+p21: Definiera: $\gamma : [a, b] \to \mathbb{C}$ => Definiera: den omvända kurvan $-\gamma$
+p21: Definiera: Konkatenation => Definiera: konkatenation $\gamma_1 \cup \gamma_2$
+p21: Definiera: $|\gamma|$ => Definiera: längden $|\gamma|$ av en kurva
+p22: Definiera: sluten => Definiera: sluten kurva
+p37: Definiera: enkelt sammanhängande, exempel => Definiera: enkelt sammanhängande område
+p40: Definiera: $u$ => Definiera: harmoniskt konjugat
+p47: Definiera: $f_n$ => Definiera: likformig konvergens (följder och serier)
+p64: Definiera: $D(z_0, R)^\times$, residy => Definiera: residy $\operatorname{Res}_{z_0} f$
+p64: Definiera: enkel => Definiera: enkel sluten kurva
+p81: Definiera: $f : \mathbb{R} \to \mathbb{C}$ => Definiera: $L^1$
+p81: Definiera: $f \in L^1$ => Definiera: Fouriertransform
+p87: Definiera: $f, g : \mathbb{R} \to \mathbb{C}$ => Definiera: faltning på $\mathbb{R}$
+p88: Definiera: $f : [0, \infty) \to \mathbb{C}$ => Definiera: Laplacetransform
+p90: Definiera: $f, g : [0, \infty) \to \mathbb{C}$ => Definiera: faltning på $[0, \infty)$
+p91: Definiera: $\alpha$ => Definiera: Z-transform
+p2: Definiera: $e^{i\theta}$ => Definiera: $e^{i\theta}$ (Eulers formel)
+p15: Definiera: $a^b$ => Definiera: $a^b$ för komplexa $a, b$
+p25: Definiera: $a^b$ => Definiera: $a^b$ (exempel $i^i$)
+p78: Definiera: $\operatorname{argvar}(\gamma)$ => Definiera: argumentvariationen $\operatorname{argvar}(\gamma)$
+p5: Formulera satsen (25 PB, ej i Adams) (sida 5) => Vad gäller om $\nabla f = 0$ i en domän?
+p7: Formulera satsen (2.13) (sida 7) => Vad säger Cauchy-Riemanns ekvationer (Sats 2.13)?
+p8: Formulera satsen (2.3 PB, 12.64 Ad) (sida 8) => Vad betyder det att $f \in C^1$ är differentierbar (2.3 PB)?
+p9: Formulera satsen 2.17 (sida 9) => Vad gäller om $f' \equiv 0$ i ett område (Sats 2.17)?

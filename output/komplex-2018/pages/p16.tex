@@ -1,0 +1,37 @@
+% language: swedish
+\begin{proof}[Bevis av Lemma]
+Enligt kedjeregeln från flervariabeln
+\begin{align*}
+  (f \circ \gamma)'(t) &= \frac{df}{dx}(\gamma(t))(\gamma'(t))_x + \frac{df}{dy}(\gamma(t))(\gamma'(t))_y = \\
+  &= \frac{df}{dx}(\gamma(t)) \operatorname{Re}(\gamma'(t)) + i\frac{df}{dx}(\gamma(t)) \operatorname{Im}(\gamma'(t)) = \\
+  &= f'(\gamma(t)) \cdot \gamma'(t). \qquad \textcolor{magenta!80!black}{\leftarrow \text{svarar mot } h \text{ reellt i def.}}
+\end{align*}
+\textcolor{red!70!black}{obs!} om $f$ holomorf, $f' = \dfrac{df}{dx}$
+\end{proof}
+
+\begin{proof}[Bevis av Proposition 2.11]
+Låt $\gamma_1(t)$, $\gamma_2(t)$ vara glatta kurvor som möts i $a = \gamma_1(0) = \gamma_2(0)$, vi antar också $\gamma_1'(0) \neq 0$, $\gamma_2'(0) \neq 0$. Vinkeln mellan $\gamma_1, \gamma_2$ ges då av $\varphi = \arg(\gamma_2'(0)) - \arg(\gamma_1'(0))$ medan vinkeln mellan $f \circ \gamma_1$, $f \circ \gamma_2$ blir $\psi = \arg((f \circ \gamma_2)'(0)) - \arg((f \circ \gamma_1)'(0))$
+
+Men enligt lemmat är $(f \circ \gamma_i)'(0) = f'(a) \cdot \gamma_i'(0)$, $i = 1, 2$
+\begin{align*}
+  \Rightarrow \psi &= \arg(f'(a)\gamma_2'(0)) - \arg(f'(a)\gamma_1'(0)) = \\
+  &= \arg(f'(a)) + \arg(\gamma_2'(0)) - \arg(f'(a)) - \arg(\gamma_1'(0)) = \varphi
+\end{align*}
+\end{proof}
+
+\begin{note}
+Om $\gamma_1, \gamma_2$ skär varandra i vinkeln $\varphi$ i $0$, $f = z^2$, vad händer med vinkeln mellan $f \circ \gamma_1$, $f \circ \gamma_2$?
+\end{note}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Möbiusavbildningar}
+$M(z) = \dfrac{az + b}{cz + d}$ kallas Möbiusavbildning \textcolor{magenta!80!black}{(Mavb)} om $ad - bc \neq 0$
+
+$M'(z) = \dfrac{ad - bc}{(cz + d)^2} \neq 0$ \textcolor{blue!60!black}{(övning 2.14)} så $M$ konform.
+
+\begin{example}
+\[ \left.\begin{array}{ll} az & \text{skalning} \\ z + b & \text{translation} \\ \frac{1}{z} & \text{inversion} \end{array}\right\} \ \textcolor{magenta!80!black}{\text{elementära Mavb}} \]
+\[ \frac{az + b}{cz + d} = \frac{bc - ad}{c^2} \cdot \frac{1}{z + \frac{d}{\rattat{c}{z}}} + \frac{a}{c} \quad \textcolor{blue!60!black}{\left(\text{alt } \frac{a}{d}z + \frac{b}{\rattat{d}{a}} \text{ om } c = 0\right)} \]
+\textcolor{red!70!black}{$\Rightarrow$} Varje Mavb fås genom komposition av elementära Mavb.
+\end{example}

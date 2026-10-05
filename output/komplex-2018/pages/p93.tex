@@ -1,0 +1,37 @@
+% language: swedish
+% figure: fig1 0.75 0.055 0.93 0.15
+% figure: fig2 0.185 0.138 0.27 0.20
+% figure: fig3 0.60 0.135 0.74 0.17
+% figure: fig4 0.79 0.49 0.93 0.585
+\subsection{Tentauppgift 2013 oktober uppg.\ 4}
+Avbilda $G = \{|z| < \sqrt{2}\} \cap \{|z - 2| < \sqrt{2}\}$ konformt \& bijektivt på öppna halvplanet
+\notefigure{fig1}{}
+\textbf{Lösning}
+\notefigure{fig2}{}
+\emph{Idé}: Hitta Mavb.
+\notefigure{fig3}{}
+
+\emph{Steg 1}: Hitta Mavb $M$ som avbildar $C_1$ \& $C_2$ på två linjer genom $0$.
+
+Välj $M(z) = \dfrac{az + b}{cz + d}$ s.a.\ $M(1 - i) = 0$, $M(1 + i) = \infty$, $M(1) = i$
+
+\dots\ $M(z) = \dfrac{z - 1 + i}{iz + 1 - i}$, $L_1 = M(C_1)$, $L_2 = M(C_2)$ enligt sats linjer genom $0$.
+
+$L_3 = M(\{z : \operatorname{Re} z = 1\})$ innehåller punkterna $0, i, \infty \overset{\textcolor{magenta!80!black}{\text{Sats}}}{\Longrightarrow} L_3 = \operatorname{Im}$ axeln
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Räknestuga 19/10}
+\subsection{Häftet ''Residue Calculus''}
+\textcircled{1} Visa att $\displaystyle\int_0^{2\pi} \frac{dt}{a + b\sin t} = \frac{2\pi}{\rattat{\sqrt{a^2 - b^2}}{\sqrt{a^2 + b^2}}}$ \quad $a > b \ge 0$
+
+\textbf{Lösning:}
+\notefigure{fig4}{}
+\[ \int_0^{2\pi} \frac{dt}{a + b\sin t} = \left[ \begin{array}{ll} z = e^{it} & \sin t = \frac{e^{it} - e^{-it}}{2i} = \frac{z - 1/z}{2i} \\ dz = ie^{it}\,dt \Rightarrow dt = dz/iz \end{array} \right] = \]
+\[ = \frac{1}{i} \int_{C[0, 1]} \frac{1}{a + b\frac{z - 1/z}{2i}} \cdot \frac{dz}{z} = 2\int_{C[0, 1]} \frac{dz}{2iaz + bz^2 - b} \overset{(*)}{=} \]
+\[ bz^2 + \rattat{2iaz}{2ia} - b = 0 \Rightarrow z^2 + \frac{2ia}{b}z - 1 = 0 \Rightarrow \left( z + \frac{ia}{b} \right)^2 = 1 - \frac{a^2}{b^2} = \frac{b^2 - a^2}{b^2} \]
+\[ z = -\frac{ia}{b} \pm i\frac{\sqrt{a^2 - b^2}}{b}, \quad z_1 = \frac{-ia}{b} - i\frac{\sqrt{a^2 - b^2}}{b} \quad z_2 = \frac{-ia}{b} + \rattat{i}{}\frac{\sqrt{a^2 - b^2}}{b} \]
+\[ -1 < -\frac{a}{b} + \frac{\sqrt{a^2 - b^2}}{b} < 1 \ \textcolor{magenta!80!black}{\fbox{?}} \Leftrightarrow -b < -a + \sqrt{a^2 - b^2} < b \Leftrightarrow \]
+\[ \Leftrightarrow a - b < \sqrt{a^2 - b^2} < a + b \Leftrightarrow (a - b)^2 < a^2 - b^2 < (a + b)^2 \quad \textcolor{magenta!80!black}{\textbf{sant!}} \]
+\[ (*) = 2 \cdot 2\pi i \operatorname{Res}(f, z_2) = \left[ f(z) = \frac{1}{2iaz + bz^2 - b} = \frac{1}{b} \frac{1}{(z - z_1)(z - z_2)} \right] \]
+\[ = 4\pi i \left. \frac{(z - z_2)}{b(z - z_1)} \right|_{z = \rattat{z_2}{z_1}} = \frac{4\pi i}{b} \frac{1}{z_2 - z_1} = \frac{4\pi i}{b} \frac{1}{2i\frac{\sqrt{a^2 - b^2}}{b}} = \dots \frac{4\pi i}{2i} \frac{1}{\sqrt{a^2 - b^2}} = \frac{2\pi}{\sqrt{a^2 - b^2}} \]

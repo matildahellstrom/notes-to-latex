@@ -1,0 +1,35 @@
+% language: swedish
+% figure: fig1 0.70 0.327 0.865 0.393
+\section{Föreläsning 17/9}
+
+\textbf{Repetition:} Två slutna kurvor $\gamma_0, \gamma_1$ \emph{homotopa i $G$}, $\gamma_0 \sim_G \gamma_1$ om $\gamma_0$ kan deformeras kontinuerligt till $\gamma_1$ \emph{inne i $G$}.
+
+\begin{theorem}[Cauchys Sats (sats 4.18, kor 4.20)]
+$f$ holomorf i $G$, $\gamma_0, \gamma_1$ slutna styckvis glatta kurvor i $G$, $\gamma_0 \sim_G \gamma_1$ då $\displaystyle\int_{\gamma_0} f\,dz = \int_{\gamma_1} f\,dz$. Om $\gamma_0 \sim_G 0$, då $\displaystyle\int_{\gamma_0} f\,dz = 0$.
+\end{theorem}
+
+Kan nu räkna ut $\displaystyle\int_\gamma \frac{p(z)}{q(z)}\,dz$, $p, q$ polynom i $z$.
+
+\textcolor{red!70!black}{Men} vad blir t.ex.\ $\displaystyle\int_{|z| = 1} \frac{e^z}{z}\,dz$ eller $\displaystyle\int_{|z| = 1} \frac{\sin z}{e^z}\,dz$?
+
+\begin{theorem}[Cauchys integralformel version 1 (sats 4.24)]
+\notefigure{fig1}{}
+$f$ holomorf i $G$, $\overline{D}(w, R) \subseteq G$, då
+\[ f(w) = \frac{1}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{z - w}\,dz, \quad 0 < r \le R \]
+\end{theorem}
+\begin{proof}
+$\dfrac{f(z)}{z - w}$ holomorf i $G \setminus \{w\}$ och för $0 < r \le R$ är $C(w, r)$ alla homotopa i $G \setminus \{w\}$. $\overset{\text{CS}}{\Longrightarrow} \dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{f(z)}{z - w}\,dz$ oberoende av $r$.
+
+\emph{Har enligt superviktiga exemplet}: $\dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{1}{z - w}\,dz = 1$
+\[ \Rightarrow f(w) = \frac{1}{2\pi i} \int_{|z - w| = r} \frac{f(w)}{z - w}\,dz \qquad \textcolor{magenta!80!black}{\text{Nu ska vi uppskatta kurvan istället}} \]
+\begin{align*}
+  \Rightarrow \left| \frac{1}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{z - w}\,dz - f(w) \right| &= \left| \frac{1}{2\pi i} \int_{|z - w| = r} \frac{f(z) - f(w)}{z - w}\,dz \right| \le \quad \textcolor{magenta!80!black}{(\Delta\text{-olikhet för integraler})} \\
+  &\le \frac{1}{2\pi} \max_{|z - w| = r} \left| \frac{f(z) - f(w)}{z - w} \right| 2\pi r = \\
+  &= \max_{|z - w| = r} |f(z) - f(w)| \xrightarrow[r \to 0]{} 0 \text{ ty } f \text{ kontinuerlig.}
+\end{align*}
+\textcolor{magenta!80!black}{$|z - w| = r$, ersätter i nästa steg och tar ut $r$:en}
+
+\textcolor{red!70!black}{Men} $\dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{f(z)}{z - w}\,dz - f(w)$ oberoende av $r$, så $= 0$
+
+dvs.\ $f(w) = \dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{f(z)}{z - w}\,dz$
+\end{proof}

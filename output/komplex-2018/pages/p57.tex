@@ -1,0 +1,50 @@
+% language: swedish
+% figure: fig1 0.06 0.275 0.75 0.335
+\section{Föreläsning 1/10}
+
+\begin{theorem}[Kollarium]
+Om $f(z_0) = 0$ men $f \not\equiv 0$, då är $z_0$ ett \emph{isolerat nollställe}. dvs.\ $\exists r > 0$ s.a.\ $f(z) \neq 0$ i $D(z_0, r) \setminus \{z_0\}$
+\end{theorem}
+\begin{proof}
+enligt klass av nollställe
+
+$f(z) = (z - z_0)^m g(z)$, $g$ holomorf så kontinuerlig
+
+$g(z_0) \neq 0 \Rightarrow \exists r > 0 : g(z) \neq 0$ i $D(z_0, r)$
+
+$(z - z_0)^m \neq 0$ i $D(z_0, r) \setminus \{z_0\} \to f \neq 0$ i $D(z_0, r) \setminus \{z_0\}$
+\end{proof}
+\notefigure{fig1}{}
+\textcolor{magenta!80!black}{Kan finnas många nollställen, måste finnas skiva runt.}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Identitetsprincipen]
+\hfill \textcolor{magenta!80!black}{Bevislistan}
+
+Antag $f, g$ holomorf i $G$, $f(z_n) = g(z_n)$, där $z_n$ följd av distinkta punkter i $G$ s.a.\ $z_n \xrightarrow[n \to \infty]{} z_\infty$
+
+Då är $f \equiv g$ i $G$.
+\end{theorem}
+\begin{proof}
+$h = f - g$ holomorf i $G$, $h(z_n) = 0$ $\forall n \in \mathbb{N}$, $h$ kontinuerlig $\Rightarrow h(z_\infty) = \displaystyle\lim_{n \to \infty} h(z_n) = 0$
+
+Får $z_\infty$ nollställe till $h$, ej isolerat $\xrightarrow[\textcolor{magenta!80!black}{\text{klass}}]{\textcolor{magenta!80!black}{\text{kor till}}} h \equiv 0$ i $G$, dvs.\ $f \equiv g$ i $G$
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Visa $\sin^2 z + \cos^2 z = 1$
+
+$f(z) = \sin^2 z + \cos^2 z$, $g(z) = 1$, holomorfa i $\mathbb{C}$.
+
+$f(x) = g(x)$, $\forall x \in \mathbb{R}$ \quad \textcolor{magenta!80!black}{Vet att de är identiska på reella linjen.}
+
+\textbf{Lösning:} Låt $z_n = 1/n$, $z_n \to 0 \in \mathbb{C}$
+\[ f(z_n) = g(z_n) \xrightarrow[\textcolor{magenta!80!black}{\text{princ.}}]{\textcolor{magenta!80!black}{\text{id.}}} f \equiv g \text{ i } \mathbb{C} \]
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\textcolor{red!70!black}{\textbf{OBS!}} Om $f(z_n) = g(z_n)$, $z_n \to z_\infty \in G$ då behöver inte $f \equiv g$.

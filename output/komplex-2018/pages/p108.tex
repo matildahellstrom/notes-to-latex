@@ -1,0 +1,31 @@
+% language: swedish
+% figure: fig1 0.865 0.67 0.985 0.73
+\[ \left| \int_{\gamma_R} g\,dz \right| \underset{\textcolor{magenta!80!black}{\text{för } \int}}{\overset{\textcolor{magenta!80!black}{\Delta \text{ olik}}}{\le}} \max_{z \in \gamma_R} \left| \frac{e^{-itz}}{(z^2 + 1)(z^2 + 4)} \right| \pi R \le \left[ |e^{-itz}| = e^{ty} \le 1 \text{ på } \gamma_R \text{ då } \underline{t \le 0}! , \right. \]
+\[ \left. |(z^2 + 1)(z^2 + 4)| \underset{\textcolor{magenta!80!black}{\Delta \text{ olik}}}{\overset{\textcolor{magenta!80!black}{\text{omv}}}{\ge}} (|z|^2 - 1)(|z|^2 - 4) = (R^2 - 1)(R^2 - 4) \text{ på } \gamma_R \right] \le \]
+\[ \le \frac{\pi R}{(R^2 - 1)(R^2 - 4)} \xrightarrow[R \to \infty]{} 0 \quad \Rightarrow \hat{f}(t) = \lim_{R \to \infty} \int_{\sigma_R} g\,dz \quad (t \le 0) \]
+$g$ holomorf i $\mathbb{C}$ förutom singulär i $\pm i$, $\pm 2i$, $i, 2i$ ligger i $\operatorname{int}(\sigma_R)$, $R > 2$
+\[ \operatorname{Res}_i g \overset{\textcolor{magenta!80!black}{\text{Sats}}}{=} \left( \frac{e^{-itz}}{(z + i)(z^2 + 4)} \right) \Big|_{z = i} = -\frac{ie^t}{6} \]
+\[ \operatorname{Res}_{2i} g \overset{\textcolor{magenta!80!black}{\text{Sats}}}{=} \left( \frac{e^{-itz}}{(z^2 + 1)(z + 2i)} \right) \Big|_{z = 2i} = \frac{ie^{2t}}{12} \]
+\[ \Longrightarrow (t \le 0) \quad \hat{f}(t) = \lim_{R \to \infty} \int_{\sigma_R} g\,dz \underset{\textcolor{magenta!80!black}{\text{Sats}}}{\overset{\textcolor{magenta!80!black}{\text{Res}}}{=}} \lim_{R \to \infty} 2\pi i\left( \frac{-ie^t}{6} + \frac{ie^{2t}}{12} \right) = \frac{\pi e^t}{6}(2 - e^t) \]
+\[ f(x) \text{ reellvärd} \Longrightarrow \overline{f(x)e^{-itx}} = f(x)e^{itx} = f(x)e^{-i(-t)x} \]
+\[ \Longrightarrow \overline{\hat{f}(t)} = \hat{f}(-t), \quad \hat{f}(t) = \overline{\hat{f}(-t)}. \]
+\[ \text{Får då } t \ge 0: \ \hat{f}(t) = \overline{\hat{f}(-t)} = [-t \le 0] = \overline{\frac{\pi e^{-t}}{6}(2 - e^{-t})} = \frac{\pi e^{-t}}{6}(2 - e^{-t}) \]
+Får att $\forall t$: $\hat{f}(t) = \dfrac{\pi e^{-|t|}}{6}(2 - e^{-|t|})$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Laplacetransformen}
+\begin{definition}
+$f : [0, \infty) \to \mathbb{C}$ integrerbar, $|f(t)| \le Ae^{Bt}$, $A, B \in \mathbb{R}$ då definierar vi LT $\tilde{f}(s) = \displaystyle\int_0^\infty f(t)e^{-st}\,dt$, $s \in \mathbb{C}$, $\operatorname{Re} s > B$
+\notefigure{fig1}{}
+\end{definition}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Tenta 2014 Januari uppg 6.}
+Lös mha LT begynnelsevärdesproblemet \quad $*$: $y'' - 2y' + 5y = e^{-t}$, $t \ge 0$, $y(0) = 1$, $y'(0) = 2$.
+
+\textbf{Lösning.} LT av $*$ ger: $s^2\tilde{y} - sy(0) - y'(0) - 2(s\tilde{y} - y(0)) + 5\tilde{y} =$
+\[ = \widetilde{e^{-t}} \quad \left[ \widetilde{e^{-t}} = \tilde{1}(s + 1) = \frac{1}{s + 1} \right] \Leftrightarrow (s^2 - 2s + 5)\tilde{y} - s - 2 + 2 = \frac{1}{s + 1} \]
+\[ \Leftrightarrow \tilde{y} = \frac{1}{(s + 1)(s^2 - 2s + 5)} + \frac{s}{s^2 - 2s + 5} = \left[ s^2 - 2s + 5 = (s - 1)^2 + 4 \right] = \]
+\hfill $\longrightarrow$

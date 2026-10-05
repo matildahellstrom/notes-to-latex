@@ -1,0 +1,41 @@
+% language: swedish
+\subsection{Serier}
+Serien $\sum_1^\infty b_k$ är \emph{konvergent} om $\sum_1^n b_k$ konvergerar, annars \emph{divergent}. Låter även $\sum_1^\infty b_k$ beteckna eventuellt gränsvärde
+
+$\sum_1^\infty b_k$ är \emph{absolutkonvergent} om $\sum_1^\infty |b_k|$ konvergent.
+
+\textbf{Sats 7.20:} Absolutkonvergent $\Rightarrow$ konvergent.
+
+\subsection{Funktionsföljder \& serier}
+Låt $f_n : G \to \mathbb{C}$ vara funktionsföljd, $A \subseteq G$.
+
+\begin{definition}
+\begin{enumerate}[label=\textcircled{\alph*}]
+  \item $f_n$ konvergerar likformigt mot $f$ på $A$ om $\displaystyle\sup_{z \in A} |f_n(z) - f(z)| \xrightarrow[n \to \infty]{} 0$
+  \item $\sum_1^\infty f_k$ konvergent likformig på $A$ om $\forall z \in A$, $\sum_1^\infty f_k(z)$ konvergent, och $\sum_1^n f_k \xrightarrow[\text{på } A]{\text{lik.f.}} \sum_1^\infty f_k$.
+\end{enumerate}
+\end{definition}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Föreläsning 25/9}
+
+\subsection{Funktionsföljd och serier}
+\begin{theorem}[Proposition 7.25]
+\begin{enumerate}[label=\alph*)]
+  \item om $f_n$ kontinuerlig $G$, $A \subseteq G$, $f_n \xrightarrow{\text{likf på } A} f$, då är $f$ kontinuerlig på $A$.
+  \item Om $f_k$ kontinuerlig, $\sum_1^\infty f_k$ konvergerar likformigt på $A$, då är $\sum_1^\infty f_k$ kontinuerlig på $A$.
+\end{enumerate}
+\end{theorem}
+
+\textcolor{red!70!black}{\textbf{OBS!}} om $\sum_1^\infty f_k$ konvergerar likformigt på $A$, $|g| \le M$ funktion på $A$, $\sum_1^\infty f_k g$ konvergerar likformigt. \textcolor{magenta!80!black}{$g$ måste inte vara kontinuerlig.}
+
+\begin{theorem}[Proposition 7.27]
+$f_n$ kontinuerlig i $G$, $\gamma$ styckvis glatt kurva i $G$
+\begin{enumerate}[label=\alph*)]
+  \item om $f_n \xrightarrow{\text{likf på } \gamma} f$, då $\displaystyle\int_\gamma f_n\,dz \xrightarrow[n \to \infty]{} \int_\gamma f\,dz$
+  \item Om $\sum_1^\infty f_k$ konvergerar likformigt på $\gamma$, då $\displaystyle\int_\gamma \sum_1^\infty f_k\,dz = \sum_1^\infty \int_\gamma f_k\,dz$
+\end{enumerate}
+\end{theorem}
+
+\hfill \textcolor{red!70!black}{\underline{Bevis}} $\longrightarrow$

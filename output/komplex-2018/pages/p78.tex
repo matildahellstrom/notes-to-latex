@@ -1,0 +1,40 @@
+% language: swedish
+% figure: fig1 0.14 0.595 0.205 0.645
+% figure: fig2 0.165 0.815 0.255 0.88
+\begin{proof}
+Numrera nollställen till $f$ i $\operatorname{int}(\gamma)$: $z_1, \dots, z_N$ \quad $n_j = $ ordning av $z_j$, numrera polerna till $f$ i $\operatorname{int}(\gamma)$: $w_1, \dots, w_M$, $m_j = $ ordning av $w_j$. Upprepa användning av klass av nollställen samt klass av isolerade singulariteter.
+\[ f(z) = \prod_{i = 1}^N (z - z_i)^{n_i} \prod_{j = 1}^M (z - w_j)^{-m_j} g(z), \quad g \text{ holomorf och } \neq 0 \text{ i något område } H \supseteq \overline{\operatorname{int}(\gamma)}. \]
+\[ \text{Får } \frac{f'(z)}{f(z)} = \sum_{i = 1}^N \frac{n_i}{z - z_i} - \sum_{j = 1}^M \frac{m_j}{z - w_j} + \frac{g'(z)}{g(z)}, \quad \frac{g'}{g} \text{ holomorf i } H. \]
+\[ W(f \circ \gamma) = \frac{1}{2\pi i} \int_{f(\gamma)} \frac{1}{z}\,dz = \frac{1}{2\pi i} \int_a^b \frac{1}{f(\gamma(t))} (f \circ \gamma)'(t)\,dt = \left[ (f \circ \gamma)'(t) \underset{\textcolor{magenta!80!black}{\text{lemma}}}{=} f'(\gamma(t))\gamma'(t) \right] = \]
+\[ = \frac{1}{2\pi i} \int_a^b \frac{f'(\gamma(t))}{f(\gamma(t))} \gamma'(t)\,dt = \frac{1}{2\pi i} \int_\gamma \frac{f'}{f}\,dz \overset{\textcolor{magenta!80!black}{\text{Residysats}}}{=} \sum_{i = 1}^N \operatorname{Res}_{z_i} \frac{f'}{f} + \sum_{j = 1}^M \operatorname{Res}_{w_j} \frac{f'}{f} = \]
+\[ = \sum_{i = 1}^N n_j - \sum_{j = 1}^M m_j = N(f, \gamma) - P(f, \gamma) \]
+\end{proof}
+
+\textcolor{red!70!black}{\textbf{OBS!}} Om $f$ holomorf så är $P(f, \gamma) = 0$ dvs.\ $N(f, \gamma) = W(f \circ \gamma)$
+
+\begin{definition}
+Om $\gamma$ styckvis glatt kurva i $\mathbb{C} \setminus \{0\}$ (ej nödvändigtvis sluten) definierar vi \emph{$\operatorname{argvar}(\gamma)$} $= \operatorname{Im} \displaystyle\int_\gamma \frac{1}{z}\,dz = \int_a^b \frac{d}{dt} \arg(\gamma(t))\,dt$ dvs.\ totala argumentvariationen längs $\gamma$.
+\end{definition}
+
+\begin{example}
+\notefigure{fig1}{}
+\underline{Hur har vinkeln ändrats?} minskat med $\pi$
+
+$\operatorname{argvar}(\gamma) = -\pi$ \quad \textcolor{magenta!80!black}{vinkeln bestäms med hänsyn till 0:an}
+\end{example}
+
+\textcolor{red!70!black}{\textbf{OBS!}} Om $\gamma$ sluten så $W(\gamma) = \dfrac{\operatorname{argvar}(\gamma)}{2\pi}$ \quad \textcolor{magenta!80!black}{pga ett helt varv.}
+\begin{itemize}
+  \item $\operatorname{argvar}(\gamma_1 \cup \gamma_2) = \operatorname{argvar}(\gamma_1) + \operatorname{argvar}(\gamma_2)$
+\end{itemize}
+
+\textcolor{red!70!black}{\textbf{OBS!}} $\operatorname{argvar}(\gamma) = \operatorname{Arg}(\gamma(b)) - \operatorname{Arg}(\gamma(a)) + 2\pi k$
+
+$k$ beror på hur $\gamma$ gått runt $0$\textcolor{red!70!black}{!}
+
+\begin{example}
+\notefigure{fig2}{}
+$\operatorname{argvar}(\gamma_1) = \pi/2$ \qquad \textcolor{magenta!80!black}{lägger alltså till $-2\pi$}
+
+$\operatorname{argvar}(\gamma_2) = -3\pi/2$
+\end{example}

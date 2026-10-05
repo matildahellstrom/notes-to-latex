@@ -1,0 +1,43 @@
+% language: swedish
+% figure: fig1 0.75 0.255 0.86 0.31
+% figure: fig2 0.46 0.375 0.64 0.472
+\fbox{3.14} \quad Hitta en Möbiusavbildning s.a.
+\begin{enumerate}[label=\alph*)]
+  \item $1 \mapsto 0$, $2 \mapsto 1$, $3 \mapsto \infty$
+  \item $1 \mapsto 0$, $1 + i \mapsto 1$, $2 \mapsto \infty$
+\end{enumerate}
+\textbf{Lösning:} a) $f(z) = \dfrac{z - 1}{z - 3} \cdot A$ \qquad $f(2) = \dfrac{2 - 1}{2 - 3} \cdot A = -A$
+
+\qquad $f(z) = \dfrac{1 - z}{z - 3}$ \qquad b) exakt likadant
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{3.41} \quad c) Skriv $i^i$ på rektangulär form
+\notefigure{fig1}{}
+\textbf{Lösning:}
+\[ i^i = (e^{\operatorname{Log} i})^i = e^{i\operatorname{Log} i} = e^{i(\ln|i| + i\pi/2)} = e^{-\pi/2} \in \mathbb{R} \ !! \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{3.45} \quad Hitta alla lösningar till:
+\begin{enumerate}[label=\alph*)]
+  \item $\operatorname{Log} z = \dfrac{\pi i}{2}$
+  \item $\operatorname{Log} z = \dfrac{3\pi i}{2}$
+\end{enumerate}
+\notefigure{fig2}{}
+\textbf{Lösning:} $\arg z = \varphi + 2\pi k$ \ $k \in \mathbb{Z}$, \ $\operatorname{Arg} z = \varphi + 2\pi k$ s.a.\ $\operatorname{Arg} z \in (-\pi, \pi]$
+
+\begin{definition}
+$\operatorname{Log} z = \ln|z| + i\operatorname{Arg} z$, \ $\log z$
+\end{definition}
+\begin{definition}
+$a^b = e^{b \cdot \operatorname{Log} a}$ \qquad $i^i = (e^{\pi i/2})^i = \dots = e^{-\pi/2}$
+
+''$(e^{\pi i/2 + 2\pi i})^i$'' $= e^{-\pi/2 - 2\pi}$ \ \textcolor{magenta!80!black}{$\leftarrow$ fel pga ej hänsyn för komplexa tal}
+\end{definition}
+
+a) $\ln|z| + i\operatorname{Arg} z = \pi i/2$
+\[ \Rightarrow \begin{cases} \ln|z| = 0 \\ \operatorname{Arg} z = \pi/2 \end{cases} \Rightarrow \begin{cases} |z| = 1 \\ \operatorname{Arg} z = \pi/2 \end{cases} \Rightarrow z = i \]
+b) $\ln|z| + i\operatorname{Arg} z = \dfrac{3\pi i}{2} \Rightarrow \begin{cases} \ln|z| = 0 \\ \operatorname{Arg} z = \frac{3\pi}{2} \end{cases}$
+
+$\Rightarrow$ omöjligt, inga lösningar.

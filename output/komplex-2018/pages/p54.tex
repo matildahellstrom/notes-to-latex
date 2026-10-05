@@ -1,0 +1,30 @@
+% language: swedish
+\fbox{7.27} \quad a) Antag att $(c_n)$ är begränsad. Visa att konvergensradien för $\sum c_n(z - z_0)^n$ är $\ge 1$.
+
+b) Antag att $(c_n)$ inte konvergerar mot $0$. Visa att konvergensradien för $\sum c_n(z - z_0)^n$ är $\le 1$.
+
+\textcircled{a} $\exists M \in \mathbb{R}$ s.a.\ $|c_n| \le M \Leftrightarrow \dfrac{1}{|c_n|} \ge \dfrac{1}{M}$
+\[ \underset{\textcolor{blue!60!black}{\text{enligt rotkriteriet}}}{R} = \lim_{n \to \infty} \frac{1}{\sqrt[n]{|c_n|}} \ge \lim_{n \to \infty} \frac{1}{\sqrt[n]{M}} = 1 \]
+
+\textcircled{b} Antag att $\exists c > 0$ s.a.\ $|c_n| \ge c$ $\forall n$
+\[ R = \lim_{n \to \infty} \frac{1}{\sqrt[n]{|c_n|}} \le \lim_{n \to \infty} \frac{1}{\sqrt[n]{c}} = 1 \]
+\begin{center}
+\fbox{$R = \displaystyle\lim_{n \to \infty} \frac{1}{\sqrt[n]{|c_n|}} \le \lim_{n \to \infty} \inf \frac{1}{\sqrt[n]{c}} = 1$}
+\end{center}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{7.28} \quad a) Hitta potensserien för $f(z) = \dfrac{1}{z}$ runt $1$.
+\[ f(z) = \frac{1}{z} = \frac{1}{1 - (1 - z)} = \sum_{n = 0}^\infty (1 - z)^n \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{7.33} \quad Hitta konvergensradien för: \quad b) $\displaystyle\sum_{k = 0}^\infty k^n z^k$ \ $n \in \mathbb{Z}$ \quad c) $\sum z^k$ \quad e) $\displaystyle\sum \frac{z^k}{k^k}$
+
+\textcircled{b} \fbox{$n \ge 0$} \quad $\displaystyle\lim_{k \to \infty} \left| \frac{c_{k+1}}{c_k} \right| = \frac{(k + 1)^n}{k^n} = \textcolor{blue!60!black}{\{\text{binomialsatsen}\}} =$
+\[ = \lim_{k \to \infty} \frac{k^n + \binom{n}{1}k^{n-1} + \dots + 1}{k^n} = \lim_{k \to \infty} 1 + \binom{n}{1}\frac{1}{k} + \dots + \frac{1}{k^n} = 1 \to \underline{R = 1} \]
+
+\textcircled{c} $\begin{array}{l} n \le 0 \\ m = -n \end{array} \to \displaystyle\sum \frac{z^k}{k^m}$, \quad $\displaystyle\lim_{k \to \infty} \left| \frac{c_{k+1}}{c_k} \right| = \lim_{k \to \infty} \frac{k^m}{(k + 1)^m} = \lim_{k \to \infty} \frac{k^m}{k^m + k^{m-1}\binom{m}{1} + \dots + 1} =$
+\[ = \lim_{k \to \infty} \frac{1}{1 + \frac{1}{k}\binom{m}{1} + \dots + \frac{1}{k^m}} = 1 \qquad \underline{R = 1} \]
+
+\textcircled{e} $\displaystyle\lim_{k \to \infty} \sqrt[k]{|c_k|} = \lim_{k \to \infty} \sqrt[k]{\frac{1}{k^k}} = \lim_{k \to \infty} \frac{1}{k} \to 0 \qquad R = \text{``}\frac{1}{0}\text{''} = \infty$

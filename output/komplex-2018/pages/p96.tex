@@ -1,0 +1,29 @@
+% language: swedish
+% figure: fig1 0.43 0.125 0.78 0.217
+% figure: fig2 0.41 0.322 0.78 0.37
+% figure: fig3 0.65 0.585 0.83 0.625
+\section{Föreläsning 19/10}
+\subsection{2013 oktober uppg 4}
+Avbilda $G = \{|z| < \sqrt{2}\} \cap \{|z - 2| < \sqrt{2}\}$ konform och bijektiv på öppna \textsuperscript{övre} halvplanet
+\notefigure{fig1}{}
+\textbf{Lösning (fortsättning):}
+\[ M(z) = \frac{z - 1 + i}{iz + 1 - i} \qquad M(G) = \{z : |z| > 0,\ \pi/4 < \operatorname{Arg}(z) < 3\pi/4\} \]
+$z^2$ dubblar vinkeln \quad $(z^2)' = 2z \neq 0$ i $M(G)$
+
+$\Rightarrow z^2$ avbildar $M(G)$ konform och bijektiv på öppna vänstra halvplanet
+\notefigure{fig2}{}
+$\Rightarrow -iz \circ z^2 \circ M(z) = -i\left( \dfrac{z - 1 + i}{iz + 1 - i} \right)^2$ avbilda $G$ bijektiv och konform på öppna övre halvplanet.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{F3 s.\ 8}
+Visa att $\displaystyle\int_{-\infty}^\infty \frac{\sin ax \sin bx}{x^2}\,dx = \pi \min(a, b)$ \quad $a, b > 0$
+
+\textbf{Lösning:} $\widehat{f * g} = \hat{f}\hat{g} \overset{\textcolor{magenta!80!black}{\text{IF}}}{\Longrightarrow} 2\pi(f * g)(-t) \overset{\textcolor{magenta!80!black}{\text{IF}}}{=} \hat{\widehat{f * g}}(t) = \widehat{\hat{f}\hat{g}}(t)$
+
+Enligt tidigare övning:
+\[ \frac{\sin(\delta x)}{x} = \frac{1}{2}\hat{f}_\delta(x), \quad f_\delta(t) = \begin{cases} 0, & |t| \ge \delta \\ 1, & |t| < \delta \end{cases} \]
+\notefigure{fig3}{}
+\[ \text{Får } \int_{-\infty}^\infty \frac{\sin ax \sin bx}{x^2}\,dx = \int_{-\infty}^\infty \frac{\sin ax}{x} \cdot \frac{\sin bx}{x} \cdot \underbrace{e^{-i0x}}_{\textcolor{red!70!black}{\text{viktig}}}\,dx = \widehat{\frac{\sin ax}{x} \cdot \frac{\sin bx}{x}}(0) = \]
+\[ = \widehat{\frac{1}{2}\hat{f}_a \cdot \frac{1}{2}\hat{f}_b}(0) = \frac{1}{4}\widehat{\hat{f}_a \hat{f}_b}(0) \overset{\textcolor{magenta!80!black}{\text{enligt ovan}}}{=} \frac{\pi}{2} f_a * f_b(0) = \frac{\pi}{2} \int_{r = -\infty}^\infty f_a(r)f_b(-r)\,dr = \]
+\[ = \frac{\pi}{2} \int_{-\min(a, b)}^{\min(a, b)} 1\,dr = \pi \min(a, b) \qquad \textcolor{blue!60!black}{\fbox{\textcolor{magenta!80!black}{''små trixig'' -- David}}} \]

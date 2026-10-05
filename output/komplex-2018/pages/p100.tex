@@ -1,0 +1,38 @@
+% language: swedish
+\subsection{Primitiva funktioner}
+\begin{definition}
+$F$ \emph{primitiv} till $f$ om $F' = f$
+\end{definition}
+\begin{definition}
+Område $G$ \emph{enkelt sammanhängande} om varje sluten kurva i $G$ är nollhomotop i $G$.
+\end{definition}
+
+\textbf{Kor 5.8:} Om $f$ holomorf i enkelt sammanhängande område $G$, då har $f$ primitiv $F$ i $G$.
+
+\begin{theorem}[Moreras sats (Kor 5.6)]
+Om $f$ kontinuerlig i område $G$ och $\displaystyle\int_\gamma f\,dz = 0$ för alla styckvis glatta slutna kurvor $\gamma$, då $f$ holomorf i $G$.
+\end{theorem}
+
+\subsection{Harmoniska funktioner}
+\begin{definition}
+$u : G \to \mathbb{R}$ \emph{harmonisk} om $u \in C^2$ och $\Delta u = \dfrac{d^2u}{dx^2} + \dfrac{d^2u}{dy^2} = 0$
+\end{definition}
+
+\textbf{Proposition 6.3:} Om $f$ holomorf, då är $\operatorname{Re} f$, $\operatorname{Im} f$ harmoniska.
+
+\begin{definition}
+Om $u$ harmonisk och $u = \operatorname{Re} f$, $f$ holomorf, då kallas $v = \operatorname{Im} f$ \emph{harmoniskt konjugat} till $u$.
+\end{definition}
+
+\textbf{Sats 6.6:} Om $u$ harmonisk i enkelt sammanhängande område $G$, då $\exists f$ holomorf i $G$ s.a.\ $u = \operatorname{Re} f$.
+
+\subsection{Tenta 2013 oktober uppg.\ 8}
+Låt $u$ vara harmonisk funktion i $\mathbb{C}$. Visa att det finns holomorf funktion $f$ s.a.\ $\operatorname{Re} f = x\dfrac{du}{dx} + y\dfrac{du}{dy}$
+
+\textbf{Lösning:} \emph{Alternativ 1}: visa att $x\dfrac{du}{dx} + y\dfrac{du}{dy}$ harmonisk, sen använd $\mathbb{C}$ enkelt sammanhängande, följer sen från sats att $\exists f$ holomorf i $\mathbb{C}$ s.a.\ $\operatorname{Re} f = x\dfrac{du}{dx} + y\dfrac{du}{dy}$.
+
+\begin{theorem}[Maximumprincipen (Sats 6.10)]
+Om $u$ harmonisk i område $G$ och $u$ antar sitt max (eller min) i $G$ då $u$ konstant.
+\end{theorem}
+
+\emph{Följd: svaga maxprincip}: Om $u$ harmonisk i $G$, kontinuerlig på $\overline{G}$ och $G$ begränsad, då antar $u$ sitt max och min på $\partial G$.

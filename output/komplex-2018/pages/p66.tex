@@ -1,0 +1,40 @@
+% language: swedish
+\begin{theorem}[Prop 9.14]
+\hfill \textcolor{magenta!80!black}{Bevislistan}
+
+Låt $f, g$ holomorf i $D(z_0, R)$, $z_0$ enkelt \textcolor{magenta!80!black}{(ordning 1)} nollställe till $g$: Då är $\operatorname{Res}_{z_0} \dfrac{f}{g} = \dfrac{f(z_0)}{g'(z_0)}$
+\end{theorem}
+\begin{proof}
+Enligt antagande $g(z) = (z - z_0)h(z)$, $h$ holomorf i $D(z_0, R)$, $h(z_0) = g'(z_0) \neq 0$. Får $h \neq 0$ i $D(z_0, \varepsilon)$, $\varepsilon > 0$.
+\[ \Rightarrow \frac{f(z)}{g(z)} = \frac{f(z)/\rattat{h(z)}{h(z_0)}}{(z - z_0)}, \quad \frac{f}{h} \text{ holomorf i } D(z_0, \varepsilon) \]
+\[ \overset{\textcolor{magenta!80!black}{\text{Prop 1.3R}}}{\Longrightarrow} \operatorname{Res}_{z_0} \frac{f}{g} = \frac{f(z_0)}{h(z_0)} = \frac{f(z_0)}{g'(z_0)} \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Storgruppsövning 3/10}
+
+\begin{example}
+Beräkna $\operatorname{Res}_\pi f$, $f(z) = \dfrac{e^z}{\sin z(z - 1)^2}$
+
+\textbf{Lösning:} $\sin \pi = 0$, $\sin'(\pi) = \cos \pi = -1 \neq 0$
+\[ \Big( g(z) = \sum c_k(z - z_0)^k = \underbrace{(z - z_0)^m}_{\textcolor{magenta!80!black}{\text{nollställe av ordning } m}} \sum_{k = 0}^\infty c_{k+m}(z - z_0)^k \Big) \]
+$\Rightarrow \pi$ enkelt nollställe till $\sin z$.
+
+$f(z) = \dfrac{g(z)}{\sin z}$, $g(z) = \dfrac{e^z}{(z - 1)^2}$ holomorf i omgivning till $\pi$
+\[ \overset{\textcolor{magenta!80!black}{\text{Prop 9.14}}}{\Longrightarrow} \operatorname{Res}_\pi \frac{e^z/(z - 1)^2}{\sin z} = \frac{\left( e^z/(z - 1)^2 \right)_{z = \pi}}{(\sin z)'|_{z = \pi}} = \frac{e^\pi/(\pi - 1)^2}{\cos \pi} = -\frac{e^\pi}{(\pi - 1)^2} \]
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{7.35} \quad Skriv funktionen som potensserie med centrum i $0$, samt bestäm konvergensradien.
+
+\textcircled{a} $\dfrac{1}{1 + 4z}$ \qquad \textcircled{c} $\dfrac{z^2}{(4 - z)^2}$ \qquad $\left[ \dfrac{1}{1 - \otimes} \overset{|\otimes| < 1}{=} \displaystyle\sum_{k = 0}^\infty \otimes^k \right]$
+
+\textbf{Lösning:} \textcircled{a} \quad $\dfrac{1}{1 + 4z} = \dfrac{1}{1 - (-4z)} \overset{|z| < \frac{1}{4}}{=} \displaystyle\sum_{k = 0}^\infty (-4z)^k = \sum_0^\infty \underbrace{(-1)^k 4^k}_{\textcolor{magenta!80!black}{c_k}} z^k$
+
+\emph{Rotkriteriet}: $|c_k|^{1/k} = 4 \to 4 \Rightarrow \textcolor{magenta!80!black}{\boxed{R = \tfrac{1}{4}}}$
+
+\textcircled{c} \quad $\dfrac{1}{4 - z} = \dfrac{1}{4} \dfrac{1}{1 - \frac{z}{4}} \overset{|z| < 4}{=} \dfrac{1}{4} \displaystyle\sum_0^\infty \left( \frac{z}{4} \right)^k = \sum_0^\infty \frac{z^k}{4^{k+1}}$. \quad $\dfrac{1}{(4 - z)^2} = \left( \dfrac{1}{4 - z} \right)' = \left( \displaystyle\sum_0^\infty \frac{z^k}{4^{k+1}} \right)' \overset{\textcolor{magenta!80!black}{\text{Sats}}}{=}$
+\[ = \sum_1^\infty \frac{kz^{k-1}}{4^{k+1}} \Rightarrow \frac{z^2}{(4 - z)^2} = \sum_1^\infty \frac{kz^{k+1}}{4^{k+1}} = \sum_2^\infty \frac{(k - 1)z^k}{4^k} \]
+\emph{Kvotkriteriet}: $\dfrac{|c_{k+1}|}{|c_k|} = \dfrac{k4^k}{4^{k+1}(k - 1)} = \dfrac{k}{4(k - 1)} \xrightarrow{k \to \infty} \dfrac{1}{4} \Rightarrow \textcolor{magenta!80!black}{\boxed{R = 4}}$

@@ -1,0 +1,32 @@
+% language: swedish
+\fbox{2.19} \quad Visa att om $f$ holomorf i område $G$ och $v = \operatorname{Im} f \equiv 0$ då är $f$ konstant.
+
+\textbf{Lösning:} Låt $u = \operatorname{Re} f$. Enligt sats så uppfyller $u, v$ CRs ekvationer:
+\[ \begin{cases} \dfrac{du}{dx} = \dfrac{dv}{dy} \\[2ex] \dfrac{du}{dy} = -\dfrac{dv}{dx} \end{cases} \qquad
+\begin{aligned}
+  &\text{Enligt antagandet } v \equiv 0 \Rightarrow \nabla v \equiv 0 + \text{CR} \Rightarrow \\
+  &\Rightarrow \nabla u \equiv 0 \underset{\textcolor{blue!60!black}{\text{sats } G \text{ område}}}{\Rightarrow} u \text{ konstant och då } f \text{ konstant}
+\end{aligned} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{2.23} \quad Visa att CRs ekvationer i polära koordinater $r, \varphi$ \ $\begin{cases} x = r\cos\varphi \\ y = r\sin\varphi \end{cases}$ blir
+\[ \begin{cases} \dfrac{du}{dr} = \dfrac{1}{r} \dfrac{dv}{d\varphi} \\[2ex] \dfrac{1}{r} \dfrac{du}{d\varphi} = -\dfrac{dv}{dr} \end{cases} \]
+
+\textbf{Lösning:} $\dfrac{dx}{dr} = \cos\varphi$, \ $\dfrac{dx}{d\varphi} = -r\sin\varphi$, \ $\dfrac{dy}{dr} = \sin\varphi$, \ $\dfrac{dy}{d\varphi} = r\cos\varphi$
+\[ \text{Får } \frac{du}{dr} \underset{\textcolor{blue!60!black}{\text{kedjeregeln}}}{=} \frac{du}{dx}\frac{dx}{dr} + \frac{du}{dy}\frac{dy}{dr} = \frac{dv}{dy}\cos\varphi - \rattat{\frac{dv}{dx}}{\frac{dv}{dy}}\sin\varphi \]
+\[ \frac{1}{r}\frac{dv}{d\varphi} = \frac{1}{r}\left( \frac{dv}{dx}\frac{dx}{d\varphi} + \frac{dv}{dy}\frac{dy}{d\varphi} \right) = \frac{1}{r}\left( \frac{dv}{dx}(-r\sin\varphi) + \frac{dv}{dy} r\cos\varphi \right) = \frac{du}{dr} \]
+andra ekv p.s.s.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{Övning:} \quad Visa att om $f$ är holomorf i $\mathbb{C}^* = \mathbb{C} \setminus \{0\}$ och $f(z) = f(|z|)$, då är $f$ konstant
+
+\textbf{Lösning:} Använd CRs ekvationer i polära koordinater. $u = \operatorname{Re} f$, $v = \operatorname{Im} f$
+
+Har enligt tidigare uppgift att
+\[ \begin{cases} \dfrac{du}{dr} = \dfrac{1}{r} \dfrac{dv}{\rattat{d\varphi}{dy}} \\[2ex] \dfrac{1}{r} \dfrac{du}{d\varphi} = -\dfrac{dv}{dr} \end{cases} \]
+Men enligt antagandet:
+\[ \left.\begin{aligned} u(r, \varphi) &= u(r) \\ v(r, \varphi) &= v(r) \end{aligned}\right\} \Rightarrow \frac{du}{d\varphi} = \frac{dv}{d\varphi} = 0 \]
+\[ \underset{\textcolor{blue!60!black}{+\text{CR}}}{\Rightarrow} \nabla u = \nabla v = 0 \]
+\[ \mathbb{C}^* \text{ område} \Rightarrow u, v, f \text{ konstanta} \]

@@ -1,0 +1,45 @@
+% language: swedish
+% figure: fig1 0.32 0.65 0.58 0.69
+\section{Repetition}
+\subsection{Komplex deriverbarhet}
+$f : G \to \mathbb{C}$ \emph{komplext deriverbar} i $z_0 \in G$ om $f'(z_0) = \displaystyle\lim_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h}$ existerar. Om $G$ öppen och $f$ komplext deriverbar i alla punkter i $G$ då säger vi att $f$ är holomorf i $G$.
+
+\begin{theorem}[Cauchy-Riemanns ekv.\ (Sats 2.13)]
+a) om $f$ holomorf, $u = \operatorname{Re} f$, $v = \operatorname{Im} f$, då löser $u, v$ CR ekv.
+\[ \begin{cases} \dfrac{du}{dx} = \dfrac{dv}{dy} \\[2ex] \dfrac{du}{dy} = -\dfrac{dv}{dx} \end{cases} \qquad \text{alt.} \quad \frac{df}{dx} = -i\frac{df}{dy} \ (= f') \]
+b) om $f \in C^1$ och dess partiella derivator löser CR:s ekv då är $f$ holomorf.
+\end{theorem}
+
+\begin{example}
+$e^z = e^x(\cos y + i\sin y)$, såg $e^z$ holomorf i $\mathbb{C}$ (hel) mha CR:s ekv.
+\end{example}
+
+\begin{theorem}[Sats 2.17]
+Om $f$ holomorf i område $G$ (dvs.\ öppen \& sammanhängande) och $f' \equiv 0$ i $G$, då är $f$ konstant
+\end{theorem}
+
+\begin{example}
+Antag att $f$ holomorf och reellvärd i $G$. Visa att $f$ konstant i $G$. \hfill \textcolor{magenta!80!black}{område}
+
+\textbf{Lösning:} Låt $u = \operatorname{Re} f$, $v = \operatorname{Im} f$, enligt antagande $v \equiv 0$.
+\[ \frac{du}{dx} \overset{\textcolor{magenta!80!black}{\text{CR}}}{=} \frac{dv}{dy} \equiv 0 \qquad f' \overset{\textcolor{magenta!80!black}{\text{CR}}}{=} \frac{df}{dx} = \frac{du}{dx} + i\frac{dv}{dx} = 0 \underset{\textcolor{magenta!80!black}{\text{Sats}}}{\Longrightarrow} f \text{ konstant} \]
+\end{example}
+
+\subsection{Konforma avbildningar}
+\begin{definition}
+En komplex fkn $f : G \to \mathbb{C}$ är \emph{konform} om den bevarar vinkeln mellan kurvor i $G$
+\notefigure{fig1}{}
+\end{definition}
+
+\textbf{Proposition 2.11:} Om $f$ holomorf i $G$, $f' \neq 0$ i $G$, då är $f$ \emph{konform}
+
+\textbf{Lemma:} $f$ holomorf, $\gamma$ kurva $(f \circ \gamma)'(t) = f'(\gamma(t))\gamma'(t)$
+
+\subsection{Möbiusavbildningar}
+$M(z) = \dfrac{az + b}{cz + d}$ kallas Mavb om $ad - bc \neq 0$. $M'(z) = \dfrac{ad - bc}{(cz + d)^2} \neq 0$
+
+dvs.\ Mavb är konform. $\hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}$ \quad $\dfrac{az + b}{cz + d}$, $\hat{\mathbb{C}} \to \mathbb{C}$, $-\dfrac{d}{c} \to \infty$, $\infty \to \dfrac{a}{c}$
+
+Får bijektion.
+
+\textbf{Sats 3.4:} Mavb avbildar cirklar \& linjer på cirklar eller linjer.

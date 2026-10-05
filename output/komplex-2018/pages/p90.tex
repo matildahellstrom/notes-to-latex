@@ -1,0 +1,26 @@
+% language: swedish
+\begin{example}
+Lös begynnelsevärdesproblemet
+\[ (*): \ u''(t) + u(t) = 1, \quad t \ge 0, \quad u(0) = 1, \quad u'(0) = 2 \]
+\textbf{Lösning:} LT av $(*)$ ger: $(s^2 + 1)\tilde{u} - s - 2 = \dfrac{1}{s} \Rightarrow \tilde{u} = \underbrace{\dfrac{s}{s^2 + 1} + 2\dfrac{1}{s^2 + 1}}_{\textcolor{magenta!80!black}{\text{enligt förra upp.}}} + \dfrac{1}{s(s^2 + 1)}$
+\[ = \left[ \text{PBU: } \frac{1}{s(s^2 + 1)} = \frac{1}{s} - \frac{s}{s^2 + 1} \right] = 2\frac{1}{s^2 + 1} + \frac{1}{s} = \widetilde{2\sin t + 1} \Rightarrow \]
+$\Rightarrow u = 2\sin t + 1$
+\end{example}
+
+\begin{definition}
+Om $f, g : [0, \infty) \to \mathbb{C}$ def.\ vi faltningen $f * g : [0, \infty) \to \mathbb{C}$ av $f$ med $g$ som $(f * g)(t) = \displaystyle\int_0^t f(r)g(t - r)\,dr$
+\end{definition}
+
+\textcolor{red!70!black}{\textbf{OBS!}} $f * g = g * f$
+
+\begin{theorem}[Proposition 3.4 F]
+$\widetilde{f * g} = \tilde{f}\tilde{g}$
+\end{theorem}
+
+\begin{example}
+Lös $(*)$: $u''(t) + u(t) = g(t)$, $t \ge 0$, $u(0) = u'(0) = 0$, $g$ given fkn, $|g(t)| \le Ae^{Bt}$.
+
+\textbf{Lösning:} LT av $(*)$ ger $s^2\tilde{u} - su(0) - u'(0) + \tilde{u} = \tilde{g} \Rightarrow$
+\[ \Rightarrow (s^2 + 1)\tilde{u} = \tilde{g} \Rightarrow \tilde{u} = \tilde{g}\frac{1}{s^2 + 1} = \tilde{g}\,\widetilde{\sin t} = \widetilde{g * \sin t} \]
+$\Rightarrow u = g * \sin t$, dvs $u(t) = \displaystyle\int_0^t g(r)\sin(t - r)\,dr$.
+\end{example}

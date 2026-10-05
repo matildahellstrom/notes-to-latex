@@ -1,0 +1,38 @@
+% language: swedish
+% figure: fig1 0.06 0.275 0.142 0.326
+% figure: fig2 0.425 0.827 0.51 0.865
+\begin{theorem}[Taylorutveckling av holomorfa funktioner (8.8)]
+\hfill \textcolor{magenta!80!black}{Bevislistan}
+
+Antag att $f$ holomorf i $D(z_0, R)$. Då har $f$ en potensserieutveckling (Taylorutveckling)
+\[ f(z) = \sum_0^\infty c_k(z - z_0)^k \text{ i } D(z_0, R) \]
+\[ c_k = \underbrace{\frac{f^{(k)}(z_0)}{k!}}_{\textcolor{magenta!80!black}{\text{derivator av } f \text{ i centrum}}} = \frac{1}{2\pi i} \int_{|z - z_0|} \frac{f(z)}{(z - z_0)^{k+1}}\,dz \]
+$0 < r < R$ \quad \textcolor{magenta!80!black}{cirkeln ska ligga i den vi började med.}
+\end{theorem}
+\begin{proof}
+Antar först \emph{$z_0 = 0$}. Välj $z \in D(0, R)$ och $|z| < r < R$
+\notefigure{fig1}{}
+\begin{align*}
+  f(z) &\overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} \frac{1}{2\pi i} \int_{|w| = r} \frac{f(w)}{w - z}\,dw = \\
+  &= \frac{1}{2\pi i} \int_{|w| = r} \frac{f(w)}{z} \cdot \frac{1}{1 - z/w}\,dw = \\
+  &= \left[ \left| \frac{z}{w} \right| = \frac{|z|}{r} < 1 \Rightarrow \frac{1}{1 - z/w} = \sum_0^\infty \left( \frac{z}{w} \right)^k \right] = \\
+  &= \frac{1}{2\pi i} \int_{|w| = r} \frac{f(w)}{w} \sum_0^\infty \left( \frac{z}{w} \right)^k dw =
+\end{align*}
+$=$ \textcolor{magenta!80!black}{\{serien måste konvergera likformigt på cirkeln. $=$ holomorf funktion, kompakt cirkel.\}} $=$
+
+\quad $\Big[$ $\sum_0^\infty \left( \frac{z}{w} \right)$ konvergerar likformigt på $(0, r)$, $\left| \frac{f(w)}{w} \right| \le M$ på $C(0, r)$ så $\frac{f(w)}{w} \sum_0^\infty \left( \frac{z}{w} \right)^k$ likformigt konvergent! $\Big]$
+\[ \underset{\textcolor{magenta!80!black}{\text{prop 7.27b}}}{=} \sum_0^\infty \rattat{z^k}{z_k} \frac{1}{2\pi i} \int_{|w| = r} \frac{f(w)}{w^{k+1}}\,dw = \sum_0^\infty c_k z^k. \]
+För $z_0 \neq 0$ låt $w = z - z_0$. $g(w) = f(z)$ holomorf $D(0, R)$
+\[ \Longrightarrow f(z) = g(w) = \sum_0^\infty c_k w^k = \sum_0^\infty c_k(z - z_0)^k, \quad c_k = \frac{g^{(k)}(0)}{k!} = \frac{f^{(k)}(z_0)}{k!} \]
+\end{proof}
+
+\textcolor{red!70!black}{\textbf{OBS!}} $\sum_0^\infty c_k(z - z_0)^k$ har konvergensradie $\ge R$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+En funktion som lokalt kan skrivas som konvergent potensserie kallas \emph{analytisk}, komplexa funktioner är analytiska omm holomorfa.
+
+Finns reella funktioner på $\mathbb{R}$ som är $C^\infty$ men ej analytiska.
+
+t.ex.\ $u(x) = \begin{cases} 0, & x \le 0 \\ e^{-1/x}, & x > 0 \end{cases}$
+\notefigure{fig2}{}

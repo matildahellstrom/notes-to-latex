@@ -1,0 +1,46 @@
+% language: swedish
+\section{Föreläsning 18/9}
+
+\begin{theorem}[Liouvilles sats (kor 5.13)]
+Om $f$ hel (holo i $\mathbb{C}$) och begränsad ($|f| \le M < \infty$), då är $f$ konstant.
+\end{theorem}
+\begin{proof}
+Tag $w \in \mathbb{C}$ godtyckligt. $f'(w) \underset{\textcolor{magenta!80!black}{\text{CIF för } f'}}{=} \dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = R} \frac{f(z)}{(z - w)^2}\,dz$
+\[ \Rightarrow |f'(w)| \underset{\textcolor{magenta!80!black}{\Delta\text{ olik} \int}}{\le} \frac{1}{2\pi} \max_{|z - w| = R} \frac{|f(z)|}{R^2} 2\pi R \le \frac{M}{R} \text{ enligt antagandena.} \]
+$f$ hel $\Rightarrow R$ kan väljas godtyckligt stort $\Rightarrow f'(w) = 0$.
+
+$w$ godtyckligt så $f' \equiv 0$, $\mathbb{C}$ område $\overset{}{\underset{\textcolor{magenta!80!black}{\text{Sats}}}{\Longrightarrow}}$ $f$ konstant
+\end{proof}
+
+\begin{note}
+Stor skillnad mot reella världen!
+\end{note}
+
+\begin{example}
+$\sin x$, $\cos x$ oändligt deriverbara och \emph{begränsade på $\mathbb{R}$} men ej konstanta.
+
+$\sin z$, $\cos z$ \emph{ej begränsade på $\mathbb{C}$}!
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\textbf{Överkursövning:} (mycket svår?)
+
+$e^z$ hel, begränsad på ett halvplan. Kan du hitta en \emph{hel} funktion som är begränsad på sektor med vinkel $> \pi$?
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Algebrans fundamentalsats (sats 5.11)]
+\hfill \textcolor{blue!60!black}{$\leftarrow$ Bevislistan (denna + Lemma -- Lemmabevis)}
+
+Låt $p(z) = z^n + a_{n-1}z^{n-1} + \dots + a_0$, $n \ge 1$, $a_i \in \mathbb{C}$. Då finns $z_0 \in \mathbb{C}$: $p(z_0) = 0$ (formulerad 1629, felaktigt bevisad av d'Alembert 1746, Euler 1749, de Foncenex 1759, Lagranges 1772, Laplace 1795, Wood 1798, Gauss 1799, korrekt bevis 1806 av Argand)
+\end{theorem}
+
+\textbf{Lemma:} Givet $p(z) = z^n + \dots + a_0$ kan man välja $R \gg 0$ s.a.\ $|p(z)| \ge \dfrac{|z|^n}{2}$ för alla $|z| \ge R$.
+
+\begin{proof}[Bevis (Lemma)]
+\[ \left| \frac{p(z)}{z^n} \right| = \left| 1 + \frac{a_{n-1}}{z} + \dots + \frac{a_0}{z^n} \right| \underset{\textcolor{magenta!80!black}{\text{Omv.\ } \Delta\text{ olik}}}{\ge} 1 - \frac{|a_{n-1}|}{|z|} - \dots - \frac{|a_0|}{|z|^n}, \]
+Välj $R > 2n \cdot \max(|a_i|, 1)$ så funkar det
+\end{proof}
+
+\hfill \textcolor{red!70!black}{\underline{Bevis}} $\rightarrow$

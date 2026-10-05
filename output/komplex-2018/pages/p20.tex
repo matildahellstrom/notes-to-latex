@@ -1,0 +1,32 @@
+% language: swedish
+% figure: fig1 0.045 0.222 0.18 0.29
+% figure: fig2 0.08 0.325 0.205 0.405
+% figure: fig3 0.54 0.50 0.67 0.55
+% figure: fig4 0.39 0.625 0.495 0.672
+\subsection{Integraler}
+\begin{enumerate}[label=\textcircled{\arabic*}]
+  \item $g : [a, b] \to \mathbb{C}$, kontinuerlig \ $(a, b \in \mathbb{R},\ a < b)$
+  \[ \int_a^b g(t)\,dt = \int_a^b \operatorname{Re} g(t)\,dt + i\int_a^b \operatorname{Im} g(t)\,dt \]
+  \item $f : G \to \mathbb{C}$ kontinuerlig \ $(G \subseteq \mathbb{C}$ område$)$
+  \notefigure{fig1}{}
+  $\gamma : [a, b] \to G$ glatt kurva \ (dvs.\ $\gamma'(t)$ kontinuerlig)
+  \[ \int_\gamma f\,dz = \int_a^b f(\gamma(t))\gamma'(t)\,dt \qquad \textcolor{magenta!80!black}{(dz = dx + i\,dy)} \]
+  \item \notefigure{fig2}{}
+  $\gamma$ styckvis glatt på delintervall $[a_0, a_1], \dots, [a_{n-1}, a_n]$
+  \[ \int_\gamma f\,dz = \int_{a_0}^{a_1} f(\gamma(t))\gamma'(t)\,dt + \dots + \int_{a_{n-1}}^{a_n} f(\gamma(t))\gamma'(t)\,dt \]
+\end{enumerate}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+$\gamma_1(t) = t + it$, \ $0 \le t \le 1$ \qquad $f = \bar{z}$
+\notefigure{fig3}{}
+\[ \int_{\gamma_1} \bar{z}\,dz = \int_0^1 \overline{(t + it)}(1 + i)\,dt = \int_0^1 2t\,dt = \left[t^2\right]_0^1 = \underline{\underline{1}} \]
+
+$\gamma_2(t) = t + it^2$, \ $0 \le t \le 1$ \qquad $f = \bar{z}$
+\notefigure{fig4}{}
+\begin{align*}
+  \int_{\gamma_2} \bar{z}\,dz &= \int_0^1 (t - it^2)(1 + 2it)\,dt = \int_0^1 (t + it^2 + 2t^3)\,dt = \left[\frac{t^2}{2} + i\frac{t^3}{3} + \frac{t^4}{2}\right]_0^1 = \\
+  &= \frac{1}{2} + \frac{i}{3} + \frac{1}{2} = \underline{1 + \frac{i}{3}}
+\end{align*}
+\end{example}

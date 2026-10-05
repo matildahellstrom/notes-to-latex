@@ -1,0 +1,47 @@
+% language: swedish
+\begin{example}
+Bestäm FT av $\dfrac{1}{1 + t^2}$
+
+\textbf{Lösning:} $\widehat{\dfrac{1}{1 + t^2}} = \dfrac{1}{2} \widehat{\dfrac{2}{1 + t^2}} = \dfrac{1}{2} \hat{\hat{e}}^{-|x|} \overset{\textcolor{magenta!80!black}{\text{IF}}}{=} \dfrac{1}{2} 2\pi e^{-|-x|} = \pi e^{-|x|}$
+
+\emph{Alternativ}: $\widehat{\dfrac{1}{1 + t^2}}(x) = \displaystyle\int_{-\infty}^\infty \frac{e^{-ixt}}{1 + t^2}\,dt$ kan räknas ut med hjälp av residykalkyl.
+\end{example}
+\begin{itemize}
+  \item $\displaystyle\int_{-\infty}^\infty |f(t)|^2\,dt = $ energin hos signalen
+\end{itemize}
+
+\begin{theorem}[Parsevals formel (Sats 2.2F)]
+Antag $f, \hat{f} \in L^1$. Då är $\displaystyle\int_{-\infty}^\infty |f(t)|^2\,dt = \frac{1}{2\pi} \int_{-\infty}^\infty |\hat{f}(x)|^2\,dx$
+\end{theorem}
+
+\begin{framed}[Utvikning: Vågfunktioner i kvantmekaniken]
+\hfill \textcolor{magenta!80!black}{ingår ej i kursen}
+
+En partikel på en linje då beskrivs i en given tidpunkt av en vågfunktion $\Psi : \mathbb{R} \to \mathbb{C}$. Sannolikheten att träffa på vår partikeln i intervallet $[a, b]$ ges av $\int_a^b |\Psi(x)|^2\,dx$. Speciellt $\int_{-\infty}^\infty |\Psi(x)|^2\,dx = 1$
+
+Anta $\Psi \in L^1$. $\Phi(p) = \dfrac{1}{\sqrt{2\pi h}} \displaystyle\int_{-\infty}^\infty \Psi(x)e^{-ip/h\,x}\,dx = \frac{1}{\sqrt{2\pi h}} \hat{\Psi}\left( \frac{p}{h} \right)$, \ $p = h \cdot$ frekvens $=$ rörelsemängd \quad \textcolor{magenta!80!black}{$h = $ plancks konstant}
+
+Notera att $\displaystyle\int_{-\infty}^\infty |\Phi(p)|^2\,dp = \frac{1}{2\pi} \int_{-\infty}^\infty \left| \hat{\Psi}\left( \frac{p}{h} \right) \right|^2 d\left( \frac{p}{h} \right) \overset{\textcolor{magenta!80!black}{\text{parseval}}}{=} \int_{-\infty}^\infty |\Psi|^2\,dx = 1$
+
+Sannolikheten att partikelns rörelsemängd ligger mellan värdena $c$ och $d$ är $\int_c^d |\Phi(p)|^2\,dp$
+
+Heisenbergs osäkerhetsrelationen är matematisk konsekvens av dualiteten mellan $\Psi$ och $\Phi$.
+\end{framed}
+
+\begin{minipage}[t]{0.45\linewidth}
+\textbf{Egenskaper hos FT (prop 2.3F)}
+\begin{enumerate}[label=\textcircled{\alph*}]
+  \item $\widehat{af + bg} = a\hat{f} + b\hat{g}$
+  \item om $f' \in L^1$, då $\widehat{f'} = ix\hat{f}$
+  \item $\widehat{f(t - a)} = e^{-iax}\hat{f}(t)$
+  \item $\widehat{f(at)}(x) = \dfrac{\hat{f}(t)(x/a)}{|a|}$ \ $(a \neq 0)$
+  \item om $tf \in L^1$, då $\widehat{tf} = i(\hat{f})'$
+\end{enumerate}
+\end{minipage}\hfill\vrule\hfill
+\begin{minipage}[t]{0.5\linewidth}
+\textcolor{red!70!black}{\fbox{Bevis:}} b)
+\[ \widehat{f'}(x) = \lim_{R \to \infty} \int_{-R}^R f'(t)e^{\rattat{-ixt}{ixt}}\,dt = \]
+\[ \overset{\textcolor{magenta!80!black}{\text{part.\ int.}}}{=} \lim_{R \to \infty}\Big( \left[ f(t)e^{-ixt} \right]_{-R}^R \]
+\[ - (-ix)\int_{-R}^R f(t)e^{-ixt}\,dt \Big) = \]
+\[ = \left[ f, f' \in L^1 \Rightarrow f(t) \xrightarrow[|t| \to \infty]{} 0 \right. \]
+\end{minipage}

@@ -1,0 +1,106 @@
+% title: Formelblad -- Komplex analys 2018
+\small
+\setlength{\columnsep}{1.4em}
+\setlength{\parskip}{0.35em}
+\newcommand{\fsec}[1]{\par\smallskip\noindent\textbf{\color{red!55!black}#1}\par}
+
+\begin{multicols}{2}
+
+\fsec{Komplexa tal}
+$z = x + iy = re^{i\theta}$, \ $r = |z|$, \ $\theta = \arg z$, \ $-\pi < \operatorname{Arg} z \le \pi$ \\
+$e^{i\theta} = \cos\theta + i\sin\theta$, \ $(\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta$ \\
+$|z|^2 = z\bar z$, \ $\operatorname{Re} z = \frac{z + \bar z}{2}$, \ $\operatorname{Im} z = \frac{z - \bar z}{2i}$, \ $\frac{z}{w} = \frac{z\bar w}{|w|^2}$ \\
+$|z \pm w| \le |z| + |w|$, \quad $|z \pm w| \ge |z| - |w|$
+
+\fsec{Elementära funktioner}
+$e^z = e^x(\cos y + i\sin y)$, \ $e^{z + 2\pi i} = e^z$ \\
+$\sin z = \frac{e^{iz} - e^{-iz}}{2i}$, \ $\cos z = \frac{e^{iz} + e^{-iz}}{2}$ \\
+$\sinh z = \frac{e^z - e^{-z}}{2}$, \ $\cosh z = \frac{e^z + e^{-z}}{2}$, \ $\sinh(iz) = i\sin z$ \\
+$\operatorname{Log} z = \ln|z| + i\operatorname{Arg} z$ (diskontinuerlig på $\mathbb{R}_{\le 0}$), \ $\operatorname{Log}'(z) = \frac1z$ \\
+$a^b = e^{b\operatorname{Log} a}$, \ t.ex.\ $i^i = e^{-\pi/2}$
+
+\fsec{Holomorfi}
+$f'(z_0) = \displaystyle\lim_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h}$, \ $h \in \mathbb{C}$ \\
+Cauchy-Riemann ($f = u + iv$): $\dfrac{du}{dx} = \dfrac{dv}{dy}$, \ $\dfrac{du}{dy} = -\dfrac{dv}{dx}$, \ $f' = \dfrac{df}{dx} = -i\dfrac{df}{dy}$ \\
+Polärt: $\dfrac{du}{dr} = \dfrac1r\dfrac{dv}{d\varphi}$, \ $\dfrac1r\dfrac{du}{d\varphi} = -\dfrac{dv}{dr}$ \\
+$f' \equiv 0$ i område $\Rightarrow f$ konstant. \ $f$ holomorf, $f' \neq 0 \Rightarrow$ konform. \\
+Harmonisk: $\Delta u = u_{xx} + u_{yy} = 0$; $\operatorname{Re} f$, $\operatorname{Im} f$ harmoniska.
+
+\fsec{Möbiusavbildningar}
+$M(z) = \dfrac{az + b}{cz + d}$, $ad - bc \neq 0$, \ $M'(z) = \dfrac{ad - bc}{(cz + d)^2}$ \\
+$M^{-1}(z) = \dfrac{dz - b}{-cz + a}$; \ $-\frac dc \mapsto \infty$, $\infty \mapsto \frac ac$ \\
+Cirklar och linjer $\mapsto$ cirklar och linjer. Tre punkter bestämmer $M$:
+$z_1, z_2, z_3 \mapsto 0, 1, \infty$: \ $\dfrac{(z - z_1)(z_2 - z_3)}{(z - z_3)(z_2 - z_1)}$ \\
+$\frac{z - a}{1 - \bar a z}$ ($|a| < 1$) avbildar $D(0,1)$ på sig själv.
+
+\fsec{Kurvintegraler}
+$\displaystyle\int_\gamma f\,dz = \int_a^b f(\gamma(t))\gamma'(t)\,dt$, \ $|\gamma| = \int_a^b |\gamma'(t)|\,dt$ \\
+$\displaystyle\left| \int_\gamma f\,dz \right| \le \max_{z \in \gamma}|f(z)| \cdot |\gamma|$ \\
+\textbf{Superviktigt:}
+\[ \int_{|z - w| = r} (z - w)^k\,dz = \begin{cases} 2\pi i, & k = -1 \\ 0, & k \neq -1 \end{cases} \]
+Primitiv $F$: $\int_\gamma f\,dz = F(\gamma(b)) - F(\gamma(a))$; finns om $G$ enkelt sammanhängande.
+
+\fsec{Cauchy}
+\emph{Cauchys sats:} $f$ holomorf i $G$, $\gamma_0 \sim_G \gamma_1 \Rightarrow \int_{\gamma_0} f = \int_{\gamma_1} f$; \ $\gamma \sim_G 0 \Rightarrow \int_\gamma f = 0$ \\
+\emph{CIF:} $f^{(k)}(w) = \dfrac{k!}{2\pi i}\displaystyle\int_{|z - w| = r} \frac{f(z)}{(z - w)^{k+1}}\,dz$ \\
+\emph{Cauchys uppskattningar:} $|f^{(k)}(w)| \le \dfrac{k!\,M}{R^k}$ om $|f| \le M$ i $D(w, R)$ \\
+\emph{Liouville:} hel och begränsad $\Rightarrow$ konstant. \\
+\emph{Maxmodulus:} $|f|$ antar max i $G \Rightarrow f$ konstant; \ svag: max på $\partial G$. \\
+\emph{Medelvärde:} $u(w) = \frac{1}{2\pi}\int_0^{2\pi} u(w + re^{it})\,dt$ \\
+\emph{Morera:} kontinuerlig och $\oint_\gamma f = 0$ för alla slutna $\gamma \Rightarrow$ holomorf.
+
+\fsec{Serier}
+$\displaystyle\frac{1}{1 - z} = \sum_{k=0}^\infty z^k$ ($|z| < 1$), \quad $e^z = \sum \frac{z^k}{k!}$ \\
+$\sin z = \sum \frac{(-1)^k z^{2k+1}}{(2k+1)!}$, \quad $\cos z = \sum \frac{(-1)^k z^{2k}}{(2k)!}$ \\
+Konvergensradie: $\dfrac1R = \displaystyle\lim \frac{|c_{k+1}|}{|c_k|}$ eller $\limsup |c_k|^{1/k}$ \\
+Taylor: $c_k = \dfrac{f^{(k)}(z_0)}{k!}$, giltig i största skivan där $f$ holomorf \\
+Laurent i $A(z_0, R_1, R_2)$: $c_k = \dfrac{1}{2\pi i}\displaystyle\int_{|z - z_0| = r} \frac{f(z)}{(z - z_0)^{k+1}}\,dz$ \\
+Nollställe av ordning $m$: $f = (z - z_0)^m g$, $g(z_0) \neq 0$. Identitetsprincipen.
+
+\fsec{Isolerade singulariteter}
+Hävbar $\Leftrightarrow \lim (z - z_0)f(z) = 0 \Leftrightarrow c_k = 0$ för $k < 0$ \\
+Pol av ordning $m \Leftrightarrow f = \dfrac{g(z)}{(z - z_0)^m}$, $g(z_0) \neq 0$ \\
+Väsentlig $\Leftrightarrow$ oändligt många $c_k \neq 0$, $k < 0$
+
+\fsec{Residyer}
+$\operatorname{Res}_{z_0} f = c_{-1}$; \ hävbar $\Rightarrow 0$ \\
+$\operatorname{Res}_{z_0} \dfrac{g(z)}{(z - z_0)^m} = \dfrac{g^{(m-1)}(z_0)}{(m - 1)!}$ \\
+$\operatorname{Res}_{z_0} \dfrac{f}{g} = \dfrac{f(z_0)}{g'(z_0)}$ om $z_0$ enkelt nollställe till $g$ \\
+\emph{Residysatsen:} $\displaystyle\int_\gamma f\,dz = 2\pi i \sum_{z_k \in \operatorname{int}\gamma} \operatorname{Res}_{z_k} f$
+
+\fsec{Reella integraler}
+\emph{Trigonometriska:} $z = e^{it}$, $dt = \frac{dz}{iz}$, $\cos t = \frac{z + 1/z}{2}$, $\sin t = \frac{z - 1/z}{2i}$, integrera över $|z| = 1$. \\
+\emph{Rationella över $\mathbb{R}$:} halvcirkel $\sigma_R = [-R, R] \cup \gamma_R$; visa $\int_{\gamma_R} \to 0$ med $|p(z)| \ge |z|^n - \dots$ \\
+\emph{Med $\cos ax$:} skriv $\cos ax = \operatorname{Re} e^{i|a|x}$; $|e^{i|a|z}| = e^{-|a|y} \le 1$ i övre halvplanet.
+
+\fsec{Argumentprincipen och Rouché}
+$W(f \circ \gamma) = \dfrac{\operatorname{argvar}(f \circ \gamma)}{2\pi} = N(f, \gamma) - P(f, \gamma)$ \\
+\emph{Rouché:} $|f| > |g|$ på $\gamma \Rightarrow f$ och $f + g$ har lika många nollställen i $\operatorname{int}\gamma$.
+
+\fsec{Fouriertransform}
+$\hat f(x) = \displaystyle\int_{-\infty}^\infty f(t)e^{-ixt}\,dt$, \quad $\hat{\hat f}(t) = 2\pi f(-t)$ \\
+Parseval: $\int |f|^2\,dt = \frac{1}{2\pi}\int |\hat f|^2\,dx$; \ $\widehat{f * g} = \hat f \hat g$ \\
+$\widehat{f'} = ix\hat f$, \ $\widehat{tf} = i\hat f'$, \ $\widehat{f(t - a)} = e^{-iax}\hat f$, \ $\widehat{f(at)} = \frac{1}{|a|}\hat f(\frac xa)$ \\
+\begin{tabular}{@{}ll@{}}
+  $e^{-|t|}$ & $\dfrac{2}{1 + x^2}$ \\
+  $\dfrac{1}{1 + t^2}$ & $\pi e^{-|x|}$ \\
+  $e^{-t^2/2}$ & $\sqrt{2\pi}\, e^{-x^2/2}$ \\
+  $1$ för $|t| \le \delta$, annars $0$ & $\dfrac{2\sin \delta x}{x}$
+\end{tabular}
+
+\fsec{Laplacetransform}
+$\tilde f(s) = \displaystyle\int_0^\infty f(t)e^{-st}\,dt$, \ $\operatorname{Re} s > B$; \ $\widetilde{f * g} = \tilde f\tilde g$, $(f * g)(t) = \int_0^t f(r)g(t - r)\,dr$ \\
+$\widetilde{f'} = s\tilde f - f(0)$, \ $\widetilde{f''} = s^2\tilde f - sf(0) - f'(0)$ \\
+$\widetilde{e^{ct}f} = \tilde f(s - c)$, \ $\widetilde{tf} = -\tilde f'$ \\
+\begin{tabular}{@{}llll@{}}
+  $1$ & $\frac1s$ & $t^n$ & $\frac{n!}{s^{n+1}}$ \\[0.6ex]
+  $e^{at}$ & $\frac{1}{s - a}$ & $t e^{at}$ & $\frac{1}{(s - a)^2}$ \\[0.6ex]
+  $\sin ct$ & $\frac{c}{s^2 + c^2}$ & $\cos ct$ & $\frac{s}{s^2 + c^2}$ \\[0.6ex]
+  $e^{at}\sin ct$ & $\frac{c}{(s - a)^2 + c^2}$ & $e^{at}\cos ct$ & $\frac{s - a}{(s - a)^2 + c^2}$
+\end{tabular}
+
+\fsec{Z-transform}
+$Z(\alpha)(z) = \displaystyle\sum_{k=0}^\infty \frac{a_k}{z^k}$; \ shift: $Z(S\alpha) = z(Z(\alpha) - a_0)$; \ $Z(\alpha * \beta) = Z(\alpha)Z(\beta)$ \\
+$\{a^k\} \mapsto \frac{z}{z - a}$, \ $\{1\} \mapsto \frac{z}{z - 1}$, \ $\{k\} \mapsto \frac{z}{(z - 1)^2}$, \ $\{k(k-1)\} \mapsto \frac{2z}{(z - 1)^3}$
+
+\end{multicols}

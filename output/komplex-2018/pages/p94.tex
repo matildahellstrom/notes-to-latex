@@ -1,0 +1,36 @@
+% language: swedish
+% figure: fig1 0.77 0.165 0.985 0.275
+% figure: fig2 0.72 0.335 0.90 0.45
+% figure: fig3 0.21 0.862 0.55 0.95
+% figure: fig4 0.77 0.832 0.90 0.93
+\begin{theorem}[Sats]
+Om $f$ har en pol av ordning $k$ i $z_0$ så är
+\[ \operatorname{Res}(f, z_0) = \frac{1}{(k - 1)!} \frac{d^{k-1}}{dz^{k-1}} \cdot (z - z_0)^k f \Big|_{z = z_0}. \qquad k = 1 \Rightarrow \operatorname{Res}(f, z_0) = (z - z_0)f \Big|_{z = z_0} \]
+\end{theorem}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+Sid 8. \textcircled{1} Beräkna $\displaystyle\int_{-\infty}^\infty \frac{dx}{1 + x^4}$
+
+\textbf{Lösning:}
+\notefigure{fig1}{}
+\[ \int_{-\infty}^\infty \frac{dx}{1 + x^4} = \lim_{R \to \infty} \int_{-R}^R \frac{dx}{1 + x^4} = \lim_{R \to \infty} \int_{[-R, R]} \frac{dz}{1 + z^4} = \]
+\[ = \lim_{R \to \infty}\left( \int_{C_R} \frac{dz}{1 + z^4} - \int_{\gamma_R} \frac{dz}{1 + z^4} \right) = (*) \qquad \left| \int_{\gamma_R} \frac{dz}{1 + z^4} \right| \le \pi R \max_{z \in \gamma_R} \left| \frac{1}{1 + z^4} \right| \le \frac{\pi R}{R^4 - 1} \xrightarrow[R \to \infty]{} 0 \]
+\[ (*) = \int_{C_R} \frac{dz}{1 + z^4} = \textcolor{red!70!black}{(*)} \Rightarrow z^4 + 1 = 0 \Leftrightarrow (z^2 - i)(z^2 + i) = 0 \]
+\notefigure{fig2}{}
+\[ \underline{z_1} = \frac{\sqrt{2}}{2}(1 + i) \quad \underline{z_2} = \frac{\sqrt{2}}{2}(-1 + i) \quad \underline{z_3} = \frac{\sqrt{2}}{2}(-1 - i) \quad \underline{z_4} = \frac{\sqrt{2}}{2}(1 - i) \]
+\[ z_1^2 = i \ \& \ z_3^2 = (-z_1)^2 = i \]
+\[ \textcolor{red!70!black}{(*)} = 2\pi i(\operatorname{Res}(z_1) + \operatorname{Res}(z_2)) = \left\{ (z - z_1)(z - z_2)(z - z_3)(z - z_4),\ \frac{1}{z^4 + 1} = \frac{1}{(z^2 - i)(z^2 + i)} \right. \]
+\[ \left. = \frac{1}{\cancel{(z - z_1)}(z - z_3)(z^2 + i)} = \frac{1}{(z^2 - i)\cancel{(z - z_2)}(z - z_4)} \right\} = \]
+\[ = 2\pi i\left( \frac{1}{2i(z_1 - z_3)} - \frac{1}{2i(z_2 - z_4)} \right) = \pi\left( \frac{1}{\sqrt{2}(1 + i)} - \frac{1}{\sqrt{2}(-1 + i)} \right) \]
+\[ = \frac{\pi}{\sqrt{2}}\left( \frac{1 - i}{(1 + i)(1 - i)} - \frac{-1 - i}{(-1 + i)(-1 - i)} \right) = \frac{\pi}{2\sqrt{2}}(1 - i + 1 + i) = \textcolor{red!70!black}{\boxed{\textcolor{black}{\frac{\pi}{\sqrt{2}}}}} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+Sida 11 \textcircled{2} Använda argumentprincipen för att hitta antalet lösningar till $z^3 + z^2 + z + 4 = 0$ i höger halvplan.
+
+\textbf{Lösning:} Låt $f(z) = z^3 + z^2 + z + 4$ och $\gamma$ vara någon enkelt sluten kurva. \emph{Arg.\ principen}: $W(f, \gamma) = N(f, \gamma) - P(f, \gamma)$
+\notefigure{fig4}{}
+$W = \dfrac{\operatorname{Arg var}}{2\pi}$
+\notefigure{fig3}{}
+\hfill $\longrightarrow$

@@ -1,0 +1,44 @@
+% language: swedish
+% figure: fig1 0.07 0.022 0.41 0.145
+\begin{proof}
+\notefigure{fig1}{}
+Numrera singulariteterna i $\operatorname{int}(\gamma)$: $z_1, \dots, z_N$. Välj $\varepsilon > 0$ s.a.\ $D(z, \varepsilon) \subseteq \operatorname{int}(\gamma)$, ej skär varann. Låt $\tilde{\gamma}$ vara som på bilden.
+
+Topologiskt faktum $\gamma \sim_{G \setminus \text{sing}} \tilde{\gamma}$. $\Rightarrow \displaystyle\int_\gamma f\,dz \overset{\textcolor{magenta!80!black}{\text{CS}}}{=} \int_{\tilde{\gamma}} f\,dz = \sum_{i = 1}^N \int_{|z - z_i| = \varepsilon/2} f(z)\,dz$
+\[ \int_{|z - z_i| = \varepsilon/2} f(z)\,dz = \int_{|z - z_i| = \varepsilon/2} \sum_{-\infty}^\infty c_k(z - z_i)^k\,dz = 2\pi i\, c_{-1} = 2\pi i \operatorname{Res}_{z_i} f \Rightarrow \]
+\[ \Rightarrow \int_\gamma f\,dz = \sum_{i = 1}^N 2\pi i \operatorname{Res}_{z_i} f = 2\pi i \sum_{z_k \in \operatorname{int}(\gamma)} \operatorname{Res}_{z_k} f. \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Räkna ut residyer}
+\begin{theorem}[Prop.\ 9.11a]
+\hfill \textcolor{magenta!80!black}{Bevislistan}
+
+Om $z_0$ hävbar singulär till $f$, då är $\operatorname{Res}_{z_0} f = 0$
+\end{theorem}
+\begin{proof}
+skriv $f(z) = \sum_{-\infty}^\infty c_k(z - z_0)^k$ i $D(z_0, R)^\times$, $z_0$ hävbar $\overset{\textcolor{magenta!80!black}{\text{Sats}}}{\Longrightarrow} c_k = 0$ $\forall k < 0$, speciellt $\operatorname{Res}_{z_0} f = c_{-1} = 0$.
+\end{proof}
+
+\begin{theorem}[Prop 1.3.R]
+\hfill \textcolor{magenta!80!black}{Bevislistan}
+
+Om $f(z) = \dfrac{g(z)}{(z - z_0)^m}$, $m \ge 1$, $g$ holomorf i $D(z_0, R)$ \ (ej nödvändigt att $g(z_0) \neq 0$)
+
+då är $\operatorname{Res}_{z_0} f = \dfrac{g^{(m-1)}(z_0)}{(m - 1)!}$
+\end{theorem}
+\begin{proof}
+Skriv $g(z) = \sum_{\rattat{0}{-\infty}}^\infty d_k(z - z_0)^k$ i $D(z_0, R)$
+\[ \Rightarrow f(z) = \frac{1}{(z - z_0)^m} \sum_0^\infty d_k(z - z_0)^k = \sum_{k = -m}^\infty d_{k+m}(z - z_0)^k \]
+\[ \Rightarrow \operatorname{Res}_{z_0} f = c_{-1} = d_{m-1} \overset{\textcolor{magenta!80!black}{\text{Sats}}}{=} \frac{g^{(m-1)}(z_0)}{(m - 1)!} \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Bestäm $\operatorname{Res}_1 f$ där $f(z) = \dfrac{e^z}{\sin z(z - 1)^2}$
+
+\textbf{Lösning:} $f(z) = \dfrac{g(z)}{(z - 1)^2}$, $g(z) = \dfrac{e^z}{\sin z}$ holomorf i omgivning till $1$.
+\[ \text{Får } \operatorname{Res}_1 f \underset{\textcolor{magenta!80!black}{\text{Prop.}}}{=} \left( \frac{e^z}{\sin z} \right)'_{z = 1} = \left[ \left( \frac{e^z}{\sin z} \right)' = \frac{e^z \sin z - e^z \cos z}{\sin^2 z} \right] = \frac{e \cdot \sin 1 - e \cdot \cos 1}{\sin^2 1} \]
+\end{example}

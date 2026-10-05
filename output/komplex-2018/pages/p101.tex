@@ -1,0 +1,31 @@
+% language: swedish
+\subsection{Tenta 2012 mars uppg.\ 8}
+Låt $f$ vara holomorf i $\mathbb{C}$, antag $f$ reellvärd på $C(0, 1)$. Visa $f$ konstant.
+
+\textbf{Lösning:} Låt $u = \operatorname{Re} f$, $v = \operatorname{Im} f$, enligt sats $u, v$ harmoniska.
+
+Enligt antagande $v = 0$ på $C(0, 1)$.
+\[ \text{Svaga maxprincipen} \Longrightarrow \max_{\overline{D}(0, 1)} v = \max_{C(0, 1)} v = 0 \Rightarrow v \le 0 \text{ på } \overline{D}(0, 1) \]
+\[ \text{Svaga maxprincipen} \Longrightarrow \min_{\overline{D}(0, 1)} v = \min_{C(0, 1)} v = 0 \Rightarrow v \ge 0 \text{ på } \overline{D(0, 1)} \]
+\[ \Rightarrow v \equiv 0 \text{ i } \overline{D}(0, 1). \quad \frac{du}{dx} \overset{\textcolor{magenta!80!black}{\text{CR}}}{=} \frac{dv}{dy} \equiv 0 \text{ i } D(0, 1),\ f' \overset{\textcolor{magenta!80!black}{\text{CR}}}{=} \frac{df}{dx} = \frac{du}{dx} + i\frac{dv}{dx} \equiv 0 \]
+i $D(0, 1) \overset{\textcolor{magenta!80!black}{\text{Sats}}}{\Longrightarrow} f$ konstant i $D(0, 1)$, dvs $f \equiv C$ i $D(0, 1)$
+
+$f, C$ holomorf i $\mathbb{C}$, $f(\frac{1}{n}) = C$, $\frac{1}{n} \xrightarrow{\textcolor{magenta!80!black}{n \to \infty}} 0 \in \mathbb{C} \underset{\textcolor{magenta!80!black}{\text{princ.}}}{\overset{\textcolor{magenta!80!black}{\text{ident.}}}{\Longrightarrow}} f \equiv C$ i $\mathbb{C}$
+
+\begin{theorem}[Maximummodulusprincipen (Kor 6.11)]
+Om $f$ holomorf i $G$ och $|f|$ antar max i $G$. då är $f$ konstant i $G$.
+\end{theorem}
+
+\subsection{Tenta 2014 Januari uppg.\ 9}
+Låt $f$ vara holomorf i $D(0, 1)$, $|f| \le 1$, $f(1/2) = 1/2$. Visa att $|f(z) - 1/2| \le 3\dfrac{|z - 1/2|}{|z - 2|}$.
+
+\textbf{Lösning:} om $|a| < 1$ så är enligt övning 3.9 Mavb $M(z) = \dfrac{z - a}{1 - \bar{a}z}$ en bijektion från $D(0, 1)$ till sig självt, speciellt är $\left| \dfrac{z - a}{1 - \bar{a}z} \right| = 1$ på $C(0, 1)$
+
+Låt $a = 1/2$, $M(z) = \dfrac{z - \frac{1}{2}}{1 - \frac{1}{2}z}$, $g(z) = \dfrac{f(z) - 1/2}{M(z)}$
+
+$M(z)$ har enkelt nollställe i $1/2$, $f(z) = 1/2$ har nollställe i $1/2$
+\[ \underset{\textcolor{magenta!80!black}{\text{nollställen}}}{\overset{\textcolor{magenta!80!black}{\text{klass av}}}{\Longrightarrow}} g \text{ holomorf i } D(0, 1).\ |g(z)| = \frac{|f(z) - 1/2|}{M(z)} \overset{\textcolor{magenta!80!black}{\Delta \text{ olik}}}{\le} \frac{|f(z)| + 1/2}{1} \le \frac{3}{2} \text{ på } C(0, 1) \]
+\emph{Svaga maximumprincipen} $\Rightarrow |g| \le 3/2$ på $D(0, 1)$
+\[ \Rightarrow |f(z) - 1/2| \le \frac{3}{2}|M(z)| = \frac{3}{2} \frac{|z - 1/2|}{|1 - \frac{1}{2}z|} = \frac{3|z - 1/2|}{|z - 2|} \]
+
+\emph{Svaga maximumprincipen}: Om $f$ holomorf i $G$, kontinuerlig på $\overline{G}$, $G$ begränsad, då antar $|f|$ sitt max på $\partial G$.

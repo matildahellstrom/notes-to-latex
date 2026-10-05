@@ -1,0 +1,36 @@
+% language: swedish
+% figure: fig1 0.58 0.075 0.64 0.135
+\begin{example}
+Hitta Taylorutvecklingen till $\dfrac{1}{1 + z^2}$ centrum i $0$, och konvergensradien.
+\notefigure{fig1}{}
+\textbf{Lösning:} $\dfrac{1}{1 + z^2}$ holomorf i $\mathbb{C} \setminus \{i, -i\}$
+\[ \frac{1}{1 + z^2} = \frac{1}{1 - (-z^2)} \overset{\textcolor{magenta!80!black}{|-z^2| < 1}}{=} \sum_0^\infty (-z^2)^k = (-1)^0 \cdot z^0 + 0 \cdot z^1 + (-1)z^2 + 0 \cdot z^3 + \dots = \]
+\[ = \sum_0^\infty c_k z^k \text{ då } c_{2k} = (-1)^k,\ c_{2k+1} = 0 \]
+$\displaystyle\limsup_{k \to \infty} |c_k|^{1/k} = 1 \to \underline{\text{konvergensradie} = 1}$
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Cauchys uppskattningar (kor 8.12)]
+Antag $f$ holomorf i $D(w, R)$ och $|f| \le M$ där. Då fås $|f^{(k)}(w)| \le \dfrac{k!\,M}{R^k}$
+\end{theorem}
+\begin{proof}
+Låt $r < R$,
+\[ |f^{(k)}(w)| \overset{\textcolor{magenta!80!black}{\text{CIF för } f^{(k)}}}{=} \left| \frac{k!}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{(z - w)^{k+1}}\,dz \right| \overset{\textcolor{magenta!80!black}{\Delta \text{ olik} \int}}{\le} \frac{k!}{2\pi} \max_{|z - w| = r} \frac{f(z)}{r^{k+1}} 2\pi r \le \frac{k!\,M}{r^k} \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Antag $f$ hel och $|f(z)| \le |z|$ $\forall z \in \mathbb{C}$, visa att $f(z) = Cz$, $C \in \mathbb{C}$
+
+\textbf{Lösning:} Låt $w \in \mathbb{C}$ godtyckligt. Vill visa $f''(w) = 0$.
+
+$f$ hel, speciellt $f$ holomorf i $D(w, R)$ för alla $R > 0$
+
+För $z \in D(w, r)$ har vi $|f(z)| \le |z| = |z - w + w| \overset{\textcolor{magenta!80!black}{\Delta \text{ olik}}}{\le} |z - w| + |w| \le R + |w|$
+\[ |f''(w)| \overset{\textcolor{magenta!80!black}{\text{CU}}}{\le} \frac{2(R + |w|)}{R^2} \xrightarrow[R \to \infty]{} 0 \]
+\[ \Rightarrow f''(w) = 0 \xrightarrow[\textcolor{magenta!80!black}{\text{godt.}}]{\textcolor{magenta!80!black}{w}} f' \equiv 0 \xrightarrow{\textcolor{magenta!80!black}{\text{Sats}}} f' = C,\ C \in \mathbb{C} \to f' = (Cz)' \]
+\[ \xrightarrow{\textcolor{magenta!80!black}{\text{Sats}}} f = Cz + D,\ D \in \mathbb{C}, \text{ men } |D| = |f(0)| \le |0| = 0 \to D \]
+$f = Cz$ \qquad \textcolor{magenta!80!black}{Variant på Liouvilles sats.}
+\end{example}

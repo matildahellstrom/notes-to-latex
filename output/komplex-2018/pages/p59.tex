@@ -1,0 +1,38 @@
+% language: swedish
+% figure: fig1 0.04 0.365 0.14 0.42
+% figure: fig2 0.60 0.698 0.775 0.735
+\[ \text{CS} \to \frac{1}{2\pi i} \int_{R_1 < r < R_2} \frac{f(w)}{w^{k+1}}\,dw = \frac{1}{2\pi i} \int_{|w| = r} \frac{f(w)}{w^{k+1}}\,dw \]
+\[ \to f(z) = \text{I} + \text{II} = \sum_{-\infty}^\infty c_k z^k, \text{ där } c_k = \frac{1}{2\pi i} \int_{|w| = r} \frac{f(w)}{w^{k+1}}\,dw, \quad R_1 < r < R_2 \]
+om $z_0 \neq 0$ låt $w = z - z_0$, $g(w) = f(z)$ får
+\[ f(z) = g(w) = \sum_{-\infty}^\infty c_k w^k = \sum_{-\infty}^\infty c_k(z - z_0)^k, \quad c_k = \frac{1}{2\pi i} \int_{|w| = r} \frac{g(w)}{w^{k+1}}\,dw = \frac{1}{2\pi i} \int_{|z - z_0| = r} \frac{f(z)}{(z - z_0)^{k+1}}\,dz \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Bestäm LSU av $\dfrac{1}{1 - z}$ centrerad i $0$, giltig i $A(0, 1, \infty)$
+
+\textbf{Lösning:} $\dfrac{1}{1 - z}$ holomorf i $\mathbb{C} \setminus \{1\}$ \qquad $c_k = \begin{cases} 0, & k < 0 \\ 1, & k \ge 0 \end{cases}$
+\notefigure{fig1}{}
+Annulus med centrum i $0$, inre radie $0$
+
+$1/(1 - z)$ holomorf i $A(0, 0, 1)$ identisk med Taylor i cirkelskivan.
+\[ = \sum_{k = 0}^\infty z^k = \sum_0^\infty c_k z^k \quad \textcolor{magenta!80!black}{\text{divergerar utanför}} \]
+Titta på allt utanför istället för $A(0, 1, \infty)$
+\[ \underbrace{\frac{1}{1 - z}}_{\textcolor{magenta!80!black}{\text{vill att det ska vara litet}}} = \rattat{-\frac{1}{z - 1}}{\frac{1}{z - 1}} = -\frac{1}{z} \frac{1}{1 - 1/z} \overset{\textcolor{magenta!80!black}{|z| > 1}}{=} -\frac{1}{z} \sum_{k = 0}^\infty \left( \frac{1}{\rattat{z}{k}} \right)^k = -\sum_{k = -\infty}^{-1} z^k = \sum_{k = -\infty}^\infty c_k z^k, \]
+\[ c_k = \begin{cases} -1, & k \le -1 \\ 0, & k > -1 \end{cases} \]
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+om $\sum_{-\infty}^\infty c_k z^k$ är LSU till $\dfrac{1}{\sin z}$ giltig i $A(0, 0, \pi)$ bestäm $c_{-1}, c_0, c_1, c_2, c_3$ \hfill holomorf i denna annulus.
+
+\textbf{Lösning:} $\dfrac{1}{\sin z}$ holomorf i $\mathbb{C} \setminus \{k\pi : k \in \mathbb{Z}\}$
+\notefigure{fig2}{}
+\[ \sin z = z - \frac{z^3}{6} + \frac{z^5}{120} + O(z^7) \]
+\[ \frac{1}{\sin z} = \frac{1}{z\underbrace{\left(1 - \frac{z^2}{6} + \frac{z^4}{120} + O(z^6)\right)}_{\textcolor{magenta!80!black}{\text{antar litet}}}} = \frac{1}{z} \sum_0^\infty \left( \frac{z^2}{6} + \frac{z^4}{120} + \dots \right)^k = \]
+\[ = \frac{1}{z}\left( 1 + \frac{z^2}{6} - \frac{z^4}{120} + \frac{z^4}{36} + \dots \right) \]
+\[ = \frac{1}{z} + \frac{z}{6} + \frac{7}{360} z^3 + O(z^5) \]
+\[ \to c_{-1} = 1,\ c_0 = 0,\ c_1 = 1/6,\ c_2 = 0,\ c_3 = \frac{7}{360} \]
+\end{example}

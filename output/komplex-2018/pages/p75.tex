@@ -1,0 +1,33 @@
+% language: swedish
+% figure: fig1 0.60 0.035 0.72 0.115
+% figure: fig2 0.725 0.68 0.885 0.73
+\begin{example}
+Bestäm $\displaystyle\int_{|z| = 1} e^z \sin(1/z)\,dz$
+\notefigure{fig1}{}
+\textbf{Lösning:} $e^z \sin(\frac{1}{z})$ holomorf i $\mathbb{C} \setminus \{0\}$
+\[ \sin\left( \frac{1}{z} \right) = z^{-1} - \frac{z^{-3}}{3!} + \frac{z^{-5}}{5!} - \dots, \quad e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \dots \]
+\[ e^z \sin(1/z) = \left( 1 + z + \frac{z^2}{2!} + \dots \right)\left( z^{-1} - \frac{z^{-3}}{3!} + \frac{z^{-5}}{5!} - \dots \right) = \sum_{-\infty}^\infty c_k z^k \]
+\textcolor{magenta!80!black}{Kommer finnas oändligt med matchningar som ger $z^{-1}$.}
+\[ \operatorname{Res}_0\left( e^z \sin\left( \frac{1}{z} \right) \right) = c_{-1} = 1 - \frac{1}{2!3!} + \frac{1}{4!5!} - \dots = \sum_{k = 0}^\infty (-1)^k \frac{1}{(2k)!(2k + 1)!} \]
+\[ \int_{|z| = 1} e^z \sin\left( \frac{1}{z} \right) dz \underset{\textcolor{magenta!80!black}{\text{Res.\ sats}}}{=} 2\pi i\left( \sum_0^\infty \frac{(-1)^k}{(2k)!(2k + 1)!} \right) \]
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Reella integraler}
+\begin{example}
+Beräkna $\displaystyle\int_0^{2\pi} \frac{\cos t}{\cos t + 2}\,dt$
+
+\textbf{Lösning:} $z = e^{it}$, \ $\cos t = \dfrac{e^{it} + e^{-it}}{2} = \dfrac{z + \frac{1}{z}}{2} = \dfrac{z^2 + 1}{2z}$
+
+$\cos t + 2 = \dfrac{z^2 + 1}{2z} + 2 = \dfrac{z^2 + 4z + 1}{2z}$. \ $dz = d(e^{it}) = ie^{it}\,dt = iz\,dt$.
+\[ dt = \frac{-i}{z}\,dz \Rightarrow \frac{\cos t}{\cos t + 2}\,dt = \frac{-i(z^2 + 1)}{z^3 + 4z^2 + z}\,dz \qquad (z^3 + 4z^2 + z = z(z^2 + 4z + 1)) \]
+$f(z) = \dfrac{-i(z^2 + 1)}{z^3 + 4z^2 + z}$ \quad $f$ holomorf i $\mathbb{C}$ förutom isolerad singularitet i $0, -2 \pm \sqrt{3}$
+\notefigure{fig2}{}
+\textcolor{magenta!80!black}{$(\sqrt{3} < 2)$}
+
+$0$ och $-2 + \sqrt{3}$ inuti enhetsskivan.
+\[ \operatorname{Res}_0 f = \left( \frac{-i(z^2 + 1)}{3z^2 + 8z + 1} \right)_{z = 0} = -i \quad \textcolor{magenta!80!black}{\text{derivatan till tidigare nämnare.}} \]
+\[ \operatorname{Res}_{-2 + \sqrt{3}} f = \left( \frac{-i(z^2 + 1)}{3z^2 + 8z + 1} \right)_{z = -2 + \sqrt{3}} = \dots = \frac{2i}{\sqrt{3}} \Rightarrow \int_0^{2\pi} \frac{\cos t}{\cos t + 2}\,dt = \int_{|z| = 1} f(z)\,dz = \]
+\[ \underset{\textcolor{magenta!80!black}{\text{Res.\ sats}}}{=} 2\pi i\left( -i + \frac{2i}{\sqrt{3}} \right) = 2\pi\left( 1 - \frac{2}{\sqrt{3}} \right) \]
+\end{example}

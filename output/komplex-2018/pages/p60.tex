@@ -1,0 +1,42 @@
+% language: swedish
+% figure: fig1 0.42 0.015 0.68 0.088
+% figure: fig2 0.045 0.55 0.142 0.603
+\section{Föreläsning 2/10}
+\subsection{LSU (fortsättning)}
+\notefigure{fig1}{}
+$f$ holomorf i $G$
+
+\textbf{Lemma:} Antag $f(z) = \sum_{-\infty}^\infty a_k(z - z_0)^k$, $g(z) = \sum_{-\infty}^\infty b_k(z - z_0)^k$ i $A(z_0, R_1, R_2)$
+
+Då är $f'(z) = \sum_{-\infty}^\infty ka_k(z - z_0)^{k-1}$ i $A(z_0, R_1, R_2)$ och $f(z)g(z) = \sum_{-\infty}^\infty c_k(z - z_0)^k$ i $A(z_0, R_1, R_2)$ där $c_k = \sum_{m = -\infty}^\infty a_m b_{k-m}$.
+
+\begin{proof}
+Visar andra påståendet. Enligt satsen om LSU gäller
+
+$f(z)g(z) = \sum_{-\infty}^\infty c_k(z - z_0)^k$ i $A(z_0, R_1, R_2)$ där \emph{$c_k$} $= \dfrac{1}{2\pi i} \displaystyle\int_{|z - z_0| = r} \frac{f(z)g(z)}{(z - z_0)^{k+1}}\,dz =$
+\[ = \frac{1}{2\pi i} \int_{|z - z_0| = r} \frac{\left( \sum_{-\infty}^\infty a_k(z - z_0)^k \right)\left( \sum_{-\infty}^\infty b_k(z - z_0)^k \right)}{(z - z_0)^{k+1}}\,dz \overset{\textcolor{magenta!80!black}{\text{likf konv}}}{=} \]
+\[ = \sum_{m = -\infty}^\infty a_m\left( \sum_{\ell = -\infty}^\infty b_\ell \underbrace{\frac{1}{2\pi i} \int_{|z - z_0| = r} \frac{(z - z_0)^m(z - z_0)^\ell}{(z - z_0)^{k+1}}\,dz}_{\textcolor{magenta!80!black}{1 \text{ om } m + \ell = k,\ 0 \text{ annars}}} \right) = \]
+\[ = \sum_{m = -\infty}^\infty a_m b_{k-m} \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Hitta LSU av $\dfrac{1}{z^2}$ centrerad i $-1$, giltig i $A(-1, 1, \infty)$
+
+\textbf{Lösning:} $\dfrac{1}{z^2}$ holomorf i $\mathbb{C} \setminus \{0\}$
+\notefigure{fig2}{}
+\textcolor{red!70!black}{\textbf{Notera:}} $\dfrac{1}{z^2} = -\left( \dfrac{1}{z} \right)'$
+\[ \frac{1}{z} = \frac{1}{z + 1 - 1} = \frac{1}{z + 1}\left( \frac{1}{1 - \frac{1}{z + 1}} \right) \overset{\textcolor{magenta!80!black}{|z| > 1}}{=} \frac{1}{z + 1} \sum_{k = 0}^\infty \left( \frac{1}{z + 1} \right)^k = \sum_{k = -\infty}^{-1} (z + 1)^k \]
+\[ \frac{1}{z^2} = -\left( \frac{1}{z} \right)' \underset{\textcolor{magenta!80!black}{\text{Lemma}}}{=} -\sum_{k = -\infty}^{-1} k(z + 1)^{k-1} \overset{\textcolor{magenta!80!black}{(*)}}{=} \]
+\[ = \sum_{k = -\infty}^{-2} (-k - 1)(z + 1)^k = \sum_{-\infty}^\infty c_k(z + 1)^k, \]
+\textcolor{magenta!80!black}{$(*)$ Gör om $k$, därav $-k \to (-k - 1)$}
+\[ c_k = \begin{cases} -k - 1, & k \le -2 \\ 0, & k > -2 \end{cases} \]
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Isolerade singulariteter}
+\begin{definition}
+Om $f$ holomorf i punkterad cirkelskiva $D(z_0, R)^\times = D(z, R) \setminus \{z_0\}$ då sägs $f$ ha en \emph{isolerad singularitet} i $z_0$.
+\end{definition}

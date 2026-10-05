@@ -1,0 +1,4 @@
+pillow>=12
+pillow-heif>=1.8
+pytest>=9
+pypdfium2>=4

@@ -1,0 +1,30 @@
+% language: swedish
+% figure: fig1 0.715 0.672 0.87 0.78
+\fbox{9.6} \quad Antag $f$ har enkel pol (ord.\ 1) i $z_0$, $g$ holomorf i omgivning till $z_0$. Visa att $\operatorname{Res}_{z_0} fg = g(z_0) \operatorname{Res}_{z_0} f$
+
+\textbf{Lösning:} $f$ enkel pol betyder $f(z) = \dfrac{h(z)}{z - z_0}$, $h$ holomorf, $h(z_0) \neq 0$. \ $\operatorname{Res}_{z_0} f = h(z_0)$
+\[ \operatorname{Res}_{z_0} fg = \operatorname{Res}_{z_0}\left( \frac{g(z)h(z)}{z - z_0} \right) \overset{\text{räkneregel}}{=} g(z_0)h(z_0) = g(z_0) \operatorname{Res}_{z_0} f \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{9.7} \quad \textcircled{e} Bestäm $\operatorname{Res}_0\left( \dfrac{e^{4z} - 1}{\sin^2 z} \right)$
+
+\textbf{Lösning:} $\sin z = z - \dfrac{z^3}{6} + O(z^5)$
+
+$e^{4z} = 1 + 4z + O(z^2)$, \quad $\dfrac{1}{\sin z} = \{\text{se uppgift 8.19}\} = \dfrac{1}{z} + O(z)$
+
+$\dfrac{1}{\sin^2 z} = \dfrac{1}{z^2} + O(1)$
+\[ \frac{e^{4z} - 1}{\sin^2 z} = (4z + O(z^2))\left( \frac{1}{z^2} + O(1) \right) = \textcolor{magenta!80!black}{\underline{\textcolor{black}{\frac{4}{z} + O(1)}}} \Rightarrow \operatorname{Res}_0\left( \frac{e^{4z} - 1}{\sin^2 z} \right) = 4 \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{9.8} \quad \textcircled{c} Beräkna $\displaystyle\int_{|z| = 2} \frac{e^z}{z^3 + z}\,dz$
+
+\textbf{Lösning:} $z^3 + z = z(z + i)(z - i)$, enkla nollställen i $0, \pm i$
+\notefigure{fig1}{}
+Alla 3 ligger i det inre av kurvan
+
+$\operatorname{Res}_0\left( \dfrac{e^z}{z^3 + z} \right) = \left( \dfrac{e^z}{3z^2 + 1} \right)_{z = 0} = \underline{1}$
+
+$\operatorname{Res}_i\left( \dfrac{e^z}{z^3 + z} \right) = \dots = \underline{-\dfrac{e^i}{2}}$ \qquad $\operatorname{Res}_{-i}\left( \dfrac{e^z}{z^3 + z} \right) = \dots = \underline{-\dfrac{e^{-i}}{2}}$
+\[ \Rightarrow \int_{|z| = 2} \frac{e^z}{z^3 + z}\,dz \underset{\text{RS}}{=} 2\pi i\left( 1 - \frac{e^i}{2} - \frac{e^{-i}}{2} \right) = 2\pi i(1 - \cos 1) \]

@@ -1,0 +1,50 @@
+% language: swedish
+% figure: fig1 0.15 0.395 0.545 0.51
+% figure: fig2 0.165 0.678 0.355 0.75
+\textcolor{red!70!black}{Fall 1:} $a = 0 \Rightarrow \left|\frac{1}{z}\right| = r \Leftrightarrow |z| = \frac{1}{r}$ dvs.\ får en cirkel
+
+\textcolor{red!70!black}{Fall 2:} $a \neq 0$, $r^2 = \left|\frac{1}{z} - a\right|^2 = \dfrac{|1 - az|^2}{|z|^2}$ \quad \textcolor{red!70!black}{$\left(|1 - az|^2 = \rattat{1 - 2\operatorname{Re}(az) + |a|^2|z|^2}{1 - \operatorname{Re}(az) + |z|^2}\right)$}
+\[ \Leftrightarrow (r^2 - |a|^2)|z|^2 + 2\operatorname{Re}(az) - 1 = 0 \]
+\textcolor{red!70!black}{Om $r \neq |a|$} \textcolor{blue!60!black}{(Jämför övning 3.10)} blir ekvationen för en cirkel
+
+\textcolor{red!70!black}{Om $r = |a|$} för linje \hfill $\square$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Visa att $M(z) = \dfrac{1 + z}{1 - z}$ avbildning $C(0, 1)$ på $i\mathbb{R} \cup \{\infty\}$
+
+\textbf{Lösning:} Enligt sats så avbildas $C(0, 1)$ på cirkel eller linje.
+
+$M(1) = \infty$, $M(i) = \dfrac{1 + i}{1 - i} = i$, $M(-1) = 0 \Rightarrow M(C(0, 1))$ är en linje genom $0$ och $i$, dvs.\ $M(C(0, 1)) = i\mathbb{R} \cup \{\infty\}$
+\end{example}
+
+\begin{example}
+För samma $M = \dfrac{1 + z}{1 - z}$, bestäm bilden av linjen genom $1$ och $i$
+
+\textbf{Lösning:}
+\notefigure{fig1}{}
+$M(i) = i$, $M(1) = \infty$ \\
+$\Rightarrow M(L)$ linje genom $i$ \\
+$\gamma_1$ och $\gamma_2$ skär i vinkeln $-\frac{\pi}{4}$
+
+\textcolor{magenta!80!black}{(Konform = vinkeln mellan två kurvor bevaras)}
+
+$M$ konform $\Rightarrow M \circ \gamma_1$, $M \circ \gamma_2$ skär i vinkeln $-\pi/4$
+
+$\Rightarrow M(L) =$ linje genom $i$ och $-1$.
+\end{example}
+
+\begin{example}
+För samma $M$, bestäm bilden av $D(0, 1)$. \textcolor{magenta!80!black}{$\leftarrow$ enhetsskivan}
+
+\textbf{Lösning:} \hfill \textcolor{magenta!80!black}{$C(0, 1) =$ enhetscirkeln}
+\notefigure{fig2}{}
+$D(0, 1)$ avgränsas av $C(0, 1)$
+
+$\Rightarrow M(D(0, 1))$ avgränsas av $M(C(0, 1)) = i\mathbb{R} \cup \{\infty\}$
+
+dvs.\ $M(D(0, 1))$ är vänstra eller högra halvplanet
+
+$M(0) = 1$, $1$ ligger i högra halvplanet $\Rightarrow M(D(0, 1)) = \text{HHP}$ \textcolor{magenta!80!black}{$\leftarrow$ högra halvplanet}
+\end{example}

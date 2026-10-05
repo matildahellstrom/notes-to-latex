@@ -1,0 +1,44 @@
+% language: swedish
+% figure: fig1 0.065 0.456 0.345 0.55
+\subsection{Exempel på holomorfa funktioner}
+\begin{itemize}
+  \item Polynom i $z$: $a_n z^n + \dots + a_0$, \ $a_i \in \mathbb{C}$
+  \item Rationella funktioner: $\dfrac{p(z)}{q(z)}$ holomorf där $q \neq 0$
+  \item $M(z) = \dfrac{az + b}{cz + d}$, \ $ad - bc \neq 0$ kallas \emph{Möbiusavbildningar}
+  \item Exponentialfunktioner: $e^z = e^x e^{iy}$
+  \item Trigonometriska funktioner \quad $\sin z = \dfrac{e^{iz} - e^{-iz}}{2i}$ \quad $\cos z = \dfrac{e^{iz} + e^{-iz}}{2}$
+
+  Konsistent med $\sin x$, $\cos x$, $x \in \mathbb{R}$, \ $\dfrac{e^{ix} - e^{-ix}}{2i} = \dfrac{e^{ix} - \overline{e^{ix}}}{2i} = \operatorname{Im} e^{ix} = \sin x$
+
+  (motsvarande med $\cos x$)
+\end{itemize}
+
+\textcolor{magenta!80!black}{$\bigstar$} Många egenskaper samma som reella versioner (prop 3.17)
+
+\begin{example}
+\[ (\sin z)' = \left( \frac{e^{iz} - e^{-iz}}{2i} \right)\rattat{'}{} = \frac{ie^{iz} + i\rattat{e^{-iz}}{e^{iz}}}{2i} = \cos z \]
+\end{example}
+
+\begin{example}
+Visa hur $\cos z$ avbildar linjen $\{\operatorname{Im} z = c\}$ i $\mathbb{C}$
+\notefigure{fig1}{}
+\[ \cos(x + ic) = \frac{e^{i(x + ic)} + e^{-i(x + ic)}}{2} = \frac{e^{-c}}{2} e^{ix} + \frac{e^{c}}{2} e^{-ix} \]
+\textcolor{blue!60!black}{lilla och stora cirkeln ihop}
+\end{example}
+
+\[ \sinh z = \frac{e^z - e^{-z}}{2}, \qquad \cosh z = \frac{e^z + e^{-z}}{2} \]
+har $\sinh(iz) = i\sin z$, \ $\cosh(iz) = \cos z$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Komplexa logaritmen}
+Finns det en funktion $\log z$ som är invers till $e^z$, $e^{\log z} = z = \log e^z$?
+
+\begin{note}
+$e^{z + 2\pi i} = e^z e^{2\pi i} = e^z$
+
+Kan ej definiera en riktig invers på hela $\mathbb{C}$.
+\end{note}
+
+Skriv $\log z = u + iv$, om nu $e^{\log z} = z$ så måste $e^{\log z} = e^{u + iv} =$
+\[ = \underline{e^u e^{iv} = z} \quad \Rightarrow \quad u = \ln|z|, \ v = \arg z \]

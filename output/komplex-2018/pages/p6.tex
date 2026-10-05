@@ -1,0 +1,43 @@
+% language: swedish
+\subsection{Räkneregler för gränsvärden}
+\begin{enumerate}[label=\alph*)]
+  \item $\displaystyle\lim_{z \to z_0} (f(z) + cg(z)) = \lim_{z \to z_0} f(z) + c \lim_{z \to z_0} g(z)$ \quad \textcolor{blue!60!black}{$c \in \mathbb{C}$}
+  \item $\displaystyle\lim_{z \to z_0} (f(z)g(z)) = \lim_{z \to z_0} f(z) \lim_{z \to z_0} g(z)$
+  \item $\displaystyle\lim_{z \to z_0} \frac{f(z)}{g(z)} = \frac{\lim_{z \to z_0} f(z)}{\lim_{z \to z_0} g(z)}$, \quad om $\displaystyle\lim_{z \to z_0} g(z) \neq 0$
+\end{enumerate}
+
+\subsection{Kontinuitet}
+\begin{definition}
+$f : G \to \mathbb{C}$ är kontinuerlig i $z_0 \in G$ om $\displaystyle\lim_{z \to z_0} f(z) = f(z_0)$
+\end{definition}
+
+\begin{example}
+$z^3$, $\bar{z}$, $\operatorname{Re} z$, \dots
+\end{example}
+
+\subsection{Komplex deriverbarhet}
+\begin{definition}
+$f : G \to \mathbb{C}$ är komplext deriverbar i $z_0 \in G$ om
+\[ f'(z_0) = \lim_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h} \text{ existerar} \quad (\textcolor{red!70!black}{\text{obs!}}\ h \in \mathbb{C}) \]
+Om $G$ är öppen och $f$ är komplext deriverbar i hela $G$, då sägs $f$ vara \emph{holomorf} i $G$.
+\end{definition}
+
+\begin{example}
+Låt $f(z) = z^n$, $n \in \mathbb{N}$ ($n \ge 1$). Visa att $\rattat{f'(z)}{f(z)} = nz^{n-1}$
+
+\textbf{Lösning:}
+\begin{align*}
+  \frac{f(z+h) - f(z)}{h} &= \frac{(z+h)^n - z^n}{h} = \frac{z^n + nz^{n-1}h + \dots + h^n - z^n}{h} = \\
+  &= \rattat{nz^{n-1}}{nz} + O(h) \to nz^{n-1}
+\end{align*}
+\end{example}
+
+\begin{example}
+$g(z) = \bar{z}$, är den holomorf?
+
+\textbf{Lösning:}
+\[ \frac{g(z+h) \rattat{-}{+} g(z)}{h} = \frac{\overline{z+h} - \bar{z}}{h} = \frac{\bar{h}}{h} \]
+\textcolor{red!70!black}{har ej gränsvärde då $h \to 0$!}
+
+\textcolor{red!70!black}{$\Rightarrow \bar{z}$ ej komplext deriverbar någonstans, inte holomorf.}
+\end{example}

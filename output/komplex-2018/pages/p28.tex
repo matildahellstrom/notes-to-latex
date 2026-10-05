@@ -1,0 +1,51 @@
+% language: swedish
+% figure: fig1 0.15 0.16 0.51 0.254
+% figure: fig2 0.095 0.797 0.23 0.89
+% figure: fig3 0.325 0.84 0.805 0.915
+\section{Storgruppsövning 14/9}
+
+\fbox{3.13} \quad $f(z) = \dfrac{2z}{z + 2}$ \quad e) Bestäm bilden av cirkeln med centrum i $1$ \\
+\phantom{\fbox{3.13} \quad $f(z) = \dfrac{2z}{z + 2}$} \quad f) Bestäm bilden av cirkeln med centrum i $-1$
+
+Använd bara $f(-2)$, $f(0)$, $f(2)$
+
+\textbf{Lösning:}
+\notefigure{fig1}{}
+$f(-2) = \infty$, $f(0) = 0$, $f(2) = 1$
+
+enligt sats $f(\mathbb{R} \cup \{\infty\})$ linje eller cirkel genom $\infty, 0, 1$ dvs.\ linje genom $0, 1 =$ reella axeln. Enligt sats: $f(C(1, 1))$ cirkeln eller linjen genom $0, 1$
+
+i punkten $0$ skär $C(1, 1)$ den reella axeln i rät vinkel
+
+$f$ konf $\Rightarrow f(C(1, 1))$ skär reella axeln i rät vinkel
+
+\qquad $\Rightarrow f(C(1, 1)) = C(1/2, 1/2)$
+
+$f(C(-1, 1)) =$ cirkel eller linje genom $\infty, 0$ dvs.\ en linje genom $0$
+
+$f(C(-1, 1))$ skär reella axeln i rät vinkel $= i\mathbb{R} \cup \{\infty\}$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{3.14} \quad Hitta en Mavb $M(z) = \dfrac{az + b}{cz + d}$ s.a.\ $M(0) = i$, $M(1) = 1$, $M(\infty) = -i$
+
+\textbf{Lösning:} $0 \mapsto i$ \quad $\dfrac{b}{d} = i$ \quad sätt $b = i$, $d = 1$
+
+\qquad $\infty \mapsto -i \Rightarrow \dfrac{a}{c} = -i$ \quad $c = ia$ \quad $\Rightarrow M(z) = \dfrac{az + i}{iaz + 1}$
+
+$M(1) = \dfrac{a + i}{ia + 1} = 1 \Rightarrow a = 1 \quad \Longrightarrow M(z) = \dfrac{z + i}{iz + 1}$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Uppgift från senaste omtentan}
+Låt $A = \{z : |z| > 0,\ 0 < \operatorname{Arg} z < \pi/3\}$. Bestäm bilden av $A$ under avbildningen $f(z) = \dfrac{z^3}{z^3 + i}$ \quad (Tips. använd att $f(z) = M(z^3)$)
+
+\textbf{Lösning:} \quad $A =$
+\notefigure{fig2}{}
+\textcolor{blue!60!black}{$M(z) = \dfrac{z}{z + i}$}
+
+Låt $g(z) = z^3$, då är $f = \underbrace{M \circ g}_{\textcolor{magenta!80!black}{\text{sammansatt}}} \to f(A) = M(B)$
+
+$B = g(A)$
+\notefigure{fig3}{}
+\hfill $\longrightarrow$

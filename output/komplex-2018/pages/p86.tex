@@ -1,0 +1,37 @@
+% language: swedish
+% figure: fig1 0.025 0.103 0.155 0.17
+% figure: fig2 0.07 0.385 0.53 0.475
+% figure: fig3 0.665 0.515 0.86 0.585
+\fbox{9.21 a} \quad Hitta antalet nollställen till $3e^z - z$ i $D(0, 1)$
+
+\textbf{Lösning:} $|f| > |g|$ på $\gamma$
+\notefigure{fig1}{}
+$\overset{\textcolor{magenta!80!black}{\text{Rouché}}}{\Longrightarrow} f$ och $f + g$ har lika många nollställen i $\operatorname{int}(\gamma)$
+
+$f(z) = 3e^z$ \quad $g(z) = -z$, \quad $f + g = 3e^z - z$
+\[ |f(z)| = 3|e^z| = 3e^x \ge 3e^{-1} > 1 \text{ på } C(0, 1) \]
+\[ |g(z)| = |-z| = |z| = 1 \text{ på } C(0, 1) \Rightarrow |f| > |g| \text{ på } C(0, 1) \]
+$\overset{\textcolor{magenta!80!black}{\text{Rouché}}}{\Longrightarrow} f$ och $f + g$ har lika många nollställen i $\operatorname{int}(C(0, 1)) = D(0, 1)$
+
+$f$ har inga nollställen i $D(0, 1)$
+
+$\Rightarrow 3e^z - z$ har inga nollställen i $D(0, 1)$
+
+\notefigure{fig2}{}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Övning F1 s.8}
+Bestäm FT av $f_{\delta}(t) = \begin{cases} 1, & |t| \le \delta \\ 0, & |t| > \delta \end{cases}$ \quad $\delta > 0$
+\notefigure{fig3}{}
+\textbf{Lösning:}
+\[ \hat{f}_\delta(x) = \int_{-\infty}^\infty f_\delta(t)e^{-ixt}\,dt = \int_{-\delta}^\delta e^{-ixt}\,dt = \left[ \frac{e^{-ixt}}{-ix} \right]_{-\delta}^\delta = -\frac{1}{ix}\left( e^{-ix\delta} - e^{ix\delta} \right) = \frac{2\sin(\delta x)}{x} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Övning F3 s.8}
+Visa att $\displaystyle\int_{-\infty}^\infty \frac{\sin(ax)\sin(bx)}{x^2}\,dx = \pi \min(a, b)$ \quad $a, b > 0$
+
+\textbf{Lösning:}
+\[ \frac{1}{4} \int_{-\infty}^\infty \frac{2\sin(ax)\,2\sin(bx)}{x^2}\,dx = \frac{1}{4}\, \widehat{\frac{2\sin ax}{x} \cdot \frac{2\sin bx}{x}}(0) = \]
+\[ = \dots \quad \text{FALTNING!} \]

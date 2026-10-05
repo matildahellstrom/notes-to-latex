@@ -1,0 +1,43 @@
+% language: swedish
+% figure: fig1 0.055 0.225 0.115 0.285
+\subsection{Harmoniska funktioner}
+\begin{definition}
+$u : G \to \mathbb{R}$, $G \subseteq \mathbb{C}$ område \emph{harmonisk} om $u \in C^2$ och $\Delta u = \dfrac{d^2u}{dx^2} + \dfrac{d^2u}{dy^2}$ \quad \textcolor{magenta!80!black}{$\leftarrow$ Laplace ekvationen}
+\end{definition}
+
+\begin{example}
+$x$, $y$, $xy$, $x^2 - y^2$, \dots
+\end{example}
+
+\textbf{Värmeledningsekvationen:}
+\notefigure{fig1}{}
+\[ \text{(VLE)}: \ \frac{du(z, t)}{dt} = \Delta u(z, t), \quad \begin{array}{l} u(z, t_0) = u_0(z) \\ u(z, t) = u_0(z) \text{ för } z \in \partial G \end{array} \]
+om $u_0(z)$ harmonisk $\Rightarrow u(z, t) = u_0(z)$ löser VLE
+
+harmoniska funktioner beskriver jämviktstillståndet
+
+\begin{example}
+Visa $u(\rattat{x, y}{t}) = \dfrac{x}{x^2 + y^2}$ harmonisk i $\mathbb{C} \setminus \{0\}$
+
+\textbf{Lösning:} $u \in C^\infty$, speciellt $C^2$
+\begin{align*}
+  \frac{du}{dx} &= \frac{y^2 - x^2}{(x^2 + y^2)^2}, & \frac{d^2u}{dx^2} &= \rattat{\frac{2x^3 - 6xy^2}{(x^2 + y^2)^3}}{\frac{-2x(x^2 + y^2)^2 + 2x^3(x^2 + y^2)}{(x^2 + y^2)^4}} \\
+  \frac{du}{dy} &= -\frac{2xy}{(x^2 + y^2)^2}, & \frac{d^2u}{dy^2} &= \rattat{\frac{6xy^2 - 2x^3}{(x^2 + y^2)^3}}{\frac{-2x(x^2 + y^2)^2 + 2xy^2(x^2 + y^2)}{(x^2 + y^2)^4}}
+\end{align*}
+\[ \Delta u = \rattat{\frac{(2x^3 - 6xy^2) + (6xy^2 - 2x^3)}{(x^2 + y^2)^3}}{\frac{2x(x^2 + y^2)(-(x^2 + y^2) + 2x^2(x^2 + y^2) + 2y^2)}{(x^2 + y^2)^4}} = 0 \]
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Proposition 6.3]
+Om $f$ holomorf i $G$, då är $u = \operatorname{Re} f$, $v = \operatorname{Im} f$ harmoniska i $G$
+\end{theorem}
+\begin{proof}
+Vill visa $u, v \in C^2$ och $\Delta u = \Delta v = 0$
+
+Enligt sats $\exists f^{(k)}$ $\forall k \in \mathbb{N}$ och CR: $f' = \dfrac{df}{dx} \textcolor{magenta!80!black}{\left(= \dfrac{du}{dx} + i\dfrac{dv}{dx}\right)} = i\dfrac{df}{dy} = -\left( \dfrac{du}{dy} + i\dfrac{dv}{dy} \right)$
+
+$\Longrightarrow u, v \in C^\infty$.
+\[ \text{CR}: \begin{cases} \dfrac{du}{dx} = \dfrac{dv}{dy} \\[2ex] \dfrac{du}{dy} = -\dfrac{dv}{dx} \end{cases} \Rightarrow \frac{d^2u}{dx^2} = \frac{d}{dx}\left( \frac{dv}{dy} \right) \overset{\textcolor{red!70!black}{v \in C^2}}{=} \frac{d}{dy}\left( \frac{dv}{dx} \right) \overset{\textcolor{red!70!black}{\text{CR}}}{=} -\frac{d^2u}{dy^2} \Rightarrow \Delta u = 0 \]
+På samma sätt får vi $\Delta v = 0$
+\end{proof}

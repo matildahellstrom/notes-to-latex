@@ -1,0 +1,66 @@
+% title: Rättelser -- Komplex analys 2018
+Dessa troliga skrivfel i originalanteckningarna har rättats i transkriptionen. Varje rättat
+ställe är markerat med ett grönt \textcolor{green!50!black}{\dag} i anteckningarna, och den ursprungliga lydelsen
+finns kvar i källfilerna (\texttt{pages/pN.tex}), så en rättelse kan tas tillbaka.
+Sidnummer avser originalanteckningarna.
+
+\newcommand{\erratum}[3]{\item[\textbf{s.\ #1}] \emph{Stod:} #2 \hfill\break \emph{Rättat till:} #3}
+
+\begin{description}[leftmargin=3.2em,style=nextline]
+  \erratum{1}{''Föreläsning 3/8''}{3/9 -- föreläsningarna fortsätter 4/9, 5/9, 10/9}
+  \erratum{5}{$\nabla f(\gamma(t) \cdot \gamma'(t)$}{$\nabla f(\gamma(t)) \cdot \gamma'(t)$ (en parentes saknas)}
+  \erratum{6}{''Visa att $f(z) = nz^{n-1}$''}{$f'(z) = nz^{n-1}$}
+  \erratum{6}{$\dots = nz + O(h)$}{$nz^{n-1} + O(h)$}
+  \erratum{6, 7}{differenskvoten $\dfrac{g(z+h) + g(z)}{h}$, $\dfrac{f(z_0+h) + f(z_0)}{h}$}{minus: $\dfrac{g(z+h) - g(z)}{h}$}
+  \erratum{8}{''Om $f$ hade holomorf''}{''Om $f$ är holomorf''}
+  \erratum{11}{''Svar: $z = w - i$''}{$z = w - 1$ (eftersom $w = z + 1$)}
+  \erratum{13}{$\dfrac{du}{dr} = \dfrac{1}{r}\dfrac{dv}{dy}$}{$\dfrac{1}{r}\dfrac{dv}{d\varphi}$ (polära koordinater)}
+  \erratum{16}{$\dfrac{1}{z + d/z}$ och $\dfrac{a}{d}z + \dfrac{b}{a}$}{$\dfrac{1}{z + d/c}$ och $\dfrac{a}{d}z + \dfrac{b}{d}$ om $c = 0$}
+  \erratum{19}{$|1 - az|^2 = 1 - \operatorname{Re}(az) + |z|^2$}{$1 - 2\operatorname{Re}(az) + |a|^2|z|^2$}
+  \erratum{30}{$A = \tfrac12$, $B = \tfrac12$}{$B = -\tfrac12$ (som raden efter använder; svaret $\pi i$ stämmer)}
+  \erratum{39}{''Visa $u(t) = \dfrac{x}{x^2+y^2}$''}{$u(x, y)$}
+  \erratum{41}{$2 + \sin t = \dfrac{4i + z + \frac1z}{2i}$}{$\dfrac{4i + z - \frac1z}{2i}$ (raden därefter är rätt)}
+  \erratum{42}{$\displaystyle\int_{[-\pi, R]}$}{$\displaystyle\int_{[-R, R]}$}
+  \erratum{55}{$\displaystyle\sum_{n = 1}^\infty \frac{(-1)^{n+1}}{2^{n+2}}(z-1)^n$}{summan börjar vid $n = -1$}
+  \erratum{56}{$s_6$ i $z^4$-koefficienten, och första ekvationen $s_1 - \frac{s_2}{2} + \frac{s_0}{4!} = 0$}{$s_0$ respektive $s_4 - \frac{s_2}{2} + \frac{s_0}{4!} = 0$}
+  \erratum{59}{$\dfrac{1}{1 - z} = \dfrac{1}{z - 1}$ och $\sum (1/k)^k$}{$-\dfrac{1}{z - 1}$ och $\sum (1/z)^k$}
+  \erratum{61}{singulariteter i $\pm 1$; ''$h$ kompakt deriverbar''; $c_1 = h(z_1)$}{$\pm i$; ''komplext deriverbar''; $c_1 = h'(z_0)$}
+  \erratum{65}{$g(z) = \sum_{-\infty}^\infty d_k(z - z_0)^k$ (Taylorserie)}{summan börjar vid $k = 0$}
+  \erratum{66}{$\dfrac{f(z)/h(z_0)}{z - z_0}$}{$\dfrac{f(z)/h(z)}{z - z_0}$}
+  \erratum{67}{$\dots + \tfrac12 (z - 1)^2$ och $e^{w^2 + 2w - 1}$}{$\tfrac14 (z-1)^2$ (raden ovan ger $-\tfrac14 + \tfrac12$) och $e^{w^2 + 2iw - 1}$}
+  \erratum{68}{nollställen $z = \pi i k$; $\operatorname{Res}_\gamma(\cot z)$}{$z = \pi k$; $\operatorname{Res}_0(\cot z)$}
+  \erratum{71}{$\dfrac{1}{2}\cdot\dfrac{1}{2 + w/2}$ och $\dfrac{1}{15}z^3$}{$\dfrac12\cdot\dfrac{1}{1 + w/2}$ och $\dfrac{1}{15}z^2$ ($c_2 = \tfrac1{15}$ som raden efter säger)}
+  \erratum{76}{$\sigma_R = [0, R] \cup \gamma_{R_2} \cup \dots$}{$\gamma_R$}
+  \erratum{79}{$\operatorname{Arg}(f(-R))$}{$\operatorname{Arg}(f(-iR))$}
+  \erratum{80}{$f \circ g \sim (f + g) \circ \gamma$}{$f \circ \gamma \sim_{\mathbb{C} \setminus \{0\}} (f + g) \circ \gamma$}
+  \erratum{82}{$\widehat{f'}(x) = \lim \int f'(t)e^{ixt}\,dt$}{$e^{-ixt}$}
+  \erratum{87}{$\hat{\hat f}(t) = 2\pi f(t)$, ''Pascals formel'', $|\hat f(x)^2|$}{$2\pi f(-t)$, Parsevals formel, $|\hat f(x)|^2$}
+  \erratum{88}{$\hat u = g\left(\frac{1}{1+x^2}\right)$}{$\hat u = \hat g \cdot \frac{1}{1+x^2}$}
+  \erratum{91}{$a_k = 1 + \sum_{j = 0}^{k+1} b_j$}{$1 + \sum_{j = 0}^{k-1} b_j$}
+  \erratum{93}{$\left.\dfrac{z - z_2}{b(z - z_1)}\right|_{z = z_1}$}{evalueras i $z = z_2$ (resten av raden stämmer)}
+  \erratum{98}{$Z(\gamma) = \tfrac12 Z(\gamma)$; ''kan kontinuerligt definierad''}{$Z(\alpha) = \tfrac12 Z(\gamma)$; ''kan deformeras kontinuerligt''}
+  \erratum{106}{$\operatorname{argvar}(\gamma \circ \gamma_R)$}{$\operatorname{argvar}(f \circ \gamma_R)$}
+  \erratum{109}{$y = \tfrac18 e^{-t} + \tfrac78 e^{-t}\cos 2t + \dots$}{$\tfrac78 e^{t}\cos 2t$ (enligt raden ovan)}
+\end{description}
+
+\subsection*{Mellansteg som rättats efter kontrollräkning}
+Alla slutsvar i anteckningarna har räknats om oberoende (126 kontroller, se nedan) och stämmer.
+Följande mellansteg var dock felaktiga trots rätt slutsvar:
+
+\begin{description}[leftmargin=3.2em,style=nextline]
+  \erratum{7}{$\dots = \dfrac{df}{dx}(x_0, y_0) + i\dfrac{dv}{dx}(x_0, y_0)$}{$\dfrac{du}{dx}(x_0, y_0) + i\dfrac{dv}{dx}(x_0, y_0)$}
+  \erratum{8}{''får $\dfrac{du}{dy} = 2x$''}{$\dfrac{du}{dx} = 2x$ (för $u = x^2 - y^2$)}
+  \erratum{10}{$(\sin z)' = \dfrac{ie^{iz} + ie^{iz}}{2i}$}{$\dfrac{ie^{iz} + ie^{-iz}}{2i}$}
+  \erratum{13}{$\dfrac{du}{dr} = \dfrac{dv}{dy}\cos\varphi - \dfrac{dv}{dy}\sin\varphi$}{$\dfrac{dv}{dy}\cos\varphi - \dfrac{dv}{dx}\sin\varphi$ (CR: $\frac{du}{dy} = -\frac{dv}{dx}$)}
+  \erratum{39}{$u_{xx}$, $u_{yy}$ och $\Delta u$ för $u = \frac{x}{x^2+y^2}$}{$u_{xx} = \dfrac{2x^3 - 6xy^2}{(x^2+y^2)^3}$, $u_{yy} = \dfrac{6xy^2 - 2x^3}{(x^2+y^2)^3}$, summan $0$}
+  \erratum{51}{$\sum_0^\infty z_k \frac{1}{2\pi i}\int \dots$}{$\sum_0^\infty z^k \frac{1}{2\pi i}\int \dots$ (raden slutar med $\sum c_k z^k$)}
+  \erratum{53}{$\sin z = -(\cos z)' = \sum \frac{(-1)^n}{(2n)!}2nz^{2n-1}$}{$-\sum \dots$ (minustecknet saknades; nästa steg stämmer)}
+  \erratum{56}{$f''(z) = -\sin z + \dfrac{2\sin z}{\cos^3 z}$}{$-\sin z - \dfrac{2\sin z}{\cos^3 z}$ ($f'''(0) = -3$ stämmer)}
+  \erratum{67}{$\sum_1^\infty \frac{z^k}{k} = \frac{\operatorname{Log}(1 - z)}{z}$}{$\sum_0^\infty \frac{z^k}{k+1} = -\frac{\operatorname{Log}(1 - z)}{z}$}
+  \erratum{68}{uppg.\ d) $\frac{1}{1 - e^z}$: poler $2\pi ik$, $k \neq 0$}{alla $k \in \mathbb{Z}$ ($z = 0$ är också en pol; $k \neq 0$ gäller för e) $\frac{z}{1 - e^z}$)}
+  \erratum{69}{$(z - \frac{z^3}{6})(\frac{A}{z} + B + Cz) = A - Bz + \dots$}{$A + Bz + \dots$ ($B = 0$ ändå)}
+  \erratum{89}{$\widetilde{e^{ct}f(s)} = \hat f(s - c)$}{$\widetilde{e^{ct}f} = \tilde f(s - c)$}
+  \erratum{93}{uppgiften: $= \frac{2\pi}{\sqrt{a^2 + b^2}}$; $bz^2 + 2ia - b = 0$; $z_2 = \frac{-ia}{b} + \frac{\sqrt{a^2 - b^2}}{b}$}{$\frac{2\pi}{\sqrt{a^2 - b^2}}$ (som lösningen visar); $bz^2 + 2iaz - b$; $z_2 = \frac{-ia}{b} + i\frac{\sqrt{a^2 - b^2}}{b}$}
+  \erratum{95}{$sL(u') - u'(0) = s^2L(u) + su(0)$}{$s^2L(u) - su(0)$ ($u(0) = 0$ här)}
+  \erratum{105}{$\operatorname{Res}_{z_3} f = -\frac{1}{2\sqrt2}$ och summan $-\frac{i}{2\sqrt2} - \frac{i}{\sqrt2}$}{$-\frac{i}{2\sqrt2}$ och $-\frac{i}{2\sqrt2} - \frac{i}{2\sqrt2}$ (slutsvaret $\frac{\pi}{\sqrt2}$ stämmer)}
+\end{description}

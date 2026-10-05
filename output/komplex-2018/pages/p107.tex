@@ -1,0 +1,44 @@
+% language: swedish
+% figure: fig1 0.045 0.146 0.135 0.195
+% figure: fig2 0.13 0.922 0.26 0.96
+\subsection{Tenta 2014 Januari uppg.\ 4}
+Hur många nollställen har $f(z) = z^4 + 2z + 10$ i $A(0, 1, 2)$?
+
+\textbf{Lösning:}
+\notefigure{fig1}{}
+\emph{\# nollställen i $D(0, 2)$}:
+
+Skriv $f = g + h$, $g(z) = z^4$, $h(z) = 2z + 10$
+\[ |g(z)| = |z^4| = |z|^4 = 16 \text{ på } C(0, 2) \]
+\[ |h(z)| = |2z + 10| \overset{\textcolor{magenta!80!black}{\Delta \text{ olik}}}{\le} 2|z| + 10 = 14 \text{ på } C(0, 2) \]
+\[ \Rightarrow |g| > |h| \text{ på } C(0, 2) \underset{\textcolor{magenta!80!black}{\text{Rouché}}}{\Longrightarrow} N(f, C(0, 2)) = N(g, C(0, 2)) = 4 \]
+
+\emph{\# nollställen i $D(0, 1)$}:
+
+Skriv $f = g + h$, $g(z) = 10$, $h(z) = z^4 + 2z$
+\[ |g| = 10 \text{ på } C(0, 1) \]
+\[ |h(z)| = |z^4 + 2z| \overset{\textcolor{magenta!80!black}{\Delta \text{ olik}}}{\le} |z|^4 + 2|z| = 3 \text{ på } C(0, 1) \]
+\[ \Rightarrow |g| > |h| \text{ på } C(0, 1) \underset{\textcolor{magenta!80!black}{\text{Rouché}}}{\Longrightarrow} N(f, C(0, 1)) = N(g, C(0, 1)) = 0 \]
+Har $|f| = |g + h| > |g| - |h| > 0$ på $C(0, 1)$
+
+$\Rightarrow$ inga nollställen på $C(0, 1)$
+
+$\Rightarrow$ \# nollställen till $f$ i $A(0, 1, 2) = N(f, C(0, 2)) - N(f, C(0, 1)) = 4$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Fouriertransformen}
+\begin{definition}
+Om $f : \mathbb{R} \to \mathbb{C}$ integrerbar och $f \in L^1$ $\left( \int_{-\infty}^\infty |f(t)|\,dt < \infty \right)$ så definierar vi FT $\hat{f} : \mathbb{R} \to \mathbb{C}$, $\hat{f}(x) = \displaystyle\int_{-\infty}^\infty f(t)e^{-ixt}\,dt$
+\end{definition}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Tenta 2014 Januari uppg.\ 1}
+Beräkna mha residykalkylen FT av $f(x) = \dfrac{1}{(x^2 + 1)(x^2 + 4)}$
+
+\textbf{Lösning:} $\hat{f}(t) = \displaystyle\int_{-\infty}^\infty \frac{e^{-it}}{(x^2 + 1)(x^2 + 4)}\,dx$. Vi noterar att $\hat{f}(t) = \displaystyle\lim_{R \to \infty} \int_{[-R, R]} g(z)\,dz$,
+
+$g(z) = \dfrac{e^{-itz}}{(z^2 + 1)(z^2 + 4)}$. Anta först $t \le 0$. Låt $\gamma_R(t) = Re^{it}$, $t \in [0, \pi]$
+\notefigure{fig2}{}
+$\sigma_R = [-R, R] \cup \gamma_R$ \hfill $\longrightarrow$

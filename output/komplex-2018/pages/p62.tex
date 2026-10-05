@@ -1,0 +1,27 @@
+% language: swedish
+$= (z - z_0)^2 g(z)$, $g$ holomorf i $D(z_0, R)$ får $f(z) = \dfrac{h(z)}{(z - z_0)^2} = g(z)$ i $D(z_0, R)^\times$ dvs $z_0$ hävbar singularitet
+
+\textcircled{b} $\Leftarrow$ \quad $\displaystyle\lim_{z \to z_0} |f(z)| = \lim_{z \to z_0} \left| \frac{g(z)}{(z - z_0)^m} \right| = |g(z_0)| \lim_{z \to z_0} \frac{1}{|z - z_0|^m} = \infty$
+
+$\Rightarrow$ \quad $\displaystyle\lim_{z \to z_0} |f(z)| = \infty \Rightarrow f \neq 0$ i $D(z_0, \varepsilon)^\times$, $\varepsilon > 0 \Rightarrow h(z) = \dfrac{1}{f(z)}$ holomorf i $D(z_0, \varepsilon)^\times$. $z_0$ isol.\ sing.\ till $h$,
+\[ \lim_{z \to z_0} |h(z)| = \frac{1}{\lim_{z \to z_0} |f(z)|} = \frac{1}{\infty} = 0 \Rightarrow \lim_{z \to z_0} (z - z_0)h(z) = 0 \overset{\textcolor{magenta!80!black}{a}}{\Rightarrow} \]
+$\overset{\textcolor{magenta!80!black}{a}}{\Rightarrow} z_0$ hävbar sing.\ till $h$, dvs.\ om $h(z) = 0$ så är $h$ holomorf i $D(z, \varepsilon)$ $z_0$ nollställe till $h$, enda nollstället i $D(z_0, \varepsilon) \Longrightarrow$
+\[ \underset{\textcolor{magenta!80!black}{\text{klass av nollställe}}}{\Longrightarrow} h(z) = (z - z_0)^m k(z),\ m \ge 1,\ k \text{ holomorf i } D(z_0, \varepsilon),\ k(z_0) \neq 0 \]
+Får alltså att $k \neq 0$ i $D(z_0, \varepsilon)$.
+
+Låt $g(z) = \dfrac{1}{k(z)}$ holomorf i $D(z_0, \varepsilon)$, $g(z_0) = \dfrac{1}{k(z_0)} \neq 0$
+
+Får $f(z) = \dfrac{1}{h(z)} = \dfrac{1}{(z - z_0)^m k(z)} = \dfrac{g(z)}{(z - z_0)^m}$ i $D(z_0, \varepsilon)^\times$
+
+Låt $g(z) = (z - z_0)^m f(z)$ i $D(z_0, R)^\times \Rightarrow f(z)$ gäller i $D(z_0, R)^\times$. \hfill $\square$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+\begin{itemize}
+  \item $\dfrac{\sin z}{z}$, $0$ isol.\ sing.\ \quad $\displaystyle\lim_{z \to 0} \frac{z \sin z}{z} = \sin 0 = 0 \Rightarrow 0$ hävbar sing.
+  \item $\dfrac{\sin z}{z^3}$, $0$ isol.\ sing.\ \quad $\sin z = z - \dfrac{z^3}{3!} + \dots$ \quad $\dfrac{\sin z}{z^3} = \dfrac{1}{z^3}\left( z - \dfrac{z^3}{3!} + \dots \right) =$
+  \[ = \frac{1}{z^2}\underbrace{\left( 1 - \frac{z^2}{3!} + \dots \right)}_{\textcolor{magenta!80!black}{g}} = [g \text{ holomorf},\ g(0) = 1] = \frac{g(z)}{z^2} \]
+  Får att $0$ är en pol av ordning 2.
+\end{itemize}
+\end{example}

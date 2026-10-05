@@ -1,0 +1,41 @@
+% language: swedish
+% figure: fig1 0.53 0.892 0.655 0.935
+\subsection{Isolerade singulariteter}
+\begin{definition}
+Antag $f$ har isolerad singularitet i $z_0$, dvs $f$ holomorf i $D(z_0, R)^\times$. Då är singulariteten:
+\begin{enumerate}[label=\textcolor{magenta!80!black}{\roman*)}]
+  \item \emph{hävbar} om man kan definiera $f(z_0)$ s.a.\ $f$ holomorf i $D(z_0, R)$
+  \item \emph{en pol} om $\displaystyle\lim_{z \to z_0} |f(z)| = \infty$
+  \item \emph{väsentlig} annars.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Klassifikation av isolerade singulariteter (Sats 4.1, 4.2 R)]
+Antag $z_0$ isolerad singularitet till $f$. Då är singulariteten:
+\begin{enumerate}[label=\textcolor{blue!60!black}{\alph*)}]
+  \item hävbar omm $\displaystyle\lim_{z \to z_0} (z - z_0)f(z) = 0$
+  \item en pol omm $f(z) = \dfrac{g(z)}{(z - z_0)^m}$, $m \ge 1$, $g$ holomorf i $D(z_0, R)$, $g(z_0) \neq 0$
+
+  $m$ är polens ordning.
+\end{enumerate}
+\end{theorem}
+
+\textcolor{red!70!black}{\textbf{OBS!}} endast a-delen är på bevislistan
+
+\subsection{Tenta 2013 Januari uppg.\ 7}
+Antag $f$ holomorf i $D(0, 1)^\times$ och $|f| \le 1$. Visa att $f$ kan utvidgas till en holomorf funktion i $D(0, 1)$.
+
+\textbf{Lösning:} $\displaystyle\lim_{z \to 0} z = 0$, $|f|$ begränsad $\underset{\textcolor{magenta!80!black}{\text{gräns}}}{\overset{\textcolor{magenta!80!black}{\text{räknesats för}}}{\Longrightarrow}} \displaystyle\lim_{z \to 0} zf(z) = 0$
+
+$\underset{\textcolor{magenta!80!black}{\text{isol.\ sing}}}{\overset{\textcolor{magenta!80!black}{\text{klass av}}}{\Longrightarrow}} 0$ hävbar singularitet, dvs $f$ kan utvidgas till holomorf funktion i $D(0, 1)$
+
+\subsection{Residykalkyl}
+\begin{definition}
+Om $f$ har isolerad singularitet i $z_0$, $f(z) = \sum_{-\infty}^\infty c_k(z - z_0)^k$ i $D(z_0, R)^\times$, då definierar vi $\operatorname{Res}_{z_0} f = c_{-1}$ \emph{residyn}
+\end{definition}
+
+\begin{theorem}[Residysatsen (Sats 9.10)]
+Antag $f$ holomorf i $G$ förutom isolerad singularitet $z_k$, $\gamma$ styckvis glatt sluten enkel positivt orienterad nollhomotop kurva i $G$ som undviker singulariteten $z_k$.
+\notefigure{fig1}{}
+Då $\displaystyle\int_\gamma f\,dz = 2\pi i \sum_{z_k \in \operatorname{int}(\gamma)} \operatorname{Res}_{z_k} f$.
+\end{theorem}

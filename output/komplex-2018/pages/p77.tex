@@ -1,0 +1,47 @@
+% language: swedish
+% figure: fig1 0.18 0.31 0.74 0.36
+% figure: fig2 0.19 0.75 0.71 0.815
+\subsection{Argumentprincipen}
+\begin{definition}
+$f$ är \emph{meromorf} i $G$ om $f$ holomorf i $G$ förutom poler.
+\end{definition}
+
+\begin{example}
+om $g, h$ holomorf i $G$, $h \not\equiv 0$ då $\frac{g}{h}$ meromorf i $G$.
+\end{example}
+
+\begin{definition}
+Låt $\gamma$ vara sluten kurva i $\mathbb{C} \setminus \{0\}$. Vi definierar \emph{vindningstalet} $W(\gamma)$ (winding number) som \# varv $\gamma$ går runt noll netto i positiv riktning, dvs $(\gamma) = m$ omm $\gamma \sim_{\mathbb{C} \setminus \{0\}} mC(0, 1)$
+\end{definition}
+
+\begin{example}
+\notefigure{fig1}{}
+\underline{$W(\gamma) = 2$} \qquad \underline{$W(\hat{\gamma}) = 0$}
+\end{example}
+
+\textcolor{red!70!black}{\fbox{OBS:}} Om $\gamma$ dessutom är styckvis glatt: $W(\gamma) = \dfrac{1}{2\pi i} \displaystyle\int_\gamma \frac{1}{z}\,dz$ tack vare CS.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Föreläsning 9/10}
+\textbf{Förra föreläsningen:}
+\begin{itemize}
+  \item $f$ \emph{meromorf} om holomorf förutom i poler
+  \item $W(\gamma) = $ \# varv $\gamma$ går runt $0$ i positiv riktning
+\end{itemize}
+
+\begin{theorem}[Argumentprincipen]
+\hfill \textcolor{magenta!80!black}{Bevislistan}
+
+Antag $f$ meromorf i $G$, $\gamma$ styckvis glatt sluten enkel nollhomotop positivt orienterad i $G$ som undviker $f$:s nollställen och poler.
+
+Då gäller att: $W(f \circ \gamma) = N(f, \gamma) - P(f, \gamma)$ där $N(f, \gamma) = $ \# nollställen till $f$ i $\operatorname{int}(\gamma)$ (med mult). $P(f, \gamma) = $ \# poler till $f$ i $\operatorname{int}(\gamma)$ (med mult)
+\end{theorem}
+
+\begin{example}
+\notefigure{fig2}{}
+\end{example}
+
+\textcolor{red!70!black}{\textbf{OBS:}} $\overline{\operatorname{int}(\gamma)}$ kompakt $\Rightarrow N(f, \gamma) < \infty$, $P(f, \gamma) < \infty$
+
+\hfill \textcolor{red!70!black}{\underline{Bevis}} $\longrightarrow$

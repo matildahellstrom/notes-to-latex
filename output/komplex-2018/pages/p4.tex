@@ -1,0 +1,56 @@
+% language: swedish
+% figure: fig1 0.088 0.16 0.18 0.215
+% figure: fig2 0.04 0.395 0.20 0.47
+% figure: fig3 0.025 0.685 0.17 0.72
+% figure: fig4 0.075 0.84 0.40 0.885
+% figure: fig5 0.49 0.885 0.547 0.922
+\begin{itemize}
+  \item $G$ \emph{sluten} om alla punkter $b \in G^c$ är yttre punkter.
+  \item $G$ \emph{kompakt} om sluten och begränsad dvs $\exists R > 0 : G \subseteq D(0, R)$
+\end{itemize}
+
+\begin{example}
+$D(a, r)$ öppen
+
+\notefigure{fig1}{}
+$\overline{D}(a, r) = \{z : |z - a| \le r\}$ \quad (sluten \& kompakt)
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Föreläsning 4/9}
+\textcolor{red!70!black}{\textbf{Repetition:}}
+
+\subsection{Topologi i planet}
+$G \subseteq \mathbb{C}$
+\notefigure{fig2}{}
+\begin{itemize}
+  \item $a$ \emph{inre} punkt i $G$ om $\exists r > 0$ s.a. $D(a, r) \subseteq G$
+  \item $b$ \emph{yttre} punkt till $G$ om $\exists r > 0$ s.a. $D(b, r) \subseteq G^c$
+  \item $c$ \emph{randpunkt} till $G$ om varken inre eller yttre, $c \in \partial G$
+  \item $G$ \emph{öppen} om $\forall a \in G$ är inre
+  \item $G$ \emph{sluten} om $\forall b \in G^c$ är yttre
+  \item $G$ \emph{kompakt} om sluten och begränsad dvs. $\exists R > 0$ s.a. $G \subseteq D(0, R)$
+\end{itemize}
+
+\begin{example}
+\begin{itemize}
+  \item $D(a, r)$ öppen
+  \item $\overline{D}(a, r)$ \ ($\subseteq D(0, R)$) \emph{sluten}, \emph{kompakt}
+  \item $C(a, r) = \{z : |z - a| = r\}$ \emph{kompakt}
+  \item \notefigure{fig3}{} reella axeln, \emph{sluten}, \emph{ej kompakt}
+  \item $A = \{p + iq : p, q \in \mathbb{Q}\}$ \emph{varken öppen eller sluten} \quad $\partial A = \mathbb{C}$
+\end{itemize}
+\end{example}
+
+\begin{definition}
+En (parametriserad) kurva i $G$ är en kontinuerlig funktion
+\[ \gamma : [\alpha, \beta] \to G, \quad \alpha, \beta \in \mathbb{R} \]
+\notefigure{fig4}{}
+\end{definition}
+
+\begin{example}
+$\gamma(t) = a + re^{it}$, \ $t \in [0, 2\pi]$
+\notefigure{fig5}{}
+dvs kurvan som parametriserar cirkeln $C(a, r)$.
+\end{example}

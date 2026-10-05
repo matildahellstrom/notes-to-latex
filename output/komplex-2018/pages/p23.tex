@@ -1,0 +1,44 @@
+% language: swedish
+% figure: fig1 0.045 0.09 0.183 0.15
+% figure: fig2 0.055 0.26 0.43 0.362
+\begin{example}
+$\gamma_0(t) = e^{it}$, $t \in [0, 2\pi]$, \ $\gamma_1(t) = 2e^{it}$
+\notefigure{fig1}{}
+$\gamma(t, s) = (1 + s)e^{it}$
+
+$\gamma_0$ och $\gamma_1$ homotopa i $\mathbb{C}$ och $\mathbb{C} \setminus \{0\}$, men ej i $\mathbb{C} \setminus \{3i/2\}$
+\end{example}
+
+\begin{definition}
+Om $\gamma$ $G$-homotop med punkt $p \in G$ (dvs.\ kurvan $\gamma_p(t) \equiv p$) kallas $\gamma$ \emph{kontraherbar} eller \emph{$0$-homotop}, skrivs $\gamma \sim_G 0$
+
+\textcolor{blue!60!black}{$\uparrow$ ''noll-homotop''}
+\end{definition}
+
+\notefigure{fig2}{}
+\[ \gamma_1 \sim_G \gamma_2 \qquad \gamma_3 \sim_G 0 \qquad \gamma_1 \not\sim_G 0 \qquad \gamma_4 \not\sim_G \gamma_5 \quad \textcolor{magenta!80!black}{\text{men } \gamma_4 \sim_G -\gamma_5} \]
+
+I praktiken, typiskt $G = \mathbb{C} \setminus \{a_1, \dots, a_k\}$
+
+\textbf{Övning 4.24:} Visa att varje sluten kurva i $\mathbb{C}$ är $0$-homotop i $\mathbb{C}$, och att om $\gamma_1, \gamma_2$ slutna i $\mathbb{C}$, $\gamma_1 \sim_{\mathbb{C}} \gamma_2$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\hfill \textcolor{blue!60!black}{David: ''I denna kurs, fuskar man lite''}
+
+\begin{theorem}[Cauchys Sats (Sats 4.18)]
+Antag att $f$ holomorf i $G$ och $\gamma_0, \gamma_1$ slutna slutna, glatta kurvor i $G$ s.a.\ $\gamma_0 \sim_G \gamma_1$ då $\displaystyle\int_{\gamma_0} f\,dz = \int_{\gamma_1} f\,dz$
+\end{theorem}
+
+\textcolor{red!70!black}{Obs!} Typiskt ej sant om $f$ ej holomorf eller $\gamma_0 \not\sim_G \gamma_1$
+
+\begin{proof}
+Kommer anta $f \in C^1$ och homotopin mellan $\gamma_0, \gamma_1$ är $C^2$
+\[ I(s) = \int_{\gamma_s} f\,dz = \int_a^b f(\gamma(t, s)) \frac{d\gamma}{dt}\,dt. \qquad \frac{dI}{ds} \underset{\textcolor{magenta!80!black}{\text{tack vare antagandet}}}{=} \int_a^b \frac{d}{ds}\left( f(\gamma(t, s)) \frac{d\gamma}{dt} \right) dt = \]
+\begin{align*}
+  &= \left[ \begin{array}{l} f \text{ holomorf så enligt lemma:} \\ \frac{d}{ds} f(\gamma(t, s)) = f'(\gamma(t, s)) \frac{d\gamma}{ds} \end{array} \right] = \int_a^b \left( f'(\gamma(t, s)) \frac{d\gamma}{ds}\frac{d\gamma}{dt} + f(\gamma(t, s)) \frac{d^2\gamma}{ds\,dt} \right) dt \\
+  &= \left[ \text{samma lemma: } \frac{d}{dt} f(\gamma(t, s)) = f' \frac{d\gamma}{dt} \right] = \int_a^b \frac{d}{dt}\left( f(\gamma(t, s)) \frac{d\gamma}{ds} \right) dt = \\
+  &= f(\gamma(b, s)) \frac{d\gamma}{ds}(b, s) - f(\gamma(a, s)) \frac{d\gamma}{ds}(a, s) = 0 \quad \text{ty } \gamma(a, s) = \gamma(b, s) \ \forall s
+\end{align*}
+\[ \Rightarrow \frac{dI}{ds} = 0 \Rightarrow I(s) \text{ konstant} \Rightarrow \int_{\gamma_0} f\,dt = I(0) = I(1) = \int_{\gamma_1} f\,dz \]
+\end{proof}

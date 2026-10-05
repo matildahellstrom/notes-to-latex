@@ -1,0 +1,45 @@
+% language: swedish
+% figure: fig1 0.29 0.66 0.92 0.885
+\begin{theorem}[Kor 4.20]
+Om $f$ holomorf i $G$, $\gamma$ sluten slutna glatta kurvor i $G$ så att $\gamma \sim_G 0$, då $\displaystyle\int_\gamma f\,dz = 0$ \quad \textcolor{magenta!80!black}{(tillhör Cauchys sats)}
+\end{theorem}
+\begin{proof}
+$\gamma \sim_G 0$ betyder $\gamma \sim_G \gamma_p$, $\gamma_p(t) \equiv p$, $p \in G$
+\[ \text{CS} \Rightarrow \int_\gamma f\,dz = \int_{\gamma_p} f\,dz = 0 \quad \text{ty } \gamma_p' = 0 \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Räknestuga 14/9}
+
+\fbox{3.5} \quad Visa att alla Möbiusavbildningar, förutom $f(z) = z$ $\forall z$, har som mest två fixpunkter dvs.\ punkter $z_0$ s.a.\ $f(z_0) = z_0$
+
+\textbf{Lösning:} Skriv $f(z) = \dfrac{az + b}{cz + d}$. Antag att $z$ är en fixpunkt
+
+dvs.\ $z = f(z) = \dfrac{az + b}{cz + d} \Rightarrow (cz + d)z = az + b$ \quad \textcolor{magenta!80!black}{\underline{max 2 lösningar}}
+
+Kollar om dom är ekvivalenta: Om $c \neq 0$ så är det en 2:a gradsfunktion \textcolor{magenta!80!black}{2 lösningar}
+
+om $c = 0 \Rightarrow dz = az + b \Rightarrow (d - a)z = b$
+
+Om $d \neq a$ så finns max \emph{en lösning}
+
+Om $d = a$ så $b = 0$.
+
+Om $c = 0$, $a = d$ \& $b = 0 \Rightarrow f(z) = \dfrac{az + b}{cz + d} = \dfrac{az}{d} = z$ \quad \textcolor{magenta!80!black}{$\leftarrow$ oändligt många lösningar vilket inte var ok enligt uppgiften}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{3.13} \quad Låt $f(z) = \dfrac{2z}{z + 2}$. Rita bilden av:
+\begin{enumerate}[label=\alph*)]
+  \item $x$-axeln
+  \item $y$-axeln
+  \item $y = x$
+  \item $C[0, 2]$
+  \item $C[1, 1]$
+  \item $C[-1, 1]$
+\end{enumerate}
+\textcolor{blue!60!black}{Tips: Räcker att rita bilden av $0, \pm 2, \infty, -1 \pm i$}
+\notefigure{fig1}{}
+\[ f(0) = \underline{0} \qquad f(2) = \underline{1} \qquad f(-2) = \underline{\infty} \qquad f(\infty) = \frac{2\infty}{\infty + 2} = \frac{2}{1 + \frac{2}{\infty}} = \underline{2} \]
+\[ f(-1 - i) = \frac{-2(1 + i)}{1 - i} = \frac{-2(1 + i)^2}{2} = -(1 + 2i - 1) = \underline{-2i} \]

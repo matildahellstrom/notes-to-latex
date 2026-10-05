@@ -1,0 +1,50 @@
+% language: swedish
+% figure: fig1 0.71 0.394 0.76 0.455
+% figure: fig2 0.395 0.677 0.745 0.744
+\section{Föreläsning 19/9}
+
+\subsection{Primitiva funktioner}
+$f$ holomorf i $G$, $F' = f$ i $G$, säger $F$ primitiv till $f$ i $G$.
+
+\begin{example}
+$e^z$ primitiv till $e^z$ i $\mathbb{C}$, $\sin z$ primitiv till $\cos z$ i $\mathbb{C}$, $\operatorname{Log} z$ primitiv till $1/z$ i $\mathbb{C} \setminus \mathbb{R}_{\le 0}$
+\end{example}
+
+\begin{theorem}[Sats 4.11]
+Antag $F$ primitiv till $f$ i $G$, $\gamma$ styckvis glatt kurva i $G$ då $\displaystyle\int_\gamma f\,dz = F(\gamma(b)) - F(\gamma(a))$.
+\end{theorem}
+\begin{proof}
+\begin{align*}
+  \int_\gamma f\,dz &= \int_a^b f(\gamma(t))\gamma'(t)\,dt = \int_a^b F'(\gamma(t))\gamma'(t)\,dt \overset{\textcolor{magenta!80!black}{\text{Lemma}}}{=} \int_a^b (F \circ \gamma)'(t)\,dt \\
+  &\underset{\textcolor{magenta!80!black}{\text{analysens fundamentalsats}}}{=} F(\gamma(b)) - F(\gamma(a))
+\end{align*}
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+Bestäm $\displaystyle\int_\gamma e^z\,dz$, $\gamma(t) = it$, $t \in [0, \pi]$
+\notefigure{fig1}{}
+\textbf{Lösning:} $\displaystyle\int_\gamma e^z\,dz \underset{\textcolor{magenta!80!black}{\text{Sats}}}{=} e^{i\pi} - e^0 = -2$
+\end{example}
+
+\textcolor{red!70!black}{\textbf{Följd:}} Om $f$ har en primitiv i $G$ och $\gamma$ sluten styckvis glatt kurva. $\Rightarrow \displaystyle\int_\gamma f\,dz = 0$
+
+\textcolor{red!70!black}{\textbf{Obs!!}} $\displaystyle\int_{|z| = 1} \frac{1}{z}\,dz = 2\pi i \neq 0 \Rightarrow \frac{1}{z}$ har ingen primitiv i $\mathbb{C} \setminus \{0\}$
+
+\begin{definition}
+Ett område $G$ är \emph{enkelt sammanhängande} om varje sluten kurva i $G$ är nollhomotop i $G$.
+\notefigure{fig2}{}
+\begin{minipage}[t]{0.48\linewidth}
+ej enkelt sammanhängande (har hål)
+
+\emph{exempel} $\mathbb{C} \setminus \{0\}$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+enkelt sammanhängande (inga hål)
+
+\emph{exempel} $D(w, r)$, $\mathbb{C}$, halvplan\dots
+
+\textcolor{blue!60!black}{Grenarna del av randen $\Rightarrow$ skapar inga hål}
+\end{minipage}
+\end{definition}

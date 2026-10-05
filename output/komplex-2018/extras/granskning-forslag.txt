@@ -1,0 +1,19 @@
+1: Resten av raden är avskuren i skanningen, så propositionens nummer syns inte. Skriv numret om du vet det.
+2: Troligen $\varphi$, samma vinkel som i resten av raden.
+3: Rosa anteckning: troligen att $w\bar z = \overline{z\bar w}$, vilket används på nästa rad.
+4: Svag rosa text överst på sidan.
+5: Svag rosa text överst på sidan.
+6: Din krulliga $\ell$, som du använder för en godtycklig gren av logaritmen.
+7: Troligen ''komplement''.
+8: Troligen $\operatorname{Im} z > 0$; högerkanten är avskuren i skanningen.
+9: Räkningen ger $z^2 + 4iz - 1$, så $-1$ stämmer matematiskt.
+10: Rosa anteckning bredvid serien.
+11: Ordet före ''$f$ holomorf''. Kanske en förkortning?
+12: Matematiskt ska det vara $z^k$ (raden slutar med $\sum c_k z^k$).
+13: Troligen ''omgivning'' (''gäller i någon omgivning till $a$'').
+14: Satsen heter Rouchés sats.
+15: Troligen $C[0, 1]$, cirkeln $|z| = 1$.
+16: Matematiskt ska det vara $g'(z_0)$ (Prop 9.14).
+17: Matematiskt ska det vara $\sin z$.
+18: Troligen $\delta$, som används i resten av uppgiften.
+19: Troligen $b$, eftersom svaret är $\pi\min(a, b)$.

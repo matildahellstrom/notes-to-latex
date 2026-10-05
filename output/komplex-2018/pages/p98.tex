@@ -1,0 +1,37 @@
+% language: swedish
+\subsection{F3 s.16}
+Lös differensekvationen $*$: $a_{k+1} - a_k = k$, $a_0 = 0$
+
+\textbf{Lösning:} $\alpha = \{a_k\}$, $\beta = \{k\}$
+\[ * \Leftrightarrow S(\alpha) - \alpha = \beta \quad \text{ZT av detta ger: } z(Z(\alpha) - a_0) - Z(\alpha) = Z(\beta) \]
+\[ \Leftrightarrow (z - 1)Z(\alpha) = \underbrace{\frac{z}{(z - 1)^2}}_{\textcolor{magenta!80!black}{\text{enligt tidigare uppgift}}} \Rightarrow Z(\alpha) = \frac{z}{(z - 1)^3} \]
+Övning 1c s.\ 16 visade att $\dfrac{2z}{(z - 1)^3} = Z(\gamma)$ \quad $\gamma = \{k(k - 1)\}$
+\[ \Rightarrow \rattat{Z(\alpha)}{Z(\gamma)} = \frac{1}{2}Z(\gamma) = Z\left( \frac{1}{2}\gamma \right) \]
+\[ \Rightarrow \alpha = \frac{1}{2}\gamma \text{ dvs.\ } a_k = \frac{k(k - 1)}{2} = \binom{k}{2} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section*{Fortsättning \textcolor{red!70!black}{\fbox{REPETITION}}}
+
+\textbf{Kurvintegraler:} \quad $\displaystyle\int_\gamma f\,dz = \int_a^b f(\gamma(t))\gamma'(t)\,dt$
+
+\begin{theorem}[Triangelolik.\ för integraler (Sats 4.6 d)]
+$\displaystyle\left| \int_\gamma f\,dz \right| \le \max_{z \in \gamma} |f(z)|\,|\gamma|$, \quad $|\gamma| = \displaystyle\int_a^b |\gamma'(t)|\,dt$.
+\end{theorem}
+
+\textbf{Homotopi:}
+\begin{definition}
+Två slutna kurvor $\gamma_0, \gamma_1$ i $G$ är homotopa \emph{i $G$}, $\gamma_0 \sim_G \gamma_1$, om $\gamma_0$ kan \rattat{deformeras kontinuerligt}{kontinuerligt definierad} till $\gamma_1$ \emph{i $G$}.
+
+$\gamma$ är nollhomotop, $\gamma \sim_G 0$, om den kan def.\ till punkt.
+\end{definition}
+
+\begin{theorem}[Cauchys Sats (Sats 4.18)]
+Om $f$ holo i $G$, $\gamma_0, \gamma_1$ styckvis glatta slutna kurvor i $G$ s.a.\ $\gamma_0 \sim_G \gamma_1$, då är $\displaystyle\int_{\gamma_0} f\,dz = \int_{\gamma_1} f\,dz$.
+
+\textcolor{red!70!black}{\{}Om $f$ holomorf i $G$, $\gamma \sim_G 0$, då $\displaystyle\int_\gamma f\,dz = 0$ (Kor.\ 4.20)\textcolor{red!70!black}{\}}
+\end{theorem}
+
+\begin{theorem}[Cauchys integralformel (Sats 4.24)]
+$f$ holomorf i $G$, $\overline{D(w, R)} \subseteq G$, då är $f(w) = \dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{f(z)}{z - w}\,dz$, \ $0 < r \le R$
+\end{theorem}

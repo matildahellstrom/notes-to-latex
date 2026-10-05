@@ -1,0 +1,50 @@
+% language: swedish
+\begin{example}
+Visa $\displaystyle\sum_0^\infty \frac{z^k}{k!} = e^z$
+
+\textbf{Lösning:} Notera $f(z) \underset{\textcolor{magenta!80!black}{\text{Sats 8.1}}}{=} \displaystyle\sum_0^\infty \frac{z^k}{k!}$ hel. \quad $f'(z) = \displaystyle\sum_1^\infty \frac{kz^{k-1}}{k!} = \sum_0^\infty \frac{z^k}{k!} = f(z)$
+
+$(fe^{-z})' = f'e^{-z} - fe^{-z} = 0$ \ \textcolor{magenta!80!black}{$(f = f')$}
+
+$\overset{\textcolor{magenta!80!black}{\text{Sats}}}{\Longrightarrow} fe^{-z}$ konstant $\Rightarrow f = ce^z$, $c = f(0) = 1 \Longrightarrow f = e^z$
+
+Får $\sin z = z - \dfrac{z^3}{3!} + \dfrac{z^5}{5!} - \dots$
+\end{example}
+
+\begin{theorem}[Kor 8.5]
+Om $f(z) = \sum_0^\infty c_k(z - z_0)^k$, konvergensradie $R > 0$ då $c_k = \dfrac{f^{(k)}(z_0)}{k!}$
+\end{theorem}
+\begin{proof}
+Iteration av Sats 8.2 ger $f^{(k)}(z) = \displaystyle\sum_{m \ge k} m(m - 1) \cdots (m - k + 1)c_m(z - z_0)^{m-k}$
+
+$\Rightarrow f^{(k)}(z_0) = k!\,c_k$
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Föreläsning 28/9}
+\subsection{Fortsättning: Taylorutvecklingar}
+\begin{itemize}
+  \item $f(z) = \sum_0^\infty c_k(z - z_0)^k$ holomorf i $D(z_0, R)$, $R$ konvergensradien \textcolor{blue!60!black}{(8.2)}
+  \item $f'(z) = \sum_1^\infty k \cdot c_k(z - z_0)^{k-1}$ \quad \textcolor{blue!60!black}{(8.2)}
+  \item $c_k = \dfrac{f^{(k)}(z_0)}{k!}$ \quad \textcolor{blue!60!black}{(Kor 8.5)}
+\end{itemize}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Kor 8.6]
+\hfill \textcolor{magenta!80!black}{Finns bara 1 potensserie till varje funktion (holomorf)}
+
+Om $\sum_0^\infty c_k(z - z_0)^k = \sum_0^\infty d_k(z - z_0)^k$ i $D(z_0, r)$, $r > 0$, då är $c_k = d_k$, $\forall k \in \mathbb{N}$
+\end{theorem}
+\begin{proof}
+$f(z) = \sum_0^\infty c_k(z - z_0)^k = \sum_0^\infty d_k(z - z_0)^k$
+\[ c_k \underset{\textcolor{magenta!80!black}{8.5}}{=} \frac{f^{(k)}(z_0)}{k!} \underset{\textcolor{magenta!80!black}{8.5}}{=} d_k \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{example}
+$\displaystyle\sum_0^\infty \frac{z^k}{k!} = e^z$, \ $\displaystyle\sum_0^\infty z^k = \{\text{konvergensradie } 1, \text{ holomorf i } D(0, 1)\} =$
+\[ = z - \frac{z^3}{3!} + \frac{z^5}{5!} - \dots = \sin z \qquad \Rightarrow \sum_0^\infty z^k = \frac{1}{1 - z} \longleftarrow \text{holomorf i } \mathbb{C} \setminus \{1\} \]
+\end{example}

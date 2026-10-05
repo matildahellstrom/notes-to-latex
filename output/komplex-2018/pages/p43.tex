@@ -1,0 +1,14 @@
+% language: swedish
+% figure: fig1 0.088 0.10 0.415 0.205
+\fbox{6.9} \quad Antag $f$ holomorf i $G$, $f(G) \subseteq H$, $u$ harmonisk i $H$, visa att $u \circ f$ harmonisk i $G$.
+\notefigure{fig1}{}
+
+\textbf{Lösning:} Välj $w \in G$, välj $\varepsilon > 0$ s.a.\ $D(f(w), \varepsilon) \subseteq H$.
+
+$f$ kontinuerlig $\Rightarrow \exists \delta > 0 : f(D(w, \delta)) \subseteq D(f(w), \varepsilon)$
+
+$D(f(w), \varepsilon)$ enkelt sammanhängande $\Rightarrow \exists g$ holomorf i $D(f(w), \varepsilon)$ s.a.\ $u = \operatorname{Re} g$ i $D(f(w), \varepsilon)$
+
+$\Rightarrow g \circ f$ holomorf i $D(w, \delta)$, $u \circ f = \operatorname{Re}(g \circ f) \underset{\textcolor{red!70!black}{\text{Sats}}}{\Longrightarrow}$
+
+$\underset{\textcolor{red!70!black}{\text{Sats}}}{\Longrightarrow} u \circ f$ harmonisk i $D(w, \delta) \Rightarrow u \circ f$ harmonisk i $G$ ty $w$ godtycklig, harmonisk lokal egenskap.

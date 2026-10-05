@@ -1,0 +1,24 @@
+% language: swedish
+% figure: fig1 0.02 0.128 0.20 0.225
+% figure: fig2 0.72 0.52 0.85 0.59
+\begin{example}
+Beräkna $\displaystyle\int_0^\infty \frac{1}{1 + x^3}\,dx$ \quad \textcolor{magenta!80!black}{$\leftarrow$ udda funktion}
+
+\begin{framed}[Notera:]
+\[ \int_{[0, R]} \frac{1}{1 + z^3}\,dz = \left[ \begin{array}{l} \gamma_1(t) = t,\ t \in [0, R] \\ \gamma_1'(t) = 1 \end{array} \right] = \int_0^R \frac{1}{1 + t^3}\,dt \]
+\end{framed}
+
+\textbf{Lösning:}
+\notefigure{fig1}{}
+\[ \gamma_R(t) = Re^{it},\ t \in [0, 2\pi/3] \qquad \sigma_R = [0, R] \cup \rattat{\gamma_R}{\gamma_{R_2}} \cup [Re^{\frac{2\pi i}{3}}, 0] \]
+\[ \int_{[Re^{2\pi i/3}, 0]} \frac{1}{1 + z^3}\,dz = -\int_{[0, Re^{2\pi i/3}]} \frac{1}{1 + z^3}\,dz = \left[ \begin{array}{l} \gamma_2(t) = e^{2\pi i/3}t,\ t \in [0, R] \\ \gamma_2'(t) = e^{2\pi i/3} \end{array} \right] = \]
+\[ = -\int_0^R \frac{1}{1 + (e^{2\pi i/3}t)^3} e^{2\pi i/3}\,dt = -e^{2\pi i/3} \int_0^R \frac{1}{1 + t^3}\,dt \]
+\[ \left| \int_{\gamma_R} \frac{1}{1 + z^3}\,dz \right| \underset{\textcolor{magenta!80!black}{\Delta \text{ olik} \int}}{\le} \max_{z \in \gamma_R} \left| \frac{1}{1 + z^3} \right| \cdot \frac{2\pi R}{3} \le \left[ \begin{array}{l} |1 + z^3| \ge |z|^3 - 1 = \\ = R^3 - 1 \end{array} \right] < \frac{2\pi R}{3(R^3 - 1)} \xrightarrow{R \to \infty} 0 \]
+\[ \Rightarrow \lim_{R \to \infty} \int_{\sigma_R} \frac{1}{1 + z^3}\,dz = \left( 1 - e^{2\pi i/3} \right) \int_0^\infty \frac{1}{1 + x^3}\,dx \]
+$\dfrac{1}{1 + z^3}$ holomorf i $\mathbb{C}$ förutom isolerade singulariteter i $-1$, $e^{\pm \pi i/3}$
+
+endast $e^{\pi i/3}$ i $\operatorname{int}(\sigma_R)$, $R > 1$
+\notefigure{fig2}{}
+\[ \operatorname{Res}_{e^{\pi i/3}}\left( \frac{1}{1 + z^3} \right) \overset{\textcolor{magenta!80!black}{\text{räkneregel}}}{=} \left( \frac{1}{3z^2} \right)_{z = e^{i\pi/3}} = \frac{1}{3e^{2\pi i/3}} \]
+\[ \int_{\sigma_R} \frac{1}{1 + z^3}\,dz \overset{\textcolor{magenta!80!black}{\text{Res.\ sats}}}{=} \frac{2\pi i}{3e^{2\pi i/3}},\ R > 1 \Rightarrow \int_0^\infty \frac{1}{1 + x^3}\,dx = \frac{2\pi i}{3e^{2\pi i/3}(1 - e^{2\pi i/3})} = \dots = \frac{2\pi}{3\sqrt{3}} \]
+\end{example}

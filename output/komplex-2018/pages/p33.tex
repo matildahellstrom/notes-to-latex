@@ -1,0 +1,33 @@
+% language: swedish
+% figure: fig1 0.455 0.46 0.575 0.515
+\begin{example}
+$\displaystyle\int \frac{\sin z}{z^2}\,dz \overset{\textcolor{magenta!80!black}{\text{CIF för der.}}}{=} \left[ \begin{array}{l} f = \sin z \\ w = 0 \end{array} \right] = 2\pi i \sin'(0) = 2\pi i$
+\end{example}
+
+\begin{theorem}[Korollorium]
+Om $f$ holomorf då existerar alla derivator $f^{(k)}$, $k \in \mathbb{N}$,
+\[ f^{(k)}(w) = \frac{k!}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{(z - w)^{k+1}}\,dz \qquad \textcolor{magenta!80!black}{\text{\underline{Tillhör inte bevislistan}}} \]
+\end{theorem}
+\begin{proof}
+$f$ holomorf i $G$, $\overline{D}(w, r) \subseteq G$. CIF för $f'$ + CS $\Rightarrow$
+\begin{align*}
+  \Rightarrow \frac{f'(w + h) - f'(w)}{h} &= \frac{1}{2\pi i h} \int_{|z - w| = r} f(z)\left( \frac{1}{(z - w - h)^2} - \frac{1}{(z - w)^2} \right) dz = \\
+  &= \left[ \frac{1}{(z - w - h)^2} - \frac{1}{(z - w)^2} = \frac{2h(z - w) - h^2}{(z - w - h)^2(z - w)^2} \right] = \\
+  &= \frac{2}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{(z - w - h)^2(z - w)}\,dz + O(h) \\
+  &\xrightarrow[h \to 0]{} \frac{2}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{(z - w)^3}\,dz \quad \text{som i förra beviset.}
+\end{align*}
+\end{proof}
+
+\begin{note}
+Det motsvarande påståendet för reella deriverbara funktioner är totalt falskt!
+\end{note}
+
+\begin{example}
+$f(x) = \begin{cases} 0, & x \le 0 \\ x^2, & x > 0 \end{cases}$
+\notefigure{fig1}{}
+$f'$ ej deriverbar
+\end{example}
+
+\begin{example}
+$\displaystyle\int_{|z| = 1} \frac{e^z}{z^k}\,dz = \{k \ge 1\} = 2\pi i \frac{(e^z)^{(k-1)}(0)}{(k - 1)!} = \frac{2\pi i}{(k - 1)!}$
+\end{example}

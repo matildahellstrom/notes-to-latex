@@ -1,0 +1,38 @@
+% language: swedish
+% figure: fig1 0.05 0.14 0.235 0.212
+% figure: fig2 0.128 0.285 0.28 0.362
+\textbf{Övning:} Bestäm integralen $\displaystyle\int_{|z - 2| = 1} \frac{e^z}{z^2}\,dz$ \quad \textcolor{magenta!80!black}{($e^z$: holomorf överallt, $z^2$: holomorf förutom vid $0$ i nämnaren)}
+
+$\Rightarrow \dfrac{e^z}{z^2}$ holomorf i $\mathbb{C} \setminus \{0\}$
+\notefigure{fig1}{}
+\[ C(2, 1) \sim_{\mathbb{C} \setminus \{0\}} 0 \quad \xrightarrow[\text{CS}]{} \quad \int_{|z - 2| = 1} \frac{e^z}{z^2}\,dz = 0 \]
+\textcolor{magenta!80!black}{Kurvan kan komprimeras till en punkt.}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\textbf{Övning:} Beräkna $I = \displaystyle\int_{|z| = 1} \frac{dz}{z^2 + 2z}$
+
+\textbf{Lösning:}
+\notefigure{fig2}{}
+Holomorf i $\mathbb{C} \setminus \{0\} \ \& \ \{-2\}$
+
+$C(0, 1) \not\sim_{\mathbb{C} \setminus \{0, -2\}} 0$ \quad dvs.\ integralen $\neq 0$
+
+\emph{Partialbråksuppdelning}: $\dfrac{1}{z^2 + 2z} = \dfrac{1}{z(2 + z)} = \dfrac{A}{z} + \dfrac{B}{(2 + z)}$ \quad $A = \frac{1}{2}$ \ $B = \rattat{-\frac{1}{2}}{\frac{1}{2}}$
+\[ \Rightarrow \frac{1}{2} \cdot \frac{1}{z} - \frac{1}{2} \cdot \frac{1}{z + 2} \quad \Longrightarrow I = \frac{1}{2}\underbrace{\int \frac{dz}{z}}_{\textcolor{blue!60!black}{(1)}} - \frac{1}{2}\underbrace{\int \frac{1}{z + 2}\,dz}_{\textcolor{magenta!80!black}{(2)}} = \]
+
+\begin{minipage}[t]{0.48\linewidth}
+\textcolor{blue!60!black}{(1)} \ \textcolor{red!70!black}{\fbox{Superviktiga exemplet från föreläsningen:}}
+\[ \int_{|z| = 1} z^k\,dz = \begin{cases} 2\pi i, & k = -1 \\ 0, & k \neq -1 \end{cases} \]
+\[ \int \frac{dz}{z} = \int z^{-1}\,dz = 2\pi i \]
+\end{minipage}\hfill\vrule\hfill
+\begin{minipage}[t]{0.45\linewidth}
+\textcolor{magenta!80!black}{(2)} \ $\dfrac{1}{z + 2}$ holomorf i $\mathbb{C} / \{-2\}$
+
+$C(0, 1) \sim_{\mathbb{C} \setminus \{-2\}} 0$
+\[ \underset{\text{CS}}{\Rightarrow} \int_{|z| = 1} \frac{1}{z + 2}\,dz = 0 \]
+\end{minipage}
+
+\[ \Longrightarrow \frac{1}{2} \cdot 2\pi i = \pi i = I \]
+
+Med denna metod kan man räkna ut integral för alla rationella funktioner.

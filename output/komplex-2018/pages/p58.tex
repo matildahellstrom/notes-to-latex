@@ -1,0 +1,34 @@
+% language: swedish
+% figure: fig1 0.06 0.315 0.18 0.375
+% figure: fig2 0.69 0.515 0.94 0.628
+\subsection{Laurentserier}
+\begin{definition}
+En serie på formen $\sum_{k = -\infty}^\infty c_k(z - z_0)^k$ kallas för en \emph{Laurentserie} med centrum i $z_0$.
+\end{definition}
+
+Kan skrivas $\displaystyle\sum_{-\infty}^\infty c_k(z - z_0)^k = \underbrace{\sum_{k = 0}^\infty c_k(z - z_0)^k}_{\textcolor{magenta!80!black}{\text{I}}} + \underbrace{\sum_{-\infty}^{-1} c_k(z - z_0)^k}_{\textcolor{magenta!80!black}{\text{II}}}$
+
+$R_2$ konvergensradie för I. $w = \dfrac{1}{z - z_0}$, II $= \sum_{k = 1}^\infty c_k w^k$ har konv.radie $1/R_1 \to$ II konvergerar då $|w| < 1/R_1 \Leftrightarrow |z - z_0| > R_1$
+\notefigure{fig1}{}
+\textcolor{magenta!80!black}{Summan av de konvergerande där båda konvergerar.}
+\[ \Rightarrow \sum_{-\infty}^\infty c_k(z - z_0)^k \text{ konvergent i annulusen } A(z_0, R_1, R_2) = \{z : R_1 < |z - z_0| < R_2\} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Laurentserieutvecklingar av holomorfa funktioner]
+\hfill \textcolor{magenta!80!black}{Bevislistan}
+
+Antag $f$ holomorf i $A(z_0, R_1, R_2)$. Då har $f$ en Laurentserieutveckling \textcolor{blue!60!black}{(LSV)}
+\[ f(z) = \sum_{-\infty}^\infty c_k(z - z_0)^k \text{ i } A(z_0, R_1, R_2) \text{ där } c_k = \frac{1}{2\pi i} \int_{|z - z_0| = r} \frac{f(z)}{(z - z_0)^{k+1}}\,dz, \quad R_1 < r < R_2 \]
+\notefigure{fig2}{}
+\end{theorem}
+\begin{proof}
+Antag först $z_0 = 0$. Välj $z \in A(z_0, R_1, R_2)$ och $r_1, r_2$ s.a.\ $R_1 < r_1 < |z| < r_2 < R_2$. Låt $\gamma$ vara som på bild.
+\[ f(z) \overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} \frac{1}{2\pi i} \int \frac{f(w)}{w - z}\,dw = \underbrace{\frac{1}{2\pi i} \int_{|w| = r_2} \frac{f(w)}{w - z}\,dw}_{\textcolor{magenta!80!black}{\text{I}}} + \underbrace{- \frac{1}{2\pi i} \int_{|w| = r_1} \frac{f(w)}{w - z}\,dw}_{\textcolor{magenta!80!black}{\text{II}}} \]
+\[ \text{I} = \left[ \frac{f(w)}{w - z} = \frac{f(w)}{w}\left( \frac{1}{1 - z/w} \right) \overset{\textcolor{magenta!80!black}{|z/w| < 1}}{=} \frac{f(w)}{w} \sum_0^\infty \frac{z^k}{w^k} \ \text{likformig konvergens på } C(0, r_2) \right] = \]
+\textcolor{magenta!80!black}{obs $< 1 \to$ geomsumma}
+\[ = \frac{1}{2\pi i} \int_{|w| = r_2} \frac{f(w)}{w} \sum_0^\infty \frac{z^k}{w^k}\,dw \overset{\textcolor{magenta!80!black}{\text{likf konv}}}{=} \sum_0^\infty z^k \frac{1}{2\pi i} \int_{|w| = r_2} \frac{f(w)}{w^{k+1}}\,dw. \]
+\[ \text{II} = \left[ -\frac{f(w)}{w - z} = \frac{f(w)}{z - w} = \frac{f(w)}{z}\left( \frac{1}{1 - w/z} \right) \overset{|w/z| < 1}{=} \frac{f(w)}{z} \sum_0^\infty \frac{w^k}{z^k} \ \text{likf.\ konv.\ på } C(0, r_1) \right] = \]
+\[ = \frac{1}{2\pi i} \int_{|w| = r_1} \frac{f(w)}{z} \sum_0^\infty \frac{w^k}{z^k}\,dw \overset{\textcolor{magenta!80!black}{\text{likf konv}}}{=} \]
+\[ = \sum_0^\infty z^{-k-1} \frac{1}{2\pi i} \int_{|w| = r_1} f(w)w^k\,dw = \sum_{k = -\infty}^{-1} z^k \frac{1}{2\pi i} \int_{|w| = r_1} \frac{f(w)}{w^{k+1}}\,dw \]
+\hfill $\rightarrow$

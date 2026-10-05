@@ -1,0 +1,29 @@
+% language: swedish
+% figure: fig1 0.655 0.505 0.77 0.555
+% figure: fig2 0.715 0.62 0.83 0.70
+\section{Storgruppsövning 10/10}
+\subsection{Övning R3 s.5}
+Beräkna $\displaystyle\int_0^{2\pi} (\cos t)^{2k}\,dt$, $k \ge 0$ heltal
+
+\textbf{Lösning:} Variabelbyte $z = e^{it}$, $\cos t = \dfrac{z^2 + 1}{2z}$, \ $dt = \dots = \dfrac{-i\,dz}{z}$
+\[ (\cos t)^{2k}\,dt = \frac{-i(z^2 + 1)^{2k}}{2^{2k} z^{2k+1}}\,dz = \left[ (z^2 + 1)^{2k} = \sum_{j = 0}^{2k} \binom{2k}{j} z^{2j} \right] = \]
+\[ = \frac{-i}{2^{2k}}\left( \sum_{j = 0}^{2k} \binom{2k}{j} z^{2j - 2k - 1} \right) dz \Rightarrow \int_0^{2\pi} (\cos t)^{2k}\,dt = \frac{-i}{2^{2k}} \sum_{j = 0}^{2k} \binom{2k}{j} \underbrace{\int_{|z| = 1} z^{2j - 2k - 1}\,dz}_{\textcolor{magenta!80!black}{2\pi i \text{ om } j = k,\ 0 \text{ annars}}} = \]
+\[ = \frac{-i}{2^{2k}} \binom{2k}{k} 2\pi i = \frac{\pi \binom{2k}{k}}{2^{2k - 1}} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Övning R3 s.8}
+Bestäm $\displaystyle\int_{-\infty}^\infty \frac{\cos ax}{1 + x^2}\,dx$, $a \in \mathbb{R}$
+
+\textbf{Lösning:} Först noterar vi att $\cos ax = \cos|a|x$.
+\[ \cos|a|x = \operatorname{Re} e^{i|a||x|} \Rightarrow \int_{-\infty}^\infty \frac{\cos|a|x}{1 + x^2}\,dx = \int_{-\infty}^\infty \frac{\operatorname{Re}(e^{i|a|x})}{1 + x^2}\,dx = \]
+\[ = \operatorname{Re} \int_{-\infty}^\infty \frac{e^{i|a|x}}{1 + x^2}\,dx = \operatorname{Re}\left( \lim_{R \to \infty} \int_{[-R, R]} \frac{e^{i|a|x}}{1 + z^2}\,dz \right) \]
+\notefigure{fig1}{}
+$\gamma_R(t) = Re^{it}$, $t \in [0, \pi]$, \quad $\sigma_R = [-R, R] \cup \gamma_R$
+\[ \left| \int_{\gamma_R} \frac{e^{i|a|x}}{1 + z^2}\,dz \right| \overset{\textcolor{magenta!80!black}{\Delta \text{ olik} \int}}{\le} \max_{z \in \gamma} \left| \frac{e^{i|a|z}}{1 + z^2} \right| \pi R \le \left[ \begin{array}{l} |e^{i|a|z}| = e^{-|a|y} \le 1 \text{ på } \gamma_R \\ |1 + z^2| \underset{\textcolor{magenta!80!black}{\text{omv.\ } \Delta \text{ olik}}}{\ge} |z|^2 - 1 = R^2 - 1 \text{ på } \gamma_R \end{array} \right] \le \]
+\[ \le \frac{\pi R}{R^2 - 1} \xrightarrow[R \to \infty]{} 0. \qquad \frac{e^{iz}}{1 + z^2} \text{ holomorf i } \mathbb{C} \setminus \{\pm i\} \]
+\notefigure{fig2}{}
+$i$ singulär i inre av $\sigma_R$, $R > 1$
+\[ \operatorname{Res}_i\left( \frac{e^{i|a|z}}{1 + z^2} \right) \overset{\textcolor{magenta!80!black}{\text{räkneregel}}}{=} \left( \frac{e^{i|a|z}}{2z} \right)_{z = i} = \frac{e^{-|a|}}{2i}. \]
+\[ \text{Får } \int_{-\infty}^\infty \frac{\cos ax}{1 + x^2}\,dx = \operatorname{Re}\left( \lim_{R \to \infty} \int_{[-R, R]} \frac{e^{i|a|z}}{1 + z^2}\,dz \right) = \operatorname{Re}\left( \lim_{R \to \infty} \int_{\sigma_R} \frac{e^{i|a|z}}{1 + z^2}\,dz \right) = \]
+\[ = \operatorname{Re}\left( 2\pi i \frac{e^{-|a|}}{2i} \right) = \operatorname{Re}(\pi e^{-|a|}) = \pi e^{-|a|}. \]

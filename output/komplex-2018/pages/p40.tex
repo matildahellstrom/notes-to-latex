@@ -1,0 +1,23 @@
+% language: swedish
+\begin{definition}
+Om $u$ harmonisk i $G$ och $u = \operatorname{Re} f$, $f$ holomorf i $G$, då kallas $v = \operatorname{Im} f$ för ett harmoniskt konjugat till $u$
+\end{definition}
+
+\begin{example}
+$z = x + iy$, $y$ harmoniskt konjugat till $x$
+
+$z^2 = x^2 - y^2 + i2xy$, $2xy$ harmoniskt konjugat till $x^2 - y^2$
+\end{example}
+
+\begin{theorem}[Sats 6.6]
+Om $u$ harmonisk i enkelt sammanhängande område $G$, då finns $f$ holomorf i $G$ s.a.\ $u = \operatorname{Re} f$
+\end{theorem}
+\begin{proof}
+Notera att om $f = u + iv$, $f' = \dfrac{df}{dx} = \dfrac{du}{dx} + i\dfrac{dv}{dx} = \dfrac{du}{dx} + i\left( -\dfrac{du}{dy} \right)$ \textcolor{magenta!80!black}{\fbox{enl.\ CR}}
+
+Låt $p = \dfrac{du}{dx}$, $q = -\dfrac{du}{dy}$, $g = p + iq \in C^1$
+\[ \frac{dp}{dx} = \frac{d^2u}{dx^2} \underset{\textcolor{magenta!80!black}{u \text{ harmoniskt}}}{=} -\frac{d^2u}{dy^2} = \frac{dq}{dy}, \qquad \frac{dp}{dy} = \frac{d^2u}{dy\,dx} \underset{\textcolor{magenta!80!black}{u \in C^2}}{=} \frac{d}{dx}\left( \frac{du}{dy} \right) = -\frac{dq}{dx} \]
+$\overset{\textcolor{red!70!black}{\text{CR}}}{\Rightarrow} g$ holo i $G$. $G$ enkelt sammanhängande $\Rightarrow \exists \tilde{f}$ holomorf i $G$, s.a.\ $\tilde{f}' = g$. Låt $\tilde{u} = \operatorname{Re} \tilde{f}$, $\tilde{v} = \operatorname{Im} \tilde{f}$
+\[ \tilde{f}' = \frac{d\tilde{u}}{dx} + i\frac{d\tilde{v}}{dx} \overset{\textcolor{red!70!black}{\text{CR}}}{=} \underline{\frac{d\tilde{u}}{dx}} - i\underline{\frac{d\tilde{u}}{dy}} = \underline{\frac{du}{dx}} - i\underline{\frac{du}{dy}} \Rightarrow \nabla u = \nabla \tilde{u} \]
+\[ \overset{\textcolor{red!70!black}{\text{Sats}}}{\Rightarrow} u = \tilde{u} + \underset{\textcolor{red!70!black}{\text{reellt}}}{c} \Rightarrow u = \operatorname{Re}(\underbrace{\tilde{f} + c}_{\textcolor{magenta!80!black}{\text{holomorf i } G}}) \]
+\end{proof}

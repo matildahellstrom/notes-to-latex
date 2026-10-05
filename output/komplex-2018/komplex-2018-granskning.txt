@@ -1,0 +1,58 @@
+Granskning av osäkra läsningar -- Komplex analys 2018 (besvarad och införd 2026-10-05)
+
+1. Sida 1. Läst som: $1.$
+   Svar: (Prop. 1)
+
+2. Sida 2. Läst som: $\varphi$
+   Svar: ok
+
+3. Sida 3. Läst som: $= \overline{z\bar{w}}$
+   Svar: ok
+
+4. Sida 9. Läst som: hemsidan
+   Svar: ok
+
+5. Sida 9. Läst som: behöver ej kunna
+   Svar: ok
+
+6. Sida 14. Läst som: $\ell og\, z$
+   Svar: Ska inte vara ett krulligt gement l utan ett krulligt stort L.
+
+7. Sida 29. Läst som: komplex element
+   Svar: Komplexa element
+
+8. Sida 29. Läst som: $0$
+   Svar: ok
+
+9. Sida 41. Läst som: $1$
+   Svar: ok
+
+10. Sida 46. Läst som: har en
+   Svar: Laurentserieutveckling
+
+11. Sida 49. Läst som: memorera
+   Svar: ok
+
+12. Sida 51. Läst som: $z_k$
+   Svar: ok
+
+13. Sida 69. Läst som: ordning
+   Svar: nollställe av ordning m vid a
+
+14. Sida 70. Läst som: Rouchés
+   Svar: ok
+
+15. Sida 70. Läst som: $C$
+   Svar: ok
+
+16. Sida 74. Läst som: $'$
+   Svar: ok
+
+17. Sida 74. Läst som: $z$
+   Svar: ok
+
+18. Sida 86. Läst som: $\delta$
+   Svar: ok
+
+19. Sida 86. Läst som: $b$
+   Svar: ok

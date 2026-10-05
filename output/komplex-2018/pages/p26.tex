@@ -1,0 +1,32 @@
+% language: swedish
+% figure: fig1 0.555 0.462 0.715 0.552
+\fbox{4.4} \quad Visa att $\displaystyle\int_{C[w, r]} \frac{dz}{z - w} = 2\pi i$
+
+\textbf{Lösning:} Parametrisera $C[w, r]$, $z = w + re^{it}$ \ $t \in [0, 2\pi]$
+
+$dz = ire^{it}\,dt$
+\[ \int_{C[w, r]} \frac{dz}{z - w} = \int_0^{2\pi} \frac{ire^{it}}{re^{it}} = i\int_0^{2\pi} dt = 2\pi i \quad \textcolor{red!70!black}{\fbox{\textbf{Viktig integral!}}} \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{4.5} \quad a) Integrera $z + \bar{z}$ över $C[0, 2]$
+
+\textbf{Lösning:}
+\begin{align*}
+  \int_{C[0, 2]} (z + \bar{z})\,dz &= \left[ \begin{array}{ll} z = 2e^{it} & t \in [0, 2\pi] \\ dz = i2e^{it} & \end{array} \right] = \int_0^{2\pi} (2e^{it} + 2e^{-it})i2e^{it}\,dt = \\
+  &= \int_0^{2\pi} (4ie^{2it} + 4i)\,dt = \left[ \frac{4ie^{2it}}{2i} + 4it \right]_0^{2\pi} = 8\pi i
+\end{align*}
+\textcolor{magenta!80!black}{Integralen av någon holomorf funktion på en sluten kurva $= 0$}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{4.28} \quad Visa att $\displaystyle\int_{C[0, 2]} \frac{dz}{z^2 + 1} = 0$
+\notefigure{fig1}{}
+\textcolor{magenta!80!black}{ej def i $i$ \& $-i$ pga nämnare $= 0$}
+
+\textbf{Lösning:}
+\[ \int_{C[0, 2]} \frac{dz}{z^2 + 1} = \int_{C[0, r]} \frac{dz}{z^2 + 1} \]
+\textcolor{blue!60!black}{$r > 2$ pga Cauchys sats säger att de är samma även om radien är större så länge cirkeln inte går genom förbjudna punkter}
+\[ |z^2 + 1| \ge |z^2| - 1 \Rightarrow \left| \frac{1}{z^2 + 1} \right| \le \frac{1}{|z|^2 - 1} \]
+\[ \Rightarrow \int_{C[0, r]} \left| \frac{dz}{z^2 + 1} \right| \le 2\pi r \cdot \max_{z \in C[0, r]} \left| \frac{1}{z^2 + 1} \right| \le \big\{ z \in C[0, r] \Leftrightarrow |z| = r \big\} \]
+\[ \le \frac{2\pi r}{r^2 - 1} \to 0 \text{ då } r \to \infty \quad \Rightarrow \int_{C[0, 2]} \frac{dz}{z^2 + 1} = 0 \]

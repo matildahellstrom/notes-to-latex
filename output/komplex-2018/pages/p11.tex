@@ -1,0 +1,39 @@
+% language: swedish
+% figure: fig1 0.70 0.22 0.825 0.283
+% figure: fig2 0.61 0.715 0.94 0.83
+\begin{definition}
+Givet område $G \subseteq \mathbb{C}$ så sägs varje \emph{kontinuerlig} funktion $\operatorname{Log} z : G \to \mathbb{C}$ som uppfyller $e^{\operatorname{Log} z} = z$ vara en \emph{gren} av den komplexa logaritmen $\log z$.
+\end{definition}
+
+Den \emph{principella grenen} definieras som $\operatorname{Log} z = \ln|z| + i \operatorname{Arg} z$,
+\hfill där $-\pi < \operatorname{Arg} z \le \pi$
+\[ e^{\ln|z| + i\operatorname{Arg} z} = e^{\ln|z|} e^{i\operatorname{Arg} z} = |z| e^{i\operatorname{Arg} z} \]
+
+\textcolor{red!70!black}{obs.} $\operatorname{Log} z$ är diskontinuerlig längs $\mathbb{R}_{\le 0}$
+\notefigure{fig1}{}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Storgruppsövning 7/9}
+
+\fbox{1.2e} \quad Bestäm real- och imaginärdel till $\left( \dfrac{-1 + i\sqrt{3}}{2} \right)^3$
+
+\textbf{Lösning:} $z = \dfrac{-1 + i\sqrt{3}}{2}$ \quad $|z| = \dfrac{\sqrt{(-1)^2 + (\sqrt{3})^2}}{2} = 1$
+\[ \theta = \operatorname{Arg} z \qquad \cos\theta = -\frac{1}{2} \quad \sin\theta = \frac{\sqrt{3}}{2} \quad \Rightarrow \theta = \frac{2\pi}{3} + 2\pi k, \ k \in \mathbb{Z} \]
+\[ \Rightarrow z = e^{i2\pi/3} \quad \Rightarrow \left( \frac{-1 + i\sqrt{3}}{2} \right)^3 = z^3 = \left(e^{i2\pi/3}\right)^3 = e^{2\pi i} = 1 \]
+\textbf{Svar:} Realdel $= 1$, imaginärdel $= 0$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{1.9} \quad Hitta alla lösningar till ekvationen: $z^2 + 2z + (1 - i) = 0$
+
+\textbf{Lösning:} $z^2 + 2z + 1 - i = (z + 1)^2 - i$
+
+Låt $w = (z + 1)^2$, lös $w^2 = i$, \ $w = re^{i\theta}$, får vi att
+\begin{align*}
+  w^2 &= r^2 e^{i2\theta} = e^{i\pi/2} \\
+  &\Rightarrow r = 1, \ 2\theta = \pi/2 + 2\pi k, \ k \in \mathbb{Z} \\
+  &\Rightarrow \theta_1 = \pi/4 \quad \theta_2 = 5\pi/4 \quad \textcolor{blue!60!black}{\longrightarrow \text{dvs.}}
+\end{align*}
+\notefigure{fig2}{}
+\textbf{Svar:} $z = w - \rattat{1}{i} = -1 \pm \dfrac{1}{\sqrt{2}}(1 + i)$

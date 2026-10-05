@@ -1,0 +1,31 @@
+% language: swedish
+\begin{example}
+Beräkna $\displaystyle\int_{-\infty}^{\infty} \frac{\cos 2x}{1 + x^2}\,dx$
+
+\textbf{Lösning:} $\cos 2x = \operatorname{Re}(e^{2ix}) \Rightarrow \displaystyle\int_{-\infty}^{\infty} \frac{\cos 2x}{1 + x^2}\,dx = \operatorname{Re} \lim_{R \to \infty} \int_{[-R, R]} \frac{e^{2iz}}{1 + z^2}\,dz$
+
+Låt $\gamma_R$, $\sigma_R$ vara som i förra exemplet, får
+\[ \int_{-\infty}^{\infty} \frac{\cos 2x}{1 + x^2}\,dx = \operatorname{Re}\left( \lim_{R \to \infty} \int_{\sigma_R} \frac{e^{2ix}}{1 + z^2}\,dz - \operatorname{Re}\left( \lim_{R \to \infty} \int_{\gamma_R} \frac{e^{2iz}}{1 + z^2}\,dz \right) \right) \]
+\begin{align*}
+  \left| \int_{\gamma_R} \frac{e^{2ix}}{1 + z^2}\,dz \right| &\underset{\textcolor{magenta!80!black}{\Delta\text{ olik} \int}}{\le} \max_{z \in \gamma_R} \frac{|e^{2iz}|}{|1 + z^2|} \pi R \le \left[ \begin{array}{l} |1 + z^2| \underset{\textcolor{magenta!80!black}{\text{omv.\ } \Delta \text{ olik}}}{\ge} |z|^2 - 1 = R^2 - 1 \\ |e^{2iz}| = |e^{2i(x + iy)}| = |e^{2ix - 2y}| = \end{array} \right. \\
+  &\left. = |e^{-2y}e^{2ix}| = |e^{-2y}||e^{2ix}| = e^{-2y} \le 1 \text{ ty } y \ge 0 \right] \le \frac{\pi R}{R^2 - 1} \xrightarrow[R \to \infty]{} 0
+\end{align*}
+\[ \frac{e^{2iz}}{1 + z^2} = \frac{\overbrace{\frac{e^{2iz}}{(z + i)}}^{\textcolor{magenta!80!black}{f}}}{\underbrace{(z - i)}_{\textcolor{magenta!80!black}{w}}}, \quad \frac{e^{2ix}}{z + i} \text{ holomorf i } \mathbb{C} \setminus \{-i\}, \ \sigma_R \sim_{\mathbb{C} \setminus \{-i\}} C(i, r), \ \left[ \begin{array}{l} 0 < r \ll 1 \\ R > 1 \end{array} \right] \]
+\[ \overset{\textcolor{magenta!80!black}{\text{CIF}}}{\Rightarrow} \int_{\sigma_R} \frac{e^{2ix}}{1 + z^2}\,dz = 2\pi i \left( \frac{e^{2iz}}{z + i} \right)_{z = i} = \pi e^{-2} \Rightarrow \int_{-\infty}^{\infty} \frac{\cos 2x}{1 + x^2}\,dx = \]
+\[ = \operatorname{Re}(\pi e^{-2}) = \pi e^{-2} \qquad \textcolor{blue!60!black}{\text{Sinus hade gett imaginär del}} \]
+\end{example}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Primitiva funktioner}
+\begin{definition}
+Låt $f, F$ vara holomorf i $G$. Om $F' = f$ kallas $F$ en \emph{primitiv} till $f$ i $G$
+\end{definition}
+
+\begin{note}
+$F$ bestämd upp till konstant om den existerar
+\end{note}
+
+\begin{example}
+$e^z$ primitiv till sig själv, $\sin z$ primitiv till $\cos z$, $\operatorname{Log} z$ primitiv $1/z$ i $\mathbb{C} \setminus \mathbb{R}_{\le 0}$.
+\end{example}

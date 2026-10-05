@@ -1,0 +1,29 @@
+% language: swedish
+% figure: fig1 0.215 0.237 0.38 0.272
+% figure: fig2 0.50 0.50 0.725 0.64
+\fbox{5.13} \quad Visa att om $f$ hel och $|f| \ge M > 0$, då är $f$ konstant
+
+\textbf{Lösning:} $|f| > 0 \Rightarrow \dfrac{1}{f}$ hel \quad $\left| \dfrac{1}{f} \right| \le \dfrac{1}{M} < \infty$
+
+$\overset{\textcolor{magenta!80!black}{\text{Liouville}}}{\Longrightarrow} \dfrac{1}{f}$ konstant $\Rightarrow f$ konstant.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{5.18} \quad Bestäm $\displaystyle\int_{-\infty}^{\infty} \frac{\cos x}{1 + x^4}\,dx$ \qquad $\gamma_R(t) = Re^{it}$, $t \in [0, \pi]$ \quad $\sigma_R = [-R, R] \cup \gamma_R$
+
+\textbf{Lösning:}
+\notefigure{fig1}{}
+\[ \int_{-\infty}^{\infty} \frac{\cos x}{1 + x^4}\,dx = \lim_{R \to \infty} \int_{[\rattat{-R}{-\pi}, R]} \frac{\operatorname{Re} e^{iz}}{1 + z^4}\,dz = \operatorname{Re} \lim_{R \to \infty} \int_{[-R, R]} \frac{e^{iz}}{1 + z^4}\,dz \]
+\[ \Rightarrow \int_{-\infty}^{\infty} \frac{\cos x}{1 + x^4}\,dx = \operatorname{Re}\left( \lim_{R \to \infty} \int_{\sigma_R} \frac{e^{iz}}{1 + z^4}\,dz \right) - \operatorname{Re}\left( \lim_{R \to \infty} \int_{\gamma_R} \frac{e^{iz}}{1 + z^4}\,dz \right) \]
+\[ \left| \int_{\gamma_R} \frac{e^{iz}}{1 + z^4}\,dz \right| \underset{\textcolor{magenta!80!black}{\Delta\text{ olik} \int}}{\le} \max_{z \in \gamma_R} \left| \frac{e^{iz}}{1 + z^4} \right| \pi R \le \]
+\[ \le \left[ \begin{array}{l} |e^{iz}| = e^{-y} \le 1 \\ |1 + z^4| \underset{\textcolor{magenta!80!black}{\text{omv.\ } \Delta \text{ olik}}}{\ge} |z|^4 - 1 = R^4 - 1 \end{array} \right] \le \frac{\pi R}{R^4 - 1} \xrightarrow[R \to \infty]{} 0 \]
+
+$z^4 + 1 = (z - z_1)(z - z_2)(z - z_3)(z - z_4)$
+\notefigure{fig2}{}
+\textcolor{magenta!80!black}{2 singulära punkter i kurvan}
+\begin{align*}
+  \int_{\sigma_R} \frac{e^{iz}}{1 + z^4}\,dz &= \int_{\gamma_1} \frac{\frac{e^{iz}}{(z - z_1) \cdots (z - z_4)}}{(z - z_1)}\,dz + \int_{\gamma_2} \frac{e^{it}/(z - z_1)(z - z_2) \cdots (z - z_4)}{(z - z_2)}\,dz \\
+  &\overset{\textcolor{red!70!black}{\text{CIF}}}{=} 2\pi i \left( \frac{e^{iz}}{(z - z_2)(z - z_3)(z - z_4)} \right)_{z = z_1} + 2\pi i \left( \frac{e^{iz}}{(z - z_1)(z - z_3)(z - z_4)} \right)_{z = z_2} = \\
+  &= \dots = \pi e^{-1/\sqrt{2}} \sin(3\pi/4 - \tfrac{1}{\sqrt{2}})
+\end{align*}
+\[ \int_{-\infty}^{\infty} \frac{\cos x}{1 + x^4}\,dx = \operatorname{Re}\left( \lim_{R \to \infty} \int_{\sigma_R} \frac{e^{iz}}{1 + z^2}\,dz \right) = \pi e^{-1/\sqrt{2}} \sin\left( \frac{3\pi}{4} - \frac{1}{\sqrt{2}} \right) \]

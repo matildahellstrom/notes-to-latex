@@ -1,0 +1,34 @@
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Original scans: large, and the source of truth lives outside git (keep a backup elsewhere)
+notes-in/*
+!notes-in/.gitkeep
+
+# Everything in output/ that the pipeline regenerates. What stays versioned:
+#   pages/*.tex (transcriptions), extras/ (bevislista selection, formula sheet, corrections, ...),
+#   drawings/ (redrawn diagrams), sources.json, *-granskning.txt (review answers)
+output/*/pages/*.jpg
+output/*/pages/*.stale.tex
+output/*/figures/
+output/*/granskning/
+output/*/*.pdf
+output/*/*.tex
+output/*/*.log
+output/*/*.aux
+output/*/*.toc
+output/*/*.thm
+output/*/*.out
+output/*/*.fls
+output/*/*.fdb_latexmk
+output/*/*.xdv
+output/*/*-anki.txt
+output/*/_check-*
+
+# Generated website (build with ./notes site)
+site/
+
+# macOS
+.DS_Store

@@ -1,0 +1,38 @@
+% language: swedish
+% figure: fig1 0.52 0.352 0.885 0.403
+% figure: fig2 0.65 0.455 0.745 0.488
+% figure: fig3 0.045 0.527 0.63 0.623
+% figure: fig4 0.085 0.80 0.30 0.855
+\subsection{Residykalkyl}
+\begin{definition}
+Låt $f$ vara holomorf med isolerad singularitet i $z_0$. om $f(z) = \sum_{-\infty}^\infty c_k(z - z_0)^k$ i \emph{$D(z_0, R)^\times$}, då definierar vi $f$:s \emph{residy} i $z_0$
+\[ \operatorname{Res}_{z_0} f = \underline{c_{-1}} \]
+\end{definition}
+
+\textcolor{red!70!black}{\textbf{Notera:}}
+\[ \int_{|z - z_0| = r} f(z)\,dz = \int_{|z - z_0| = r} \sum_{-\infty}^\infty c_k(z - z_0)^k\,dz \overset{\textcolor{magenta!80!black}{\text{likf konv}}}{=} \]
+\[ = \sum_{-\infty}^\infty c_k \underbrace{\int_{|z - z_0| = r} (z - z_0)^k\,dz}_{\textcolor{magenta!80!black}{2\pi i \text{ då } k = -1,\ 0 \text{ annars}}} = 2\pi i\, c_{-1} = 2\pi i \operatorname{Res}_{z_0} f \]
+\hfill $0 < r < R$
+
+\begin{definition}
+En sluten kurva $\gamma$ är \emph{enkel} om den ej skär sig själv (dvs.\ $\gamma(t) \neq \gamma(s)$ om $a \le t < s < b$)
+\notefigure{fig1}{}
+\end{definition}
+
+\textbf{Jordans kurvsats:} om $\gamma$ sluten enkel kurva, då omsluter $\gamma$ ett område $\operatorname{int}(\gamma)$ \textcolor{magenta!80!black}{(interior)} kallat det inre av $\gamma$.
+\notefigure{fig2}{}
+
+\textcolor{red!70!black}{\textbf{Faktum:}} Om $\gamma$ sluten enkel kurva i $G$, och $\gamma \sim_G 0$, då $\operatorname{int}(\gamma) \subseteq G$
+\notefigure{fig3}{}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Residysatsen (Sats 9.10)]
+\hfill \textcolor{magenta!80!black}{Bevislistan}
+
+Antag $f$ holomorf i $G$ förutom isolerade singulariteten $z_k$, $\gamma$ styckvis glatta kurvor, enkla, positiv orientering nollhomotop kurva i $G$ som undviker singulära $z_k$. Då är
+\[ \int_\gamma f(z)\,dz = 2\pi i \sum_{z_k \in \operatorname{int}(\gamma)} \operatorname{Res}_{z_k} f \]
+\notefigure{fig4}{}
+\end{theorem}
+
+\hfill \textcolor{red!70!black}{\fbox{Bevis}} $\longrightarrow$

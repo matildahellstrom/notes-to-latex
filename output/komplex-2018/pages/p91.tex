@@ -1,0 +1,45 @@
+% language: swedish
+\section{Föreläsning 16/10}
+\subsection{Z-transformen}
+\begin{definition}
+Låt $\alpha = \{a_k\}_{k = 0}^\infty$ följd av komplexa tal, anta $\exists M, r \in \mathbb{R}$ s.a.\ $|a_k| \le Mr^k$. Då definieras Z-transformen $Z(\alpha)$ av $\alpha$ som $Z(\alpha)(z) = \displaystyle\sum_{k = 0}^\infty \frac{a_k}{z^k}$
+\end{definition}
+
+\textcolor{red!70!black}{\textbf{OBS!}} $\left| \dfrac{a_k}{z^k} \right| \le M\left( \dfrac{r}{|z|} \right)^k$ så $Z(\alpha)$ holomorf i $\{z : |z| > r\}$
+
+\begin{example}
+$\alpha = \{a_k\}$, $a_k = 2^k$, $(M = 1, r = 2)$
+\[ Z(\alpha)(z) = \sum_0^\infty \left( \frac{2}{z} \right)^k = \frac{1}{1 - 2/z} = \frac{z}{z - 2} \]
+\end{example}
+
+\textcolor{red!70!black}{\textbf{OBS!}} $Z(\alpha) = Z(\beta) \Rightarrow \alpha = \beta$ \quad \textcolor{magenta!80!black}{varför?}
+
+\begin{definition}
+Givet $\alpha = \{a_k\}$ definierar vi \emph{shift} $S(\alpha) = \{b_k\}$ \quad $b_k = a_{k+1}$
+\end{definition}
+\begin{itemize}
+  \item $Z(S(\alpha)) = \displaystyle\sum_0^\infty \frac{a_{k+1}}{z^k} = z\sum_{k = 1}^\infty \frac{a_k}{z^k} = z(Z(\alpha) - a_0)$
+  \item $Z(S^N(\alpha)) = \dots = z^N\left( Z(\alpha) - \displaystyle\sum_0^{N-1} \frac{a_k}{z^k} \right)$
+\end{itemize}
+
+\begin{definition}
+Givet $\alpha = \{a_k\}$, $\beta = \{b_k\}$ definierar vi \emph{faltningen} $\alpha * \beta = \{c_k\}$ \quad $c_k = \displaystyle\sum_{j = 0}^k a_j b_{k-j}$
+\end{definition}
+
+\begin{theorem}[Proposition 4.1F]
+$Z(\alpha * \beta) = Z(\alpha)Z(\beta)$
+\end{theorem}
+\begin{proof}
+$Z(\alpha)Z(\beta) = \left( \displaystyle\sum_0^\infty \frac{a_k}{z^k} \right)\left( \sum_0^\infty \frac{b_m}{z^m} \right) = \sum_{k = 0}^\infty \left( \sum_{j = 0}^k a_j b_{k-j} \right) \frac{1}{z^k} = Z(\alpha * \beta)$
+\end{proof}
+
+\begin{example}
+Hitta följden $\alpha = \{a_k\}$ som löser differensekvationen
+\[ (*) \quad a_{k+1} - a_k = b_k, \quad a_0 = 1, \quad \beta = \{b_k\} \text{ given (anta } |b_k| \le Mr^k) \]
+\textbf{Lösning:} observation: $(*)$ kan skrivas $S(\alpha) - \alpha = \beta$
+
+Z-transformen av detta ger: $z(Z(\alpha) - 1) - Z(\alpha) = Z(\beta)$
+\[ \Rightarrow Z(\alpha) = \frac{z}{z - 1} + \frac{1}{z - 1}Z(\beta). \quad \text{Har } \frac{z}{z - 1} = \frac{1}{1 - 1/z} = \sum_0^\infty \frac{1}{z^k} = Z(I), \ I = (1, 1, 1, \dots) \]
+\[ \frac{1}{z - 1} = \frac{1}{z} \cdot \frac{1}{1 - 1/z} = \sum_{k = 1}^\infty \frac{1}{z^k} = Z(I'),\ I' = (0, 1, 1, \dots) \quad \text{Får } Z(\alpha) = Z(I) + Z(I')Z(\beta) = \]
+\[ = Z(I + I' * \beta) \Longrightarrow \alpha = I + I' * \beta \text{ dvs.\ } a_k = 1 + \sum_{j = 1}^k b_{k-j} = 1 + \sum_{j = 0}^{\rattat{k - 1}{k + 1}} b_j \]
+\end{example}

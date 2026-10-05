@@ -1,0 +1,46 @@
+% language: swedish
+% figure: fig1 0.535 0.307 0.665 0.37
+% figure: fig2 0.81 0.62 0.935 0.685
+\begin{example}
+Beräkna $\displaystyle\int_{|z| = 1} \frac{e^z}{z}\,dz$
+
+\textbf{Lösning:} $\textcolor{magenta!80!black}{f \to}\ e^z$ holomorf i $\mathbb{C}$, $w = 0$ \quad $\overline{D}(0, 1) \subseteq \mathbb{C} \overset{\textcolor{magenta!80!black}{\text{CIF}}}{\Rightarrow} e^0 = \dfrac{1}{2\pi i} \displaystyle\int_{|z| = 1} \frac{e^z}{z - 0}\,dz$
+\[ \Rightarrow \int_{|z| = 1} \frac{e^z}{z}\,dz = 2\pi i \]
+\end{example}
+
+\begin{theorem}[Cauchys Integralformel version 2]
+$f$ holomorf i $G$, $w \in G$, $\gamma$ sluten styckvis glatt kurva i $G \setminus \{w\}$, $\gamma \sim_{G \setminus \{w\}} C(w, r)$, $0 < r \ll 1$, då $f(w) = \dfrac{1}{2\pi i} \displaystyle\int_\gamma \frac{f(z)}{z - w}\,dz$
+\end{theorem}
+
+\begin{example}
+Bestäm $\displaystyle\int_\gamma \frac{\sin z}{1 - z}\,dz$, där
+\notefigure{fig1}{}
+\textbf{Lösning:}
+
+$\sin z$ holomorf i $\mathbb{C}$. \ $\gamma \sim_{\mathbb{C} \setminus \{1\}} -2C(1, r)$
+\[ \Rightarrow \int_\gamma \frac{\sin z}{1 - z}\,dz = -\int_\gamma \frac{\sin z}{z - 1}\,dz \overset{\textcolor{magenta!80!black}{\text{CIF v.2}}}{=} -(-2)2\pi i \sin 1 = 4\pi i \sin 1 \]
+\end{example}
+
+\textcolor{red!70!black}{Men} $\displaystyle\int_{|z| = 1} \frac{e^z}{z^2}\,dz$?
+
+\begin{theorem}[Cauchys integralformel för derivatan ($\sim$ Sats 5.1)]
+\hfill \textcolor{magenta!80!black}{Tillhör bevislistan}
+
+$f$ holomorf i $G$, $\overline{D}(w, r) \subseteq G$, då $f'(w) = \dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{f(z)}{(z - w)^2}\,dz$.
+\end{theorem}
+\begin{proof}
+\notefigure{fig2}{}
+Om $|h| < r$ så CIFv2 $= f(w + h) = \dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{f(z)}{z - (w + h)}\,dz$
+\begin{align*}
+  \Rightarrow \frac{f(w + h) - f(w)}{h} &= \frac{1}{2\pi i h} \int_{|z - w| = r} f(z)\left( \frac{1}{z - w - h} - \frac{1}{z - w} \right) dz = \\
+  &= \left[ \frac{1}{z - w - h} - \frac{1}{z - w} = \frac{h}{(z - w - h)(z - w)} \right] = \\
+  &= \frac{1}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{(z - w - h)(z - w)}\,dz \overset{\textcolor{red!70!black}{?}}{\xrightarrow[h \to 0]{}} \frac{1}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{(z - w)^2}\,dz
+\end{align*}
+\begin{align*}
+  \Rightarrow &\left| \int_{|z - w| = r} \frac{f(z)}{(z - w - h)(z - w)}\,dz - \int_{|z - w| = r} \frac{f(z)}{(z - w)^2}\,dz \right| = \\
+  &= \left[ \frac{1}{(z - w - h)(z - w)} - \frac{1}{(z - w)^2} = \frac{h}{(z - w - h)(z - w)^2} \right] = \\
+  &= \left| \int_{|z - w| = r} \frac{f(z)h}{(z - w - h)(z - w)^2}\,dz \right| \underset{\textcolor{magenta!80!black}{\Delta\text{-olik} \int}}{\le} \max_{|z - w| = r} \left| \frac{f(z)h}{(z - w - h)(z - w)^2} \right| \cdot 2\pi r \le \\
+  &\le \left[ \begin{array}{l} |z - w - h| \ge |z - w| - |h| = r - |h| \\ \text{omv.\ } \Delta\text{-olik} \ge r/2 \text{ för } |h| < r/2 \end{array} \right] \le \max_{|z - w| = r} |f(z)| \cdot \frac{2|h|}{r^3} \cdot 2\pi r \xrightarrow[h \to 0]{} 0
+\end{align*}
+\[ \Rightarrow \frac{f(w + h) - f(w)}{h} \xrightarrow[h \to 0]{} \frac{1}{2\pi i} \int_{|z - w| = r} \frac{f(z)}{(z - w)^2}\,dz \]
+\end{proof}

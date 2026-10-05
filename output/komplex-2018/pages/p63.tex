@@ -1,0 +1,38 @@
+% language: swedish
+% figure: fig1 0.04 0.098 0.13 0.15
+\section{Föreläsning 3/10}
+\subsection{Isolerad singularitet (fortsättning)}
+\notefigure{fig1}{}
+$f$ holomorf i $D(z_0, R)^\times$
+\begin{enumerate}[label=\textcolor{red!70!black}{\roman*)}]
+  \item hävbar, om man kan definiera $f(z_0)$ s.a.\ $f$ holomorf i $D(z_0, R)$
+
+  \emph{Enligt KIS} omm $\displaystyle\lim_{z \to z_0} f(z) = 0$.
+  \item pol om $\displaystyle\lim_{z \to z_0} |f(z)| = \infty$. \emph{Enligt KIS} omm $f(z) = \dfrac{g(z)}{(z - z_0)^m}$, $m \ge 1$, $g$ holomorf i $D(z_0, R)$, $g(z_0) \neq 0$. $m$ kallas polens ordning
+  \item väsentlig annars.
+\end{enumerate}
+
+\begin{theorem}[Sats 4.3R]
+Antag $f$ har isolerade singulariteter i $z_0$ och $f(z) = \sum_{-\infty}^\infty c_k(z - z_0)^k$ i \emph{$D(z_0, R)^\times$}. Då är singulariteten $z_0$.
+\begin{enumerate}[label=\textcolor{blue!60!black}{\alph*)}]
+  \item hävbar omm $c_k = 0$ $\forall k < 0$
+  \item pol omm $\exists m \ge 1 : c_{-m} \neq 0$, medan $c_k = 0$, $k < -m$
+  \item väsentlig omm $c_k \neq 0$ för oändligt många negativa $k$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Lämnas som nyttig övning
+\end{proof}
+
+\begin{example}
+$\sin(\frac{1}{z})$, $0$ isolerad singularitet. $\sin(\frac{1}{z}) = \dfrac{1}{z} - \dfrac{(1/z)^3}{3!} + \dfrac{(1/z)^5}{5!} - \dots =$
+\[ = z^{-1} - \frac{1}{3!} z^{-3} + \frac{1}{5!} z^{-5} - \dots \quad \text{dvs.\ } c_k \neq 0 \text{ för } k < 0 \text{ och udda.} \]
+$\overset{\textcolor{magenta!80!black}{\text{Sats}}}{\Longrightarrow} 0$ väsentlig singularitet
+\end{example}
+
+\textbf{Lemma:} Om $\sum_{-\infty}^\infty a_k(z - z_0)^k = \sum_{-\infty}^\infty b_k(z - z_0)^k$ i $A(z_0, R_1, R_2)$, $R_1 < R_2$, då är $a_k = b_k$ $\forall k \in \mathbb{Z}$
+\begin{proof}
+Låt $f(z) = \sum_{-\infty}^\infty a_k(z - z_0)^k = \sum_{-\infty}^\infty b_k(z - z_0)^k$, \ $\dfrac{1}{2\pi i} \displaystyle\int_{|z - z_0| = r} \frac{f(z)}{(z - z_0)^{k+1}}\,dz =$
+\[ = \frac{1}{2\pi i} \int_{|z - z_0| = r} \frac{\sum_{-\infty}^\infty a_m(z - z_0)^m}{(z - z_0)^{k+1}}\,dz \overset{\textcolor{magenta!80!black}{\text{likf konv}}}{=} \sum_{m = -\infty}^\infty a_m \underbrace{\frac{1}{2\pi i} \int_{|z - z_0| = r} \frac{(z - z_0)^m}{(z - z_0)^{k+1}}\,dz}_{\textcolor{magenta!80!black}{1 \text{ om } m = k,\ 0 \text{ annars}}} = a_k \]
+P.s.s.\ $= b_k \Rightarrow a_k = b_k$ $\forall k$
+\end{proof}

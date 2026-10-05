@@ -1,0 +1,57 @@
+% language: swedish
+% figure: fig1 0.03 0.105 0.16 0.162
+% figure: fig2 0.22 0.168 0.32 0.207
+% figure: fig3 0.345 0.205 0.52 0.248
+% figure: fig4 0.515 0.336 0.655 0.377
+% figure: fig5 0.09 0.878 0.18 0.935
+\begin{definition}
+En öppen mängd $G$ är \emph{sammanhängande} om för alla $z, w \in G$ det finns en kurva i $G$ som förbinder dem.
+\notefigure{fig1}{}
+$G$ kallas då domän.
+\end{definition}
+
+\begin{example}
+\notefigure{fig2}{}
+t.ex. $D(a, r)$ är sammanhängande
+
+\notefigure{fig3}{}
+$\leftarrow$ ej sammanhängande
+\end{example}
+
+\begin{theorem}[(25 PB, ej i Adams)]
+Om $G$ är en domän och $f : G \to \mathbb{R}$ funktion s.a. $\nabla f = 0$, då är $f$ konstant.
+\end{theorem}
+\begin{proof}
+Tag två punkter $z, w \in G$
+\notefigure{fig4}{}
+Eftersom $G$ är sammanhängande finns kurvan $\gamma : [0, 1] \to G$ s.a. $\gamma(0) = z$, $\gamma(1) = w$. Kan välja $\gamma$ glatt (antal gånger du kan derivera i detta fallet vill vi att den är en gång deriverbar). Får $f \circ \gamma : [0, 1] \to \mathbb{R}$,
+\[ (f \circ \gamma)'(t) = \rattat{\nabla f(\gamma(t))}{\nabla f(\gamma(t)} \cdot \gamma'(t) = 0 \quad \Rightarrow \quad f \circ \gamma \text{ konstant,} \]
+dvs $f(z) = f \circ \gamma(0) = f \circ \gamma(1) = f(w) \Rightarrow f$ konstant
+\end{proof}
+
+\subsection{Komplexa funktioner}
+\begin{definition}
+Låt $G \subseteq \mathbb{C}$. En komplex funktion är en funktion $f : G \to \mathbb{C}$.
+\end{definition}
+
+\begin{example}
+\begin{itemize}
+  \item $f(z) = z^2$, \quad $f : \mathbb{C} \to \mathbb{C}$
+  \item $g(z) = \dfrac{\bar{z}}{z}$, \quad $g : \mathbb{C} \setminus \{0\} \to \mathbb{C}$
+  \item $h(z) = \operatorname{Re} z - 7i \cdot \operatorname{Im} z$, \quad $h : \mathbb{C} \to \mathbb{C}$
+\end{itemize}
+\end{example}
+
+\subsection{Gränsvärden}
+\begin{definition}
+$\displaystyle\lim_{z \to z_0} f(z) = w$ om $\forall \varepsilon > 0 \ \exists \delta > 0 : 0 < |z - z_0| < \delta \Rightarrow |f(z) - w| < \varepsilon$
+\end{definition}
+
+\begin{example}
+Existerar gränsvärdet $\displaystyle\lim_{z \to 0} \frac{\bar{z}}{z}$? \quad \textcolor{magenta!80!black}{\textbf{Svar:} nej \ $1 \neq -1$}
+
+Låt $z = x$ reellt, $\bar{z} = \bar{x} = x$ så $\displaystyle\lim_{x \to 0} \frac{x}{x} = \underline{1}$
+
+\notefigure{fig5}{}
+Låt nu istället $z = iy$, dvs rent imaginärt $\bar{z} = \overline{iy} = -iy$, \ $\displaystyle\lim_{iy \to 0} \frac{-iy}{iy} = \underline{-1}$
+\end{example}

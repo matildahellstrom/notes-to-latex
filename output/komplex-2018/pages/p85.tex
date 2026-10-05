@@ -1,0 +1,32 @@
+% language: swedish
+% figure: fig1 0.205 0.11 0.49 0.185
+% figure: fig2 0.59 0.11 0.72 0.19
+% figure: fig3 0.045 0.462 0.268 0.53
+\subsection{Övning R1 s.11}
+Hitta antalet nollställen till $z^2 + z + 1$ i vänstra halvplanet.
+
+\textbf{Lösning:}
+\notefigure{fig1}{}
+\notefigure{fig2}{}
+$\gamma_R(t) = Re^{it}$, $t \in [\pi/2, 3\pi/2]$ \qquad $\sigma_R = \gamma_R \cup [-iR, iR]$
+
+$f(z) = z^2 + z + 1$
+
+\emph{$\operatorname{argvar}(f \circ \gamma)$}: \quad $f(Re^{it}) = R^2 e^{2it} + Re^{it} + 1 = R^2 e^{2it}\left( 1 + \dfrac{e^{-it}}{R} + \dfrac{e^{-2it}}{R^2} \right)$
+\[ \Rightarrow \operatorname{argvar}(f(Re^{it})) \approx 2t + 2\pi k \]
+\[ \Rightarrow \operatorname{argvar}(f \circ \gamma_R) \approx 2\pi \]
+\emph{$\operatorname{argvar}(f \circ [-iR, iR])$}: \quad $f(iy) = -y^2 + iy + 1 = 1 - y^2 + iy$
+\[ f(-iR) = 1 - R^2 - iR \Rightarrow \arg(f(-iR)) \approx \pi + 2\pi k_1 \]
+\[ f(iR) = 1 - R^2 + iR \Rightarrow \arg(f(iR)) \approx \pi + 2\pi k_2 \]
+\notefigure{fig3}{}
+\textcolor{magenta!80!black}{\fbox{möjliga sätt att gå från $f(-iR)$ till $f(iR)$}} \quad \{rätt kurva är \textcolor{magenta!80!black}{\underline{rosa}} kurvan\}
+
+Var passerar $f \circ [-iR, iR]$ $x$-axeln?
+
+-- Jo när $\operatorname{Im} f(iy) = 0$ dvs då $y = 0 \Rightarrow$ kurvan passerar $x$-axeln bara i punkten $1$.
+\begin{align*}
+  &\Rightarrow \operatorname{argvar}(f \circ [-iR, iR]) \approx 2\pi \\
+  &\Rightarrow \operatorname{argvar}(f \circ \sigma_R) \approx 4\pi \\
+  &\Rightarrow W(f \circ \sigma_R) = 2,\ R \gg 1
+\end{align*}
+$\overset{\textcolor{magenta!80!black}{\text{arg princ.}}}{\Longrightarrow} f$ har två nollställen i vänstra halvplanet.

@@ -1,0 +1,59 @@
+% language: swedish
+% figure: fig1 0.675 0.41 0.80 0.50
+% figure: fig2 0.52 0.61 0.605 0.70
+\begin{align*}
+  w &= s(\cos\varphi + i\sin\varphi) \\
+  zw &= rs(\cos\theta\cos\varphi - \sin\theta\sin\varphi + i(\cos\theta\sin\varphi + \sin\theta\cos\varphi)) = \\
+  &= rs(\cos(\theta+\varphi) + i\sin(\theta+\varphi))
+\end{align*}
+\begin{align*}
+  \Rightarrow \quad |zw| &= |z|\,|w| \\
+  \arg(zw) &= \arg z + \arg w
+\end{align*}
+
+\begin{definition}
+$e^{i\theta} = \cos\theta + i\sin\theta$ \qquad får $e^{i\theta}e^{i\varphi} = e^{i(\theta+\varphi)}$
+\end{definition}
+
+\begin{theorem}[De Moivre]
+$(\cos\theta + i\sin\theta)^n = \cos n\theta + i\sin n\theta$
+\end{theorem}
+\begin{proof}
+$(\cos\theta + i\sin\theta)^n = (e^{i\theta})^n = e^{in\theta} = \cos n\theta + i\sin n\theta$
+\end{proof}
+
+$z = re^{i\theta}$, \ $r = |z|$, \ $\theta = \arg z$ \quad \textcolor{magenta!80!black}{Kallas polär form}
+
+\begin{example}
+Skriv $2 - 2i$ på polär form
+
+\notefigure{fig1}{}
+\textbf{Lösning:}
+\begin{align*}
+  |2 - 2i| &= \sqrt{2^2 + (-2)^2} = \sqrt{8} = 2\sqrt{2} \\
+  \arg(2 - 2i) &= \arctan\left(\frac{-2}{2}\right) = -\pi/4
+\end{align*}
+$\Rightarrow \quad 2 - 2i = 2\sqrt{2}\, e^{-i\pi/4}$
+\end{example}
+
+\subsection{Komplexa konjugatet}
+$z = x + iy = re^{i\theta}$, \quad $\bar{z} = x - iy = re^{-i\theta}$
+\notefigure{fig2}{}
+
+\textbf{Prop 1.5:}
+\begin{enumerate}[label=\alph*)]
+  \item $\overline{z \pm w} = \bar{z} \pm \bar{w}$
+  \item $\overline{zw} = \bar{z} \cdot \bar{w}$
+  \item $\overline{\left(\frac{z}{w}\right)} = \frac{\bar{z}}{\bar{w}}$
+  \item $\bar{\bar{z}} = z$
+  \item $|\bar{z}| = |z|$
+  \item $|z|^2 = z \cdot \bar{z}$
+  \item $\operatorname{Re} z = \frac{1}{2}(z + \bar{z})$
+  \item $\operatorname{Im} z = \frac{1}{2i}(z - \bar{z})$
+\end{enumerate}
+
+\textbf{Visar h):} $\frac{1}{2i}(z - \bar{z}) = \frac{1}{2i}(x + iy - (x - iy)) = \frac{1}{2i}(2iy) = y = \operatorname{Im} z$ \hfill $\square$
+
+\begin{note}
+$\displaystyle \frac{z}{w} = \frac{z\bar{w}}{w\bar{w}} = \frac{z\bar{w}}{|w|^2}$
+\end{note}

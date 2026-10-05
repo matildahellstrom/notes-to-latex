@@ -1,0 +1,30 @@
+% language: swedish
+\subsection{Taylorutveckling}
+\begin{theorem}[Sats 7.31]
+En potensserie $\sum_0^\infty c_k(z - z_0)^k$ har konvergensradie $R \in [0, \infty]$ s.a.
+\begin{enumerate}[label=\textcircled{\alph*}]
+  \item serien konvergerar på $D(z, R)$
+  \item serien konvergerar likformigt på $\overline{D}(z, r)$, $r < R$
+  \item serien divergerar på $\mathbb{C} \setminus \overline{D}(z, R)$
+\end{enumerate}
+\end{theorem}
+
+\textbf{Sats 8.1:} Om $f(z) = \sum_0^\infty c_k(z - z_0)^k$ har konvergensradie $R > 0$, då är $f(z)$ holomorf i $D(z_0, R)$
+
+\begin{theorem}[Taylorutveckling av holomorfa funktioner (Sats 8.8)]
+Antag $f$ holomorf i $D(z_0, R)$. Då har $f$ en taylorutveckling $f(z) = \sum_0^\infty c_k(z - z_0)^k$ i $D(z_0, R)$ där $c_k = \dfrac{f^{(k)}(z_0)}{k!} = \dfrac{1}{2\pi i} \displaystyle\int_{|z - z_0| = r} \frac{f(z)}{(z - z_0)}\,dz$ \ $(r < R)$
+\end{theorem}
+
+\begin{theorem}[Klassification av nollställen (Sats 8.14+)]
+$f$ holomorf i $G$, $f(z_0) = 0$, då gäller antingen:
+\begin{enumerate}[label=\textcolor{red!70!black}{\roman*)}]
+  \item $f \equiv 0$ i $G$ eller
+  \item $f(z) = (z - z_0)^m g(z)$, $m \ge 1$, $g$ holomorf i $G$, $g(z_0) \neq 0$.
+
+  $m$ kallas nollställets ordning
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Identitetsprincipen (Sats 8.15, 16)]
+Antag $f, g$ holomorfa i $G$, $f(z_n) = g(z_n)$, $z_n$ följd distinkta \textcolor{magenta!80!black}{(''olika'')} punkter i $G$, $z_n \xrightarrow[n \to \infty]{} z_\infty \in G$, då är $f \equiv g$ i $G$.
+\end{theorem}

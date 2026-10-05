@@ -1,0 +1,27 @@
+% language: swedish
+\textbf{Lemma:} Om $f, g$ kontinuerlig, $L^1$ och $\hat{f} = \hat{g}$, då är $f = g$.
+\begin{proof}
+$f - g \in L^1$, $\widehat{f - g} = \hat{f} - \hat{g} = 0 \in L^1$
+\[ \Rightarrow (f - g)(t) = \frac{1}{2\pi} \hat{\hat{(f - g)}}(-t) = \frac{1}{2\pi} \hat{0}(-t) = 0 \Rightarrow f = g \]
+\end{proof}
+
+\begin{example}
+Bestäm FT av $f(t) = e^{-t^2/2}$
+
+\textbf{Lösning:} Notera att $f' = -te^{-t^2/2} = -tf \Rightarrow 0 = f' + tf$
+\[ \Rightarrow 0 = \widehat{f' + tf} = \widehat{f'} + \widehat{tf} = ix\hat{f} + i\hat{f}' \Rightarrow \hat{f}' = -x\hat{f} \]
+dvs.\ $\hat{f}$ löser samma diff.ekv.\ som $f$!
+
+Får $(e^{x^2/2}\hat{f})' = xe^{x^2/2}\hat{f} + e^{x^2/2}\hat{f}' = 0$
+\[ \Longrightarrow \hat{f} = ce^{-x^2/2}. \]
+\[ \hat{\hat{f}} = c^2 e^{-t^2/2} \Rightarrow c^2 = \hat{\hat{f}}(0) \overset{\textcolor{magenta!80!black}{\text{IF}}}{=} 2\pi f(0) = 2\pi, \quad c = \hat{f}(0) = \int_{-\infty}^\infty e^{-t^2/2}\,dt > 0 \]
+\[ \Longrightarrow c = \sqrt{2\pi}, \quad \widehat{e^{-t^2/2}} = \sqrt{2\pi}\, e^{-x^2/2} \]
+Detta är ''anledningen'' till varför den Gaussiska funktionen $\dfrac{1}{\sqrt{2\pi}} e^{-t^2/2}$ dyker upp överallt!
+\end{example}
+
+\begin{example}
+Bestäm FT av $\dfrac{1}{t^2 + 4t + 5}$
+
+\textbf{Lösning:} $t^2 + 4t + 5 = (t + 2)^2 + 1$
+\[ \widehat{\frac{1}{1 + (t + 2)^2}} \underset{\textcolor{magenta!80!black}{(a = -2)}}{\overset{\textcolor{magenta!80!black}{\text{räkneregel}}}{=}} e^{-i(-2)x} \widehat{\frac{1}{1 + t^2}} = e^{2ix}\pi e^{-|x|} = \pi e^{2ix - |x|} \]
+\end{example}

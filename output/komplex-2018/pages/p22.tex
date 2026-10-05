@@ -1,0 +1,43 @@
+% language: swedish
+% figure: fig1 0.49 0.20 0.57 0.25
+% figure: fig2 0.80 0.462 0.985 0.528
+\begin{note}
+$\displaystyle\sup_{z \in \gamma} |f(z)| = \max_{z \in \gamma} |f(z)| < \infty$ \quad pga följande resultat:
+\end{note}
+
+\begin{theorem}[Sats A.1]
+Om $K$ är kompakt och $u : K \to \mathbb{R}$ kontinuerlig, då antar $u$ min och max på $K$, speciellt $u$ begränsad
+\end{theorem}
+
+\begin{framed}[Superviktigt exempel:]
+Beräkna $\displaystyle\int_{|z| = 1} z^k\,dz$, \ $k \in \mathbb{Z}$
+\notefigure{fig1}{}
+$z = \gamma(t) = e^{it}$, $t \in [0, 2\pi]$
+
+\textbf{Lösning:} $\gamma'(t) = ie^{it} \Rightarrow$
+\begin{align*}
+  \int_\gamma z^k\,dz &= \int_0^{2\pi} e^{ikt} \cdot ie^{it}\,dt = \\
+  &= i\int_0^{2\pi} (\cos((k+1)t) + i\sin((k+1)t))\,dt = \begin{cases} 2\pi i, & k = -1 \\ 0, & k \neq -1 \end{cases}
+\end{align*}
+Vad blir $\displaystyle\int_{|z - w| = r} \frac{1}{z - w}\,dz$?
+\end{framed}
+
+\subsection{Homotopi mellan slutna kurvor}
+\notefigure{fig2}{}
+\begin{definition}
+Kurvan $\gamma : [a, b] \to \mathbb{C}$ är \emph{sluten} om $\gamma(a) = \gamma(b)$
+\end{definition}
+
+Låt $\gamma_0, \gamma_1$ vara två slutna kurvor i område $G$.
+
+\begin{definition}
+$\gamma_0$ och $\gamma_1$ är \emph{homotopa i $G$}, skrivs $\gamma_0 \sim_G \gamma_1$, om $\exists$ kontinuerliga funktioner $\gamma(t, s) : [a, b] \times [0, 1] \to G$ s.a
+\begin{enumerate}[label=\roman*)]
+  \item $\gamma(t, 0) = \gamma_0(t)$
+  \item $\gamma(t, 1) = \gamma_1(t)$
+  \item $\gamma(a, s) = \gamma(b, s) \quad \forall s \in [0, 1]$
+\end{enumerate}
+dvs.\ kurvorna $\gamma_s(t) = \gamma(t, s)$ är alla slutna. Funktionen $\gamma(t, s)$ kallas \emph{homotopi} mellan $\gamma_0$ och $\gamma_1$
+\end{definition}
+
+\textbf{Intuitivt:} $\gamma_0 \sim_G \gamma_1$ om $\gamma_0$ kan kontinuerligt deformeras till $\gamma_1$ \emph{inne i $G$}

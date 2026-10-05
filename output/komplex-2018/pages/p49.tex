@@ -1,0 +1,39 @@
+% language: swedish
+% figure: fig1 0.028 0.26 0.18 0.317
+\subsection{Taylorutvecklingar}
+\begin{theorem}[Sats 8.1]
+Om $f(z) = \sum_0^\infty c_k(z - z_0)^k$ har konvergensradien $R > 0$, då är $f(z)$ holomorf i $D(z_0, R)$ (i $\mathbb{C}$ om $R = \infty$)
+\end{theorem}
+\begin{proof}
+$c_k(z - z_0)^k$ kontinuerlig, $\sum_0^\infty c_k(z - z_0)^k$ konvergerar likformigt på $\overline{D}(z_0, r)$, $r < R \overset{\textcolor{magenta!80!black}{\text{Prop 7.25b}}}{\Longrightarrow} f$ kontinuerlig på $\overline{D}(z_0, r) \underset{\textcolor{magenta!80!black}{r \to R}}{\overset{\textcolor{magenta!80!black}{\text{låt}}}{\Longrightarrow}} f$ kontinuerlig i $D(z_0, R)$. Låt $\gamma : [a, b] \to D(z_0, R)$ vara styckvis glatt sluten kurva
+\notefigure{fig1}{}
+$|\gamma(t) - z_0|$ kontinuerlig funktion på $[a, b]$ \textcolor{magenta!80!black}{$\leftarrow$ kompakt}
+\[ \underset{\textcolor{magenta!80!black}{\text{Sats A.1}}}{\Longrightarrow} \exists t_0 \in [a, b] : \sup|\gamma(t) - z_0| = |\gamma(t_0) - z_0| = r < R \]
+$\Rightarrow \gamma \subseteq \overline{D}(z_0, r) \Longrightarrow \sum_0^\infty c_k(z - z_0)^k$ konvergerar likformig på $\gamma$!
+\[ \Rightarrow \int_\gamma f\,dz \overset{\textcolor{magenta!80!black}{7.25b}}{=} \sum_0^\infty \int_\gamma c_k(z - z_0)^k\,dz = \left[ \int_\gamma c_k(z - z_0)^k\,dz = 0 \ \forall k \text{ enligt CS} \right] = \]
+$= \underline{\underline{0}} \Longrightarrow$ memorera $f$ holomorf i $D(z_0, R)$
+\end{proof}
+
+\textcolor{red!70!black}{\textbf{OBS!}} Ger oss massor av holomorfa funktioner.
+
+Välj $c_k : |c_k| \le M \Rightarrow \sum_0^\infty c_k z^k$ holomorf i $D(0, 1)$ om $|c_k| \le \dfrac{M}{k!}$ då $\sum_0^\infty c_k z^k$ hel.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[Sats 8.2]
+Om $f(z) = \sum_0^\infty c_k(z - z_0)^k$ har konvergensradien $R > 0$, då $f'(z) = \sum_1^\infty kc_k(z - z_0)^{k-1}$ i $D(z_0, R)$
+\end{theorem}
+\begin{proof}
+Låt $0 < r < R$. För $z \in D(z_0, r)$: $f'(z) \overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} \dfrac{1}{2\pi i} \displaystyle\int_{|w - z_0| = r} \frac{f(w)}{(w - z)^2}\,dw$
+
+$\sum_0^\infty c_k(w - z_0)^k$ konvergerar likformigt på $C(z_0, r)$
+
+$\left| \dfrac{1}{(w - z)^2} \right| \le M$ på $C(z_0, r) \Rightarrow \displaystyle\sum_0^\infty \frac{c_k(w - z_0)^k}{(w - z)^2}$ konvergerar likformigt på $\gamma$
+\begin{align*}
+  \Rightarrow f'(z) &= \frac{1}{2\pi i} \int_{|w - z| = r} \frac{\sum_0^\infty c_k(w - z_0)^k}{(w - z)^2}\,dw \overset{\textcolor{magenta!80!black}{7.25b}}{=} \sum_0^\infty c_k \frac{1}{2\pi i} \int_\gamma \frac{(w - z_0)^k}{(w - z)^2}\,dw \overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} \\
+  &= \sum_0^\infty c_k\left( (w - z_0)^k \right)'_{w = z} = \\
+  &= \sum_1^\infty kc_k(z - z_0)^{k-1}
+\end{align*}
+\end{proof}
+
+\textcolor{red!70!black}{\textbf{Obs!}} $\sum kc_k(z - z_0)^{k-1}$ har samma konvergensradie

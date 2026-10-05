@@ -1,0 +1,34 @@
+% language: swedish
+% figure: fig1 0.055 0.17 0.13 0.215
+% figure: fig2 0.175 0.45 0.36 0.49
+% figure: fig3 0.055 0.57 0.20 0.625
+% figure: fig4 0.072 0.83 0.195 0.90
+\begin{proof}
+Antag att $p(z) \neq 0$, $\forall z \in \mathbb{C}$. Får då $f(z) = \dfrac{1}{p(z)}$ hela funktionen. Välj $R \gg 0$ som i Lemmat, då gäller för $|z| \ge R$ att $|f(z)| = \dfrac{1}{|p(z)|} \le \dfrac{2}{|z|^n} \le \dfrac{2}{R^n} < \infty$
+
+$|f(z)|$ kontinuerlig funktion, $\overline{D}(0, R)$ kompakt $\overset{\textcolor{magenta!80!black}{\text{Sats A1}}}{\Rightarrow} |f| \le C$ på $\overline{D}(0, R)$
+\notefigure{fig1}{}
+\[ \Rightarrow |f| \le \max\left( \frac{2}{R^n}, C \right) \text{ på hela } \mathbb{C}. \]
+\[ \underset{\textcolor{magenta!80!black}{\text{Liouville}}}{\Rightarrow} f \text{ konstant} \Rightarrow p \text{ konstant} \Rightarrow \text{motsägelse då grad } p \ge 1 \]
+\end{proof}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Beräkning av reella integraler}
+\begin{example}
+Beräkna $\displaystyle\int_{-\infty}^{\infty} \frac{dx}{1 + x^2} = \lim_{R \to \infty} (\arctan(R) - \arctan(-R)) = \frac{\pi}{2} - \left(-\frac{\pi}{2}\right) = \pi$
+
+$\displaystyle\int_{-\infty}^{\infty} \frac{dx}{1 + x^2}$ med komplex analys
+
+\textbf{Lösning:}
+\notefigure{fig2}{}
+$[-R, R]$ parametriseras av $\gamma(t) = t$, $t \in [-R, R]$ \quad $\gamma'(t) = 1$
+\[ \Rightarrow \int_{[-R, R]} \frac{1}{1 + z^2}\,dz \overset{\textcolor{magenta!80!black}{\text{def}}}{=} \int_{-R}^{R} \frac{1}{1 + t^2}\,dt \Rightarrow \int_{-\infty}^{\infty} \frac{dx}{1 + x^2} = \lim_{R \to \infty} \int_{[-R, R]} \frac{1}{1 + z^2}\,dz \]
+\notefigure{fig3}{}
+$\gamma_R(t) = Re^{it}$ \ $t \in [0, \pi]$ \quad $\sigma_R = [-R, R] \cup \gamma_R$ sluten styckvis glatt kurva
+\[ \Rightarrow \int_{-\infty}^{\infty} \frac{1}{1 + x^2}\,dx = \lim_{R \to \infty} \int_{\sigma_R} \frac{1}{1 + z^2}\,dz - \lim_{R \to \infty} \int_{\gamma_R} \frac{1}{1 + z^2}\,dz \]
+\[ \left| \int_{\gamma_R} \frac{1}{1 + z^2}\,dz \right| \underset{\textcolor{magenta!80!black}{\Delta\text{olik} \int}}{\le} \max_{z \in \gamma_R} \left| \frac{1}{1 + z^2} \right| \cdot \pi R \le \left[ \underset{\textcolor{magenta!80!black}{\text{omv } \Delta \text{ olik}}}{|1 + z^2| \ge |z^2| - 1 = R^2 - 1} \right] \le \frac{\pi R}{R^2 - 1} \xrightarrow[R \to \infty]{} 0 \]
+\[ \frac{1}{1 + z^2} = \frac{1}{(z - i)(z + i)} = \frac{\overbrace{\frac{1}{z + i}}^{\textcolor{magenta!80!black}{f}}}{\underbrace{z - i}_{\textcolor{magenta!80!black}{w}}} \Rightarrow \frac{1}{z + i} \text{ holomorf i } \mathbb{C} \setminus \{-i\}, \ \sigma_R \sim_{\mathbb{C} \setminus \{-i\}} C(i, r) \quad 0 < r \ll 1 \]
+\notefigure{fig4}{}
+\[ \overset{\textcolor{magenta!80!black}{\text{CIF}}}{\Rightarrow} \int_{\sigma_R} \frac{1}{1 + z^2}\,dz = 2\pi i \left( \frac{1}{z + i} \right)_{z = i} = \pi \Rightarrow \int_{-\infty}^{\infty} \frac{1}{1 + x^2}\,dx = \pi \]
+\end{example}

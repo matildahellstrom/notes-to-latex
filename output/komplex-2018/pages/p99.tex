@@ -1,0 +1,42 @@
+% language: swedish
+\subsection{2013 Januari \textcircled{1a}}
+Bestäm $\displaystyle\int_{|z| = 1} \frac{e^z - e^{-z}}{z}\,dz$
+
+\textbf{Lösning:} $\displaystyle\int_{|z| = 1} \frac{e^z - e^{-z}}{z}\,dz \overset{\textcolor{magenta!80!black}{\text{CIF}}}{=} 2\pi i(e^z - e^{-z})_{z = 0} = 0$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\begin{theorem}[CIF för derivator (Sats 5.1)]
+$f$ holo i $G$, $\overline{D(w, R)} \subseteq G$, då $f'(w) = \dfrac{1}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{f(z)}{(z - w)^2}\,dz$, \ $0 < r \le R$
+
+\textbf{Kor:} Om $f$ holomorf så $\exists f^{(k)}$, $\forall k \in \mathbb{N}$, \ $f^{(k)}(w) = \dfrac{k!}{2\pi i} \displaystyle\int_{|z - w| = r} \frac{f(z)}{(z - w)^{k+1}}\,dz$.
+\end{theorem}
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{2013 Januari \textcircled{3}}
+Beräkna $\displaystyle\int_{|z| = 1} \frac{\sin z - \sinh z}{z^8}\,dz$
+
+\textbf{Lösning:} $\displaystyle\int_{|z| = 1} \frac{\sin z - \sinh z}{z^8}\,dz \underset{\textcolor{magenta!80!black}{\text{för der}}}{\overset{\textcolor{magenta!80!black}{\text{CIF}}}{=}} \frac{2\pi i}{7!}(\sin z - \sinh z)^{(7)}_{z = 0} = -\frac{4\pi i}{7!}$
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\section{Föreläsning 22/10}
+\begin{theorem}[Liouvilles sats (Kor 5.13)]
+Om $f$ hel (holomorf i $\mathbb{C}$) och $|f| \le M$ då är $f$ konstant.
+\end{theorem}
+
+\subsection{Tenta 2012 Januari uppg.\ 8}
+Bestäm alla hela funktioner $f$ s.a.\ $|f(z)| \le e^{\operatorname{Re} z}$
+
+\textbf{Lösning:} Låt $g(z) = \dfrac{f(z)}{e^z}$ hel funktion.
+\[ |g(z)| = \frac{|f(z)|}{|e^z|} \le \frac{e^{\operatorname{Re} z}}{e^{\operatorname{Re} z}} = 1 \overset{\textcolor{magenta!80!black}{\text{Liouvilles}}}{\Longrightarrow} g \equiv C \Rightarrow f = Ce^z \]
+$|f(z)| = |C|e^{\operatorname{Re} z} \le e^{\operatorname{Re} z}$ enligt antagandet
+
+$\Rightarrow |C| \le 1$, så vi får $f(z) = Ce^z$, $|C| \le 1$
+
+De funktionerna uppfyller kraven, så svaret blir $f(z) = Ce^z$, $|C| \le 1$
+
+\begin{theorem}[Algebrans fundamentalsats (Sats 5.11)]
+Om $p(z) = z^n + a_{n-1}z^{n-1} + \dots + a_1 z^1 + a_0 z^0$ \ $n \ge 1$, då finns $z_0 \in \mathbb{C}$ s.a.\ $p(z_0) = 0$
+\end{theorem}

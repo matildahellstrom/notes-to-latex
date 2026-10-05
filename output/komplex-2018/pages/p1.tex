@@ -1,0 +1,53 @@
+% language: swedish
+% figure: fig1 0.055 0.085 0.38 0.15
+% figure: fig2 0.20 0.225 0.355 0.295
+% figure: fig3 0.80 0.44 0.955 0.53
+% figure: fig4 0.05 0.78 0.28 0.90
+% figure: fig5 0.67 0.745 0.985 0.852
+% figure: fig6 0.44 0.872 0.59 0.935
+\section{Komplex Analys}
+\hfill \rattat{Föreläsning 3/9}{Föreläsning 3/8}
+
+\notefigure{fig1}{}
+$f$ \emph{holomorf} om $\displaystyle\lim_{h \to 0} \frac{f(z+h) - f(z)}{h} = f'(z) \quad \forall z$
+
+Ex: $z^3 - iz + 3,\ e^z,\ \sin z,\ \sum_{n=1}^{\infty} \frac{1}{n^z}, \dots$ \qquad ej $x, y$
+
+\textbf{Integraler:}
+\notefigure{fig2}{}
+\begin{itemize}
+  \item om $f$ holomorf: $\int_\gamma f(z)\,dz = 0$
+  \item om $f$ singulär i enstaka punkter $\left(\frac{1}{1+z^2}\right)$ kan $\int_\gamma f(z)\,dz$ beräknas mha \emph{residykalkyl}
+\end{itemize}
+Låter oss även beräkna reella integraler, $\displaystyle\int_{-\infty}^{\infty} \frac{\cos x}{1+x^2}\,dx$, som i sin tur dyker upp i \emph{Fourieranalys}.
+
+\textbf{Tillämpningar:} röntgenkristallografi (DNA), kvantmekanik, \dots
+
+\textbf{Riemannhypotesen:} $\zeta(z) = \sum_{n=1}^{\infty} \frac{1}{n^z}$ kan vara noll på linjen
+\notefigure{fig3}{}
+bygger på \emph{identitetsprincipen}.
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\subsection{Komplexa tal}
+$\mathbb{C} = \{x + iy : x, y \in \mathbb{R}\}$, \quad $i$ nytt tal: $i^2 = -1$
+\begin{align*}
+  (x+iy) + (a+ib) &= (x+a) + i(y+b) \in \mathbb{C} \\
+  (x+iy)(a+ib) &= (xa - yb) + i(xb + ya) \in \mathbb{C}
+\end{align*}
+Vanliga räkneregler gäller (Prop.\ 1)
+
+\subsection{Komplexa talplanet}
+\notefigure{fig4}{}
+$x = \operatorname{Re} z$, \quad $y = \operatorname{Im} z$
+
+$|z| = \sqrt{x^2 + y^2}$ \quad (absolutbelopp)
+
+\notefigure{fig5}{}
+
+\begin{framed}[Polär form:]
+\notefigure{fig6}{}
+$z = r(\cos\theta + i\sin\theta)$ \quad $\rightarrow$
+
+$\arg z = \theta$ endast bestämt upp till multipel av $2\pi$
+\end{framed}

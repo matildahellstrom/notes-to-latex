@@ -1,0 +1,31 @@
+% language: swedish
+% figure: fig1 0.69 0.098 0.99 0.205
+% figure: fig2 0.72 0.625 0.96 0.72
+\section{Storgruppsövning 5/10}
+
+\fbox{8.17} \quad Hitta LSU av $\dfrac{1}{z(z - 2)^2}$ centrerad i $2$, bestäm konvergensområde.
+
+\textbf{Lösning:} $\dfrac{1}{z(z - 2)^2}$ holomorf i $\mathbb{C} \setminus \{0, 2\}$ \qquad \fbox{$\dfrac{1}{1 - \otimes} \overset{|\otimes| < 1}{=} \displaystyle\sum_0^\infty \otimes^k$}
+\notefigure{fig1}{}
+\emph{i $A(2, 0, 2)$} $= D(2, 2)^\times$
+
+Sätt $w = z - 2 \Rightarrow z = w + 2$
+\[ \frac{1}{z} = \frac{1}{w + 2} = \frac{1}{2 + w} = \frac{1}{2} \frac{1}{\rattat{1}{2} + w/2} = \frac{1}{2} \frac{1}{1 - (-w/2)} \overset{|w| < 2}{=} \frac{1}{2} \sum_0^\infty (-w/2)^k = \]
+\[ = \sum_0^\infty \frac{(-1)^k}{2^{k+1}} w^k = \sum_0^\infty \frac{(-1)^k}{2^{k+1}} (z - 2)^k \]
+\[ \Rightarrow \frac{1}{z(z - 2)^2} = \sum_0^\infty \frac{(-1)^k}{2^{k+1}} (z - 2)^{k-2} = \sum_{-2}^\infty \frac{\overbrace{(-1)^{k+2}}^{\textcolor{blue!60!black}{\text{spelar ingen roll}}}}{2^{k+3}} (z - 2)^k \]
+\emph{i $A(2, 2, \infty)$}:
+\[ \frac{1}{z} = \frac{1}{w + 2} = \frac{1}{w} \frac{1}{1 - (-2/w)} \overset{|w| > 2}{=} \frac{1}{w} \sum_0^\infty \left( \frac{-2}{w} \right)^k = \sum_0^\infty (-2)^k w^{-k-1} = \]
+\[ = \sum_{-\infty}^{-1} (-2)^{-k-1} w^k = \sum_{-\infty}^{-1} (-2)^{-k-1} (z - 2)^k. \]
+\[ \frac{1}{z(z - 2)^2} = \sum_{-\infty}^{-1} (-2)^{-k-1} (z - 2)^{k-2} = \sum_{-\infty}^{-3} (-2)^{-k-3} (z - 2)^k \]
+
+\noindent\rule{\linewidth}{0.4pt}
+
+\fbox{8.19} \quad Hitta $c_k$, $-4 \le k \le 3$ där $\sum_{-\infty}^\infty c_k z^k$ LSU av $\dfrac{1}{\sin^2 z}$ giltig i $D(0, \pi)^\times$. \quad \{OBS, står 4 i boken men jobbig räkning\}
+
+\textbf{Lösning:} $\dfrac{1}{\sin^2 z}$ holomorf i $\mathbb{C} \setminus \{k\pi, k \in \mathbb{Z}\}$
+\notefigure{fig2}{}
+\[ \sin z = z - \frac{z^3}{6} + \frac{z^5}{120} + O(z^7) = z\left( 1 - \frac{z^2}{6} + \frac{z^4}{120} + O(z^6) \right) \]
+\[ \frac{1}{\sin z} = \frac{1}{z} \frac{1}{1 - \left( \frac{z^2}{6} - \frac{z^4}{120} + O(z^6) \right)} \overset{|z| \ll 1}{=} \frac{1}{z} \sum_0^\infty \left( \frac{z^2}{6} - \frac{z^4}{120} + O(z^6) \right)^k = \]
+\[ = \underbrace{\frac{1}{z}}_{\textcolor{magenta!80!black}{k = 0}} + \underbrace{\frac{z}{6} - \frac{z^3}{120} + O(z^5)}_{\textcolor{magenta!80!black}{k = 1}} + \underbrace{\frac{z^3}{36} + O(z^5)}_{\textcolor{magenta!80!black}{k \ge 2}} = \frac{1}{z} + \frac{z}{6} + \frac{7}{360} z^3 + O(z^5) \]
+\[ \frac{1}{\sin^2 z} = \left( \frac{1}{z} + \frac{z}{6} + \frac{7}{360} z^3 + O(z^5) \right)^2 = \frac{1}{z^2} + \frac{1}{3} + \frac{1}{15} z^{\rattat{2}{3}} + O(z^4) \]
+\[ \Rightarrow c_{-4} = 0,\ c_{-3} = 0,\ c_{-2} = 1,\ c_{-1} = 0,\ c_0 = \frac{1}{3},\ c_1 = 0,\ c_2 = \frac{1}{15},\ c_3 = 0 \]
