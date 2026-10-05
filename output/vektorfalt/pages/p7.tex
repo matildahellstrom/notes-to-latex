@@ -1,0 +1,31 @@
+% language: swedish
+% figure: fig1 0.66 0.215 0.95 0.31
+\subsection{Linje-, Yt- och Volymintegraler}
+
+Arbete $W = \underset{\textcolor{magenta!80!black}{\uparrow \text{ konstant kraft}}}{F} \cdot \overset{\textcolor{magenta!80!black}{\text{rak}}}{s}$
+
+\begin{minipage}{0.6\linewidth}
+Om nu $\vb{F}$ varierar längs vägen.\\
+Delar in vägen i många delar.\\
+Arbetet vid förflyttning $\vb{r} + d\vb{r}$.\\
+$dW = -\vb{F} \cdot d\vb{r}$
+\end{minipage}
+\begin{minipage}{0.38\linewidth}
+\notefigure[0.95]{fig1}{}
+\end{minipage}
+
+Nu längs hela $C$:
+\[ W = -\sum_{i=1}^N \vb{F}_i \cdot d\vb{r}_i \]
+Linjeintegral längs kurvan
+\[ \int_C \vb{F} \cdot d\vb{r} = \lim_{n \to \infty} \sum_{i=1}^N \vb{F}_i \cdot d\vb{r}_i \]
+Riktning är viktig hos $C$. Motsatt riktning $\Rightarrow$ multiplikation med $-1$.
+
+\subsubsection*{Att beräkna linjeintegraler}
+Kurvan $C$ måste parametriseras. Uttryck $\vb{r}(t)$ som en funktion av exempelvis tid.
+\[ \int_C \vb{F} \cdot d\vb{r} = \int_C \vb{F}(\vb{r}(t)) \cdot d\vb{r} = \int_t \vb{F}(\vb{r}(t))\frac{d\vb{r}}{dt}\,dt \]
+
+\begin{example}
+\[ \vb{F} = \begin{bmatrix} y \\ x \\ z \end{bmatrix}, \quad \text{Parametrisering } \begin{bmatrix} x = t \\ y = t \\ z = 2t^2 \end{bmatrix}, \quad t \in [0, 1] \]
+\[ \text{Uttryck } \vb{F}(t) = \begin{bmatrix} t \\ t \\ 2t^2 \end{bmatrix}, \quad \frac{d\vb{r}}{dt} = \begin{bmatrix} dx/dt = 1 \\ dy/dt = 1 \\ dz/dt = 4t \end{bmatrix} \]
+Beräkna $\displaystyle\int_C \vb{F} \cdot d\vb{r} = \int_0^1 (t, t, 2t^2) \cdot (1, 1, 4t)\,dt =$
+\end{example}

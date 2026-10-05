@@ -1,0 +1,53 @@
+% language: swedish
+% figure: fig1 0.12 0.065 0.45 0.185
+% figure: fig2 0.12 0.29 0.37 0.42
+% figure: fig3 0.11 0.545 0.29 0.628
+% figure: fig4 0.12 0.655 0.38 0.78
+Antag $|\vb{u}| = u_0(x, y)$
+
+\begin{minipage}{0.45\linewidth}
+\notefigure[0.95]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.53\linewidth}
+Area $dS = dx\,dy$\\
+Flöde genom $dS$\\
+$dQ = u_0(x, y) \cdot dS = u_0(x, y)\,dx\,dy$
+\end{minipage}
+\[ \text{Totalt flöde } Q = \iint_S u_0(x, y)\,dS = \int_0^1\!\!\int_0^1 u_0(x, y)\,dx\,dy \]
+Generellt är $\vb{u}$ ej vinkelrätt mot ytan $S$.
+
+\begin{minipage}{0.36\linewidth}
+\notefigure[0.95]{fig2}{}
+\end{minipage}
+\begin{minipage}{0.62\linewidth}
+$\vb{u}$:s komponent vinkelrätt mot ytan: $\vb{u} \cdot \vb{n}$\\
+Flöde ytan $dS$: $dQ = \vb{u} \cdot \vb{n}\,dS$
+\[ Q = \iint_S \vb{u} \cdot \vb{n}\,dS = \iint_S \vb{u} \cdot \vb{n}\,dx\,dy \]
+\end{minipage}
+
+Bestäm riktning på $\vb{n}$ först.
+
+\subsubsection*{Ytintegral över sluten yta}
+\begin{minipage}{0.3\linewidth}
+\notefigure[0.95]{fig3}{}
+\end{minipage}
+\begin{minipage}{0.68\linewidth}
+\[ \oiint_S \vb{u} \cdot \vb{n}\,dS \]
+\end{minipage}
+
+\begin{center}Om $S$ är en krökt yta\end{center}
+
+\begin{minipage}{0.38\linewidth}
+\notefigure[0.95]{fig4}{}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+Parametrisera ytan $S$ som $\vb{r}(v, w)$\\
+Betrakta en liten förflyttning $v$ till $v + dv$
+\end{minipage}
+
+$\Rightarrow \vb{r}(v + dv, w)$\\
+Skillnadsvektorn $\vb{r}(v + dv, w) - \vb{r}(v, w) = \dfrac{\partial\vb{r}}{\partial v}\,dv$\\
+$d\vb{r}$ är tangent till planet.\\
+På samma sätt för $\dfrac{\partial\vb{r}}{\partial w}\,dw$
+
+Vi behöver uttrycka $\vb{n}\,dS$.

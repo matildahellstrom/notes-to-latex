@@ -21,8 +21,8 @@
 window.MathJax = {
   tex: {
     inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']],
-    packages: {'[+]': ['html', 'cancel', 'color', 'mhchem', 'textmacros', 'enclose']},
-    macros: {textsuperscript: ['^{#1}', 1], textcircled: ['\\enclose{circle}{\\kern1mu{#1}\\kern1mu}', 1]}
+    packages: {'[+]': ['html', 'cancel', 'color', 'mhchem', 'textmacros', 'enclose', 'unicode']},
+    macros: {textsuperscript: ['^{#1}', 1], oiint: '\\mathop{\\unicode{x222F}}\\nolimits', oiiint: '\\mathop{\\unicode{x2230}}\\nolimits', textcircled: ['\\enclose{circle}{\\kern1mu{#1}\\kern1mu}', 1]}
   },
   options: {ignoreHtmlClass: 'mj-defer', processHtmlClass: 'mj-now'},
   svg: {fontCache: 'global', mtextInheritFont: true},

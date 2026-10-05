@@ -1,0 +1,50 @@
+% language: swedish
+% figure: fig1 0.12 0.07 0.375 0.165
+% figure: fig2 0.56 0.43 0.84 0.54
+Skalärprodukt: $\vb{a} \cdot \vb{b} = |\vb{a}||\vb{b}|\cos\theta$
+
+\begin{minipage}{0.4\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.58\linewidth}
+\begin{itemize}[label=--]
+  \item $\vb{a} \cdot \vb{b} = \vb{b} \cdot \vb{a}$
+  \item Om vinkelräta $\Leftrightarrow \vb{a} \cdot \vb{b} = 0$
+  \item $\vb{a} \cdot \vb{a} = |\vb{a}|^2$
+  \item $\vb{a} \cdot (\vb{b} + \vb{c}) = \vb{a} \cdot \vb{b} + \vb{a} \cdot \vb{c}$
+  \item $c(\vb{a} \cdot \vb{b}) = (c\vb{a}) \cdot \vb{b}$
+\end{itemize}
+\end{minipage}
+
+\begin{center}Formel för skalärprodukt\end{center}
+\begin{align*}
+\vb{a} \cdot \vb{b} &= (a_1\vb{e}_1 + a_2\vb{e}_2 + a_3\vb{e}_3) \cdot (b_1\vb{e}_1 + b_2\vb{e}_2 + b_3\vb{e}_3) \\
+&= a_1b_1 + a_2b_2 + a_3b_3
+\end{align*}
+
+\begin{example}[1.4]
+Vilket $c$ ger ortogonala vektorer för\\
+$(c, 1, 1) \cdot (-1, 2, 0) = -c + 2 = 0 \Rightarrow c = 2$
+\end{example}
+
+\begin{minipage}{0.55\linewidth}
+Kryssprodukt: $\vb{a} \times \vb{b}$\\
+$|\vb{a} \times \vb{b}| = |\vb{a}||\vb{b}|\sin\theta$\\
+Vektor vinkelrät mot $\vb{a}$ och $\vb{b}$ i högersystem
+\[ \vb{a} \times \vb{b} = |\vb{a}||\vb{b}|\sin\theta\,\vb{u} \]
+\end{minipage}
+\begin{minipage}{0.43\linewidth}
+\notefigure[0.95]{fig2}{}
+\end{minipage}
+
+\begin{itemize}
+  \item $\vb{a} \times \vb{b} = -\vb{b} \times \vb{a}$
+  \item Om $\vb{a} \parallel \vb{b} \Longleftrightarrow \vb{a} \times \vb{b} = \vb{0}$
+  \item $\vb{a} \times (\vb{b} + \vb{c}) = \vb{a} \times \vb{b} + \vb{a} \times \vb{c}$
+  \item $(c\vb{a}) \times \vb{b} = c(\vb{a} \times \vb{b})$
+\end{itemize}
+\[ \vb{a} \times \vb{b} = (a_1, a_2, a_3) \times (b_1, b_2, b_3) = \begin{vmatrix} \vb{e}_1 & \vb{e}_2 & \vb{e}_3 \\ a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \end{vmatrix} \]
+
+\begin{example}[1.7]
+Enhetsvektor vinkelrät mot $(1, 0, 1)$ och $(0, 1, 1)$
+\end{example}

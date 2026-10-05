@@ -1,0 +1,34 @@
+% language: swedish
+% figure: fig1 0.11 0.70 0.39 0.805
+\begin{example}[1.7 (forts.)]
+\[ (1, 0, 1) \times (0, 1, 1) = \begin{vmatrix} \vb{e}_1 & \vb{e}_2 & \vb{e}_3 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{vmatrix} = (-1, -1, 1) \]
+Normering: $\dfrac{(-1, -1, 1)}{\sqrt{3}}$
+\end{example}
+
+Skalär trippelprodukt: $\vb{a} \underbrace{\cdot \underbrace{\vb{b} \times \vb{c}}_{1}}_{2} := \vb{a} \cdot (\vb{b} \times \vb{c})$
+\[ \vb{a} \cdot \vb{b} \times \vb{c} = \vb{b} \cdot \vb{c} \times \vb{a} = \vb{c} \cdot \vb{a} \times \vb{b} = \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix} \]
+Om två vektorer är identiska $\Rightarrow \vb{a} \cdot \vb{b} \times \vb{c} = 0$
+
+Vektortrippelprodukt:
+\begin{align*}
+\vb{a} \times (\vb{b} \times \vb{c}) &= (\vb{a} \cdot \vb{c})\vb{b} - (\vb{a} \cdot \vb{b})\vb{c} \\
+(\vb{a} \times \vb{b}) \times \vb{c} &= -\vb{c} \times (\vb{a} \times \vb{b}) = -(\vb{c} \cdot \vb{b})\vb{a} + (\vb{c} \cdot \vb{a})\vb{b}
+\end{align*}
+
+\subsection{Skalära fält och vektorfält}
+Skalärt fält i 3D: $T(x, y, z) = T(\vb{r})$ \qquad (temperatur)\\
+\phantom{Skalärt fält i }2D: $T(x, y) = T(\vb{r})$
+
+\begin{example}
+$T(x, y) = x^2 + y^2$\\
+Konturlinjer: Definieras av $T(x, y) = \text{konstant}$\\
+\phantom{Konturlinjer: Definieras av }$x^2 + y^2 = \text{konstant}$
+\notefigure[0.3]{fig1}{}
+\end{example}
+
+Vektorfält i 3D: $\vb{u}(x, y, z) = \vb{u}(\vb{r})$\\
+\phantom{Vektorfält i }2D: $\vb{u}(x, y) = \vb{u}(\vb{r})$
+
+\begin{example}
+$\vb{u}(x, y) = (y, x)$
+\end{example}

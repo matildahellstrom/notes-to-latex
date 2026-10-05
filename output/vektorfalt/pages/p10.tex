@@ -1,0 +1,35 @@
+% language: swedish
+% figure: fig1 0.46 0.2 0.595 0.31
+Med hjälp av kryssprodukt kan vi uttrycka
+\[ \vb{n}\,dS = \left( \frac{\partial\vb{r}}{\partial v} \times \frac{\partial\vb{r}}{\partial w} \right) dv\,dw \]
+Gör ytintegral
+\[ \iint_S \vb{u} \cdot \vb{n}\,dS = \iint_S \vb{u} \cdot \left( \frac{\partial\vb{r}}{\partial v} \times \frac{\partial\vb{r}}{\partial w} \right) dv\,dw \]
+
+\begin{example}
+\begin{minipage}{0.3\linewidth}
+\[ \vb{u} = \begin{bmatrix} x \\ z \\ -y \end{bmatrix} \]
+\end{minipage}
+\begin{minipage}{0.3\linewidth}
+\notefigure[0.75]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.36\linewidth}
+Yta beskrivs som\\
+$x^2 + y^2 = 1$\\
+$0 \le z \le 1$
+\end{minipage}
+
+Ytan parametriseras med $z$ och $\theta$:
+\[ \vb{r} = \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} \cos\theta \\ \sin\theta \\ z \end{bmatrix}. \quad \text{Beräkna} \quad \frac{\partial\vb{r}}{\partial\theta} = \begin{bmatrix} -\sin\theta \\ \cos\theta \\ 0 \end{bmatrix}, \quad \frac{\partial\vb{r}}{\partial z} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \]
+\[ \frac{\partial\vb{r}}{\partial\theta} \times \frac{\partial\vb{r}}{\partial z} = \begin{vmatrix} \hat{x} & \hat{y} & \hat{z} \\ -\sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{vmatrix} = \begin{bmatrix} \cos\theta \\ \sin\theta \\ 0 \end{bmatrix} \]
+\begin{align*}
+&\Rightarrow \iint_S \vb{u} \cdot \vb{n}\,dS = \iint_S \vb{u} \cdot \vb{n}\,dz\,d\theta = \\
+&= \int_0^{2\pi}\!\!\int_0^1 (\cos\theta, z, -\sin\theta) \cdot (\cos\theta, \sin\theta, 0)\,dz\,d\theta = \\
+&= \int_0^{2\pi}\!\!\int_0^1 \cos^2\theta + z\sin\theta\,dz\,d\theta = \dots = \pi
+\end{align*}
+\end{example}
+
+\subsubsection*{Volymintegral}
+Volym $V$ har densitet $\rho$. Om $\rho$ konstant $\Rightarrow m = \rho V$.\\
+Men om $\rho(\vb{r})$, vad blir massan av volymen.\\
+Dela upp volymen $V$ i små $\delta V_i$.\\
+Summa total massa $M = \displaystyle\sum_{i=1}^N \rho(\vb{r}_i)\,\delta V_i$

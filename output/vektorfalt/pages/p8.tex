@@ -1,0 +1,41 @@
+% language: swedish
+% figure: fig1 0.13 0.465 0.33 0.585
+% figure: fig2 0.30 0.785 0.44 0.825
+% figure: fig3 0.12 0.865 0.285 0.915
+\begin{example}[(forts.)]
+\[ = \int_0^1 2t + 8t^3\,dt = 3 \]
+\end{example}
+
+\subsubsection*{Linjeintegral kring en sluten kurva}
+\begin{example}
+\[ \vb{F} = \begin{bmatrix} y \\ x \\ z \end{bmatrix}, \quad \text{Parametrisering} = \begin{bmatrix} x = \cos\theta \\ y = \sin\theta \\ z = 0 \end{bmatrix}, \quad \theta \in [0, 2\pi] \]
+\[ \frac{d\vb{r}}{d\theta} = \begin{bmatrix} -\sin\theta \\ \cos\theta \\ 0 \end{bmatrix}, \quad \vb{F}(\theta) = \begin{bmatrix} \sin\theta \\ \cos\theta \\ 0 \end{bmatrix} \]
+\begin{align*}
+\oint_C \vb{F} \cdot d\vb{r} &= \int_0^{2\pi} (\sin\theta, \cos\theta, 0) \cdot (-\sin\theta, \cos\theta, 0)\,d\theta = \\
+&= \int_0^{2\pi} -\sin^2\theta + \cos^2\theta\,d\theta = \int_0^{2\pi} \cos 2\theta\,d\theta = \left[ \frac{1}{2}\sin 2\theta \right]_0^{2\pi} = 0
+\end{align*}
+Fältet $\vb{F}$ är konservativt.
+\end{example}
+
+\begin{minipage}{0.35\linewidth}
+\notefigure[0.85]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.63\linewidth}
+Ekvivalent definition av konservativt fält:\\
+Integralen beror bara av ändpunkter
+\[ \int_{C_1} \vb{F} \cdot d\vb{r} = \int_{C_2} \vb{F} \cdot d\vb{r} \]
+\end{minipage}
+
+Andra linjeintegraler:\\
+$\displaystyle\int_C \Phi\,d\vb{r}$ vektorvärd, \ $\displaystyle\int_C \vb{F} \times d\vb{r}$ också vektorvärd
+
+\subsubsection*{Ytintegraler}
+\begin{example}
+\notefigure[0.16]{fig2}{}
+, flöde $\vb{u}$ genom $S$
+
+Vätska strömmar genom rör. Enklaste fallet
+\notefigure[0.18]{fig3}{}
+, $\vb{u}$ konstant i tid och rum, $|\vb{u}| = u_0$
+\[ \text{Flöde } Q = \frac{u_0 A t}{t} = u_0 A \]
+\end{example}

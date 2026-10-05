@@ -46,7 +46,7 @@ Newtons andra lag: $\vb{F} = m\vb{a}$
 
 ## Notation (packages already loaded)
 
-- Maths: `amsmath`, `amssymb`, `mathtools`, `amsthm`, `bm`, `cancel` (`\cancel{...}` for factors the student strikes through when simplifying).
+- Maths: `amsmath`, `amssymb`, `mathtools`, `amsthm`, `bm`, `cancel` (`\cancel{...}` for factors the student strikes through when simplifying), `esint` (`\oiint` for an integral over a closed surface, ∯).
 - `physics`: vectors `\vb{F}` (use `\vec{}` only if the student clearly draws arrows), derivatives `\dv{y}{x}`, `\pdv{f}{x}`, `\abs{x}`, `\norm{v}`, `\ket{\psi}`, `\bra{\phi}`, `\expval{A}`.
 - `siunitx`: a number with a unit is `\SI{9.81}{\metre\per\second\squared}` or `\qty{}{}`; a bare unit is `\si{\kilo\gram}`. Write decimal numbers as they appear, inside `\num{}` or `\SI{}` so the spacing is right: `\num{7,3}`, `\SI{3,5}{\metre}`. On Swedish pages they print with a comma, on English pages with a point.
 - `mhchem`: every chemical formula and reaction goes in `\ce{...}`, e.g. `\ce{2H2 + O2 -> 2H2O}`, `\ce{N2 + 3H2 <=> 2NH3}`, `\ce{Fe^{3+}}`, `\ce{H2O(l)}`.

@@ -1,0 +1,27 @@
+% language: swedish
+% figure: fig1 0.12 0.02 0.40 0.185
+% figure: fig2 0.09 0.72 0.39 0.865
+\begin{minipage}{0.42\linewidth}
+\notefigure[0.9]{fig1}{}
+\end{minipage}
+\begin{minipage}{0.56\linewidth}
+Rita ut många pilar för att få förståelse för vektorfältet.
+\end{minipage}
+
+Fältlinjer: En linje som överallt har fältvektorn som tangent. Antag fält $\vb{F}(\vb{r})$. Låtsas att $\vb{F}$ är ett hastighetsfält $\vb{v}(\vb{r})$ (för enkelhetens och intuitionens skull). En testpartikel följer en bana
+\[ \frac{d\vb{r}}{dt} = \vb{v}(\vb{r}) \Rightarrow \frac{d\vb{r}(t)}{dt} = \vb{v}(\vb{r}(t)) \]
+Analogt för $\vb{F}$
+\[ \frac{d}{d\tau}\big(\vb{r}(\tau)\big) = \underset{\textcolor{magenta!80!black}{\uparrow \text{ Godtycklig konstant} \neq 0}}{C}\,\vb{F}(\vb{r}(\tau)) \]
+
+\begin{example}
+$\vb{F}(x, y) = (y, x)$\\
+Differentialekvationer: $\begin{cases} \dfrac{dx}{d\tau} = y & (C \text{ väljs till } 1) \\[1em] \dfrac{dy}{d\tau} = x \end{cases}$
+
+Kopplade. Använd kedjeregeln
+\begin{align*}
+&\frac{dx}{d\tau} = \frac{dx}{dy}\frac{dy}{d\tau} \Rightarrow y = \frac{dx}{dy}\,\unsure{x} \\
+&\Rightarrow \int y\,dy = \int x\,dx \Rightarrow y^2 = x^2 + C \Rightarrow y = \pm\sqrt{C + x^2} \\
+&\phantom{\Rightarrow \int y\,dy = \int x\,dx \Rightarrow{}} y^2 - x^2 = C
+\end{align*}
+\notefigure[0.32]{fig2}{}
+\end{example}
